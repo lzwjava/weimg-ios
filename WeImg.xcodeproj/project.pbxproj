@@ -14,6 +14,10 @@
 		706A00281C5A297300A8D7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A00271C5A297300A8D7B4 /* Assets.xcassets */; };
 		706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00291C5A297300A8D7B4 /* LaunchScreen.storyboard */; };
 		706A00361C5A297300A8D7B4 /* WeImgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A00351C5A297300A8D7B4 /* WeImgTests.swift */; };
+		70DC10761C5D3DAB005174C4 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC10751C5D3DAB005174C4 /* PostManager.swift */; };
+		70DC10791C5D3E3E005174C4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC10781C5D3E3E005174C4 /* NetworkManager.swift */; };
+		70DC107B1C5D405D005174C4 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC107A1C5D405D005174C4 /* BaseManager.swift */; };
+		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		256BB710AFCAA4E8AF7D684E /* Pods-WeImg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.debug.xcconfig"; sourceTree = "<group>"; };
+		423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.release.xcconfig"; sourceTree = "<group>"; };
+		527C54C41326CCAC54767B52 /* Pods_WeImg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeImg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A001B1C5A297300A8D7B4 /* WeImg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeImg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A001E1C5A297300A8D7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A00201C5A297300A8D7B4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +45,9 @@
 		706A00311C5A297300A8D7B4 /* WeImgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeImgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A00351C5A297300A8D7B4 /* WeImgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeImgTests.swift; sourceTree = "<group>"; };
 		706A00371C5A297300A8D7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70DC10751C5D3DAB005174C4 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		70DC10781C5D3E3E005174C4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		70DC107A1C5D405D005174C4 /* BaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +75,8 @@
 				706A001D1C5A297300A8D7B4 /* WeImg */,
 				706A00341C5A297300A8D7B4 /* WeImgTests */,
 				706A001C1C5A297300A8D7B4 /* Products */,
+				DB40785DB5ECC51595966755 /* Pods */,
+				8DC6AB465A73753D8A544447 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +92,8 @@
 		706A001D1C5A297300A8D7B4 /* WeImg */ = {
 			isa = PBXGroup;
 			children = (
+				70DC10771C5D3DC0005174C4 /* network */,
+				70DC10741C5D3D38005174C4 /* manager */,
 				706A001E1C5A297300A8D7B4 /* AppDelegate.swift */,
 				706A00201C5A297300A8D7B4 /* FirstViewController.swift */,
 				706A00221C5A297300A8D7B4 /* SecondViewController.swift */,
@@ -99,6 +114,40 @@
 			path = WeImgTests;
 			sourceTree = "<group>";
 		};
+		70DC10741C5D3D38005174C4 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				70DC10751C5D3DAB005174C4 /* PostManager.swift */,
+				70DC107A1C5D405D005174C4 /* BaseManager.swift */,
+			);
+			name = manager;
+			sourceTree = "<group>";
+		};
+		70DC10771C5D3DC0005174C4 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				70DC10781C5D3E3E005174C4 /* NetworkManager.swift */,
+			);
+			name = network;
+			sourceTree = "<group>";
+		};
+		8DC6AB465A73753D8A544447 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				527C54C41326CCAC54767B52 /* Pods_WeImg.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB40785DB5ECC51595966755 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				256BB710AFCAA4E8AF7D684E /* Pods-WeImg.debug.xcconfig */,
+				423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 706A003A1C5A297300A8D7B4 /* Build configuration list for PBXNativeTarget "WeImg" */;
 			buildPhases = (
+				575001F54111F358BFD00671 /* Check Pods Manifest.lock */,
 				706A00171C5A297300A8D7B4 /* Sources */,
 				706A00181C5A297300A8D7B4 /* Frameworks */,
 				706A00191C5A297300A8D7B4 /* Resources */,
+				FB02CC444DAAB6BDF2F196EE /* Embed Pods Frameworks */,
+				B4DE8ABCEC72E408386725FF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,12 +247,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		575001F54111F358BFD00671 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4DE8ABCEC72E408386725FF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeImg/Pods-WeImg-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB02CC444DAAB6BDF2F196EE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeImg/Pods-WeImg-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		706A00171C5A297300A8D7B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70DC107B1C5D405D005174C4 /* BaseManager.swift in Sources */,
 				706A00231C5A297300A8D7B4 /* SecondViewController.swift in Sources */,
+				70DC10761C5D3DAB005174C4 /* PostManager.swift in Sources */,
+				70DC10791C5D3E3E005174C4 /* NetworkManager.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
 				706A00211C5A297300A8D7B4 /* FirstViewController.swift in Sources */,
 			);
@@ -327,6 +430,7 @@
 		};
 		706A003B1C5A297300A8D7B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 256BB710AFCAA4E8AF7D684E /* Pods-WeImg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeImg/Info.plist;
@@ -338,6 +442,7 @@
 		};
 		706A003C1C5A297300A8D7B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeImg/Info.plist;
@@ -390,6 +495,7 @@
 				706A003C1C5A297300A8D7B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		706A003D1C5A297300A8D7B4 /* Build configuration list for PBXNativeTarget "WeImgTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +504,7 @@
 				706A003F1C5A297300A8D7B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
