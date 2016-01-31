@@ -5,6 +5,9 @@ use_frameworks!
 
 target 'WeImg' do
     pod 'Alamofire', '~> 3.1.4'
+    pod 'SwiftyJSON', '~> 2.3.2'
+#    pod 'ObjectMapper', '~> 1.1.1'
+    pod 'AlamofireObjectMapper', '~> 2.1'
 end
 
 target 'WeImgTests' do
