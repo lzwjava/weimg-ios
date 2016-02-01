@@ -21,11 +21,23 @@ class WeImgTests: XCTestCase {
         super.tearDown()
     }
     
+    func wait() {
+        expectationForNotification("WeImgTest", object: nil
+            , handler: nil);
+        waitForExpectationsWithTimeout(30, handler: nil);
+    }
+    
+    func notify() {
+        NSNotificationCenter.defaultCenter().postNotificationName("WeImgTest", object: nil);
+    }
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        PostManager.manager.getPost()
-        NSThread.sleepForTimeInterval(5)
+        PostManager.manager.getPost { (posts:[Post], error: NSError?) -> Void in
+            self.notify()
+        }
+        wait()
     }
     
     func testPerformanceExample() {
