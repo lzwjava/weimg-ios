@@ -16,5 +16,19 @@ class UserManager: BaseManager {
     }
     
     func register(mobilePhoneNumber: String, password: String, smsCode: String, username: String, completion: (NSError?) -> Void) {
+        HttpClient.post("users", parameters: [
+            "mobilePhoneNumber": mobilePhoneNumber,
+            "password": password,
+            "smsCode": smsCode,
+            "username": username],
+            completionHandler: completion)
+    }
+    
+    func requestSmsCode(mobilePhoneNumber: String, completion:(NSError?) -> Void) {
+        HttpClient.post("requestSmsCode", parameters: ["mobilePhoneNumber": mobilePhoneNumber], completionHandler: completion)
+    }
+    
+    func fetchSelf() {
+        HttpClient.get("users/self", parameters: nil)
     }
 }
