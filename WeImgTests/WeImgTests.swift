@@ -47,6 +47,21 @@ class WeImgTests: XCTestCase {
         wait()
     }
     
+    func testUpload() {
+        let path = NSBundle(forClass: self.dynamicType).pathForResource("beauty", ofType: "jpg")
+        let image = UIImage(contentsOfFile: path!)
+        ImageManager.manager.uploadImage(image!, desc: "Young beauty!") { (imageId: String?, error: NSError?) -> Void in
+            XCTAssertNil(error)
+            XCTAssertNotNil(imageId)
+            self.notify()
+        }
+        wait()
+    }
+    
+    func testLogin() {
+        
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
