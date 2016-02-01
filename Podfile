@@ -8,6 +8,7 @@ target 'WeImg' do
     pod 'SwiftyJSON', '~> 2.3.2'
 #    pod 'ObjectMapper', '~> 1.1.1'
     pod 'AlamofireObjectMapper', '~> 2.1'
+    pod 'Qiniu', '~> 7.0'
 end
 
 target 'WeImgTests' do

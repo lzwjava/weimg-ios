@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import AlamofireObjectMapper
 import Alamofire
-import ObjectMapper
 
 class PostManager : BaseManager {
     static let manager: PostManager = {

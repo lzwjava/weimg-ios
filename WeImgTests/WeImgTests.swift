@@ -40,6 +40,13 @@ class WeImgTests: XCTestCase {
         wait()
     }
     
+    func testGetUpload() {
+        ImageManager.manager.getUpload { (uploadToken: UploadToken?, error:NSError?) -> Void in
+            self.notify()
+        }
+        wait()
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
