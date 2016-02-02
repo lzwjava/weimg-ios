@@ -15,14 +15,7 @@ class PostManager : BaseManager {
     }()
     
     func getPost( completionHandler: ([Post], NSError?) -> Void) {
-        HttpClient.get("posts").responseArray("result") { (response: Response<[Post], NSError>) in
-            if response.result.error != nil {
-                completionHandler([], response.result.error!);
-            } else {
-                let postArray = response.result.value
-                completionHandler(postArray!, nil);
-            }
-        };
+        HttpClient.getArray("posts", parameters: nil, completion: completionHandler)
     }
     
     func createPost(title: String, images: [UIImage], descs: [String], completionHandler: (NSError?)-> Void) {

@@ -28,7 +28,7 @@ class UserManager: BaseManager {
         HttpClient.post("requestSmsCode", parameters: ["mobilePhoneNumber": mobilePhoneNumber], completionHandler: completion)
     }
     
-    func fetchSelf() {
-        HttpClient.get("users/self", parameters: nil)
+    func fetchSelf(completion: (User?, NSError?) -> Void) {
+        HttpClient.get("users/self", completion:completion)
     }
 }

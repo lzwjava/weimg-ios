@@ -8,12 +8,13 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 class HttpClient {
     
     private static var baseUrl : String = "http://localhost:3005/";
     
-    static func get(URLString: URLStringConvertible,
+    private static func get(URLString: URLStringConvertible,
         parameters: [String: AnyObject]? = nil)
         -> Request
     {
@@ -21,7 +22,7 @@ class HttpClient {
         return Alamofire.request(.GET, url, parameters: parameters)
     }
     
-    static func get(URLString: URLStringConvertible,
+    private static func get(URLString: URLStringConvertible,
         parameters: [String: AnyObject]? = nil, completion:(AnyObject?, NSError?) -> Void){
         let url = baseUrl + URLString.URLString;
         Alamofire.request(.GET, url, parameters: parameters).responseJSON { (resp: Response<AnyObject, NSError>) -> Void in
@@ -32,6 +33,52 @@ class HttpClient {
             }
         }
     }
+    
+    private static func objectMapperError() -> NSError {
+        let failureReason = "ObjectMapper failed to serialize response."
+        let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+        return error
+    }
+    
+    private static func get<T: Mappable>(URLString: URLStringConvertible,
+        parameters: [String: AnyObject]? = nil,array: Bool, completion:(T?, [T], NSError?) -> Void) {
+            get(URLString, parameters: parameters) { (result: AnyObject?, error: NSError?) -> Void in
+                guard error == nil else {
+                    completion(nil, [], error)
+                    return
+                }
+                var parsedObject : T?
+                var parsedArray: [T]?
+                if array {
+                    parsedArray = Mapper<T>().mapArray(result)
+                } else {
+                    parsedObject = Mapper<T>().map(result)
+                }
+                guard parsedObject != nil else {
+                    completion(nil, [], objectMapperError())
+                    return
+                }
+                if array {
+                    completion(nil, parsedArray!, nil)
+                } else {
+                    completion(parsedObject, [], nil)
+                }
+            }
+    }
+    
+    static func get<T: Mappable>(URLString: URLStringConvertible,
+        parameters: [String: AnyObject]? = nil, completion:(T?, NSError?) -> Void) {
+            get(URLString, parameters: parameters, array: false) { (object: T?, array: [T]?, error: NSError?) -> Void in
+                completion(object, error)
+            }
+    }
+
+    static func getArray<T: Mappable>(URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, completion:([T], NSError?) -> Void) {
+            get(URLString, parameters: parameters, array: true) { (object: T?, array: [T], error: NSError?) -> Void in
+                completion(array, error)
+            }
+    }
+
     
     private static func errorFromReponse(resp: Response<AnyObject, NSError>) -> NSError? {
         if resp.result.error != nil {

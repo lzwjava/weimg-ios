@@ -16,13 +16,7 @@ class ImageManager : BaseManager {
     }()
     
     func getUpload(completionHandler: (UploadToken?, NSError?) -> Void) {
-        HttpClient.get("images/upload").responseObject("result") { (response: Response<UploadToken, NSError>) in
-            if response.result.error != nil {
-                completionHandler(nil, response.result.error!)
-            } else {
-                completionHandler(response.result.value!, nil)
-            }
-        }
+        HttpClient.get("images/upload", completion: completionHandler)
     }
     
     func uploadImage(image: UIImage, desc: String?, completionHandler:(String?, NSError?) -> Void) {
