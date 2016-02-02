@@ -31,4 +31,8 @@ class UserManager: BaseManager {
     func fetchSelf(completion: (User?, NSError?) -> Void) {
         HttpClient.get("users/self", completion:completion)
     }
+    
+    func changeUser() {
+        
+    }
 }
