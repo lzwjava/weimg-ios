@@ -9,9 +9,11 @@ target 'WeImg' do
 #    pod 'ObjectMapper', '~> 1.1.1'
     pod 'AlamofireObjectMapper', '~> 2.1'
     pod 'Qiniu', '~> 7.0'
+    pod 'Ruler'
+    pod 'Proposer'
+    pod 'Navi'
 end
 
 target 'WeImgTests' do
 
 end
-

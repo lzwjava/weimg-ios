@@ -13,16 +13,33 @@
 		706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00291C5A297300A8D7B4 /* LaunchScreen.storyboard */; };
 		706A00361C5A297300A8D7B4 /* WeImgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A00351C5A297300A8D7B4 /* WeImgTests.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
-		70C2F39D1C60E0B000C345B2 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3901C60E0B000C345B2 /* BaseManager.swift */; };
-		70C2F39E1C60E0B000C345B2 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3911C60E0B000C345B2 /* HttpClient.swift */; };
-		70C2F39F1C60E0B000C345B2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3921C60E0B000C345B2 /* ImageManager.swift */; };
-		70C2F3A01C60E0B000C345B2 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3931C60E0B000C345B2 /* PostManager.swift */; };
-		70C2F3A11C60E0B000C345B2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3941C60E0B000C345B2 /* UserManager.swift */; };
-		70C2F3A21C60E0B000C345B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3961C60E0B000C345B2 /* FirstViewController.swift */; };
-		70C2F3A31C60E0B000C345B2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3971C60E0B000C345B2 /* SecondViewController.swift */; };
-		70C2F3A41C60E0B000C345B2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F39A1C60E0B000C345B2 /* Post.swift */; };
-		70C2F3A51C60E0B000C345B2 /* UploadToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F39B1C60E0B000C345B2 /* UploadToken.swift */; };
-		70C2F3A61C60E0B000C345B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F39C1C60E0B000C345B2 /* User.swift */; };
+		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
+		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
+		70C2F3DE1C60E68200C345B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D51C60E68200C345B2 /* FirstViewController.swift */; };
+		70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */; };
+		70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D81C60E68200C345B2 /* RegisterPickMobileViewController.swift */; };
+		70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D91C60E68200C345B2 /* RegisterPickNameViewController.swift */; };
+		70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3DA1C60E68200C345B2 /* RegisterVerifyMobileViewController.swift */; };
+		70C2F3E31C60E68200C345B2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3DB1C60E68200C345B2 /* SecondViewController.swift */; };
+		70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3E51C60E69900C345B2 /* BaseManager.swift */; };
+		70C2F3F61C60E69900C345B2 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3E61C60E69900C345B2 /* HttpClient.swift */; };
+		70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3E71C60E69900C345B2 /* ImageManager.swift */; };
+		70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3E81C60E69900C345B2 /* PostManager.swift */; };
+		70C2F3F91C60E69900C345B2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3E91C60E69900C345B2 /* UserManager.swift */; };
+		70C2F4071C60E6B500C345B2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4031C60E6B500C345B2 /* Post.swift */; };
+		70C2F4081C60E6B500C345B2 /* UploadToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4041C60E6B500C345B2 /* UploadToken.swift */; };
+		70C2F4091C60E6B500C345B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4051C60E6B500C345B2 /* User.swift */; };
+		70C2F40C1C60E72C00C345B2 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F40B1C60E72C00C345B2 /* CameraPreviewView.swift */; };
+		70C2F40F1C60E76100C345B2 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F40E1C60E76100C345B2 /* BorderButton.swift */; };
+		70C2F4121C60E7E400C345B2 /* BorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4111C60E7E400C345B2 /* BorderTextField.swift */; };
+		70C2F4151C60EB5E00C345B2 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4141C60EB5E00C345B2 /* CommonHelper.swift */; };
+		70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4171C60EC6E00C345B2 /* UIColor+WeImg.swift */; };
+		70C2F41A1C60EC9600C345B2 /* UIColor+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4191C60EC9600C345B2 /* UIColor+Yep.swift */; };
+		70C2F41D1C60ECD600C345B2 /* NavigationTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F41C1C60ECD600C345B2 /* NavigationTitleLabel.swift */; };
+		70C2F41F1C60ED0300C345B2 /* NSTimeZone+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F41E1C60ED0300C345B2 /* NSTimeZone+Yep.swift */; };
+		70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4201C60ED4100C345B2 /* YepHUD.swift */; };
+		70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4221C60ED7B00C345B2 /* UIViewController+Yep.swift */; };
+		70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4241C60EDD400C345B2 /* String+Yep.swift */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,16 +67,33 @@
 		706A00351C5A297300A8D7B4 /* WeImgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeImgTests.swift; sourceTree = "<group>"; };
 		706A00371C5A297300A8D7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
-		70C2F3901C60E0B000C345B2 /* BaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
-		70C2F3911C60E0B000C345B2 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		70C2F3921C60E0B000C345B2 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		70C2F3931C60E0B000C345B2 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
-		70C2F3941C60E0B000C345B2 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		70C2F3961C60E0B000C345B2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		70C2F3971C60E0B000C345B2 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		70C2F39A1C60E0B000C345B2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		70C2F39B1C60E0B000C345B2 /* UploadToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadToken.swift; sourceTree = "<group>"; };
-		70C2F39C1C60E0B000C345B2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
+		70C2F3D51C60E68200C345B2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickAvatarViewController.swift; sourceTree = "<group>"; };
+		70C2F3D81C60E68200C345B2 /* RegisterPickMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickMobileViewController.swift; sourceTree = "<group>"; };
+		70C2F3D91C60E68200C345B2 /* RegisterPickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickNameViewController.swift; sourceTree = "<group>"; };
+		70C2F3DA1C60E68200C345B2 /* RegisterVerifyMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVerifyMobileViewController.swift; sourceTree = "<group>"; };
+		70C2F3DB1C60E68200C345B2 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		70C2F3E51C60E69900C345B2 /* BaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		70C2F3E61C60E69900C345B2 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		70C2F3E71C60E69900C345B2 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		70C2F3E81C60E69900C345B2 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		70C2F3E91C60E69900C345B2 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		70C2F4031C60E6B500C345B2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		70C2F4041C60E6B500C345B2 /* UploadToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadToken.swift; sourceTree = "<group>"; };
+		70C2F4051C60E6B500C345B2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		70C2F40B1C60E72C00C345B2 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		70C2F40E1C60E76100C345B2 /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		70C2F4111C60E7E400C345B2 /* BorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTextField.swift; sourceTree = "<group>"; };
+		70C2F4141C60EB5E00C345B2 /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
+		70C2F4171C60EC6E00C345B2 /* UIColor+WeImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+WeImg.swift"; sourceTree = "<group>"; };
+		70C2F4191C60EC9600C345B2 /* UIColor+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Yep.swift"; sourceTree = "<group>"; };
+		70C2F41C1C60ECD600C345B2 /* NavigationTitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTitleLabel.swift; sourceTree = "<group>"; };
+		70C2F41E1C60ED0300C345B2 /* NSTimeZone+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeZone+Yep.swift"; sourceTree = "<group>"; };
+		70C2F4201C60ED4100C345B2 /* YepHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepHUD.swift; sourceTree = "<group>"; };
+		70C2F4221C60ED7B00C345B2 /* UIViewController+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Yep.swift"; sourceTree = "<group>"; };
+		70C2F4241C60EDD400C345B2 /* String+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Yep.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +138,12 @@
 		706A001D1C5A297300A8D7B4 /* WeImg */ = {
 			isa = PBXGroup;
 			children = (
-				70C2F38F1C60E0B000C345B2 /* manager */,
-				70C2F3951C60E0B000C345B2 /* controller */,
-				70C2F3981C60E0B000C345B2 /* view */,
-				70C2F3991C60E0B000C345B2 /* model */,
+				70C2F4161C60EBBB00C345B2 /* Extensions */,
+				70C2F4131C60EB2700C345B2 /* Helpers */,
+				70C2F4021C60E6B500C345B2 /* Models */,
+				70C2F4061C60E6B500C345B2 /* Views */,
+				70C2F3E41C60E69900C345B2 /* Managers */,
+				70C2F3D11C60E68200C345B2 /* ViewControllers */,
 				706A001E1C5A297300A8D7B4 /* AppDelegate.swift */,
 				706A00241C5A297300A8D7B4 /* Main.storyboard */,
 				706A00271C5A297300A8D7B4 /* Assets.xcassets */,
@@ -127,42 +163,121 @@
 			path = WeImgTests;
 			sourceTree = "<group>";
 		};
-		70C2F38F1C60E0B000C345B2 /* manager */ = {
+		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				70C2F3901C60E0B000C345B2 /* BaseManager.swift */,
-				70C2F3911C60E0B000C345B2 /* HttpClient.swift */,
-				70C2F3921C60E0B000C345B2 /* ImageManager.swift */,
-				70C2F3931C60E0B000C345B2 /* PostManager.swift */,
-				70C2F3941C60E0B000C345B2 /* UserManager.swift */,
+				70C2F3D21C60E68200C345B2 /* Base */,
+				70C2F3D61C60E68200C345B2 /* Register */,
+				70C2F3D51C60E68200C345B2 /* FirstViewController.swift */,
+				70C2F3DB1C60E68200C345B2 /* SecondViewController.swift */,
 			);
-			path = manager;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		70C2F3951C60E0B000C345B2 /* controller */ = {
+		70C2F3D21C60E68200C345B2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				70C2F3961C60E0B000C345B2 /* FirstViewController.swift */,
-				70C2F3971C60E0B000C345B2 /* SecondViewController.swift */,
+				70C2F3D31C60E68200C345B2 /* BaseViewController.swift */,
+				70C2F3D41C60E68200C345B2 /* SegueViewController.swift */,
 			);
-			path = controller;
+			path = Base;
 			sourceTree = "<group>";
 		};
-		70C2F3981C60E0B000C345B2 /* view */ = {
+		70C2F3D61C60E68200C345B2 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */,
+				70C2F3D81C60E68200C345B2 /* RegisterPickMobileViewController.swift */,
+				70C2F3D91C60E68200C345B2 /* RegisterPickNameViewController.swift */,
+				70C2F3DA1C60E68200C345B2 /* RegisterVerifyMobileViewController.swift */,
 			);
-			path = view;
+			path = Register;
 			sourceTree = "<group>";
 		};
-		70C2F3991C60E0B000C345B2 /* model */ = {
+		70C2F3E41C60E69900C345B2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				70C2F39A1C60E0B000C345B2 /* Post.swift */,
-				70C2F39B1C60E0B000C345B2 /* UploadToken.swift */,
-				70C2F39C1C60E0B000C345B2 /* User.swift */,
+				70C2F3E51C60E69900C345B2 /* BaseManager.swift */,
+				70C2F3E61C60E69900C345B2 /* HttpClient.swift */,
+				70C2F3E71C60E69900C345B2 /* ImageManager.swift */,
+				70C2F3E81C60E69900C345B2 /* PostManager.swift */,
+				70C2F3E91C60E69900C345B2 /* UserManager.swift */,
 			);
-			path = model;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		70C2F4021C60E6B500C345B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F4031C60E6B500C345B2 /* Post.swift */,
+				70C2F4041C60E6B500C345B2 /* UploadToken.swift */,
+				70C2F4051C60E6B500C345B2 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		70C2F4061C60E6B500C345B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F41B1C60ECD600C345B2 /* Labels */,
+				70C2F4101C60E7E400C345B2 /* TextFields */,
+				70C2F40D1C60E76100C345B2 /* Buttons */,
+				70C2F40A1C60E72C00C345B2 /* CameraPreview */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		70C2F40A1C60E72C00C345B2 /* CameraPreview */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F40B1C60E72C00C345B2 /* CameraPreviewView.swift */,
+			);
+			path = CameraPreview;
+			sourceTree = "<group>";
+		};
+		70C2F40D1C60E76100C345B2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F40E1C60E76100C345B2 /* BorderButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		70C2F4101C60E7E400C345B2 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F4111C60E7E400C345B2 /* BorderTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		70C2F4131C60EB2700C345B2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F4201C60ED4100C345B2 /* YepHUD.swift */,
+				70C2F4141C60EB5E00C345B2 /* CommonHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		70C2F4161C60EBBB00C345B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F4241C60EDD400C345B2 /* String+Yep.swift */,
+				70C2F4221C60ED7B00C345B2 /* UIViewController+Yep.swift */,
+				70C2F41E1C60ED0300C345B2 /* NSTimeZone+Yep.swift */,
+				70C2F4191C60EC9600C345B2 /* UIColor+Yep.swift */,
+				70C2F4171C60EC6E00C345B2 /* UIColor+WeImg.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70C2F41B1C60ECD600C345B2 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F41C1C60ECD600C345B2 /* NavigationTitleLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
@@ -335,17 +450,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70C2F3A01C60E0B000C345B2 /* PostManager.swift in Sources */,
-				70C2F3A11C60E0B000C345B2 /* UserManager.swift in Sources */,
+				70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */,
+				70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */,
+				70C2F40C1C60E72C00C345B2 /* CameraPreviewView.swift in Sources */,
+				70C2F4121C60E7E400C345B2 /* BorderTextField.swift in Sources */,
+				70C2F41A1C60EC9600C345B2 /* UIColor+Yep.swift in Sources */,
+				70C2F3E31C60E68200C345B2 /* SecondViewController.swift in Sources */,
+				70C2F3F61C60E69900C345B2 /* HttpClient.swift in Sources */,
+				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
+				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
-				70C2F39D1C60E0B000C345B2 /* BaseManager.swift in Sources */,
-				70C2F3A21C60E0B000C345B2 /* FirstViewController.swift in Sources */,
-				70C2F39E1C60E0B000C345B2 /* HttpClient.swift in Sources */,
-				70C2F3A31C60E0B000C345B2 /* SecondViewController.swift in Sources */,
-				70C2F39F1C60E0B000C345B2 /* ImageManager.swift in Sources */,
-				70C2F3A51C60E0B000C345B2 /* UploadToken.swift in Sources */,
-				70C2F3A41C60E0B000C345B2 /* Post.swift in Sources */,
-				70C2F3A61C60E0B000C345B2 /* User.swift in Sources */,
+				70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */,
+				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
+				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
+				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
+				70C2F4081C60E6B500C345B2 /* UploadToken.swift in Sources */,
+				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
+				70C2F40F1C60E76100C345B2 /* BorderButton.swift in Sources */,
+				70C2F3F91C60E69900C345B2 /* UserManager.swift in Sources */,
+				70C2F4071C60E6B500C345B2 /* Post.swift in Sources */,
+				70C2F4091C60E6B500C345B2 /* User.swift in Sources */,
+				70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */,
+				70C2F3DE1C60E68200C345B2 /* FirstViewController.swift in Sources */,
+				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
+				70C2F4151C60EB5E00C345B2 /* CommonHelper.swift in Sources */,
+				70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */,
+				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,
+				70C2F41D1C60ECD600C345B2 /* NavigationTitleLabel.swift in Sources */,
+				70C2F41F1C60ED0300C345B2 /* NSTimeZone+Yep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeImg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WeImg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
