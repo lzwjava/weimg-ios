@@ -47,7 +47,7 @@ class RegisterVerifyMobileViewController: SegueViewController {
         }
     }
 
-    private var callMeInSeconds = YepConfig.callMeInSeconds()
+    private var callMeInSeconds = 60;
 
     
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ class RegisterVerifyMobileViewController: SegueViewController {
 
         navigationItem.rightBarButtonItem = nextButton
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "activeAgain:", name: AppDelegate.Notification.applicationDidBecomeActive, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "activeAgain:", name: "applicationDidBecomeActive", object: nil)
 
         verifyMobileNumberPromptLabel.text = NSLocalizedString("Input verification code sent to", comment: "")
         phoneNumberLabel.text = "+" + areaCode + " " + mobile
@@ -142,23 +142,23 @@ class RegisterVerifyMobileViewController: SegueViewController {
             }
         }
 
-        sendVerifyCodeOfMobile(mobile, withAreaCode: areaCode, useMethod: .Call, failureHandler: { (reason, errorMessage) in
-            defaultFailureHandler(reason, errorMessage: errorMessage)
-
-            if let errorMessage = errorMessage {
-                dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                    YepAlert.alertSorry(message: errorMessage, inViewController: self)
-
-                    UIView.performWithoutAnimation {
-                        self?.callMeButton.setTitle(NSLocalizedString("Call me", comment: ""), forState: .Normal)
-                        self?.callMeButton.layoutIfNeeded()
-                    }
-                }
-            }
-
-        }, completion: { success in
-            println("resendVoiceVerifyCode \(success)")
-        })
+//        sendVerifyCodeOfMobile(mobile, withAreaCode: areaCode, useMethod: .Call, failureHandler: { (reason, errorMessage) in
+//            defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//            if let errorMessage = errorMessage {
+//                dispatch_async(dispatch_get_main_queue()) { [weak self] in
+//                    YepAlert.alertSorry(message: errorMessage, inViewController: self)
+//
+//                    UIView.performWithoutAnimation {
+//                        self?.callMeButton.setTitle(NSLocalizedString("Call me", comment: ""), forState: .Normal)
+//                        self?.callMeButton.layoutIfNeeded()
+//                    }
+//                }
+//            }
+//
+//        }, completion: { success in
+//            println("resendVoiceVerifyCode \(success)")
+//        })
     }
 
     @objc private func textFieldDidChange(textField: UITextField) {
@@ -183,34 +183,34 @@ class RegisterVerifyMobileViewController: SegueViewController {
 
         YepHUD.showActivityIndicator()
 
-        verifyMobile(mobile, withAreaCode: areaCode, verifyCode: verifyCode, failureHandler: { [weak self] (reason, errorMessage) in
-            defaultFailureHandler(reason, errorMessage: errorMessage)
-
-            YepHUD.hideActivityIndicator()
-
-            if let errorMessage = errorMessage {
-                dispatch_async(dispatch_get_main_queue()) {
-                    self?.nextButton.enabled = false
-
-                    YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: { [weak self] in
-                        self?.verifyCodeTextField.becomeFirstResponder()
-                    })
-                }
-            }
-
-        }, completion: { loginUser in
-
-            println("\(loginUser)")
-
-            YepHUD.hideActivityIndicator()
-
-            dispatch_async(dispatch_get_main_queue()) {
-
-                saveTokenAndUserInfoOfLoginUser(loginUser)
-
-                self.performSegueWithIdentifier("showRegisterPickAvatar", sender: nil)
-            }
-        })
+//        verifyMobile(mobile, withAreaCode: areaCode, verifyCode: verifyCode, failureHandler: { [weak self] (reason, errorMessage) in
+//            defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//            YepHUD.hideActivityIndicator()
+//
+//            if let errorMessage = errorMessage {
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self?.nextButton.enabled = false
+//
+//                    YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: { [weak self] in
+//                        self?.verifyCodeTextField.becomeFirstResponder()
+//                    })
+//                }
+//            }
+//
+//        }, completion: { loginUser in
+//
+//            println("\(loginUser)")
+//
+//            YepHUD.hideActivityIndicator()
+//
+//            dispatch_async(dispatch_get_main_queue()) {
+//
+//                saveTokenAndUserInfoOfLoginUser(loginUser)
+//
+//                self.performSegueWithIdentifier("showRegisterPickAvatar", sender: nil)
+//            }
+//        })
     }
 }
 

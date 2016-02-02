@@ -91,7 +91,7 @@ class RegisterPickNameViewController: BaseViewController {
     // MARK: Actions
 
     @objc private func tapTerms(sender: UITapGestureRecognizer) {
-        if let URL = NSURL(string: YepConfig.termsURLString) {
+        if let URL = NSURL(string: "http://weibo.com") {
             yep_openURL(URL)
         }
     }
@@ -115,7 +115,7 @@ class RegisterPickNameViewController: BaseViewController {
         }
 
         let nickname = text.trimming(.WhitespaceAndNewline)
-        YepUserDefaults.nickname.value = nickname
+//        YepUserDefaults.nickname.value = nickname
 
         performSegueWithIdentifier("showRegisterPickMobile", sender: nil)
     }

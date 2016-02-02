@@ -111,61 +111,61 @@ class RegisterPickMobileViewController: SegueViewController {
 
         YepHUD.showActivityIndicator()
         
-        validateMobile(mobile, withAreaCode: areaCode, failureHandler: { (reason, errorMessage) in
-            defaultFailureHandler(reason, errorMessage: errorMessage)
-            
-            YepHUD.hideActivityIndicator()
-
-        }, completion: { (available, message) in
-            if available, let nickname = YepUserDefaults.nickname.value {
-                println("ValidateMobile: available")
-
-                registerMobile(mobile, withAreaCode: areaCode, nickname: nickname, failureHandler: { (reason, errorMessage) in
-                    defaultFailureHandler(reason, errorMessage: errorMessage)
-
-                    YepHUD.hideActivityIndicator()
-
-                    if let errorMessage = errorMessage {
-                        YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: { [weak self] in
-                            self?.mobileNumberTextField.becomeFirstResponder()
-                        })
-                    }
-
-                }, completion: { created in
-
-                    YepHUD.hideActivityIndicator()
-
-                    if created {
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.performSegueWithIdentifier("showRegisterVerifyMobile", sender: ["mobile" : mobile, "areaCode": areaCode])
-                        })
-
-                    } else {
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.nextButton.enabled = false
-
-                            YepAlert.alertSorry(message: "registerMobile failed", inViewController: self, withDismissAction: { [weak self] in
-                                self?.mobileNumberTextField.becomeFirstResponder()
-                            })
-                        })
-                    }
-                })
-
-            } else {
-                println("ValidateMobile: \(message)")
-
-                YepHUD.hideActivityIndicator()
-
-                dispatch_async(dispatch_get_main_queue()) {
-
-                    self.nextButton.enabled = false
-
-                    YepAlert.alertSorry(message: message, inViewController: self, withDismissAction: { [weak self] in
-                        self?.mobileNumberTextField.becomeFirstResponder()
-                    })
-                }
-            }
-        })
+//        validateMobile(mobile, withAreaCode: areaCode, failureHandler: { (reason, errorMessage) in
+//            defaultFailureHandler(reason, errorMessage: errorMessage)
+//            
+//            YepHUD.hideActivityIndicator()
+//
+//        }, completion: { (available, message) in
+//            if available, let nickname = YepUserDefaults.nickname.value {
+//                println("ValidateMobile: available")
+//
+//                registerMobile(mobile, withAreaCode: areaCode, nickname: nickname, failureHandler: { (reason, errorMessage) in
+//                    defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//                    YepHUD.hideActivityIndicator()
+//
+//                    if let errorMessage = errorMessage {
+//                        YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: { [weak self] in
+//                            self?.mobileNumberTextField.becomeFirstResponder()
+//                        })
+//                    }
+//
+//                }, completion: { created in
+//
+//                    YepHUD.hideActivityIndicator()
+//
+//                    if created {
+//                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                            self.performSegueWithIdentifier("showRegisterVerifyMobile", sender: ["mobile" : mobile, "areaCode": areaCode])
+//                        })
+//
+//                    } else {
+//                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                            self.nextButton.enabled = false
+//
+//                            YepAlert.alertSorry(message: "registerMobile failed", inViewController: self, withDismissAction: { [weak self] in
+//                                self?.mobileNumberTextField.becomeFirstResponder()
+//                            })
+//                        })
+//                    }
+//                })
+//
+//            } else {
+//                println("ValidateMobile: \(message)")
+//
+//                YepHUD.hideActivityIndicator()
+//
+//                dispatch_async(dispatch_get_main_queue()) {
+//
+//                    self.nextButton.enabled = false
+//
+//                    YepAlert.alertSorry(message: message, inViewController: self, withDismissAction: { [weak self] in
+//                        self?.mobileNumberTextField.becomeFirstResponder()
+//                    })
+//                }
+//            }
+//        })
     }
 
     // MARK: Navigation

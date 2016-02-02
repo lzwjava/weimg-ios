@@ -221,29 +221,31 @@ class RegisterPickAvatarViewController: SegueViewController {
     private func uploadAvatarAndGotoPickSkills() {
         
         YepHUD.showActivityIndicator()
-
-        let image = avatar.largestCenteredSquareImage().resizeToTargetSize(YepConfig.avatarMaxSize())
+        
+        let avatarMaxSize = CGSize(width: 414, height: 414);
+    
+        let image = avatar.largestCenteredSquareImage().resizeToTargetSize(avatarMaxSize)
 
         let imageData = UIImageJPEGRepresentation(image, YepConfig.avatarCompressionQuality())
 
         if let imageData = imageData {
-
-            updateAvatarWithImageData(imageData, failureHandler: { (reason, errorMessage) in
-
-                defaultFailureHandler(reason, errorMessage: errorMessage)
-
-                YepHUD.hideActivityIndicator()
-
-            }, completion: { newAvatarURLString in
-                YepHUD.hideActivityIndicator()
-
-                dispatch_async(dispatch_get_main_queue()) {
-
-                    YepUserDefaults.avatarURLString.value = newAvatarURLString
-
-                    self.performSegueWithIdentifier("showRegisterPickSkills", sender: nil)
-                }
-            })
+//
+//            updateAvatarWithImageData(imageData, failureHandler: { (reason, errorMessage) in
+//
+//                defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//                YepHUD.hideActivityIndicator()
+//
+//            }, completion: { newAvatarURLString in
+//                YepHUD.hideActivityIndicator()
+//
+//                dispatch_async(dispatch_get_main_queue()) {
+//
+//                    YepUserDefaults.avatarURLString.value = newAvatarURLString
+//
+//                    self.performSegueWithIdentifier("showRegisterPickSkills", sender: nil)
+//                }
+//            })
         }
     }
 

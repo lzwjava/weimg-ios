@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A001E1C5A297300A8D7B4 /* AppDelegate.swift */; };
 		706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00241C5A297300A8D7B4 /* Main.storyboard */; };
-		706A00281C5A297300A8D7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A00271C5A297300A8D7B4 /* Assets.xcassets */; };
+		706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A00271C5A297300A8D7B4 /* Images.xcassets */; };
 		706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00291C5A297300A8D7B4 /* LaunchScreen.storyboard */; };
 		706A00361C5A297300A8D7B4 /* WeImgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A00351C5A297300A8D7B4 /* WeImgTests.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
@@ -40,6 +40,11 @@
 		70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4201C60ED4100C345B2 /* YepHUD.swift */; };
 		70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4221C60ED7B00C345B2 /* UIViewController+Yep.swift */; };
 		70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4241C60EDD400C345B2 /* String+Yep.swift */; };
+		70C2F4271C611AE900C345B2 /* UIFont+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4261C611AE900C345B2 /* UIFont+Yep.swift */; };
+		70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4281C611B4E00C345B2 /* YepAlert.swift */; };
+		70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F42A1C611BCA00C345B2 /* UIImage+Yep.swift */; };
+		70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F42C1C611BF900C345B2 /* YepConfig.swift */; };
+		70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F42E1C611D1F00C345B2 /* Intro.storyboard */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +65,7 @@
 		706A001B1C5A297300A8D7B4 /* WeImg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeImg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A001E1C5A297300A8D7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A00251C5A297300A8D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		706A00271C5A297300A8D7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		706A00271C5A297300A8D7B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		706A002A1C5A297300A8D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		706A002C1C5A297300A8D7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		706A00311C5A297300A8D7B4 /* WeImgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeImgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +99,11 @@
 		70C2F4201C60ED4100C345B2 /* YepHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepHUD.swift; sourceTree = "<group>"; };
 		70C2F4221C60ED7B00C345B2 /* UIViewController+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Yep.swift"; sourceTree = "<group>"; };
 		70C2F4241C60EDD400C345B2 /* String+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Yep.swift"; sourceTree = "<group>"; };
+		70C2F4261C611AE900C345B2 /* UIFont+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Yep.swift"; sourceTree = "<group>"; };
+		70C2F4281C611B4E00C345B2 /* YepAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepAlert.swift; sourceTree = "<group>"; };
+		70C2F42A1C611BCA00C345B2 /* UIImage+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Yep.swift"; sourceTree = "<group>"; };
+		70C2F42C1C611BF900C345B2 /* YepConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepConfig.swift; sourceTree = "<group>"; };
+		70C2F42F1C611D1F00C345B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +156,8 @@
 				70C2F3D11C60E68200C345B2 /* ViewControllers */,
 				706A001E1C5A297300A8D7B4 /* AppDelegate.swift */,
 				706A00241C5A297300A8D7B4 /* Main.storyboard */,
-				706A00271C5A297300A8D7B4 /* Assets.xcassets */,
+				70C2F42E1C611D1F00C345B2 /* Intro.storyboard */,
+				706A00271C5A297300A8D7B4 /* Images.xcassets */,
 				706A00291C5A297300A8D7B4 /* LaunchScreen.storyboard */,
 				706A002C1C5A297300A8D7B4 /* Info.plist */,
 			);
@@ -254,8 +265,10 @@
 		70C2F4131C60EB2700C345B2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				70C2F4281C611B4E00C345B2 /* YepAlert.swift */,
 				70C2F4201C60ED4100C345B2 /* YepHUD.swift */,
 				70C2F4141C60EB5E00C345B2 /* CommonHelper.swift */,
+				70C2F42C1C611BF900C345B2 /* YepConfig.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -263,6 +276,8 @@
 		70C2F4161C60EBBB00C345B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				70C2F42A1C611BCA00C345B2 /* UIImage+Yep.swift */,
+				70C2F4261C611AE900C345B2 /* UIFont+Yep.swift */,
 				70C2F4241C60EDD400C345B2 /* String+Yep.swift */,
 				70C2F4221C60ED7B00C345B2 /* UIViewController+Yep.swift */,
 				70C2F41E1C60ED0300C345B2 /* NSTimeZone+Yep.swift */,
@@ -382,8 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */,
-				706A00281C5A297300A8D7B4 /* Assets.xcassets in Resources */,
+				706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */,
 				706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */,
+				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,12 +480,16 @@
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
 				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
+				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,
 				70C2F4081C60E6B500C345B2 /* UploadToken.swift in Sources */,
+				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
+				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
 				70C2F40F1C60E76100C345B2 /* BorderButton.swift in Sources */,
 				70C2F3F91C60E69900C345B2 /* UserManager.swift in Sources */,
 				70C2F4071C60E6B500C345B2 /* Post.swift in Sources */,
 				70C2F4091C60E6B500C345B2 /* User.swift in Sources */,
+				70C2F4271C611AE900C345B2 /* UIFont+Yep.swift in Sources */,
 				70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */,
 				70C2F3DE1C60E68200C345B2 /* FirstViewController.swift in Sources */,
 				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
@@ -514,6 +534,14 @@
 				706A002A1C5A297300A8D7B4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		70C2F42E1C611D1F00C345B2 /* Intro.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70C2F42F1C611D1F00C345B2 /* Base */,
+			);
+			name = Intro.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
