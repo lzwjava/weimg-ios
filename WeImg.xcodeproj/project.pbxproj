@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70629B121C61EF7500865921 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70629B141C61EF7500865921 /* Localizable.strings */; };
 		706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A001E1C5A297300A8D7B4 /* AppDelegate.swift */; };
 		706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00241C5A297300A8D7B4 /* Main.storyboard */; };
 		706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A00271C5A297300A8D7B4 /* Images.xcassets */; };
@@ -73,6 +74,8 @@
 		256BB710AFCAA4E8AF7D684E /* Pods-WeImg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.debug.xcconfig"; sourceTree = "<group>"; };
 		423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.release.xcconfig"; sourceTree = "<group>"; };
 		527C54C41326CCAC54767B52 /* Pods_WeImg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeImg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70629B161C61EFC000865921 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		70629B171C61EFD900865921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		706A001B1C5A297300A8D7B4 /* WeImg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeImg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A001E1C5A297300A8D7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A00251C5A297300A8D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 				706A00271C5A297300A8D7B4 /* Images.xcassets */,
 				706A00291C5A297300A8D7B4 /* LaunchScreen.storyboard */,
 				706A002C1C5A297300A8D7B4 /* Info.plist */,
+				70629B141C61EF7500865921 /* Localizable.strings */,
 			);
 			path = WeImg;
 			sourceTree = "<group>";
@@ -434,8 +438,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
+				"zh-Hans",
 			);
 			mainGroup = 706A00121C5A297300A8D7B4;
 			productRefGroup = 706A001C1C5A297300A8D7B4 /* Products */;
@@ -456,6 +461,7 @@
 				706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */,
 				706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */,
 				70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */,
+				70629B121C61EF7500865921 /* Localizable.strings in Resources */,
 				706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */,
 				70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
@@ -588,6 +594,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		70629B141C61EF7500865921 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70629B161C61EFC000865921 /* zh-Hans */,
+				70629B171C61EFD900865921 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		706A00241C5A297300A8D7B4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

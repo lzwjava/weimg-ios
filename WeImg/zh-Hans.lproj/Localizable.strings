@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  WeImg
+
+  Created by lzw on 16/2/3.
+  Copyright © 2016年 WeImg Inc. All rights reserved.
+*/
+
+"Login" = "登录";
+
+"Sign Up" = "注册";
+
+"Sorry" = "抱歉";
+
+"Success" = "成功";
+
+"Take Photo" = "拍照";
+
+/* No comment provided by engineer. */
+"What's your name?" = "您的名字？";
+
+/* No comment provided by engineer. */
+"What's your number?" = "您的手机号码？";
+
+"By tapping Next you agree to our terms." = "点击下一步表示您同意我们的条款。";
+
+/* No comment provided by engineer. */
+"Next" = "下一步";
+
+/* No comment provided by engineer. */
+"Nickname" = "昵称";
