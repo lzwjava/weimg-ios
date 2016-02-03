@@ -45,6 +45,14 @@
 		70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F42A1C611BCA00C345B2 /* UIImage+Yep.swift */; };
 		70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F42C1C611BF900C345B2 /* YepConfig.swift */; };
 		70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F42E1C611D1F00C345B2 /* Intro.storyboard */; };
+		70C2F4371C61BD2E00C345B2 /* ShowStepGeniusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4321C61BD2E00C345B2 /* ShowStepGeniusViewController.swift */; };
+		70C2F4381C61BD2E00C345B2 /* ShowStepMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4331C61BD2E00C345B2 /* ShowStepMatchViewController.swift */; };
+		70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4341C61BD2E00C345B2 /* ShowStepMeetViewController.swift */; };
+		70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4351C61BD2E00C345B2 /* ShowStepViewController.swift */; };
+		70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4361C61BD2E00C345B2 /* ShowViewController.swift */; };
+		70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F43C1C61BD5D00C345B2 /* EdgeBorderButton.swift */; };
+		70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F43F1C61BD9400C345B2 /* LoginByMobileViewController.swift */; };
+		70C2F4421C61BD9400C345B2 /* LoginVerifyMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4401C61BD9400C345B2 /* LoginVerifyMobileViewController.swift */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +112,14 @@
 		70C2F42A1C611BCA00C345B2 /* UIImage+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Yep.swift"; sourceTree = "<group>"; };
 		70C2F42C1C611BF900C345B2 /* YepConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepConfig.swift; sourceTree = "<group>"; };
 		70C2F42F1C611D1F00C345B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
+		70C2F4321C61BD2E00C345B2 /* ShowStepGeniusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStepGeniusViewController.swift; sourceTree = "<group>"; };
+		70C2F4331C61BD2E00C345B2 /* ShowStepMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStepMatchViewController.swift; sourceTree = "<group>"; };
+		70C2F4341C61BD2E00C345B2 /* ShowStepMeetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStepMeetViewController.swift; sourceTree = "<group>"; };
+		70C2F4351C61BD2E00C345B2 /* ShowStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowStepViewController.swift; sourceTree = "<group>"; };
+		70C2F4361C61BD2E00C345B2 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		70C2F43C1C61BD5D00C345B2 /* EdgeBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeBorderButton.swift; sourceTree = "<group>"; };
+		70C2F43F1C61BD9400C345B2 /* LoginByMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginByMobileViewController.swift; sourceTree = "<group>"; };
+		70C2F4401C61BD9400C345B2 /* LoginVerifyMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVerifyMobileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +193,8 @@
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				70C2F43E1C61BD9400C345B2 /* Login */,
+				70C2F4311C61BD2E00C345B2 /* Show */,
 				70C2F3D21C60E68200C345B2 /* Base */,
 				70C2F3D61C60E68200C345B2 /* Register */,
 				70C2F3D51C60E68200C345B2 /* FirstViewController.swift */,
@@ -249,6 +267,7 @@
 		70C2F40D1C60E76100C345B2 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				70C2F43C1C61BD5D00C345B2 /* EdgeBorderButton.swift */,
 				70C2F40E1C60E76100C345B2 /* BorderButton.swift */,
 			);
 			path = Buttons;
@@ -293,6 +312,27 @@
 				70C2F41C1C60ECD600C345B2 /* NavigationTitleLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		70C2F4311C61BD2E00C345B2 /* Show */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F4321C61BD2E00C345B2 /* ShowStepGeniusViewController.swift */,
+				70C2F4331C61BD2E00C345B2 /* ShowStepMatchViewController.swift */,
+				70C2F4341C61BD2E00C345B2 /* ShowStepMeetViewController.swift */,
+				70C2F4351C61BD2E00C345B2 /* ShowStepViewController.swift */,
+				70C2F4361C61BD2E00C345B2 /* ShowViewController.swift */,
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		70C2F43E1C61BD9400C345B2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				70C2F43F1C61BD9400C345B2 /* LoginByMobileViewController.swift */,
+				70C2F4401C61BD9400C345B2 /* LoginVerifyMobileViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
@@ -468,21 +508,26 @@
 			files = (
 				70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */,
 				70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */,
+				70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */,
 				70C2F40C1C60E72C00C345B2 /* CameraPreviewView.swift in Sources */,
 				70C2F4121C60E7E400C345B2 /* BorderTextField.swift in Sources */,
 				70C2F41A1C60EC9600C345B2 /* UIColor+Yep.swift in Sources */,
 				70C2F3E31C60E68200C345B2 /* SecondViewController.swift in Sources */,
 				70C2F3F61C60E69900C345B2 /* HttpClient.swift in Sources */,
+				70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */,
 				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
 				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
+				70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
 				70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */,
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
 				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
 				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,
+				70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */,
 				70C2F4081C60E6B500C345B2 /* UploadToken.swift in Sources */,
 				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,
+				70C2F4421C61BD9400C345B2 /* LoginVerifyMobileViewController.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
 				70C2F40F1C60E76100C345B2 /* BorderButton.swift in Sources */,
@@ -493,9 +538,12 @@
 				70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */,
 				70C2F3DE1C60E68200C345B2 /* FirstViewController.swift in Sources */,
 				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
+				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
+				70C2F4371C61BD2E00C345B2 /* ShowStepGeniusViewController.swift in Sources */,
 				70C2F4151C60EB5E00C345B2 /* CommonHelper.swift in Sources */,
 				70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */,
 				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,
+				70C2F4381C61BD2E00C345B2 /* ShowStepMatchViewController.swift in Sources */,
 				70C2F41D1C60ECD600C345B2 /* NavigationTitleLabel.swift in Sources */,
 				70C2F41F1C60ED0300C345B2 /* NSTimeZone+Yep.swift in Sources */,
 			);
