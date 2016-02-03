@@ -105,10 +105,10 @@ class RegisterPickNameViewController: BaseViewController {
     }
 
     @objc private func next(sender: UIBarButtonItem) {
-        showRegisterPickMobile()
+        showRegisterPickPassword()
     }
 
-    private func showRegisterPickMobile() {
+    private func showRegisterPickPassword() {
 
         guard let text = nameTextField.text else {
             return
@@ -116,9 +116,8 @@ class RegisterPickNameViewController: BaseViewController {
 
         let nickname = text.trimming(.WhitespaceAndNewline)
         UserManager.manager.pickedUsername = nickname;
-//        YepUserDefaults.nickname.value = nickname
 
-        performSegueWithIdentifier("showRegisterPickMobile", sender: nil)
+        performSegueWithIdentifier("showRegisterPickPassword", sender: nil)
     }
 }
 
@@ -131,7 +130,7 @@ extension RegisterPickNameViewController: UITextFieldDelegate {
         }
 
         if !text.isEmpty {
-            showRegisterPickMobile()
+            showRegisterPickPassword()
         }
 
         return true

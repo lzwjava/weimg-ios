@@ -19,6 +19,8 @@
 /* No comment provided by engineer. */
 "What's your name?" = "您的名字？";
 
+"Your password?" = "您的密码？";
+
 /* No comment provided by engineer. */
 "What's your number?" = "您的手机号码？";
 
@@ -29,3 +31,5 @@
 
 /* No comment provided by engineer. */
 "Nickname" = "昵称";
+
+"terms" = "条款";

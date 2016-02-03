@@ -157,12 +157,12 @@
                         <outlet property="pickNamePromptLabel" destination="Pw6-yh-kid" id="Qcq-Q7-euR"/>
                         <outlet property="pickNamePromptLabelTopConstraint" destination="RJx-dt-P2H" id="MbW-vC-xD0"/>
                         <outlet property="promptTermsLabel" destination="h5A-MY-QLR" id="y3O-ph-nRC"/>
-                        <segue destination="047-MJ-GYQ" kind="show" identifier="showRegisterPickMobile" id="Geb-Ph-Xb5"/>
+                        <segue destination="g4b-1O-Pyw" kind="show" identifier="showRegisterPickPassword" id="ZBT-Jn-eI1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jqn-of-yCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="388"/>
+            <point key="canvasLocation" x="1868" y="416"/>
         </scene>
         <!--Register Pick Mobile View Controller-->
         <scene sceneID="dAu-Gr-LIS">
@@ -181,7 +181,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="86" placeholder=" " adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rD8-Pa-pw2" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="86" placeholder=" " adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rD8-Pa-pw2" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="195.5" width="79" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Uzt-dE-3IR"/>
@@ -199,7 +199,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMl-2s-Pwj" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BMl-2s-Pwj" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
                                 <rect key="frame" x="79" y="195.5" width="521" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="5y7-kD-E2s"/>
@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFT-3O-YJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2617" y="388"/>
+            <point key="canvasLocation" x="3305" y="408"/>
         </scene>
         <!--Register Verify Mobile View Controller-->
         <scene sceneID="wKg-dX-Gxb">
@@ -333,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8F6-GG-ikl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3373" y="388"/>
+            <point key="canvasLocation" x="4041" y="388"/>
         </scene>
         <!--Register Pick Avatar View Controller-->
         <scene sceneID="UoI-N1-e8N">
@@ -457,189 +457,11 @@
                         <outlet property="openCameraButton" destination="nqi-d1-G0k" id="GhI-uW-eZW"/>
                         <outlet property="retakeButton" destination="2pw-VA-qDr" id="Ilk-KJ-atU"/>
                         <outlet property="takePicturePromptLabel" destination="8It-jU-dm1" id="l9u-lB-2rc"/>
-                        <segue destination="OBL-Og-6Ae" kind="show" identifier="showRegisterPickSkills" id="fwO-Qy-gTW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwD-fg-Cys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4166" y="388"/>
-        </scene>
-        <!--Register Pick Skills View Controller-->
-        <scene sceneID="vgc-NH-qgo">
-            <objects>
-                <viewController storyboardIdentifier="RegisterPickSkillsViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="OBL-Og-6Ae" customClass="RegisterPickSkillsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="p8G-DH-wnn"/>
-                        <viewControllerLayoutGuide type="bottom" id="iwK-9W-H4c"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ybu-mU-M88">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-3R-BNx">
-                                <rect key="frame" x="0.0" y="132" width="600" height="468"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewLayout key="collectionViewLayout" id="Dgv-j3-PVw" customClass="RegisterPickSkillsLayout" customModule="WeImg" customModuleProvider="target"/>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="OBL-Og-6Ae" id="vKV-XZ-5xv"/>
-                                    <outlet property="delegate" destination="OBL-Og-6Ae" id="04k-XM-7YT"/>
-                                </connections>
-                            </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abu-JC-epb">
-                                <rect key="frame" x="0.0" y="64" width="600" height="68"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may meet different people and content depends on your skills" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-et-s4X">
-                                        <rect key="frame" x="50" y="26" width="500" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="GHQ-ul-u1v"/>
-                                    <constraint firstAttribute="trailing" secondItem="Rxp-et-s4X" secondAttribute="trailing" constant="50" id="LTr-iQ-yuO"/>
-                                    <constraint firstItem="Rxp-et-s4X" firstAttribute="leading" secondItem="Abu-JC-epb" secondAttribute="leading" constant="50" id="Zuh-VK-Mtb"/>
-                                    <constraint firstItem="Rxp-et-s4X" firstAttribute="centerY" secondItem="Abu-JC-epb" secondAttribute="centerY" id="gqR-lp-mnP"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Hi3-3R-BNx" firstAttribute="leading" secondItem="Ybu-mU-M88" secondAttribute="leading" id="98V-H7-LjP"/>
-                            <constraint firstItem="Abu-JC-epb" firstAttribute="leading" secondItem="Ybu-mU-M88" secondAttribute="leading" id="De4-Sr-oKu"/>
-                            <constraint firstAttribute="bottom" secondItem="Hi3-3R-BNx" secondAttribute="bottom" id="MZ1-YZ-QyT"/>
-                            <constraint firstItem="Abu-JC-epb" firstAttribute="top" secondItem="p8G-DH-wnn" secondAttribute="bottom" id="QUc-aU-Ea3"/>
-                            <constraint firstAttribute="trailing" secondItem="Hi3-3R-BNx" secondAttribute="trailing" id="RoJ-Zy-4i2"/>
-                            <constraint firstAttribute="trailing" secondItem="Abu-JC-epb" secondAttribute="trailing" id="gwv-wY-kMh"/>
-                            <constraint firstItem="Hi3-3R-BNx" firstAttribute="top" secondItem="Abu-JC-epb" secondAttribute="bottom" id="iPL-FG-VgZ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="introlLabel" destination="Rxp-et-s4X" id="aTg-BH-Xlc"/>
-                        <outlet property="skillsCollectionView" destination="Hi3-3R-BNx" id="3tf-cy-8EF"/>
-                        <segue destination="vEE-XY-eq4" kind="presentation" identifier="presentSelectSkills" id="akJ-Zs-aMG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zsq-iH-xb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4918" y="388"/>
-        </scene>
-        <!--Register Select Skills View Controller-->
-        <scene sceneID="Mb0-xw-Vkz">
-            <objects>
-                <viewController storyboardIdentifier="RegisterSelectSkillsViewController" id="vEE-XY-eq4" customClass="RegisterSelectSkillsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SoT-jT-Jpl"/>
-                        <viewControllerLayoutGuide type="bottom" id="bNl-1o-JmM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gsh-ws-D5N">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EJ5-Hf-UMM" userLabel="Skill Categories Collection View">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="njF-Go-k8V">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vEE-XY-eq4" id="Xj0-IO-g3E"/>
-                                    <outlet property="delegate" destination="vEE-XY-eq4" id="csb-OZ-MJR"/>
-                                </connections>
-                            </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xur-C9-Tc1" userLabel="Skills Collection View">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewLayout key="collectionViewLayout" id="NKD-Qj-Ktb" customClass="RegisterSelectSkillsLayout" customModule="WeImg" customModuleProvider="target"/>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vEE-XY-eq4" id="sK5-GO-ZjU"/>
-                                    <outlet property="delegate" destination="vEE-XY-eq4" id="3Vs-cc-fvq"/>
-                                </connections>
-                            </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pick_skills_dismiss_background" translatesAutoresizingMaskIntoConstraints="NO" id="VjQ-Cs-1dW">
-                                <rect key="frame" x="0.0" y="460" width="600" height="140"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-wh-PsD">
-                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssh-a5-EGH">
-                                        <rect key="frame" x="261" y="0.0" width="78" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="oNI-Fk-e5A"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="-10" minY="5" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Cancel" image="flat_arrow_down">
-                                            <color key="titleColor" red="0.13725490200000001" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancel" destination="vEE-XY-eq4" eventType="touchUpInside" id="Ldz-fv-9LN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AY6-Bh-fXh">
-                                        <rect key="frame" x="274" y="0.0" width="52" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Z7e-qU-8v2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="-7" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Back" image="flat_arrow_left">
-                                            <color key="titleColor" red="0.13725490200000001" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="back" destination="vEE-XY-eq4" eventType="touchUpInside" id="0VR-Aq-PS0"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="AY6-Bh-fXh" secondAttribute="centerX" id="Trr-6g-2dt"/>
-                                    <constraint firstAttribute="centerX" secondItem="Ssh-a5-EGH" secondAttribute="centerX" id="cON-1Z-JBr"/>
-                                    <constraint firstAttribute="height" constant="60" id="jdB-3f-yEa"/>
-                                    <constraint firstItem="Ssh-a5-EGH" firstAttribute="top" secondItem="VwP-wh-PsD" secondAttribute="top" id="m6P-lJ-RxV"/>
-                                    <constraint firstItem="AY6-Bh-fXh" firstAttribute="top" secondItem="Ssh-a5-EGH" secondAttribute="top" id="uxf-df-QXa"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="EJ5-Hf-UMM" secondAttribute="trailing" id="1YD-5H-hOD"/>
-                            <constraint firstItem="VwP-wh-PsD" firstAttribute="leading" secondItem="gsh-ws-D5N" secondAttribute="leading" id="3BG-Yz-Y7A"/>
-                            <constraint firstItem="VjQ-Cs-1dW" firstAttribute="bottom" secondItem="VwP-wh-PsD" secondAttribute="bottom" id="CsY-ra-r36"/>
-                            <constraint firstItem="xur-C9-Tc1" firstAttribute="height" secondItem="EJ5-Hf-UMM" secondAttribute="height" id="D88-ER-CcS"/>
-                            <constraint firstItem="bNl-1o-JmM" firstAttribute="top" secondItem="EJ5-Hf-UMM" secondAttribute="bottom" id="DLB-At-GP1"/>
-                            <constraint firstItem="VjQ-Cs-1dW" firstAttribute="trailing" secondItem="VwP-wh-PsD" secondAttribute="trailing" id="EKp-gV-TEI"/>
-                            <constraint firstItem="VjQ-Cs-1dW" firstAttribute="leading" secondItem="VwP-wh-PsD" secondAttribute="leading" id="KDZ-KE-SHN"/>
-                            <constraint firstAttribute="trailing" secondItem="xur-C9-Tc1" secondAttribute="trailing" id="Sih-Gb-ELE"/>
-                            <constraint firstItem="xur-C9-Tc1" firstAttribute="leading" secondItem="gsh-ws-D5N" secondAttribute="leading" id="Sxw-3r-cDH"/>
-                            <constraint firstItem="bNl-1o-JmM" firstAttribute="top" secondItem="xur-C9-Tc1" secondAttribute="bottom" id="a1o-Ix-bA3"/>
-                            <constraint firstItem="EJ5-Hf-UMM" firstAttribute="top" secondItem="SoT-jT-Jpl" secondAttribute="bottom" id="bff-NW-tC0"/>
-                            <constraint firstItem="EJ5-Hf-UMM" firstAttribute="leading" secondItem="gsh-ws-D5N" secondAttribute="leading" id="dDa-xG-8H8"/>
-                            <constraint firstAttribute="bottom" secondItem="VwP-wh-PsD" secondAttribute="bottom" id="fYG-72-Avb"/>
-                            <constraint firstAttribute="trailing" secondItem="VwP-wh-PsD" secondAttribute="trailing" id="iTs-tl-kfZ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="backButton" destination="AY6-Bh-fXh" id="cRW-dH-T2r"/>
-                        <outlet property="cancelButton" destination="Ssh-a5-EGH" id="nBT-cm-Ons"/>
-                        <outlet property="skillCategoriesCollectionView" destination="EJ5-Hf-UMM" id="WZ8-pq-Xox"/>
-                        <outlet property="skillsCollectionView" destination="xur-C9-Tc1" id="VuZ-ln-vlC"/>
-                        <outlet property="skillsCollectionViewBottomConstrain" destination="a1o-Ix-bA3" id="7Ht-mN-CpY"/>
-                        <outlet property="skillsCollectionViewEqualHeightToSkillCategoriesCollectionViewConstraint" destination="D88-ER-CcS" id="bnV-Ux-gNG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kWc-cY-UDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5614" y="388"/>
+            <point key="canvasLocation" x="4778" y="380"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bAi-xi-FcJ">
@@ -827,13 +649,58 @@
             </objects>
             <point key="canvasLocation" x="2652" y="1200"/>
         </scene>
+        <!--Register Pick Password View Controller-->
+        <scene sceneID="El2-67-Yg4">
+            <objects>
+                <viewController storyboardIdentifier="RegisterPickPasswordViewController" id="g4b-1O-Pyw" customClass="RegisterPickPasswordViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hTS-kL-KUi"/>
+                        <viewControllerLayoutGuide type="bottom" id="B8c-8j-Xpf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4SK-zc-10A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8b-6I-OD6">
+                                <rect key="frame" x="236.5" y="124" width="127" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3m-me-ldF" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="195.5" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jjB-CR-Zyc"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p8b-6I-OD6" firstAttribute="top" secondItem="hTS-kL-KUi" secondAttribute="bottom" constant="60" id="16E-lq-dyd"/>
+                            <constraint firstAttribute="centerX" secondItem="p8b-6I-OD6" secondAttribute="centerX" id="Sb1-DV-p2b"/>
+                            <constraint firstItem="c3m-me-ldF" firstAttribute="top" secondItem="p8b-6I-OD6" secondAttribute="bottom" constant="50" id="ilP-Za-lzj"/>
+                            <constraint firstItem="c3m-me-ldF" firstAttribute="leading" secondItem="4SK-zc-10A" secondAttribute="leading" id="us0-ET-ccy"/>
+                            <constraint firstAttribute="trailing" secondItem="c3m-me-ldF" secondAttribute="trailing" id="yT5-li-ijB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="c3m-me-ldF" id="YUf-if-5ba"/>
+                        <outlet property="passwordTextFieldTopConstraint" destination="ilP-Za-lzj" id="bZ6-Kc-Ujm"/>
+                        <outlet property="pickPasswordPromptLabel" destination="p8b-6I-OD6" id="346-Oi-gzf"/>
+                        <outlet property="pickPasswordPromptLabelTopConstraint" destination="16E-lq-dyd" id="4Dl-YD-LAd"/>
+                        <segue destination="047-MJ-GYQ" kind="show" identifier="showRegisterPickMobile" id="E6R-eg-8yt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKe-fm-ks2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2600" y="416"/>
+        </scene>
     </scenes>
     <resources>
         <image name="button_camera_roll" width="40" height="40"/>
         <image name="button_capture" width="70" height="70"/>
         <image name="default_avatar" width="100" height="100"/>
-        <image name="flat_arrow_down" width="14" height="5"/>
-        <image name="flat_arrow_left" width="6" height="15"/>
-        <image name="pick_skills_dismiss_background" width="375" height="140"/>
     </resources>
 </document>

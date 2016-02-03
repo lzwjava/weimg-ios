@@ -13,6 +13,7 @@
 		706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A00271C5A297300A8D7B4 /* Images.xcassets */; };
 		706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00291C5A297300A8D7B4 /* LaunchScreen.storyboard */; };
 		706A00361C5A297300A8D7B4 /* WeImgTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A00351C5A297300A8D7B4 /* WeImgTests.swift */; };
+		706BD6781C626C8900A277D7 /* RegisterPickPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6771C626C8900A277D7 /* RegisterPickPasswordViewController.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -85,6 +86,7 @@
 		706A00311C5A297300A8D7B4 /* WeImgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeImgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A00351C5A297300A8D7B4 /* WeImgTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeImgTests.swift; sourceTree = "<group>"; };
 		706A00371C5A297300A8D7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		706BD6771C626C8900A277D7 /* RegisterPickPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickPasswordViewController.swift; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */,
 				70C2F3D81C60E68200C345B2 /* RegisterPickMobileViewController.swift */,
 				70C2F3D91C60E68200C345B2 /* RegisterPickNameViewController.swift */,
+				706BD6771C626C8900A277D7 /* RegisterPickPasswordViewController.swift */,
 				70C2F3DA1C60E68200C345B2 /* RegisterVerifyMobileViewController.swift */,
 			);
 			path = Register;
@@ -544,6 +547,7 @@
 				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
 				70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
+				706BD6781C626C8900A277D7 /* RegisterPickPasswordViewController.swift in Sources */,
 				70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */,
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
