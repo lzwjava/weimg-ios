@@ -12,6 +12,7 @@ target 'WeImg' do
     pod 'Ruler'
     pod 'Proposer'
     pod 'Navi'
+    pod 'SQLite.swift', '~> 0.9.2'
 end
 
 target 'WeImgTests' do

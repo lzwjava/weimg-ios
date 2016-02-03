@@ -141,6 +141,10 @@ class RegisterVerifyMobileViewController: SegueViewController {
                 self.callMeButton.layoutIfNeeded()
             }
         }
+        
+        UserManager.manager.register(UserManager.manager.pickedMobilePhoneNumber!, password: "123456", smsCode: areaCode, username: UserManager.manager.pickedUsername!) { (error: NSError?) -> Void in
+            
+        }
 
 //        sendVerifyCodeOfMobile(mobile, withAreaCode: areaCode, useMethod: .Call, failureHandler: { (reason, errorMessage) in
 //            defaultFailureHandler(reason, errorMessage: errorMessage)

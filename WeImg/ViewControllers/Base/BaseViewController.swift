@@ -43,5 +43,19 @@ class BaseViewController: SegueViewController {
             navigationController.setNavigationBarHidden(false, animated: animatedOnNavigationBar)
         }
     }
+    
+    func filterError(error: NSError?) -> Bool {
+        if let error = error {
+            alertError(error) {}
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func alertError(error: NSError, dismissAction: () -> Void) {
+        let errorMessage = error.userInfo[NSLocalizedDescriptionKey] as! String
+        YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: dismissAction)
+    }
 }
 

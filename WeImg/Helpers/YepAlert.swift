@@ -28,7 +28,7 @@ class YepAlert {
         }
     }
 
-    class func alertSorry(message message: String?, inViewController viewController: UIViewController?, withDismissAction dismissAction: () -> Void) {
+    class func alertSorry(message message: String?, inViewController viewController: UIViewController?, withDismissAction dismissAction: (() -> Void)?) {
         alert(title: NSLocalizedString("Sorry", comment: ""), message: message, dismissTitle: NSLocalizedString("OK", comment: ""), inViewController: viewController, withDismissAction: dismissAction)
     }
 

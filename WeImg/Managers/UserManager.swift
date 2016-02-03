@@ -9,6 +9,13 @@
 import Foundation
 
 class UserManager: BaseManager {
+    var pickedUsername: String?
+    var pickedMobilePhoneNumber: String?
+    
+    static let manager: UserManager = {
+        return UserManager()
+    }()
+    
     func login(mobilePhoneNumber: String, password: String, completion: (NSError?) -> Void) {
         let dict: [String: String] = ["mobilePhoneNumber": mobilePhoneNumber,
             "password": password];

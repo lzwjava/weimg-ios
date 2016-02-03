@@ -115,6 +115,7 @@ class RegisterPickNameViewController: BaseViewController {
         }
 
         let nickname = text.trimming(.WhitespaceAndNewline)
+        UserManager.manager.pickedUsername = nickname;
 //        YepUserDefaults.nickname.value = nickname
 
         performSegueWithIdentifier("showRegisterPickMobile", sender: nil)

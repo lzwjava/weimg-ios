@@ -87,8 +87,7 @@ class HttpClient {
             let dict = resp.result.value as! [String: AnyObject]
             let status = dict["status"] as! String
             if status != "success" {
-                var userInfo = [NSObject: AnyObject]()
-                userInfo[NSLocalizedDescriptionKey] = dict["error"] as! String
+                let userInfo = [NSLocalizedDescriptionKey: dict["error"] as! String]
                 let statusError = NSError(domain: "WeImg", code: 0, userInfo: userInfo)
                 return statusError
             } else {

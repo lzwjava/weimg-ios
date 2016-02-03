@@ -9,7 +9,7 @@
 import UIKit
 import Ruler
 
-class RegisterPickMobileViewController: SegueViewController {
+class RegisterPickMobileViewController: BaseViewController {
 
     @IBOutlet private weak var pickMobileNumberPromptLabel: UILabel!
     @IBOutlet private weak var pickMobileNumberPromptLabelTopConstraint: NSLayoutConstraint!
@@ -110,6 +110,19 @@ class RegisterPickMobileViewController: SegueViewController {
         }
 
         YepHUD.showActivityIndicator()
+        
+        UserManager.manager.requestSmsCode(mobile) { (error: NSError?) -> Void in
+            YepHUD.hideActivityIndicator()
+            if let error = error {
+                self.nextButton.enabled = false
+                self.alertError(error, dismissAction: { [weak self] in
+                    self?.mobileNumberTextField.becomeFirstResponder()
+                })
+            } else {
+                UserManager.manager.pickedMobilePhoneNumber = mobile;
+                self.performSegueWithIdentifier("showRegisterVerifyMobile", sender: ["mobile" : mobile, "areaCode": areaCode])
+            }
+        }
         
 //        validateMobile(mobile, withAreaCode: areaCode, failureHandler: { (reason, errorMessage) in
 //            defaultFailureHandler(reason, errorMessage: errorMessage)
