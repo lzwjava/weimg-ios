@@ -12,10 +12,31 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // 全局的外观自定义
+        customAppearce()
+        
+//        let isLogined = YepUserDefaults.isLogined
+        let isLogined = false
+        
+//        if isLogined {
+//            
+//            // 记录启动通知类型
+//            if let
+//                notification = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? UILocalNotification,
+//                userInfo = notification.userInfo,
+//                type = userInfo["type"] as? String {
+//                    remoteNotificationType = RemoteNotificationType(rawValue: type)
+//            }
+//            
+//        } else {
+            startShowStory()
+//        }
+        
+
         return true
     }
 
@@ -40,6 +61,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func startShowStory() {
+        
+        let storyboard = UIStoryboard(name: "Show", bundle: nil)
+        let rootViewController = storyboard.instantiateViewControllerWithIdentifier("ShowNavigationController") as! UINavigationController
+        window?.rootViewController = rootViewController
+    }
+    
+    private func customAppearce() {
+        
+        // Global Tint Color
+        
+        window?.tintColor = UIColor.yepTintColor()
+        window?.tintAdjustmentMode = .Normal
+        
+        // NavigationBar Item Style
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepTintColor()], forState: .Normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepTintColor().colorWithAlphaComponent(0.3)], forState: .Disabled)
+        
+        // NavigationBar Title Style
+        
+        let shadow: NSShadow = {
+            let shadow = NSShadow()
+            shadow.shadowColor = UIColor.lightGrayColor()
+            shadow.shadowOffset = CGSizeMake(0, 0)
+            return shadow
+        }()
+        
+        let textAttributes = [
+            NSForegroundColorAttributeName: UIColor.yepNavgationBarTitleColor(),
+            NSShadowAttributeName: shadow,
+            NSFontAttributeName: UIFont.navigationBarTitleFont()
+        ]
+        
+        /*
+        let barButtonTextAttributes = [
+        NSForegroundColorAttributeName: UIColor.yepTintColor(),
+        NSFontAttributeName: UIFont.barButtonFont()
+        ]
+        */
+        
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
+        //UIBarButtonItem.appearance().setTitleTextAttributes(barButtonTextAttributes, forState: UIControlState.Normal)
+        //UINavigationBar.appearance().setBackgroundImage(UIImage(named:"white"), forBarMetrics: .Default)
+        //UINavigationBar.appearance().shadowImage = UIImage()
+        //UINavigationBar.appearance().translucent = false
+        
+        // TabBar
+        
+        //UITabBar.appearance().backgroundImage = UIImage(named:"white")
+        //UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().tintColor = UIColor.yepTintColor()
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
+        //UITabBar.appearance().translucent = false
+    }
+
 
 
 }
