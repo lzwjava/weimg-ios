@@ -88,16 +88,10 @@ enum ProfileUser {
         }
     }
     
-   
-    var needSeparationLine: Bool {
-
-        return providersCount > 0
-    }
 }
 
 class ProfileViewController: SegueViewController {
     
-//    private var socialAccount: SocialAccount?
 
     enum FromType {
         case None
@@ -107,32 +101,14 @@ class ProfileViewController: SegueViewController {
     var fromType: FromType = .None
 
     var oAuthCompleteAction: (() -> Void)?
-    
-//    var afterOAuthAction: ((socialAccount: SocialAccount) -> Void)?
+
 
     var profileUser: ProfileUser?
     var profileUserIsMe = true {
         didSet {
             if !profileUserIsMe {
 
-                //let moreBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_more"), style: UIBarButtonItemStyle.Plain, target: self, action: "moreAction")
-
-                //customNavigationItem.rightBarButtonItem = moreBarButtonItem
-
-
-                if fromType == .OneToOneConversation {
-                    sayHiView.hidden = true
-
-                } else {
-                    sayHiView.tapAction = { [weak self] in
-                        self?.sayHi()
-                    }
-
-                    profileCollectionView.contentInset.bottom = sayHiView.bounds.height
-                }
-
             } else {
-                sayHiView.hidden = true
 
                 let settingsBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_settings"), style: .Plain, target: self, action: "showSettings:")
 
@@ -140,13 +116,6 @@ class ProfileViewController: SegueViewController {
             }
         }
     }
-
-    private lazy var shareView: ShareProfileView = {
-        let share = ShareProfileView(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
-        share.alpha = 0
-        self.view.addSubview(share)
-        return share
-    }()
 
     #if DEBUG
     private lazy var profileFPSLabel: FPSLabel = {
@@ -164,16 +133,11 @@ class ProfileViewController: SegueViewController {
 
     private var customNavigationBar: UINavigationBar!
 
-    private let skillCellIdentifier = "SkillCell"
     private let headerCellIdentifier = "ProfileHeaderCell"
     private let footerCellIdentifier = "ProfileFooterCell"
     private let sectionHeaderIdentifier = "ProfileSectionHeaderReusableView"
     private let sectionFooterIdentifier = "ProfileSectionFooterReusableView"
     private let separationLineCellIdentifier = "ProfileSeparationLineCell"
-    private let socialAccountCellIdentifier = "ProfileSocialAccountCell"
-    private let socialAccountImagesCellIdentifier = "ProfileSocialAccountImagesCell"
-    private let socialAccountGithubCellIdentifier = "ProfileSocialAccountGithubCell"
-    private let feedsCellIdentifier = "ProfileFeedsCell"
 
     private lazy var collectionViewWidth: CGFloat = {
         return CGRectGetWidth(self.profileCollectionView.bounds)
@@ -221,8 +185,6 @@ class ProfileViewController: SegueViewController {
 
 //    private var feeds: [DiscoveredFeed]?
 //    private var feedAttachments: [DiscoveredAttachment]?
-
-    private let skillTextAttributes = [NSFontAttributeName: UIFont.skillTextFont()]
 
     private var footerCellHeight: CGFloat {
         let attributes = [NSFontAttributeName: YepConfig.Profile.introductionLabelFont]
@@ -319,7 +281,7 @@ class ProfileViewController: SegueViewController {
                 if let user = userWithUserID(profileUser.userID, inRealm: realm) {
                     
                     if user.friendState == UserFriendState.Normal.rawValue {
-                        sayHiView.title = NSLocalizedString("Chat", comment: "")
+                        
                     }
                 }
                 
@@ -345,9 +307,6 @@ class ProfileViewController: SegueViewController {
                 realm = try? Realm(),
                 me = userWithUserID(myUserID, inRealm: realm) {
                     profileUser = ProfileUser.UserType(me)
-
-                    masterSkills = skillsFromUserSkillList(me.masterSkills)
-                    learningSkills = skillsFromUserSkillList(me.learningSkills)
 
                     updateProfileCollectionView()
             }
@@ -386,14 +345,9 @@ class ProfileViewController: SegueViewController {
             }
         }
 
-        profileCollectionView.registerNib(UINib(nibName: skillCellIdentifier, bundle: nil), forCellWithReuseIdentifier: skillCellIdentifier)
         profileCollectionView.registerNib(UINib(nibName: headerCellIdentifier, bundle: nil), forCellWithReuseIdentifier: headerCellIdentifier)
         profileCollectionView.registerNib(UINib(nibName: footerCellIdentifier, bundle: nil), forCellWithReuseIdentifier: footerCellIdentifier)
         profileCollectionView.registerNib(UINib(nibName: separationLineCellIdentifier, bundle: nil), forCellWithReuseIdentifier: separationLineCellIdentifier)
-        profileCollectionView.registerNib(UINib(nibName: socialAccountCellIdentifier, bundle: nil), forCellWithReuseIdentifier: socialAccountCellIdentifier)
-        profileCollectionView.registerNib(UINib(nibName: socialAccountImagesCellIdentifier, bundle: nil), forCellWithReuseIdentifier: socialAccountImagesCellIdentifier)
-        profileCollectionView.registerNib(UINib(nibName: socialAccountGithubCellIdentifier, bundle: nil), forCellWithReuseIdentifier: socialAccountGithubCellIdentifier)
-        profileCollectionView.registerNib(UINib(nibName: feedsCellIdentifier, bundle: nil), forCellWithReuseIdentifier: feedsCellIdentifier)
         profileCollectionView.registerNib(UINib(nibName: sectionHeaderIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: sectionHeaderIdentifier)
         profileCollectionView.registerClass(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: sectionFooterIdentifier)
 
@@ -812,22 +766,12 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
 
         case ProfileSection.Header.rawValue:
             return 1
-
-        case ProfileSection.Master.rawValue:
-            return profileUser?.masterSkillsCount ?? 0
-
-        case ProfileSection.Learning.rawValue:
-            return profileUser?.learningSkillsCount ?? 0
-
         case ProfileSection.Footer.rawValue:
             return 1
 
         case ProfileSection.SeparationLine.rawValue:
             let needSeparationLine = profileUser?.needSeparationLine ?? false
             return needSeparationLine ? 1 : 0
-            
-        case ProfileSection.SocialAccount.rawValue:
-            return profileUser?.providersCount ?? 0
 
         case ProfileSection.SeparationLine2.rawValue:
             return 1
@@ -868,46 +812,6 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
 
             return cell
 
-        case ProfileSection.Master.rawValue:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(skillCellIdentifier, forIndexPath: indexPath) as! SkillCell
-
-            cell.skill = profileUser?.cellSkillInSkillSet(.Master, atIndexPath: indexPath)
-
-            if cell.skill == nil {
-                if let profileUser = profileUser {
-                    println("Master profileUser: \(profileUser)")
-                } else {
-                    println("Master profileUser is nil")
-                }
-            }
-
-            cell.tapAction = { [weak self] skill in
-                //self?.performSegueWithIdentifier("showSkillHome", sender: ["skill": skill, "preferedSkillSet": SkillSet.Master.rawValue])
-                self?.performSegueWithIdentifier("showFeedsWithSkill", sender: ["skill": skill, "preferedSkillSet": SkillSet.Master.rawValue])
-            }
-
-            return cell
-
-        case ProfileSection.Learning.rawValue:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(skillCellIdentifier, forIndexPath: indexPath) as! SkillCell
-
-            cell.skill = profileUser?.cellSkillInSkillSet(.Learning, atIndexPath: indexPath)
-
-            if cell.skill == nil {
-                if let profileUser = profileUser {
-                    println("Learning profileUser: \(profileUser)")
-                } else {
-                    println("Learning profileUser is nil")
-                }
-            }
-
-            cell.tapAction = { [weak self] skill in
-                //self?.performSegueWithIdentifier("showSkillHome", sender: ["skill": skill, "preferedSkillSet": SkillSet.Learning.rawValue])
-                self?.performSegueWithIdentifier("showFeedsWithSkill", sender: ["skill": skill, "preferedSkillSet": SkillSet.Learning.rawValue])
-            }
-
-            return cell
-
         case ProfileSection.Footer.rawValue:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(footerCellIdentifier, forIndexPath: indexPath) as! ProfileFooterCell
 
@@ -921,78 +825,12 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(separationLineCellIdentifier, forIndexPath: indexPath) as! ProfileSeparationLineCell
             return cell
             
-        case ProfileSection.SocialAccount.rawValue:
-
-            if let providerName = profileUser?.providerNameWithIndexPath(indexPath), socialAccount = SocialAccount(rawValue: providerName) {
-
-                if socialAccount == .Github {
-                    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(socialAccountGithubCellIdentifier, forIndexPath: indexPath) as! ProfileSocialAccountGithubCell
-
-                    cell.configureWithProfileUser(profileUser, socialAccount: socialAccount, githubWork: githubWork, completion: { githubWork in
-                        self.githubWork = githubWork
-                    })
-
-                    return cell
-
-                } else {
-
-                    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(socialAccountImagesCellIdentifier, forIndexPath: indexPath) as! ProfileSocialAccountImagesCell
-                    
-                    cell.socialAccount = socialAccount
-                    
-                    var socialWork: SocialWork?
-
-                    switch socialAccount {
-
-                    case .Dribbble:
-                        if let dribbbleWork = dribbbleWork {
-                            socialWork = SocialWork.Dribbble(dribbbleWork)
-                        }
-
-                    case .Instagram:
-                        if let instagramWork = instagramWork {
-                            socialWork = SocialWork.Instagram(instagramWork)
-                        }
-
-                    default:
-                        break
-                    }
-
-                    cell.configureWithProfileUser(profileUser, socialAccount: socialAccount, socialWork: socialWork, completion: { socialWork in
-                        switch socialWork {
-
-                        case .Dribbble(let dribbbleWork):
-                            self.dribbbleWork = dribbbleWork
-
-                        case .Instagram(let instagramWork):
-                            self.instagramWork = instagramWork
-                        }
-                    })
-                    
-                    return cell
-                }
-            }
-
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(socialAccountCellIdentifier, forIndexPath: indexPath) as! ProfileSocialAccountCell
-            return cell
-
         case ProfileSection.SeparationLine2.rawValue:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(separationLineCellIdentifier, forIndexPath: indexPath) as! ProfileSeparationLineCell
             return cell
 
-        case ProfileSection.Feeds.rawValue:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(feedsCellIdentifier, forIndexPath: indexPath) as! ProfileFeedsCell
-
-            cell.configureWithProfileUser(profileUser, feedAttachments: feedAttachments, completion: { [weak self] feeds, feedAttachments in
-                self?.feeds = feeds
-                self?.feedAttachments = feedAttachments
-            })
-
-            return cell
-
         default:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(skillCellIdentifier, forIndexPath: indexPath) as! SkillCell
-            return cell
+            break;
         }
     }
 
@@ -1003,37 +841,11 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: sectionHeaderIdentifier, forIndexPath: indexPath) as! ProfileSectionHeaderReusableView
 
             switch indexPath.section {
-
-            case ProfileSection.Master.rawValue:
-                header.titleLabel.text = SkillSet.Master.name
-
-            case ProfileSection.Learning.rawValue:
-                header.titleLabel.text = SkillSet.Learning.name
-
             default:
                 header.titleLabel.text = ""
             }
 
             if profileUserIsMe {
-
-                header.tapAction = { [weak self] in
-
-                    let skillSet: SkillSet
-
-                    switch indexPath.section {
-
-                    case ProfileSection.Master.rawValue:
-                        skillSet = .Master
-
-                    case ProfileSection.Learning.rawValue:
-                        skillSet = .Learning
-
-                    default:
-                        skillSet = .Master
-                    }
-
-                    self?.performSegueWithIdentifier("showEditSkills", sender: ["skillSet": skillSet.rawValue])
-                }
 
             } else {
                 header.accessoryImageView.hidden = true
@@ -1054,27 +866,14 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         case ProfileSection.Header.rawValue:
             return UIEdgeInsets(top: 0, left: 0, bottom: sectionBottomEdgeInset, right: 0)
 
-        case ProfileSection.Master.rawValue:
-            return UIEdgeInsets(top: 0, left: sectionLeftEdgeInset, bottom: 15, right: sectionRightEdgeInset)
-
-        case ProfileSection.Learning.rawValue:
-            return UIEdgeInsets(top: 0, left: sectionLeftEdgeInset, bottom: sectionBottomEdgeInset, right: sectionRightEdgeInset)
-
         case ProfileSection.Footer.rawValue:
             return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
             
         case ProfileSection.SeparationLine.rawValue:
             return UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
 
-        case ProfileSection.SocialAccount.rawValue:
-            let inset: CGFloat = (profileUser?.providersCount ?? 0) > 0 ? 30 : 0
-            return UIEdgeInsets(top: inset, left: 0, bottom: inset, right: 0)
-
         case ProfileSection.SeparationLine2.rawValue:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
-        case ProfileSection.Feeds.rawValue:
-            return UIEdgeInsets(top: 30, left: 0, bottom: 30, right: 0)
 
         default:
             return UIEdgeInsetsZero
@@ -1088,31 +887,11 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         case ProfileSection.Header.rawValue:
 
             return CGSize(width: collectionViewWidth, height: collectionViewWidth * profileAvatarAspectRatio)
-
-        case ProfileSection.Master.rawValue:
-
-            let skillLocalName = profileUser?.cellSkillInSkillSet(.Master, atIndexPath: indexPath)?.localName ?? ""
-
-            let rect = skillLocalName.boundingRectWithSize(CGSize(width: CGFloat(FLT_MAX), height: SkillCell.height), options: [.UsesLineFragmentOrigin, .UsesFontLeading], attributes: skillTextAttributes, context: nil)
-
-            return CGSize(width: rect.width + 24, height: SkillCell.height)
-
-        case ProfileSection.Learning.rawValue:
-
-            let skillLocalName = profileUser?.cellSkillInSkillSet(.Learning, atIndexPath: indexPath)?.localName ?? ""
-
-            let rect = skillLocalName.boundingRectWithSize(CGSize(width: CGFloat(FLT_MAX), height: SkillCell.height), options: [.UsesLineFragmentOrigin, .UsesFontLeading], attributes: skillTextAttributes, context: nil)
-
-            return CGSize(width: rect.width + 24, height: SkillCell.height)
-
         case ProfileSection.Footer.rawValue:
             return CGSize(width: collectionViewWidth, height: footerCellHeight)
 
         case ProfileSection.SeparationLine.rawValue:
             return CGSize(width: collectionViewWidth, height: 1)
-            
-        case ProfileSection.SocialAccount.rawValue:
-            return CGSize(width: collectionViewWidth, height: (profileUser?.providersCount ?? 0) > 0 ? 40 : 0)
 
         case ProfileSection.SeparationLine2.rawValue:
             return CGSize(width: collectionViewWidth, height: 1)
@@ -1149,14 +928,6 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
 
         } else {
             switch section {
-
-            case ProfileSection.Master.rawValue:
-                let height: CGFloat = (profileUser.masterSkillsCount > 0 && profileUser.userID != YepUserDefaults.userID.value) ? normalHeight : 0
-                return CGSizeMake(collectionViewWidth, height)
-
-            case ProfileSection.Learning.rawValue:
-                let height: CGFloat = (profileUser.learningSkillsCount > 0 && profileUser.userID != YepUserDefaults.userID.value) ? normalHeight : 0
-                return CGSizeMake(collectionViewWidth, height)
                 
             default:
                 return CGSizeZero
@@ -1169,116 +940,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-
-        switch indexPath.section {
-
-        case ProfileSection.Learning.rawValue, ProfileSection.Master.rawValue:
-            // do in SkillCell's tapAction
-            break
-
-        case ProfileSection.SocialAccount.rawValue:
-
-            if let profileUser = profileUser {
-
-                if let providerName = profileUser.providerNameWithIndexPath(indexPath), socialAccount = SocialAccount(rawValue: providerName) {
-
-                    if profileUser.enabledSocialAccount(socialAccount) {
-                        performSegueWithIdentifier("showSocialWork\(socialAccount.segue)", sender: providerName)
-
-                    } else {
-                        if profileUserIsMe {
-                            
-                            afterOAuthAction = { [weak self] socialAccount in
-                                // 更新自己的 provider enabled 状态
-                                let providerName = socialAccount.rawValue
-                                
-                                dispatch_async(dispatch_get_main_queue()) {
-                                    guard let realm = try? Realm() else {
-                                        return
-                                    }
-                                    
-                                    if let
-                                        myUserID = YepUserDefaults.userID.value,
-                                        me = userWithUserID(myUserID, inRealm: realm) {
-                                            
-                                            var haveSocialAccountProvider = false
-                                            for socialAccountProvider in me.socialAccountProviders {
-                                                if socialAccountProvider.name == providerName {
-                                                    let _ = try? realm.write {
-                                                        socialAccountProvider.enabled = true
-                                                    }
-                                                    
-                                                    haveSocialAccountProvider = true
-                                                    break
-                                                }
-                                            }
-                                            
-                                            // 如果之前没有，这就新建一个
-                                            if !haveSocialAccountProvider {
-                                                let provider = UserSocialAccountProvider()
-                                                provider.name = providerName
-                                                provider.enabled = true
-                                                
-                                                let _ = try? realm.write {
-                                                    me.socialAccountProviders.append(provider)
-                                                }
-                                            }
-                                            
-                                            self?.updateProfileCollectionView()
-                                            
-                                            // OAuth 成功后，自动跳转去显示对应的 social work
-                                            delay(1) {
-                                                self?.performSegueWithIdentifier("showSocialWork\(socialAccount.segue)", sender: providerName)
-                                            }
-                                    }
-                                }
-                            }
-                            
-                            if isOperatingSystemAtLeastMajorVersion(9) {
-                            
-                                self.socialAccount = SocialAccount(rawValue: providerName)
-
-                                if #available(iOS 9.0, *) {
-
-                                    guard let accessToken = YepUserDefaults.v1AccessToken.value else {
-                                        performSegueWithIdentifier("presentOAuth", sender: providerName)
-                                        return
-                                    }
-
-                                    let safariViewController = SFSafariViewController(URL: NSURL(string: "\(socialAccount.authURL)?_tkn=\(accessToken)")!)
-                                    presentViewController(safariViewController, animated: true, completion: nil)
-                                    
-                                    oAuthCompleteAction = {
-                                        safariViewController.dismissViewControllerAnimated(true, completion: nil)
-                                    }
-
-                                } else {
-                                    performSegueWithIdentifier("presentOAuth", sender: providerName)
-                                }
-                                
-                            } else {
-                                performSegueWithIdentifier("presentOAuth", sender: providerName)
-                            }
-                        }
-                    }
-                }
-            }
-
-        case ProfileSection.Feeds.rawValue:
-            guard let profileUser = profileUser else {
-                return
-            }
-
-            let info: [String: AnyObject] = [
-                "profileUser": Box(profileUser),
-                "feeds": Box(feeds ?? []),
-            ]
-
-            performSegueWithIdentifier("showFeedsOfProfileUser", sender: Box(info))
-
-        default:
-            break
-        }
+        
     }
 }
 
@@ -1310,45 +972,6 @@ extension ProfileViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if shareView.progress >= 1.0 {
-            shareView.shareActionAnimationAndDoFurther({
-                dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                    self?.tryShareMyProfile(nil)
-                }
-            })
-        }
-    }
-}
-
-// MARK: - NSURLConnectionDataDelegate
-
-extension ProfileViewController: NSURLConnectionDataDelegate {
-    
-    func prepareForOAuthResult(notification: NSNotification) {
         
-        oAuthCompleteAction?()
-
-        if let result = notification.object as? NSNumber, socialAccount = self.socialAccount {
-            if result == 1 {
-                
-                socialAccountWithProvider(socialAccount.rawValue, failureHandler: { reason, errorMessage in
-
-                    defaultFailureHandler(reason, errorMessage: errorMessage)
-
-                }, completion: { provider in
-
-                    println("provider: \(provider)")
-
-                    dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                        self?.afterOAuthAction?(socialAccount: socialAccount)
-                    }
-                })
-                
-            } else {
-                
-                YepAlert.alertSorry(message: NSLocalizedString("OAuth Error", comment: ""), inViewController: self, withDismissAction: {})
-            }
-        }
     }
 }
-

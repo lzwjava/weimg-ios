@@ -41,3 +41,16 @@ func delay(time: NSTimeInterval, work: dispatch_block_t) -> CancelableTask? {
     
     return finalTask
 }
+
+
+func GoogleAnalyticsTrackView(name: String) {
+    
+}
+
+func GoogleAnalyticsTrackEvent(action: String, label: String, value: NSNumber) {
+    
+}
+
+func GoogleAnalyticsTrackSocial(network: String, action: String, target: String) {
+    
+}

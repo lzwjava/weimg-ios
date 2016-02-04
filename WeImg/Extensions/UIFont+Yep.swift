@@ -12,26 +12,6 @@ extension UIFont {
     class func chatTextFont() -> UIFont {
         return UIFont.systemFontOfSize(16)
     }
-
-    class func skillDiscoverTextFont() -> UIFont {
-        return UIFont.systemFontOfSize(11)
-    }
-    
-    class func skillTextFont() -> UIFont {
-        return UIFont.systemFontOfSize(14)
-    }
-
-    class func skillTextLargeFont() -> UIFont {
-        return UIFont.systemFontOfSize(20)
-    }
-    
-    class func skillHomeTextLargeFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
-    }
-    
-    class func skillHomeButtonFont() -> UIFont {
-        return UIFont.systemFontOfSize(16)
-    }
     
     class func barButtonFont() -> UIFont {
         return UIFont.systemFontOfSize(14)
