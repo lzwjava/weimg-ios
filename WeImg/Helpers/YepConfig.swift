@@ -13,6 +13,9 @@ let avatarFadeTransitionDuration: NSTimeInterval = 0.0
 
 class YepConfig {
     
+    static let appURLString = "itms-apps://itunes.apple.com/app/id" + "983891256"
+    static let termsURLString = "http://privacy.soyep.com"
+    
     class func avatarCompressionQuality() -> CGFloat {
         return 0.7
     }
@@ -23,6 +26,10 @@ class YepConfig {
     
     class func avatarMaxSize() -> CGSize {
         return CGSize(width: 414, height: 414)
+    }
+    
+    class func editProfileAvatarSize() -> CGFloat {
+        return 100
     }
     
     struct Settings {

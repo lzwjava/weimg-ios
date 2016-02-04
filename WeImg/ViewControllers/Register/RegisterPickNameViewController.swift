@@ -91,7 +91,7 @@ class RegisterPickNameViewController: BaseViewController {
     // MARK: Actions
 
     @objc private func tapTerms(sender: UITapGestureRecognizer) {
-        if let URL = NSURL(string: "http://weibo.com") {
+        if let URL = NSURL(string: YepConfig.termsURLString) {
             yep_openURL(URL)
         }
     }

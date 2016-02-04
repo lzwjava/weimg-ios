@@ -64,14 +64,6 @@ class RegisterPickPasswordViewController: BaseViewController {
         passwordTextField.becomeFirstResponder()
     }
 
-    // MARK: Actions
-
-    @objc private func tapTerms(sender: UITapGestureRecognizer) {
-        if let URL = NSURL(string: "http://weibo.com") {
-            yep_openURL(URL)
-        }
-    }
-
     @objc private func textFieldDidChange(textField: UITextField) {
         guard let text = textField.text else {
             return

@@ -34,6 +34,8 @@
 		706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */; };
 		706BD6AA1C6358C300A277D7 /* EditProfileMoreInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */; };
 		706BD6AB1C6358C300A277D7 /* EditProfileMoreInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */; };
+		706BD6AF1C636BA800A277D7 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6AD1C636BA800A277D7 /* AboutCell.swift */; };
+		706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6AE1C636BA800A277D7 /* AboutCell.xib */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -127,6 +129,8 @@
 		706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileLessInfoCell.xib; sourceTree = "<group>"; };
 		706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileMoreInfoCell.swift; sourceTree = "<group>"; };
 		706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileMoreInfoCell.xib; sourceTree = "<group>"; };
+		706BD6AD1C636BA800A277D7 /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
+		706BD6AE1C636BA800A277D7 /* AboutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutCell.xib; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 		706BD67E1C63022700A277D7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				706BD6AC1C636BA800A277D7 /* About */,
 				706BD69D1C6358C300A277D7 /* EditProfileColoredTitle */,
 				706BD6A01C6358C300A277D7 /* EditProfileLessInfo */,
 				706BD6A31C6358C300A277D7 /* EditProfileMoreInfo */,
@@ -343,6 +348,15 @@
 				706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */,
 			);
 			path = EditProfileMoreInfo;
+			sourceTree = "<group>";
+		};
+		706BD6AC1C636BA800A277D7 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				706BD6AD1C636BA800A277D7 /* AboutCell.swift */,
+				706BD6AE1C636BA800A277D7 /* AboutCell.xib */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
@@ -612,6 +626,7 @@
 				706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */,
 				706BD6A71C6358C300A277D7 /* EditProfileColoredTitleCell.xib in Resources */,
 				706BD6AB1C6358C300A277D7 /* EditProfileMoreInfoCell.xib in Resources */,
+				706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */,
 				706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */,
 				70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */,
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
@@ -702,6 +717,7 @@
 				70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */,
 				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
 				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
+				706BD6AF1C636BA800A277D7 /* AboutCell.swift in Sources */,
 				70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
 				706BD6821C63022700A277D7 /* SettingsUserCell.swift in Sources */,
