@@ -20,13 +20,13 @@ enum ProfileUser {
     case DiscoveredUserType(DiscoveredUser)
     case UserType(User)
 
-    var userID: String {
+    var userId: String {
         switch self {
         case .DiscoveredUserType(let discoveredUser):
-            return discoveredUser.id
+            return discoveredUser.userId
 
         case .UserType(let user):
-            return user.userID
+            return user.userId
         }
     }
 
@@ -48,32 +48,22 @@ enum ProfileUser {
         return username
     }
 
-    var nickname: String {
-        switch self {
-        case .DiscoveredUserType(let discoveredUser):
-            return discoveredUser.nickname
+    var avatarUrl: String? {
 
-        case .UserType(let user):
-            return user.nickname
-        }
-    }
-
-    var avatarURLString: String? {
-
-        var avatarURLString: String? = nil
+        var avatarUrl: String? = nil
 
         switch self {
 
         case .DiscoveredUserType(let discoveredUser):
-            avatarURLString = discoveredUser.avatarURLString
+            avatarUrl = discoveredUser.avatarUrl
 
         case .UserType(let user):
-            if !user.avatarURLString.isEmpty {
-                avatarURLString = user.avatarURLString
+            if !user.avatarUrl.isEmpty {
+                avatarUrl = user.avatarUrl
             }
         }
         
-        return avatarURLString
+        return avatarUrl
     }
 
     var isMe: Bool {
@@ -149,6 +139,11 @@ class ProfileViewController: SegueViewController {
     private lazy var introductionText: String = {
 
         var introduction: String?
+        
+        func updateIntro(intro: String) {
+            self.introductionText = intro
+            self.updateProfileCollectionView()
+        }
 
         if let profileUser = self.profileUser {
             switch profileUser {
@@ -166,15 +161,14 @@ class ProfileViewController: SegueViewController {
                     introduction = user.introduction
                 }
 
-                if user.friendState == UserFriendState.Me.rawValue {
-                    YepUserDefaults.introduction.bindListener(self.listener.introduction) { [weak self] introduction in
-                        dispatch_async(dispatch_get_main_queue()) {
-                            if let introduction = introduction {
-                                self?.introductionText = introduction
-                                self?.updateProfileCollectionView()
-                            }
-                        }
-                    }
+                if user.friendState == UserFriendState.Me {
+//                    YepUserDefaults.introduction.bindListener(self.listener.introduction) { [weak self] introduction in
+//                        dispatch_async(dispatch_get_main_queue()) {
+//                            if let introduction = introduction {
+//
+//                            }
+//                        }
+//                    }
                 }
             }
         }
@@ -215,7 +209,7 @@ class ProfileViewController: SegueViewController {
 
         YepUserDefaults.nickname.removeListenerWithName(listener.nickname)
         YepUserDefaults.introduction.removeListenerWithName(listener.introduction)
-        YepUserDefaults.avatarURLString.removeListenerWithName(listener.avatar)
+        YepUserDefaults.avatarUrl.removeListenerWithName(listener.avatar)
 
         profileCollectionView?.delegate = nil
 
@@ -248,8 +242,6 @@ class ProfileViewController: SegueViewController {
         println("init ProfileViewController \(self)")
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "cleanForLogout:", name: EditProfileViewController.Notification.Logout, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "prepareForOAuthResult:", name: YepConfig.Notification.OAuthResult, object: nil)
 
         if let profileUser = profileUser {
 
@@ -278,7 +270,7 @@ class ProfileViewController: SegueViewController {
             
             if let realm = try? Realm() {
                 
-                if let user = userWithUserID(profileUser.userID, inRealm: realm) {
+                if let user = userWithUserID(profileUser.userId, inRealm: realm) {
                     
                     if user.friendState == UserFriendState.Normal.rawValue {
                         
@@ -402,20 +394,20 @@ class ProfileViewController: SegueViewController {
             case .UserType(let user):
                 customNavigationItem.title = user.nickname
 
-                if user.friendState == UserFriendState.Me.rawValue {
+                if user.friendState == UserFriendState.Me {
                     YepUserDefaults.nickname.bindListener(listener.nickname) { [weak self] nickname in
                         dispatch_async(dispatch_get_main_queue()) {
                             self?.customNavigationItem.title = nickname
                         }
                     }
 
-                    YepUserDefaults.avatarURLString.bindListener(listener.avatar) { [weak self] avatarURLString in
+                    YepUserDefaults.avatarUrl.bindListener(listener.avatar) { [weak self] avatarUrl in
                         dispatch_async(dispatch_get_main_queue()) {
                             let indexPath = NSIndexPath(forItem: 0, inSection: ProfileSection.Header.rawValue)
                             if let cell = self?.profileCollectionView.cellForItemAtIndexPath(indexPath) as? ProfileHeaderCell {
-                                if let avatarURLString = avatarURLString {
+                                if let avatarUrl = avatarUrl {
                                     cell.blurredAvatarImage = nil // need reblur
-                                    cell.updateAvatarWithAvatarURLString(avatarURLString)
+                                    cell.updateAvatarWithAvatarURLString(avatarUrl)
                                 }
                             }
                         }
@@ -425,7 +417,7 @@ class ProfileViewController: SegueViewController {
 
             if !profileUserIsMe {
 
-                let userID = profileUser.userID
+                let userID = profileUser.userId
 
                 userInfoOfUserWithUserID(userID, failureHandler: nil, completion: { userInfo in
                     //println("userInfoOfUserWithUserID \(userInfo)")
@@ -529,9 +521,9 @@ class ProfileViewController: SegueViewController {
             var thumbnail: UIImage?
 
             if let
-                avatarURLString = profileUser?.avatarURLString,
+                avatarUrl = profileUser?.avatarUrl,
                 realm = try? Realm(),
-                avatar = avatarWithAvatarURLString(avatarURLString, inRealm: realm) {
+                avatar = avatarWithAvatarURLString(avatarUrl, inRealm: realm) {
                     if let
                         avatarFileURL = NSFileManager.yepAvatarURLWithName(avatar.avatarFileName),
                         avatarFilePath = avatarFileURL.path,
@@ -583,7 +575,7 @@ class ProfileViewController: SegueViewController {
         if let _ = profileUser?.username {
             
             if let profileUser = profileUser {
-                GoogleAnalyticsTrackEvent("Share Profile", label: "\(profileUser.nickname) \(profileUser.userID)", value: 0)
+                GoogleAnalyticsTrackEvent("Share Profile", label: "\(profileUser.nickname) \(profileUser.userId)", value: 0)
             }
             
             shareProfile()
@@ -955,7 +947,7 @@ extension ProfileViewController: UIScrollViewDelegate {
 //        if let _ = profileUser.username {
 //            
 //        } else {
-//            if profileUser.userID != YepUserDefaults.userID.value {
+//            if profileuser.userId != YepUserDefaults.userID.value {
 //                return
 //            }
 //        }

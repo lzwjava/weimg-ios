@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Ruler
 
 let avatarFadeTransitionDuration: NSTimeInterval = 0.0
 
@@ -65,4 +66,25 @@ class YepConfig {
         static let rightEdgeInset: CGFloat = leftEdgeInset
         static let introductionLabelFont = UIFont.systemFontOfSize(14)
     }
+    
+    struct ChinaSocialNetwork {
+        
+        struct WeChat {
+            
+            static let appID = "wx10f099f798871364"
+            
+            static let sessionType = "com.Catch-Inc.Yep.WeChat.Session"
+            static let sessionTitle = NSLocalizedString("WeChat Session", comment: "")
+            static let sessionImage = UIImage(named: "wechat_session")!
+            
+            static let timelineType = "com.Catch-Inc.Yep.WeChat.Timeline"
+            static let timelineTitle = NSLocalizedString("WeChat Timeline", comment: "")
+            static let timelineImage = UIImage(named: "wechat_timeline")!
+        }
+    }
+    
+    struct Feedback {
+        static let bottomMargin: CGFloat = Ruler.iPhoneVertical(10, 20, 40, 40).value
+    }
+
 }

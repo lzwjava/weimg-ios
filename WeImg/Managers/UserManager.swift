@@ -12,6 +12,7 @@ class UserManager: BaseManager {
     var pickedUsername: String?
     var pickedMobilePhoneNumber: String?
     var pickedPassword: String?
+    static var currentUser: User?
     
     static let manager: UserManager = {
         return UserManager()

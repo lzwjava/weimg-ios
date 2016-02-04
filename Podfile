@@ -18,7 +18,7 @@ target 'WeImg' do
     pod 'TPKeyboardAvoiding', '~> 1.2.11'
     pod 'Kingfisher', '~> 2.0.1'
     pod 'FXBlurView', '~> 1.6.4'
-    pod 'MonkeyKing', '~> 0.9'
+    pod 'MonkeyKing', '0.0.2'
 end
 
 target 'WeImgTests' do

@@ -46,6 +46,12 @@
 		706BD6D71C6395F100A277D7 /* ProfileLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6D51C6395F100A277D7 /* ProfileLayout.swift */; };
 		706BD6D81C6395F100A277D7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6D61C6395F100A277D7 /* ProfileViewController.swift */; };
 		706BD6DA1C63A0B500A277D7 /* DiscoveredUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6D91C63A0B500A277D7 /* DiscoveredUser.swift */; };
+		706BD6DE1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6DC1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.swift */; };
+		706BD6DF1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6DD1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.xib */; };
+		706BD6E21C63B01B00A277D7 /* WeChatActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6E11C63B01B00A277D7 /* WeChatActivity.swift */; };
+		706BD6E41C63B4F500A277D7 /* PlainAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6E31C63B4F500A277D7 /* PlainAvatar.swift */; };
+		706BD6E61C63BA7300A277D7 /* AvatarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6E51C63BA7300A277D7 /* AvatarStyles.swift */; };
+		706BD6E91C63C20D00A277D7 /* YepNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6E81C63C20D00A277D7 /* YepNavigationController.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -151,6 +157,12 @@
 		706BD6D51C6395F100A277D7 /* ProfileLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileLayout.swift; sourceTree = "<group>"; };
 		706BD6D61C6395F100A277D7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		706BD6D91C63A0B500A277D7 /* DiscoveredUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveredUser.swift; sourceTree = "<group>"; };
+		706BD6DC1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSectionHeaderReusableView.swift; sourceTree = "<group>"; };
+		706BD6DD1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSectionHeaderReusableView.xib; sourceTree = "<group>"; };
+		706BD6E11C63B01B00A277D7 /* WeChatActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeChatActivity.swift; sourceTree = "<group>"; };
+		706BD6E31C63B4F500A277D7 /* PlainAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainAvatar.swift; sourceTree = "<group>"; };
+		706BD6E51C63BA7300A277D7 /* AvatarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarStyles.swift; sourceTree = "<group>"; };
+		706BD6E81C63C20D00A277D7 /* YepNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepNavigationController.swift; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +251,7 @@
 		706A001D1C5A297300A8D7B4 /* WeImg */ = {
 			isa = PBXGroup;
 			children = (
+				706BD6E01C63B01B00A277D7 /* Activities */,
 				70C2F4161C60EBBB00C345B2 /* Extensions */,
 				70C2F4131C60EB2700C345B2 /* Helpers */,
 				70C2F4021C60E6B500C345B2 /* Models */,
@@ -415,9 +428,35 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		706BD6DB1C63A96C00A277D7 /* ProfileSectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				706BD6DC1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.swift */,
+				706BD6DD1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.xib */,
+			);
+			path = ProfileSectionHeader;
+			sourceTree = "<group>";
+		};
+		706BD6E01C63B01B00A277D7 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				706BD6E11C63B01B00A277D7 /* WeChatActivity.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		706BD6E71C63C20D00A277D7 /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				706BD6E81C63C20D00A277D7 /* YepNavigationController.swift */,
+			);
+			path = Nav;
+			sourceTree = "<group>";
+		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				706BD6E71C63C20D00A277D7 /* Nav */,
 				706BD6D41C6395F100A277D7 /* Profile */,
 				706BD6931C63039C00A277D7 /* EditProfile */,
 				706BD68E1C63030E00A277D7 /* Feedback */,
@@ -481,6 +520,7 @@
 		70C2F4061C60E6B500C345B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				706BD6DB1C63A96C00A277D7 /* ProfileSectionHeader */,
 				706BD6B61C63752A00A277D7 /* ProfileFooter */,
 				706BD6B91C63752A00A277D7 /* ProfileHeader */,
 				706BD6BC1C63752A00A277D7 /* ProfileSeparationLine */,
@@ -522,6 +562,8 @@
 		70C2F4131C60EB2700C345B2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				706BD6E51C63BA7300A277D7 /* AvatarStyles.swift */,
+				706BD6E31C63B4F500A277D7 /* PlainAvatar.swift */,
 				70C2F4281C611B4E00C345B2 /* YepAlert.swift */,
 				70C2F4201C60ED4100C345B2 /* YepHUD.swift */,
 				70C2F4141C60EB5E00C345B2 /* CommonHelper.swift */,
@@ -699,6 +741,7 @@
 				70629B121C61EF7500865921 /* Localizable.strings in Resources */,
 				706BD6831C63022700A277D7 /* SettingsUserCell.xib in Resources */,
 				706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */,
+				706BD6DF1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.xib in Resources */,
 				70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
@@ -774,6 +817,8 @@
 				70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */,
 				70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */,
 				70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */,
+				706BD6E61C63BA7300A277D7 /* AvatarStyles.swift in Sources */,
+				706BD6E91C63C20D00A277D7 /* YepNavigationController.swift in Sources */,
 				70C2F40C1C60E72C00C345B2 /* CameraPreviewView.swift in Sources */,
 				70C2F4121C60E7E400C345B2 /* BorderTextField.swift in Sources */,
 				70C2F41A1C60EC9600C345B2 /* UIColor+Yep.swift in Sources */,
@@ -815,9 +860,11 @@
 				706BD6B21C636D0300A277D7 /* YepLog.swift in Sources */,
 				70C2F4091C60E6B500C345B2 /* User.swift in Sources */,
 				70C2F4271C611AE900C345B2 /* UIFont+Yep.swift in Sources */,
+				706BD6DE1C63A96C00A277D7 /* ProfileSectionHeaderReusableView.swift in Sources */,
 				70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */,
 				70C2F3DE1C60E68200C345B2 /* FirstViewController.swift in Sources */,
 				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
+				706BD6E21C63B01B00A277D7 /* WeChatActivity.swift in Sources */,
 				706BD67D1C63019B00A277D7 /* SettingsViewController.swift in Sources */,
 				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
 				70C2F4451C61C44C00C345B2 /* WelcomeViewController.swift in Sources */,
@@ -832,6 +879,7 @@
 				70C2F41D1C60ECD600C345B2 /* NavigationTitleLabel.swift in Sources */,
 				706BD6A81C6358C300A277D7 /* EditProfileLessInfoCell.swift in Sources */,
 				70C2F41F1C60ED0300C345B2 /* NSTimeZone+Yep.swift in Sources */,
+				706BD6E41C63B4F500A277D7 /* PlainAvatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

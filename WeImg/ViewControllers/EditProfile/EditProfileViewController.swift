@@ -90,13 +90,13 @@ class EditProfileViewController: SegueViewController {
     // MARK: Actions
 
     private func updateAvatar(completion:() -> Void) {
-        if let avatarURLString = YepUserDefaults.avatarURLString.value {
+        if let avatarUrl = YepUserDefaults.avatarUrl.value {
 
-            println("avatarURLString: \(avatarURLString)")
+            println("avatarUrl: \(avatarUrl)")
 
             let avatarSize = YepConfig.editProfileAvatarSize()
             let avatarStyle: AvatarStyle = .RoundedRectangle(size: CGSize(width: avatarSize, height: avatarSize), cornerRadius: avatarSize * 0.5, borderWidth: 0)
-            let plainAvatar = PlainAvatar(avatarURLString: avatarURLString, avatarStyle: avatarStyle)
+            let plainAvatar = PlainAvatar(avatarUrl: avatarUrl, avatarStyle: avatarStyle)
             avatarImageView.navi_setAvatar(plainAvatar, withFadeTransitionDuration: avatarFadeTransitionDuration)
             
             completion()
@@ -476,7 +476,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
             }, completion: { newAvatarURLString in
                 dispatch_async(dispatch_get_main_queue()) {
 
-                    YepUserDefaults.avatarURLString.value = newAvatarURLString
+                    YepUserDefaults.avatarUrl.value = newAvatarURLString
 
                     println("newAvatarURLString: \(newAvatarURLString)")
 

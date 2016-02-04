@@ -74,14 +74,14 @@ class ProfileHeaderCell: UICollectionViewCell {
     */
 
     func configureWithDiscoveredUser(discoveredUser: DiscoveredUser) {
-        updateAvatarWithAvatarURLString(discoveredUser.avatarURLString)
+        updateAvatarWithAvatarURLString(discoveredUser.avatarUrl)
 
         //location = CLLocation(latitude: discoveredUser.latitude, longitude: discoveredUser.longitude)
     }
 
     func configureWithUser(user: User) {
 
-        updateAvatarWithAvatarURLString(user.avatarURLString)
+        updateAvatarWithAvatarURLString(user.avatarUrl)
 
         /*
         if user.friendState == UserFriendState.Me.rawValue {
@@ -122,7 +122,7 @@ class ProfileHeaderCell: UICollectionViewCell {
         }
     }
 
-    func updateAvatarWithAvatarURLString(avatarURLString: String) {
+    func updateAvatarWithAvatarURLString(avatarUrl: String) {
 
         if avatarImageView.image == nil {
             avatarImageView.alpha = 0
@@ -130,7 +130,7 @@ class ProfileHeaderCell: UICollectionViewCell {
         }
 
         let avatarStyle = AvatarStyle.Original
-        let plainAvatar = PlainAvatar(avatarURLString: avatarURLString, avatarStyle: avatarStyle)
+        let plainAvatar = PlainAvatar(avatarUrl: avatarUrl, avatarStyle: avatarStyle)
 
         AvatarPod.wakeAvatar(plainAvatar) { [weak self] finished, image, _ in
 
@@ -157,11 +157,5 @@ class ProfileHeaderCell: UICollectionViewCell {
                 })
             }
         }
-    }
-
-    // MARK: Notifications
-    
-    func updateAddress() {
-        locationLabel.text = YepLocationService.sharedManager.address
     }
 }

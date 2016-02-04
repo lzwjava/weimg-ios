@@ -241,7 +241,7 @@ class RegisterPickAvatarViewController: BaseViewController {
 //
 //                dispatch_async(dispatch_get_main_queue()) {
 //
-//                    YepUserDefaults.avatarURLString.value = newAvatarURLString
+//                    YepUserDefaults.avatarUrl.value = newAvatarURLString
 //
 //                    self.performSegueWithIdentifier("showRegisterPickSkills", sender: nil)
 //                }
