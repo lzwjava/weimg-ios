@@ -13,6 +13,9 @@ target 'WeImg' do
     pod 'Proposer'
     pod 'Navi'
     pod 'SQLite.swift', '~> 0.9.2'
+    pod 'KeyboardMan'
+    pod 'DeviceGuru'
+    pod 'TPKeyboardAvoiding'
 end
 
 target 'WeImgTests' do

@@ -186,6 +186,24 @@ class RegisterVerifyMobileViewController: BaseViewController {
         }
 
         YepHUD.showActivityIndicator()
+        
+        if let phone = UserManager.manager.pickedMobilePhoneNumber,
+            password = UserManager.manager.pickedPassword,
+            username = UserManager.manager.pickedUsername {
+            UserManager.manager.register(phone, password: password, smsCode: verifyCode, username: username) { (error: NSError?) -> Void in
+                YepHUD.hideActivityIndicator()
+                if let error = error {
+                    self.nextButton.enabled = false
+                    self.alertError(error, dismissAction: { () -> Void in
+                        self.verifyCodeTextField.becomeFirstResponder()
+                    })
+                }
+                if (self.filterError(error)) {
+                    self.performSegueWithIdentifier("showRegisterPickAvatar", sender: nil)
+                }
+            }
+        }
+        
 
 //        verifyMobile(mobile, withAreaCode: areaCode, verifyCode: verifyCode, failureHandler: { [weak self] (reason, errorMessage) in
 //            defaultFailureHandler(reason, errorMessage: errorMessage)
