@@ -26,6 +26,14 @@
 		706BD6921C63030E00A277D7 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6901C63030E00A277D7 /* FeedbackViewController.swift */; };
 		706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6941C63039C00A277D7 /* EditProfile.storyboard */; };
 		706BD6971C63039C00A277D7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6951C63039C00A277D7 /* EditProfileViewController.swift */; };
+		706BD69A1C63581200A277D7 /* HorizontalLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6991C63581200A277D7 /* HorizontalLineView.swift */; };
+		706BD69C1C63588700A277D7 /* NSBundle+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD69B1C63588700A277D7 /* NSBundle+Yep.swift */; };
+		706BD6A61C6358C300A277D7 /* EditProfileColoredTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD69E1C6358C300A277D7 /* EditProfileColoredTitleCell.swift */; };
+		706BD6A71C6358C300A277D7 /* EditProfileColoredTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD69F1C6358C300A277D7 /* EditProfileColoredTitleCell.xib */; };
+		706BD6A81C6358C300A277D7 /* EditProfileLessInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6A11C6358C300A277D7 /* EditProfileLessInfoCell.swift */; };
+		706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */; };
+		706BD6AA1C6358C300A277D7 /* EditProfileMoreInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */; };
+		706BD6AB1C6358C300A277D7 /* EditProfileMoreInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -111,6 +119,14 @@
 		706BD6901C63030E00A277D7 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		706BD6941C63039C00A277D7 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		706BD6951C63039C00A277D7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		706BD6991C63581200A277D7 /* HorizontalLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLineView.swift; sourceTree = "<group>"; };
+		706BD69B1C63588700A277D7 /* NSBundle+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+Yep.swift"; sourceTree = "<group>"; };
+		706BD69E1C6358C300A277D7 /* EditProfileColoredTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileColoredTitleCell.swift; sourceTree = "<group>"; };
+		706BD69F1C6358C300A277D7 /* EditProfileColoredTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileColoredTitleCell.xib; sourceTree = "<group>"; };
+		706BD6A11C6358C300A277D7 /* EditProfileLessInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileLessInfoCell.swift; sourceTree = "<group>"; };
+		706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileLessInfoCell.xib; sourceTree = "<group>"; };
+		706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileMoreInfoCell.swift; sourceTree = "<group>"; };
+		706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileMoreInfoCell.xib; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +256,9 @@
 		706BD67E1C63022700A277D7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				706BD69D1C6358C300A277D7 /* EditProfileColoredTitle */,
+				706BD6A01C6358C300A277D7 /* EditProfileLessInfo */,
+				706BD6A31C6358C300A277D7 /* EditProfileMoreInfo */,
 				706BD6841C63025B00A277D7 /* SettingsMore */,
 				706BD67F1C63022700A277D7 /* SettingsUser */,
 			);
@@ -289,6 +308,41 @@
 				706BD6951C63039C00A277D7 /* EditProfileViewController.swift */,
 			);
 			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		706BD6981C63581200A277D7 /* HorizontalLine */ = {
+			isa = PBXGroup;
+			children = (
+				706BD6991C63581200A277D7 /* HorizontalLineView.swift */,
+			);
+			path = HorizontalLine;
+			sourceTree = "<group>";
+		};
+		706BD69D1C6358C300A277D7 /* EditProfileColoredTitle */ = {
+			isa = PBXGroup;
+			children = (
+				706BD69E1C6358C300A277D7 /* EditProfileColoredTitleCell.swift */,
+				706BD69F1C6358C300A277D7 /* EditProfileColoredTitleCell.xib */,
+			);
+			path = EditProfileColoredTitle;
+			sourceTree = "<group>";
+		};
+		706BD6A01C6358C300A277D7 /* EditProfileLessInfo */ = {
+			isa = PBXGroup;
+			children = (
+				706BD6A11C6358C300A277D7 /* EditProfileLessInfoCell.swift */,
+				706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */,
+			);
+			path = EditProfileLessInfo;
+			sourceTree = "<group>";
+		};
+		706BD6A31C6358C300A277D7 /* EditProfileMoreInfo */ = {
+			isa = PBXGroup;
+			children = (
+				706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */,
+				706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */,
+			);
+			path = EditProfileMoreInfo;
 			sourceTree = "<group>";
 		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
@@ -355,6 +409,7 @@
 		70C2F4061C60E6B500C345B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				706BD6981C63581200A277D7 /* HorizontalLine */,
 				706BD67E1C63022700A277D7 /* Cells */,
 				70C2F41B1C60ECD600C345B2 /* Labels */,
 				70C2F4101C60E7E400C345B2 /* TextFields */,
@@ -403,6 +458,7 @@
 		70C2F4161C60EBBB00C345B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				706BD69B1C63588700A277D7 /* NSBundle+Yep.swift */,
 				70C2F42A1C611BCA00C345B2 /* UIImage+Yep.swift */,
 				70C2F4261C611AE900C345B2 /* UIFont+Yep.swift */,
 				70C2F4241C60EDD400C345B2 /* String+Yep.swift */,
@@ -554,6 +610,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */,
+				706BD6A71C6358C300A277D7 /* EditProfileColoredTitleCell.xib in Resources */,
+				706BD6AB1C6358C300A277D7 /* EditProfileMoreInfoCell.xib in Resources */,
 				706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */,
 				70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */,
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
@@ -565,6 +623,7 @@
 				70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
+				706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */,
 				706BD6911C63030E00A277D7 /* Feedback.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,11 +711,14 @@
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
 				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
+				706BD6AA1C6358C300A277D7 /* EditProfileMoreInfoCell.swift in Sources */,
 				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,
 				70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */,
 				706BD68D1C63030400A277D7 /* AboutViewController.swift in Sources */,
 				70C2F4081C60E6B500C345B2 /* UploadToken.swift in Sources */,
+				706BD69A1C63581200A277D7 /* HorizontalLineView.swift in Sources */,
 				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,
+				706BD6A61C6358C300A277D7 /* EditProfileColoredTitleCell.swift in Sources */,
 				70C2F4421C61BD9400C345B2 /* LoginVerifyMobileViewController.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
@@ -676,9 +738,11 @@
 				70C2F4371C61BD2E00C345B2 /* ShowStepGeniusViewController.swift in Sources */,
 				70C2F4151C60EB5E00C345B2 /* CommonHelper.swift in Sources */,
 				70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */,
+				706BD69C1C63588700A277D7 /* NSBundle+Yep.swift in Sources */,
 				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,
 				70C2F4381C61BD2E00C345B2 /* ShowStepMatchViewController.swift in Sources */,
 				70C2F41D1C60ECD600C345B2 /* NavigationTitleLabel.swift in Sources */,
+				706BD6A81C6358C300A277D7 /* EditProfileLessInfoCell.swift in Sources */,
 				70C2F41F1C60ED0300C345B2 /* NSTimeZone+Yep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
