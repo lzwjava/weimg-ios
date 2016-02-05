@@ -69,6 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootViewController
     }
     
+    func startMainStory() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as! UITabBarController
+        window?.rootViewController = rootViewController
+    }
+    
     private func customAppearce() {
         
         // Global Tint Color

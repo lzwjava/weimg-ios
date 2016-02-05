@@ -85,7 +85,7 @@
 		70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4361C61BD2E00C345B2 /* ShowViewController.swift */; };
 		70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F43C1C61BD5D00C345B2 /* EdgeBorderButton.swift */; };
 		70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F43F1C61BD9400C345B2 /* LoginByMobileViewController.swift */; };
-		70C2F4421C61BD9400C345B2 /* LoginVerifyMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4401C61BD9400C345B2 /* LoginVerifyMobileViewController.swift */; };
+		70C2F4421C61BD9400C345B2 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4401C61BD9400C345B2 /* LoginPasswordViewController.swift */; };
 		70C2F4451C61C44C00C345B2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4441C61C44C00C345B2 /* WelcomeViewController.swift */; };
 		70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F4461C61C4AE00C345B2 /* Show.storyboard */; };
 		70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F4491C61C61D00C345B2 /* Show.xcassets */; };
@@ -189,7 +189,7 @@
 		70C2F4361C61BD2E00C345B2 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		70C2F43C1C61BD5D00C345B2 /* EdgeBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeBorderButton.swift; sourceTree = "<group>"; };
 		70C2F43F1C61BD9400C345B2 /* LoginByMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginByMobileViewController.swift; sourceTree = "<group>"; };
-		70C2F4401C61BD9400C345B2 /* LoginVerifyMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVerifyMobileViewController.swift; sourceTree = "<group>"; };
+		70C2F4401C61BD9400C345B2 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
 		70C2F4441C61C44C00C345B2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		70C2F4471C61C4AE00C345B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Show.storyboard; sourceTree = "<group>"; };
 		70C2F4491C61C61D00C345B2 /* Show.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Show.xcassets; sourceTree = "<group>"; };
@@ -551,7 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				70C2F43F1C61BD9400C345B2 /* LoginByMobileViewController.swift */,
-				70C2F4401C61BD9400C345B2 /* LoginVerifyMobileViewController.swift */,
+				70C2F4401C61BD9400C345B2 /* LoginPasswordViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -781,7 +781,7 @@
 				706BD69A1C63581200A277D7 /* HorizontalLineView.swift in Sources */,
 				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,
 				706BD6A61C6358C300A277D7 /* EditProfileColoredTitleCell.swift in Sources */,
-				70C2F4421C61BD9400C345B2 /* LoginVerifyMobileViewController.swift in Sources */,
+				70C2F4421C61BD9400C345B2 /* LoginPasswordViewController.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
 				706BD6921C63030E00A277D7 /* FeedbackViewController.swift in Sources */,

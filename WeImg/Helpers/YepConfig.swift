@@ -22,7 +22,11 @@ class YepConfig {
     }
     
     class func verifyCodeLength() -> Int {
-        return 4
+        return 6
+    }
+    
+    class func minPasswordLength() -> Int {
+        return 6
     }
     
     class func avatarMaxSize() -> CGSize {

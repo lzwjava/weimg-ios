@@ -181,7 +181,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="86" placeholder=" " adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rD8-Pa-pw2" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="86" placeholder=" " adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rD8-Pa-pw2" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="195.5" width="79" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Uzt-dE-3IR"/>
@@ -199,7 +199,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BMl-2s-Pwj" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BMl-2s-Pwj" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
                                 <rect key="frame" x="79" y="195.5" width="521" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="5y7-kD-E2s"/>
@@ -498,7 +498,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="86" placeholder=" " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-RT-8MI" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="86" placeholder=" " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lCp-RT-8MI" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="195.5" width="79" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="LIQ-lH-fzY"/>
@@ -519,7 +519,7 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGO-sg-N4b" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FGO-sg-N4b" customClass="BorderTextField" customModule="WeImg" customModuleProvider="target">
                                 <rect key="frame" x="79" y="195.5" width="521" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="U4j-Tg-Ig3"/>
@@ -560,10 +560,10 @@
             </objects>
             <point key="canvasLocation" x="1874" y="1200"/>
         </scene>
-        <!--Login Verify Mobile View Controller-->
+        <!--Login Password View Controller-->
         <scene sceneID="6Lj-8E-qEc">
             <objects>
-                <viewController storyboardIdentifier="LoginVerifyMobileViewController" id="hOk-H8-kcY" customClass="LoginVerifyMobileViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPasswordViewController" id="hOk-H8-kcY" customClass="LoginPasswordViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6V2-qQ-Nbs"/>
                         <viewControllerLayoutGuide type="bottom" id="Xu4-pd-mLu"/>
@@ -572,8 +572,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TS-6h-Jhq">
-                                <rect key="frame" x="233.5" y="124" width="134.5" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TS-6h-Jhq">
+                                <rect key="frame" x="233.5" y="124" width="134.5" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -584,61 +584,19 @@
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" secureTextEntry="YES"/>
                             </textField>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XO-0K-ihg" userLabel="Helper View">
-                                <rect key="frame" x="232.5" y="305.5" width="136.5" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="MiF-PI-x2H"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn't get it?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oW-Rx-Fxw">
-                                <rect key="frame" x="232.5" y="311.5" width="80.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f3-u0-uhX">
-                                <rect key="frame" x="321" y="305.5" width="48" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <state key="normal" title="Call me">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="callMe:" destination="hOk-H8-kcY" eventType="touchUpInside" id="bXQ-bk-JaI"/>
-                                    <action selector="callMe:" destination="RMg-rt-U0Z" eventType="touchUpInside" id="w7e-3J-dKF"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18602354812" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqa-1C-yyI">
-                                <rect key="frame" x="255.5" y="149.5" width="89" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5XO-0K-ihg" firstAttribute="centerX" secondItem="ofP-ec-R5d" secondAttribute="centerX" id="0yT-6d-kUY"/>
-                            <constraint firstItem="5XO-0K-ihg" firstAttribute="centerY" secondItem="5f3-u0-uhX" secondAttribute="centerY" id="23H-QI-Jn7"/>
-                            <constraint firstItem="Gqa-1C-yyI" firstAttribute="top" secondItem="3TS-6h-Jhq" secondAttribute="bottom" constant="4" id="AN4-WU-KWj"/>
-                            <constraint firstItem="5XO-0K-ihg" firstAttribute="leading" secondItem="9oW-Rx-Fxw" secondAttribute="leading" id="DTA-He-ZAA"/>
-                            <constraint firstItem="5f3-u0-uhX" firstAttribute="top" secondItem="ofP-ec-R5d" secondAttribute="bottom" constant="50" id="Ftc-6c-Yb6"/>
                             <constraint firstAttribute="trailing" secondItem="ofP-ec-R5d" secondAttribute="trailing" id="J5g-t0-YK8"/>
                             <constraint firstItem="3TS-6h-Jhq" firstAttribute="top" secondItem="6V2-qQ-Nbs" secondAttribute="bottom" constant="60" id="PGZ-Yb-5uK"/>
-                            <constraint firstItem="Gqa-1C-yyI" firstAttribute="centerX" secondItem="3TS-6h-Jhq" secondAttribute="centerX" id="Rgd-OI-Vjf"/>
                             <constraint firstItem="ofP-ec-R5d" firstAttribute="top" secondItem="3TS-6h-Jhq" secondAttribute="bottom" constant="50" id="T3h-YG-LL0"/>
                             <constraint firstItem="ofP-ec-R5d" firstAttribute="leading" secondItem="53c-s3-mzh" secondAttribute="leading" id="ZXo-4A-ruK"/>
-                            <constraint firstItem="9oW-Rx-Fxw" firstAttribute="centerY" secondItem="5f3-u0-uhX" secondAttribute="centerY" id="am1-iK-y7P"/>
-                            <constraint firstItem="5XO-0K-ihg" firstAttribute="trailing" secondItem="5f3-u0-uhX" secondAttribute="trailing" id="f0n-bu-9r8"/>
-                            <constraint firstItem="5f3-u0-uhX" firstAttribute="leading" secondItem="9oW-Rx-Fxw" secondAttribute="trailing" constant="8" id="mbp-dZ-6kp"/>
                             <constraint firstAttribute="centerX" secondItem="3TS-6h-Jhq" secondAttribute="centerX" id="yFu-Ip-DQz"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="callMeButton" destination="5f3-u0-uhX" id="jC5-XU-fsd"/>
-                        <outlet property="callMeButtonTopConstraint" destination="Ftc-6c-Yb6" id="7mE-zz-iBA"/>
-                        <outlet property="callMePromptLabel" destination="9oW-Rx-Fxw" id="DKX-D0-eBS"/>
-                        <outlet property="phoneNumberLabel" destination="Gqa-1C-yyI" id="HRy-8R-ZEE"/>
                         <outlet property="verifyCodeTextField" destination="ofP-ec-R5d" id="SB7-R3-pu7"/>
                         <outlet property="verifyCodeTextFieldTopConstraint" destination="T3h-YG-LL0" id="Wj8-Tg-GtL"/>
                         <outlet property="verifyMobileNumberPromptLabel" destination="3TS-6h-Jhq" id="bc9-0C-J2o"/>

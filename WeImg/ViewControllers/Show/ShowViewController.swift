@@ -130,7 +130,8 @@ class ShowViewController: UIViewController {
     
     @IBAction private func register(sender: UIButton) {
         let storyboard = UIStoryboard(name: "Intro", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("RegisterPickNameViewController") as! RegisterPickNameViewController
+//        let vc = storyboard.instantiateViewControllerWithIdentifier("RegisterPickNameViewController") as! RegisterPickNameViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("RegisterPickAvatarViewController") as! RegisterPickAvatarViewController
 
         navigationController?.pushViewController(vc, animated: true)
     }

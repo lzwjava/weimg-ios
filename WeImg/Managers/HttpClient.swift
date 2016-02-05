@@ -87,7 +87,13 @@ class HttpClient {
             let dict = resp.result.value as! [String: AnyObject]
             let status = dict["status"] as! String
             if status != "success" {
-                let userInfo = [NSLocalizedDescriptionKey: dict["error"] as! String]
+                var errorInfo = ""
+                if dict["error"] != nil {
+                    errorInfo = dict["error"] as! String
+                } else {
+                    errorInfo = status
+                }
+                let userInfo = [NSLocalizedDescriptionKey: errorInfo]
                 let statusError = NSError(domain: "WeImg", code: 0, userInfo: userInfo)
                 return statusError
             } else {
@@ -102,15 +108,31 @@ class HttpClient {
     }
     
     static func post(URLString: URLStringConvertible,
-        parameters: [String: AnyObject], completionHandler: ([String: AnyObject]?,NSError?) -> Void) {
+        parameters: [String: AnyObject]?, completionHandler: ([String: AnyObject]?, NSError?) -> Void) {
         let url = baseUrl + URLString.URLString
-            Alamofire.request(.POST, url, parameters: parameters).responseJSON() { (resp: Response<AnyObject, NSError>) in
+        Alamofire.request(.POST, url, parameters: parameters).responseJSON() { (resp: Response<AnyObject, NSError>) in
                 if let error = errorFromReponse(resp) {
                     completionHandler(nil, error)
                 } else {
                     let result = resultFromReponse(resp)
                     completionHandler(result as? [String:AnyObject], nil)
                 }
+            }
+    }
+    
+    static func post<T: Mappable>(URLString: URLStringConvertible,
+        parameters: [String: AnyObject]? = nil, completion:(T?, NSError?) -> Void) {
+            post(URLString, parameters: parameters) { (dict: [String : AnyObject]?, error: NSError?) -> Void in
+                guard error == nil else {
+                    completion(nil, error)
+                    return
+                }
+                let parsedObject = Mapper<T>().map(dict)
+                guard parsedObject != nil else {
+                    completion(nil, objectMapperError())
+                    return
+                }
+                completion(parsedObject, nil)
             }
     }
     

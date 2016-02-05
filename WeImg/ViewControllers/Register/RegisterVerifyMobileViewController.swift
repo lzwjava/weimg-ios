@@ -197,8 +197,7 @@ class RegisterVerifyMobileViewController: BaseViewController {
                     self.alertError(error, dismissAction: { () -> Void in
                         self.verifyCodeTextField.becomeFirstResponder()
                     })
-                }
-                if (self.filterError(error)) {
+                } else {
                     self.performSegueWithIdentifier("showRegisterPickAvatar", sender: nil)
                 }
             }

@@ -52,6 +52,8 @@ class LoginByMobileViewController: BaseViewController {
 
         pickMobileNumberPromptLabelTopConstraint.constant = Ruler.iPhoneVertical(30, 50, 60, 60).value
         mobileNumberTextFieldTopConstraint.constant = Ruler.iPhoneVertical(30, 40, 50, 50).value
+        
+        mobileNumberTextField.text = "13261630925"
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -109,7 +111,9 @@ class LoginByMobileViewController: BaseViewController {
             return
         }
 
-        YepHUD.showActivityIndicator()
+//        YepHUD.showActivityIndicator()
+        self.showLoginVerifyMobile()
+        
 //        
 //        sendVerifyCodeOfMobile(mobile, withAreaCode: areaCode, useMethod: .SMS, failureHandler: { [weak self] reason, errorMessage in
 //            defaultFailureHandler(reason, errorMessage: errorMessage)
@@ -155,7 +159,7 @@ class LoginByMobileViewController: BaseViewController {
         if segue.identifier == "showLoginVerifyMobile" {
 
             if let info = sender as? [String: String] {
-                let vc = segue.destinationViewController as! LoginVerifyMobileViewController
+                let vc = segue.destinationViewController as! LoginPasswordViewController
 
                 vc.mobile = info["mobile"]
                 vc.areaCode = info["areaCode"]

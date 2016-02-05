@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 class UserManager: BaseManager {
     var pickedUsername: String?
@@ -20,17 +21,32 @@ class UserManager: BaseManager {
     
     func login(mobilePhoneNumber: String, password: String, completion: (NSError?) -> Void) {
         let dict: [String: String] = ["mobilePhoneNumber": mobilePhoneNumber,
-            "password": password];
-        HttpClient.post("login", parameters:dict, completionHandler: completion)
+            "password": password.md5()];
+        HttpClient.post("login", parameters:dict) {
+            (user: User?, error: NSError?) -> Void in
+            guard error == nil else {
+                completion(error)
+                return
+            }
+            self.changeUser(user!)
+            completion(nil)
+        }
     }
     
     func register(mobilePhoneNumber: String, password: String, smsCode: String, username: String, completion: (NSError?) -> Void) {
         HttpClient.post("users", parameters: [
             "mobilePhoneNumber": mobilePhoneNumber,
-            "password": password,
+            "password": password.md5(),
             "smsCode": smsCode,
-            "username": username],
-            completionHandler: completion)
+            "username": username]) {
+                (user: User?, error: NSError?) in
+                guard error == nil else {
+                    completion(error)
+                    return
+                }
+                self.changeUser(user!)
+                completion(nil)
+        }
     }
     
     func requestSmsCode(mobilePhoneNumber: String, completion:(NSError?) -> Void) {
@@ -41,8 +57,8 @@ class UserManager: BaseManager {
         HttpClient.get("users/self", completion:completion)
     }
     
-    func changeUser() {
-        
+    private func changeUser(user: User) {
+        UserManager.currentUser = user
     }
     
     func userWithUserId(userId: String) {
