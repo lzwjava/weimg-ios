@@ -15,7 +15,7 @@ class PostManager : BaseManager {
     }()
     
     func getPost( completionHandler: ([Post], NSError?) -> Void) {
-        HttpClient.getArray("posts", parameters: nil, completion: completionHandler)
+        HttpClient.requestArray(.GET, "posts", parameters: nil, completion: completionHandler)
     }
     
     func createPost(title: String, images: [UIImage], descs: [String], completionHandler: (NSError?)-> Void) {

@@ -20,7 +20,7 @@ class UploadToken : Mappable {
     
     func mapping(map: Map) {
         bucketUrl   <-  map["bucketUrl"]
-        imageId     <-  map["imageId"]
+        imageId     <-  map["key"]
         uptoken     <-  map["uptoken"]
     }
 }

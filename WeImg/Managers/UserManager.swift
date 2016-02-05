@@ -22,7 +22,7 @@ class UserManager: BaseManager {
     func login(mobilePhoneNumber: String, password: String, completion: (NSError?) -> Void) {
         let dict: [String: String] = ["mobilePhoneNumber": mobilePhoneNumber,
             "password": password.md5()];
-        HttpClient.post("login", parameters:dict) {
+        HttpClient.request(.POST, "login", parameters:dict) {
             (user: User?, error: NSError?) -> Void in
             guard error == nil else {
                 completion(error)
@@ -34,7 +34,7 @@ class UserManager: BaseManager {
     }
     
     func register(mobilePhoneNumber: String, password: String, smsCode: String, username: String, completion: (NSError?) -> Void) {
-        HttpClient.post("users", parameters: [
+        HttpClient.request(.POST, "users", parameters: [
             "mobilePhoneNumber": mobilePhoneNumber,
             "password": password.md5(),
             "smsCode": smsCode,
@@ -50,11 +50,11 @@ class UserManager: BaseManager {
     }
     
     func requestSmsCode(mobilePhoneNumber: String, completion:(NSError?) -> Void) {
-        HttpClient.post("requestSmsCode", parameters: ["mobilePhoneNumber": mobilePhoneNumber], completionHandler: completion)
+        HttpClient.request(.POST, "requestSmsCode", parameters: ["mobilePhoneNumber": mobilePhoneNumber], completion: completion)
     }
     
     func fetchSelf(completion: (User?, NSError?) -> Void) {
-        HttpClient.get("users/self", completion:completion)
+        HttpClient.request(.GET, "users/self", completion:completion)
     }
     
     private func changeUser(user: User) {
@@ -63,5 +63,27 @@ class UserManager: BaseManager {
     
     func userWithUserId(userId: String) {
         
+    }
+    
+    private func updateInfo(avatarUrl: String?, username: String?, introduction: String?, completion:(user: User?, error:NSError?) -> Void) {
+        var params =  [String: AnyObject]()
+        if let avatarUrl = avatarUrl {
+            params["avatarUrl"] = avatarUrl
+        }
+        if let username = username {
+            params["username"] = username
+        }
+        if let introduction = introduction {
+            params["introduction"] = introduction
+        }
+        HttpClient.request(.PATCH, "self") { (user: User?, error: NSError?) -> Void in
+            
+        }
+    }
+    
+    func updateAvatarWithImageData(data: NSData, completion:(NSError?) -> Void) {
+        ImageManager.manager.uploadImageData(data) { (dict: [String : String]?, error: NSError?) -> Void in
+            
+        }
     }
 }

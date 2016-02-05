@@ -16,33 +16,46 @@ class ImageManager : BaseManager {
     }()
     
     func getUpload(completionHandler: (UploadToken?, NSError?) -> Void) {
-        HttpClient.get("images/upload", completion: completionHandler)
+        HttpClient.request(.GET, "files/uptoken", completion: completionHandler)
+    }
+    
+    func uploadImageData(imageData: NSData, completion:([String:String]?, NSError?) -> Void) {
+        getUpload { (uploadToken: UploadToken?, error: NSError?) -> Void in
+            let upManager = QNUploadManager()
+            let key = (uploadToken?.imageId)! + ".jpg"
+            upManager.putData(imageData, key: key, token: uploadToken?.uptoken, complete: { (resp: QNResponseInfo!, key: String!, dict: [NSObject : AnyObject]!) -> Void in
+                if !resp.ok {
+                    completion(nil, resp.error)
+                } else {
+                    var data = [String: String]()
+                    data["url"] = (uploadToken?.bucketUrl)! + "/" + key
+                    data["key"] = uploadToken?.imageId
+                    completion(data, nil)
+                }
+            }, option: nil)
+        }
     }
     
     func uploadImage(image: UIImage, desc: String?, completionHandler:(String?, NSError?) -> Void) {
-        getUpload { (uploadToken: UploadToken?, error: NSError?) -> Void in
-            let data = UIImageJPEGRepresentation(image, 0.8)
-            let upManager = QNUploadManager()
-            let key = (uploadToken?.imageId)! + ".jpg"
-            upManager.putData(data, key: key, token: uploadToken?.uptoken, complete: { (resp: QNResponseInfo!, key: String!, dict: [NSObject : AnyObject]!) -> Void in
-                if !resp.ok {
-                    completionHandler(nil, resp.error)
+        let data = UIImageJPEGRepresentation(image, 0.8)
+        uploadImageData(data!) { (dict: [String: String]?, error: NSError?) -> Void in
+            guard error == nil else {
+                completionHandler(nil, error)
+                return
+            }
+            var params = [String: String]()
+            params["imageId"] = dict!["key"]
+            params["link"] = dict!["url"]
+            if desc != nil {
+                params["description"] = desc
+            }
+            HttpClient.request(.GET, "images", parameters: params) { (error: NSError?) -> Void in
+                if error != nil {
+                    completionHandler(nil, error)
                 } else {
-                    var data = [String: String]()
-                    data["link"] = (uploadToken?.bucketUrl)! + "/" + key
-                    data["imageId"] = uploadToken?.imageId
-                    if desc != nil {
-                        data["description"] = desc
-                    }
-                    HttpClient.post("images", parameters: data) { (dict: [String : AnyObject]?, error: NSError?) -> Void in
-                        if error != nil {
-                            completionHandler(nil, error)
-                        } else {
-                            completionHandler(data["imageId"], nil)
-                        }
-                    }
+                    completionHandler(params["imageId"], nil)
                 }
-            }, option: nil)
+            }
         }
     }
 }

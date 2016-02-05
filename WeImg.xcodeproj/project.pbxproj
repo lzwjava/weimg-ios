@@ -45,6 +45,7 @@
 		706BD6EB1C64DF8D00A277D7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6EA1C64DF8D00A277D7 /* Models.swift */; };
 		706BD6ED1C64E78B00A277D7 /* NSFileManager+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6EC1C64E78B00A277D7 /* NSFileManager+Yep.swift */; };
 		706BD6EF1C64EA9E00A277D7 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6EE1C64EA9E00A277D7 /* Avatar.swift */; };
+		706BD6F11C65291500A277D7 /* EmptyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6F01C65291500A277D7 /* EmptyObject.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -149,6 +150,7 @@
 		706BD6EA1C64DF8D00A277D7 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		706BD6EC1C64E78B00A277D7 /* NSFileManager+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Yep.swift"; sourceTree = "<group>"; };
 		706BD6EE1C64EA9E00A277D7 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		706BD6F01C65291500A277D7 /* EmptyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyObject.swift; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				706BD6D91C63A0B500A277D7 /* DiscoveredUser.swift */,
 				706BD6EA1C64DF8D00A277D7 /* Models.swift */,
 				706BD6EE1C64EA9E00A277D7 /* Avatar.swift */,
+				706BD6F01C65291500A277D7 /* EmptyObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
 				706BD6821C63022700A277D7 /* SettingsUserCell.swift in Sources */,
 				706BD6871C63025B00A277D7 /* SettingsMoreCell.swift in Sources */,
+				706BD6F11C65291500A277D7 /* EmptyObject.swift in Sources */,
 				706BD6781C626C8900A277D7 /* RegisterPickPasswordViewController.swift in Sources */,
 				70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */,
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,

@@ -14,18 +14,10 @@ class HttpClient {
     
     private static var baseUrl : String = "http://localhost:3005/";
     
-    private static func get(URLString: URLStringConvertible,
-        parameters: [String: AnyObject]? = nil)
-        -> Request
-    {
-        let url = baseUrl + URLString.URLString;
-        return Alamofire.request(.GET, url, parameters: parameters)
-    }
-    
-    private static func get(URLString: URLStringConvertible,
-        parameters: [String: AnyObject]? = nil, completion:(AnyObject?, NSError?) -> Void){
-        let url = baseUrl + URLString.URLString;
-        Alamofire.request(.GET, url, parameters: parameters).responseJSON { (resp: Response<AnyObject, NSError>) -> Void in
+    private static func request(method: Alamofire.Method, _ URLString: URLStringConvertible,
+        parameters: [String: AnyObject]? = nil, completion:(AnyObject?, NSError?) -> Void) {
+        let url = baseUrl + URLString.URLString
+        Alamofire.request(method, url, parameters: parameters).responseJSON { (resp: Response<AnyObject, NSError>) -> Void in
             if let error = errorFromReponse(resp) {
                 completion(nil, error)
             } else {
@@ -40,9 +32,9 @@ class HttpClient {
         return error
     }
     
-    private static func get<T: Mappable>(URLString: URLStringConvertible,
-        parameters: [String: AnyObject]? = nil,array: Bool, completion:(T?, [T], NSError?) -> Void) {
-            get(URLString, parameters: parameters) { (result: AnyObject?, error: NSError?) -> Void in
+    private static func request<T: Mappable>(method: Alamofire.Method, _ URLString: URLStringConvertible,
+        parameters: [String: AnyObject]? = nil, array: Bool, completion:(T?, [T], NSError?) -> Void) {
+            request(method, URLString, parameters: parameters) { (result: AnyObject?, error: NSError?) -> Void in
                 guard error == nil else {
                     completion(nil, [], error)
                     return
@@ -66,15 +58,25 @@ class HttpClient {
             }
     }
     
-    static func get<T: Mappable>(URLString: URLStringConvertible,
+    static func request<T: Mappable>(method: Alamofire.Method, _ URLString: URLStringConvertible,
         parameters: [String: AnyObject]? = nil, completion:(T?, NSError?) -> Void) {
-            get(URLString, parameters: parameters, array: false) { (object: T?, array: [T]?, error: NSError?) -> Void in
+            request(method, URLString, parameters: parameters, array: false) { (object: T?, array: [T]?, error: NSError?) -> Void in
                 completion(object, error)
             }
     }
+    
+    static func request(method: Alamofire.Method, _ URLString: URLStringConvertible,
+        parameters: [String: AnyObject]? = nil, completion:(NSError?) -> Void) {
+            request(method, URLString, parameters: parameters) {
+                (object: EmptyObject?, error: NSError?) in
+                completion(error)
+            }
+    }
+    
+    
 
-    static func getArray<T: Mappable>(URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, completion:([T], NSError?) -> Void) {
-            get(URLString, parameters: parameters, array: true) { (object: T?, array: [T], error: NSError?) -> Void in
+    static func requestArray<T: Mappable>(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, completion:([T], NSError?) -> Void) {
+            request(method, URLString, parameters: parameters, array: true) { (object: T?, array: [T], error: NSError?) -> Void in
                 completion(array, error)
             }
     }
@@ -105,42 +107,6 @@ class HttpClient {
     private static func resultFromReponse(resp: Response<AnyObject, NSError>) -> AnyObject? {
         let dict = resp.result.value as! [String: AnyObject]
         return dict["result"]
-    }
-    
-    static func post(URLString: URLStringConvertible,
-        parameters: [String: AnyObject]?, completionHandler: ([String: AnyObject]?, NSError?) -> Void) {
-        let url = baseUrl + URLString.URLString
-        Alamofire.request(.POST, url, parameters: parameters).responseJSON() { (resp: Response<AnyObject, NSError>) in
-                if let error = errorFromReponse(resp) {
-                    completionHandler(nil, error)
-                } else {
-                    let result = resultFromReponse(resp)
-                    completionHandler(result as? [String:AnyObject], nil)
-                }
-            }
-    }
-    
-    static func post<T: Mappable>(URLString: URLStringConvertible,
-        parameters: [String: AnyObject]? = nil, completion:(T?, NSError?) -> Void) {
-            post(URLString, parameters: parameters) { (dict: [String : AnyObject]?, error: NSError?) -> Void in
-                guard error == nil else {
-                    completion(nil, error)
-                    return
-                }
-                let parsedObject = Mapper<T>().map(dict)
-                guard parsedObject != nil else {
-                    completion(nil, objectMapperError())
-                    return
-                }
-                completion(parsedObject, nil)
-            }
-    }
-    
-    static func post(URLString: URLStringConvertible,
-        parameters: [String: AnyObject], completionHandler: (NSError?) -> Void) {
-            post(URLString, parameters: parameters) { (dict: [String: AnyObject]?, error: NSError?) -> Void in
-                completionHandler(error)
-            }
     }
     
 }
