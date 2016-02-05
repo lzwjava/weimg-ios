@@ -8,7 +8,6 @@
 
 import UIKit
 import Navi
-import RealmSwift
 
 private let screenScale = UIScreen.mainScreen().scale
 
@@ -49,8 +48,7 @@ extension PlainAvatar: Navi.Avatar {
     var localOriginalImage: UIImage? {
 
         if let
-            realm = try? Realm(),
-            avatar = avatarWithAvatarURLString(avatarUrl, inRealm: realm),
+            avatar = avatarWithAvatarURLString(avatarUrl),
             avatarFileURL = NSFileManager.yepAvatarURLWithName(avatar.avatarFileName),
             avatarFilePath = avatarFileURL.path,
             image = UIImage(contentsOfFile: avatarFilePath) {
@@ -66,15 +64,13 @@ extension PlainAvatar: Navi.Avatar {
 
         case miniAvatarStyle:
             if let
-                realm = try? Realm(),
-                avatar = avatarWithAvatarURLString(avatarUrl, inRealm: realm) {
+                avatar = avatarWithAvatarURLString(avatarUrl) {
                     return UIImage(data: avatar.roundMini, scale: screenScale)
             }
 
         case nanoAvatarStyle:
             if let
-                realm = try? Realm(),
-                avatar = avatarWithAvatarURLString(avatarUrl, inRealm: realm) {
+                avatar = avatarWithAvatarURLString(avatarUrl) {
                     return UIImage(data: avatar.roundNano, scale: screenScale)
             }
 
@@ -86,21 +82,16 @@ extension PlainAvatar: Navi.Avatar {
     }
 
     func saveOriginalImage(originalImage: UIImage, styledImage: UIImage) {
-
-        guard let realm = try? Realm() else {
-            return
-        }
-
-        var _avatar = avatarWithAvatarURLString(avatarUrl, inRealm: realm)
+        var _avatar = avatarWithAvatarURLString(avatarUrl)
 
         if _avatar == nil {
 
             let newAvatar = Avatar()
             newAvatar.avatarUrl = avatarUrl
-
-            let _ = try? realm.write {
-                realm.add(newAvatar)
-            }
+//
+//            let _ = try? realm.write {
+//                realm.add(newAvatar)
+//            }
 
             _avatar = newAvatar
         }
@@ -113,9 +104,9 @@ extension PlainAvatar: Navi.Avatar {
 
         if avatar.avatarFileName.isEmpty, let _ = NSFileManager.saveAvatarImage(originalImage, withName: avatarFileName) {
 
-            let _ = try? realm.write {
-                avatar.avatarFileName = avatarFileName
-            }
+//            let _ = try? realm.write {
+//                avatar.avatarFileName = avatarFileName
+//            }
         }
 
         switch style {
@@ -126,16 +117,16 @@ extension PlainAvatar: Navi.Avatar {
 
             case 60:
                 if avatar.roundMini.length == 0, let data = UIImagePNGRepresentation(styledImage) {
-                    let _ = try? realm.write {
-                        avatar.roundMini = data
-                    }
+//                    let _ = try? realm.write {
+//                        avatar.roundMini = data
+//                    }
                 }
 
             case 40:
                 if avatar.roundNano.length == 0, let data = UIImagePNGRepresentation(styledImage) {
-                    let _ = try? realm.write {
-                        avatar.roundNano = data
-                    }
+//                    let _ = try? realm.write {
+//                        avatar.roundNano = data
+//                    }
                 }
 
             default:

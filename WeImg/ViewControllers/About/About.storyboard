@@ -8,7 +8,7 @@
         <!--About View Controller-->
         <scene sceneID="BoP-eo-dVd">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="B7e-qT-n3V" customClass="AboutViewController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="B7e-qT-n3V" customClass="AboutViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3gP-F0-Md3"/>
                         <viewControllerLayoutGuide type="bottom" id="DBV-iO-pWY"/>
@@ -74,20 +74,11 @@
                         <outlet property="appNameLabelTopConstraint" destination="zqS-j4-rlV" id="qpT-S9-J8m"/>
                         <outlet property="appVersionLabel" destination="YGt-Mh-BQL" id="a3Z-VW-vYX"/>
                         <outlet property="copyrightLabel" destination="rHG-mc-O86" id="dp1-ib-h6d"/>
-                        <segue destination="coO-i5-47H" kind="show" identifier="showPodsHelpYep" id="8y6-rc-3Xj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1FF-09-HTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3727" y="797"/>
-        </scene>
-        <!--PodsHelpYepViewController-->
-        <scene sceneID="FNg-E5-Dqm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PodsHelpYep" referencedIdentifier="PodsHelpYepViewController" id="coO-i5-47H" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="21H-JD-2rB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4242.5" y="797"/>
         </scene>
     </scenes>
     <resources>

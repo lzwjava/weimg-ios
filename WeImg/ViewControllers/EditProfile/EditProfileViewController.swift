@@ -10,7 +10,6 @@ import UIKit
 import TPKeyboardAvoiding
 import Proposer
 import Navi
-import RealmSwift
 
 class EditProfileViewController: SegueViewController {
 
@@ -210,8 +209,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
                 var username = ""
                 if let
                     myUserID = UserManager.currentUser?.userId,
-                    realm = try? Realm(),
-                    me = userWithUserID(myUserID, inRealm: realm) {
+                    me = userWithUserID(myUserID) {
                         username = me.username
                 }
 
@@ -349,7 +347,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
 
                 if let
                     myUserID = UserManager.currentUser?.userId,
-                    me = userWithUserID(myUserID, inRealm: try! Realm()) {
+                    me = userWithUserID(myUserID) {
 
                         let username = me.username
 

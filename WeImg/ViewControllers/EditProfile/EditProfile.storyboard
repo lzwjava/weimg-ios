@@ -9,7 +9,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="wug-qX-SHm">
             <objects>
-                <viewController storyboardIdentifier="EditProfileViewController" id="ARL-wa-16S" customClass="EditProfileViewController" customModule="Yep" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="ARL-wa-16S" customClass="EditProfileViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="scg-q0-Icz"/>
                         <viewControllerLayoutGuide type="bottom" id="AOC-F1-9xe"/>
@@ -100,9 +100,6 @@
                         <outlet property="avatarImageViewWidthConstraint" destination="VqV-cy-fEX" id="UmF-DJ-fYz"/>
                         <outlet property="editProfileTableView" destination="dZB-Et-VDq" id="hcV-Va-JSZ"/>
                         <outlet property="mobileLabel" destination="vpA-xU-vyL" id="naY-1Y-zOj"/>
-                        <segue destination="yin-fx-rF6" kind="show" identifier="showEditNicknameAndBadge" id="D3C-Fh-mgy">
-                            <nil key="action"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERa-8Z-cFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,14 +110,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4251" y="-959"/>
-        </scene>
-        <!--EditNicknameAndBadgeViewController-->
-        <scene sceneID="mMh-xj-HKm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="EditNicknameAndBadge" referencedIdentifier="EditNicknameAndBadgeViewController" id="yin-fx-rF6" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hvl-rR-gPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4828" y="-959"/>
         </scene>
     </scenes>
     <resources>

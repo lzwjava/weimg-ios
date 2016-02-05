@@ -45,9 +45,6 @@
                         <segue destination="qUb-Rp-vab" kind="show" identifier="showEditProfile" id="527-Oc-L5m">
                             <nil key="action"/>
                         </segue>
-                        <segue destination="2UT-sY-Fqw" kind="show" identifier="showNotifications" id="CJR-QK-H7k">
-                            <nil key="action"/>
-                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COs-ps-Zbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,21 +59,13 @@
             </objects>
             <point key="canvasLocation" x="3488" y="219"/>
         </scene>
-        <!--NotificationsViewController-->
-        <scene sceneID="OcI-sq-fZb">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Notifications" referencedIdentifier="NotificationsViewController" id="2UT-sY-Fqw" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HRa-hq-dX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3495" y="297"/>
-        </scene>
         <!--FeedbackViewController-->
         <scene sceneID="oUO-1z-Qao">
             <objects>
                 <viewControllerPlaceholder storyboardName="Feedback" referencedIdentifier="FeedbackViewController" id="feD-q4-5Gn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2s-Du-rjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3486" y="373"/>
+            <point key="canvasLocation" x="3484.5" y="325"/>
         </scene>
         <!--AboutViewController-->
         <scene sceneID="Ipc-zL-ez7">
