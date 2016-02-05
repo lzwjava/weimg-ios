@@ -52,6 +52,8 @@
 		706BD6E41C63B4F500A277D7 /* PlainAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6E31C63B4F500A277D7 /* PlainAvatar.swift */; };
 		706BD6E61C63BA7300A277D7 /* AvatarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6E51C63BA7300A277D7 /* AvatarStyles.swift */; };
 		706BD6E91C63C20D00A277D7 /* YepNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6E81C63C20D00A277D7 /* YepNavigationController.swift */; };
+		706BD6EB1C64DF8D00A277D7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6EA1C64DF8D00A277D7 /* Models.swift */; };
+		706BD6ED1C64E78B00A277D7 /* NSFileManager+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6EC1C64E78B00A277D7 /* NSFileManager+Yep.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -163,6 +165,8 @@
 		706BD6E31C63B4F500A277D7 /* PlainAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainAvatar.swift; sourceTree = "<group>"; };
 		706BD6E51C63BA7300A277D7 /* AvatarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarStyles.swift; sourceTree = "<group>"; };
 		706BD6E81C63C20D00A277D7 /* YepNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepNavigationController.swift; sourceTree = "<group>"; };
+		706BD6EA1C64DF8D00A277D7 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		706BD6EC1C64E78B00A277D7 /* NSFileManager+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Yep.swift"; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -513,6 +517,7 @@
 				70C2F4041C60E6B500C345B2 /* UploadToken.swift */,
 				70C2F4051C60E6B500C345B2 /* User.swift */,
 				706BD6D91C63A0B500A277D7 /* DiscoveredUser.swift */,
+				706BD6EA1C64DF8D00A277D7 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -584,6 +589,7 @@
 				70C2F41E1C60ED0300C345B2 /* NSTimeZone+Yep.swift */,
 				70C2F4191C60EC9600C345B2 /* UIColor+Yep.swift */,
 				70C2F4171C60EC6E00C345B2 /* UIColor+WeImg.swift */,
+				706BD6EC1C64E78B00A277D7 /* NSFileManager+Yep.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -865,6 +871,7 @@
 				70C2F3DE1C60E68200C345B2 /* FirstViewController.swift in Sources */,
 				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
 				706BD6E21C63B01B00A277D7 /* WeChatActivity.swift in Sources */,
+				706BD6ED1C64E78B00A277D7 /* NSFileManager+Yep.swift in Sources */,
 				706BD67D1C63019B00A277D7 /* SettingsViewController.swift in Sources */,
 				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
 				70C2F4451C61C44C00C345B2 /* WelcomeViewController.swift in Sources */,
@@ -875,6 +882,7 @@
 				706BD6D71C6395F100A277D7 /* ProfileLayout.swift in Sources */,
 				706BD6CC1C63752A00A277D7 /* ProfileSeparationLineCell.swift in Sources */,
 				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,
+				706BD6EB1C64DF8D00A277D7 /* Models.swift in Sources */,
 				70C2F4381C61BD2E00C345B2 /* ShowStepMatchViewController.swift in Sources */,
 				70C2F41D1C60ECD600C345B2 /* NavigationTitleLabel.swift in Sources */,
 				706BD6A81C6358C300A277D7 /* EditProfileLessInfoCell.swift in Sources */,

@@ -50,12 +50,12 @@ class ProfileFooterCell: UICollectionViewCell {
         userID = profileUser.userId
         profileUserIsMe = profileUser.isMe
 
-        configureWithNickname(profileUser.nickname ?? "", username: profileUser.username, introduction: introduction)
+        configureWithNickname("", username: profileUser.username, introduction: introduction)
     }
 
     private func configureWithNickname(nickname: String, username: String?, introduction: String) {
 
-        nicknameLabel.text = nickname
+        nicknameLabel.text = username
 
         if let username = username {
             usernameLabel.text = "@" + username

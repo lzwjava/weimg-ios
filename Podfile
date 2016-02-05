@@ -19,6 +19,7 @@ target 'WeImg' do
     pod 'Kingfisher', '~> 2.0.1'
     pod 'FXBlurView', '~> 1.6.4'
     pod 'MonkeyKing', '0.0.2'
+    pod 'RealmSwift', '0.97.0'
 end
 
 target 'WeImgTests' do

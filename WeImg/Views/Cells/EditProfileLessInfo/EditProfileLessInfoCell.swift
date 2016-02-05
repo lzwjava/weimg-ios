@@ -20,8 +20,6 @@ class EditProfileLessInfoCell: UITableViewCell {
         static let normalInfoLabelTrailing: CGFloat = 8 + 30 + 8
     }
 
-    @IBOutlet weak var badgeImageView: UIImageView!
-
     @IBOutlet weak var accessoryImageView: UIImageView!
 
     override func awakeFromNib() {

@@ -13,6 +13,7 @@ import SafariServices
 import Kingfisher
 import Proposer
 import CoreLocation
+import RealmSwift
 
 let profileAvatarAspectRatio: CGFloat = 12.0 / 16.0
 
@@ -81,17 +82,6 @@ enum ProfileUser {
 }
 
 class ProfileViewController: SegueViewController {
-    
-
-    enum FromType {
-        case None
-        case OneToOneConversation
-        case GroupConversation
-    }
-    var fromType: FromType = .None
-
-    var oAuthCompleteAction: (() -> Void)?
-
 
     var profileUser: ProfileUser?
     var profileUserIsMe = true {
@@ -106,13 +96,6 @@ class ProfileViewController: SegueViewController {
             }
         }
     }
-
-    #if DEBUG
-    private lazy var profileFPSLabel: FPSLabel = {
-        let label = FPSLabel()
-        return label
-    }()
-    #endif
 
     private var statusBarShouldLight = false
 
@@ -145,23 +128,23 @@ class ProfileViewController: SegueViewController {
             self.updateProfileCollectionView()
         }
 
-        if let profileUser = self.profileUser {
-            switch profileUser {
-                
-            case .DiscoveredUserType(let discoveredUser):
-                if let _introduction = discoveredUser.introduction {
-                    if !_introduction.isEmpty {
-                        introduction = _introduction
-                    }
-                }
-
-            case .UserType(let user):
-
-                if !user.introduction.isEmpty {
-                    introduction = user.introduction
-                }
-
-                if user.friendState == UserFriendState.Me {
+//        if let profileUser = self.profileUser {
+//            switch profileUser {
+//                
+//            case .DiscoveredUserType(let discoveredUser):
+//                if let _introduction = discoveredUser.introduction {
+//                    if !_introduction.isEmpty {
+//                        introduction = _introduction
+//                    }
+//                }
+//
+//            case .UserType(let user):
+//
+//                if !user.introduction.isEmpty {
+//                    introduction = user.introduction
+//                }
+//
+//                if user.friendState == UserFriendState.Me.rawValue {
 //                    YepUserDefaults.introduction.bindListener(self.listener.introduction) { [weak self] introduction in
 //                        dispatch_async(dispatch_get_main_queue()) {
 //                            if let introduction = introduction {
@@ -169,9 +152,9 @@ class ProfileViewController: SegueViewController {
 //                            }
 //                        }
 //                    }
-                }
-            }
-        }
+//                }
+//            }
+//        }
 
         return introduction ?? NSLocalizedString("No Introduction yet.", comment: "")
     }()
@@ -206,10 +189,6 @@ class ProfileViewController: SegueViewController {
 
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
-
-        YepUserDefaults.nickname.removeListenerWithName(listener.nickname)
-        YepUserDefaults.introduction.removeListenerWithName(listener.introduction)
-        YepUserDefaults.avatarUrl.removeListenerWithName(listener.avatar)
 
         profileCollectionView?.delegate = nil
 
@@ -255,13 +234,13 @@ class ProfileViewController: SegueViewController {
                     break
                 }
 
-                if let user = userWithUserID(discoveredUser.id, inRealm: realm) {
+                if let user = userWithUserID(discoveredUser.userId, inRealm: realm) {
                     
                     self.profileUser = ProfileUser.UserType(user)
 
                     updateProfileCollectionView()
                     
-                    GoogleAnalyticsTrackEvent("Visit Profile", label: user.nickname, value: 0)
+                    GoogleAnalyticsTrackEvent("Visit Profile", label: user.username, value: 0)
                 }
 
             default:
@@ -281,21 +260,21 @@ class ProfileViewController: SegueViewController {
 
         } else {
 
-            // 为空的话就要显示自己
-            syncMyInfoAndDoFurtherAction {
-
-                // 提示没有 Skills
-                guard let
-                    myUserID = YepUserDefaults.userID.value,
-                    realm = try? Realm(),
-                    me = userWithUserID(myUserID, inRealm: realm) else {
-                        return
-                }
-
-            }
+//            // 为空的话就要显示自己
+//            syncMyInfoAndDoFurtherAction {
+//
+//                // 提示没有 Skills
+//                guard let
+//                    myUserID = YepUserDefaults.userID.value,
+//                    realm = try? Realm(),
+//                    me = userWithUserID(myUserID, inRealm: realm) else {
+//                        return
+//                }
+//
+//            }
 
             if let
-                myUserID = YepUserDefaults.userID.value,
+                myUserID = UserManager.currentUser?.userId,
                 realm = try? Realm(),
                 me = userWithUserID(myUserID, inRealm: realm) {
                     profileUser = ProfileUser.UserType(me)
@@ -389,29 +368,13 @@ class ProfileViewController: SegueViewController {
             switch profileUser {
 
             case .DiscoveredUserType(let discoveredUser):
-                customNavigationItem.title = discoveredUser.nickname
+                customNavigationItem.title = discoveredUser.username
 
             case .UserType(let user):
-                customNavigationItem.title = user.nickname
+                customNavigationItem.title = user.username
 
-                if user.friendState == UserFriendState.Me {
-                    YepUserDefaults.nickname.bindListener(listener.nickname) { [weak self] nickname in
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self?.customNavigationItem.title = nickname
-                        }
-                    }
-
-                    YepUserDefaults.avatarUrl.bindListener(listener.avatar) { [weak self] avatarUrl in
-                        dispatch_async(dispatch_get_main_queue()) {
-                            let indexPath = NSIndexPath(forItem: 0, inSection: ProfileSection.Header.rawValue)
-                            if let cell = self?.profileCollectionView.cellForItemAtIndexPath(indexPath) as? ProfileHeaderCell {
-                                if let avatarUrl = avatarUrl {
-                                    cell.blurredAvatarImage = nil // need reblur
-                                    cell.updateAvatarWithAvatarURLString(avatarUrl)
-                                }
-                            }
-                        }
-                    }
+                if user.friendState == UserFriendState.Me.rawValue {
+                    self.customNavigationItem.title = UserManager.currentUser?.username
                 }
             }
 
@@ -419,31 +382,31 @@ class ProfileViewController: SegueViewController {
 
                 let userID = profileUser.userId
 
-                userInfoOfUserWithUserID(userID, failureHandler: nil, completion: { userInfo in
-                    //println("userInfoOfUserWithUserID \(userInfo)")
-
-                    // 对非好友来说，必要
-
-                    dispatch_async(dispatch_get_main_queue()) { [weak self] in
-
-                        if let realm = try? Realm() {
-                            let _ = try? realm.write {
-                                updateUserWithUserID(userID, useUserInfo: userInfo, inRealm: realm)
-                            }
-                        }
-
-                        if let discoveredUser = parseDiscoveredUser(userInfo) {
-                            switch profileUser {
-                            case .DiscoveredUserType:
-                                self?.profileUser = ProfileUser.DiscoveredUserType(discoveredUser)
-                            default:
-                                break
-                            }
-                        }
-                        
-                        self?.updateProfileCollectionView()
-                    }
-                })
+//                userInfoOfUserWithUserID(userID, failureHandler: nil, completion: { userInfo in
+//                    //println("userInfoOfUserWithUserID \(userInfo)")
+//
+//                    // 对非好友来说，必要
+//
+//                    dispatch_async(dispatch_get_main_queue()) { [weak self] in
+//
+//                        if let realm = try? Realm() {
+//                            let _ = try? realm.write {
+//                                updateUserWithUserID(userID, useUserInfo: userInfo, inRealm: realm)
+//                            }
+//                        }
+//
+//                        if let discoveredUser = parseDiscoveredUser(userInfo) {
+//                            switch profileUser {
+//                            case .DiscoveredUserType:
+//                                self?.profileUser = ProfileUser.DiscoveredUserType(discoveredUser)
+//                            default:
+//                                break
+//                            }
+//                        }
+//                        
+//                        self?.updateProfileCollectionView()
+//                    }
+//                })
             }
 
             if profileUserIsMe {
@@ -464,27 +427,17 @@ class ProfileViewController: SegueViewController {
                 }
             }
         }
-
-        if profileUserIsMe {
-            proposeToAccess(.Location(.WhenInUse), agreed: {
-                YepLocationService.turnOn()
-
-                YepLocationService.sharedManager.afterUpdatedLocationAction = { [weak self] newLocation in
-
-                    let indexPath = NSIndexPath(forItem: 0, inSection: ProfileSection.Footer.rawValue)
-                    if let cell = self?.profileCollectionView.cellForItemAtIndexPath(indexPath) as? ProfileFooterCell {
-                        cell.location = newLocation
-                    }
-                }
-
-            }, rejected: {
-                println("Yep can NOT get Location. :[\n")
-            })
+    }
+    
+    func updateAvatar() {
+        let avatarUrl = UserManager.currentUser?.avatarUrl
+        let indexPath = NSIndexPath(forItem: 0, inSection: ProfileSection.Header.rawValue)
+        if let cell = self.profileCollectionView.cellForItemAtIndexPath(indexPath) as? ProfileHeaderCell {
+            if let avatarUrl = avatarUrl {
+                cell.blurredAvatarImage = nil // need reblur
+                cell.updateAvatarWithAvatarURLString(avatarUrl)
+            }
         }
-
-        #if DEBUG
-//            view.addSubview(profileFPSLabel)
-        #endif
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -516,58 +469,58 @@ class ProfileViewController: SegueViewController {
 
     private func shareProfile() {
 
-         if let username = profileUser?.username, profileURL = NSURL(string: "http://soyep.com/\(username)"), nickname = profileUser?.nickname {
-
-            var thumbnail: UIImage?
-
-            if let
-                avatarUrl = profileUser?.avatarUrl,
-                realm = try? Realm(),
-                avatar = avatarWithAvatarURLString(avatarUrl, inRealm: realm) {
-                    if let
-                        avatarFileURL = NSFileManager.yepAvatarURLWithName(avatar.avatarFileName),
-                        avatarFilePath = avatarFileURL.path,
-                        image = UIImage(contentsOfFile: avatarFilePath) {
-                            thumbnail = image.navi_centerCropWithSize(CGSize(width: 100, height: 100))
-                    }
-            }
-
-            let info = MonkeyKing.Info(
-                //title: String(format:NSLocalizedString("Yep! I'm %@.", comment: ""), nickname),
-                title: nickname,
-                description: NSLocalizedString("From Yep, with Skills.", comment: ""),
-                thumbnail: thumbnail,
-                media: .URL(profileURL)
-            )
-
-            let sessionMessage = MonkeyKing.Message.WeChat(.Session(info: info))
-
-            let weChatSessionActivity = WeChatActivity(
-                type: .Session,
-                message: sessionMessage,
-                finish: { success in
-                    println("share Profile to WeChat Session success: \(success)")
-                    GoogleAnalyticsTrackSocial("WeChat Session", action: "Profile", target: profileURL.absoluteString)
-                }
-            )
-
-            let timelineMessage = MonkeyKing.Message.WeChat(.Timeline(info: info))
-
-            let weChatTimelineActivity = WeChatActivity(
-                type: .Timeline,
-                message: timelineMessage,
-                finish: { success in
-                    println("share Profile to WeChat Timeline success: \(success)")
-                    GoogleAnalyticsTrackSocial("WeChat Timeline", action: "Profile", target: profileURL.absoluteString)
-                }
-            )
-            
-            GoogleAnalyticsTrackSocial("Share", action: "Profile", target: profileURL.absoluteString)
-
-            let activityViewController = UIActivityViewController(activityItems: ["\(nickname), \(NSLocalizedString("From Yep, with Skills.", comment: "")) \(profileURL)"], applicationActivities: [weChatSessionActivity, weChatTimelineActivity])
-
-            self.presentViewController(activityViewController, animated: true, completion: nil)
-        }
+//         if let username = profileUser?.username, profileURL = NSURL(string: "http://soyep.com/\(username)"), nickname = profileUser?.nickname {
+//
+//            var thumbnail: UIImage?
+//
+//            if let
+//                avatarUrl = profileUser?.avatarUrl,
+//                realm = try? Realm(),
+//                avatar = avatarWithAvatarURLString(avatarUrl, inRealm: realm) {
+//                    if let
+//                        avatarFileURL = NSFileManager.yepAvatarURLWithName(avatar.avatarFileName),
+//                        avatarFilePath = avatarFileURL.path,
+//                        image = UIImage(contentsOfFile: avatarFilePath) {
+//                            thumbnail = image.navi_centerCropWithSize(CGSize(width: 100, height: 100))
+//                    }
+//            }
+//
+//            let info = MonkeyKing.Info(
+//                //title: String(format:NSLocalizedString("Yep! I'm %@.", comment: ""), nickname),
+//                title: nickname,
+//                description: NSLocalizedString("From Yep, with Skills.", comment: ""),
+//                thumbnail: thumbnail,
+//                media: .URL(profileURL)
+//            )
+//
+//            let sessionMessage = MonkeyKing.Message.WeChat(.Session(info: info))
+//
+//            let weChatSessionActivity = WeChatActivity(
+//                type: .Session,
+//                message: sessionMessage,
+//                finish: { success in
+//                    println("share Profile to WeChat Session success: \(success)")
+//                    GoogleAnalyticsTrackSocial("WeChat Session", action: "Profile", target: profileURL.absoluteString)
+//                }
+//            )
+//
+//            let timelineMessage = MonkeyKing.Message.WeChat(.Timeline(info: info))
+//
+//            let weChatTimelineActivity = WeChatActivity(
+//                type: .Timeline,
+//                message: timelineMessage,
+//                finish: { success in
+//                    println("share Profile to WeChat Timeline success: \(success)")
+//                    GoogleAnalyticsTrackSocial("WeChat Timeline", action: "Profile", target: profileURL.absoluteString)
+//                }
+//            )
+//            
+//            GoogleAnalyticsTrackSocial("Share", action: "Profile", target: profileURL.absoluteString)
+//
+//            let activityViewController = UIActivityViewController(activityItems: ["\(nickname), \(NSLocalizedString("From Yep, with Skills.", comment: "")) \(profileURL)"], applicationActivities: [weChatSessionActivity, weChatTimelineActivity])
+//
+//            self.presentViewController(activityViewController, animated: true, completion: nil)
+//        }
     }
 
     @objc private func tryShareMyProfile(sender: AnyObject?) {
@@ -575,7 +528,7 @@ class ProfileViewController: SegueViewController {
         if let _ = profileUser?.username {
             
             if let profileUser = profileUser {
-                GoogleAnalyticsTrackEvent("Share Profile", label: "\(profileUser.nickname) \(profileUser.userId)", value: 0)
+                GoogleAnalyticsTrackEvent("Share Profile", label: "\(profileUser.username) \(profileUser.userId)", value: 0)
             }
             
             shareProfile()
@@ -586,28 +539,28 @@ class ProfileViewController: SegueViewController {
 
                 let newUsername = text
 
-                updateMyselfWithInfo(["username": newUsername], failureHandler: { [weak self] reason, errorMessage in
-                    defaultFailureHandler(reason, errorMessage: errorMessage)
-
-                    YepAlert.alertSorry(message: errorMessage ?? NSLocalizedString("Create username failed!", comment: ""), inViewController: self)
-
-                }, completion: { success in
-                    dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                        guard let realm = try? Realm() else {
-                            return
-                        }
-                        if let
-                            myUserID = YepUserDefaults.userID.value,
-                            me = userWithUserID(myUserID, inRealm: realm) {
-                                let _ = try? realm.write {
-                                    me.username = newUsername
-                                }
-                        }
-
-                        self?.shareProfile()
-                    }
-                })
-
+//            updateMyselfWithInfo(["username": newUsername], failureHandler: { [weak self] reason, errorMessage in
+//                    defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//                    YepAlert.alertSorry(message: errorMessage ?? NSLocalizedString("Create username failed!", comment: ""), inViewController: self)
+//
+//                }, completion: { success in
+//                    dispatch_async(dispatch_get_main_queue()) { [weak self] in
+//                        guard let realm = try? Realm() else {
+//                            return
+//                        }
+//                        if let
+//                            myUserID = YepUserDefaults.userID.value,
+//                            me = userWithUserID(myUserID, inRealm: realm) {
+//                                let _ = try? realm.write {
+//                                    me.username = newUsername
+//                                }
+//                        }
+//
+//                        self?.shareProfile()
+//                    }
+//                })
+//
             }, cancelAction: {
             })
         }
@@ -762,7 +715,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             return 1
 
         case ProfileSection.SeparationLine.rawValue:
-            let needSeparationLine = profileUser?.needSeparationLine ?? false
+            let needSeparationLine = false
             return needSeparationLine ? 1 : 0
 
         case ProfileSection.SeparationLine2.rawValue:
@@ -817,12 +770,9 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(separationLineCellIdentifier, forIndexPath: indexPath) as! ProfileSeparationLineCell
             return cell
             
-        case ProfileSection.SeparationLine2.rawValue:
+        default:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(separationLineCellIdentifier, forIndexPath: indexPath) as! ProfileSeparationLineCell
             return cell
-
-        default:
-            break;
         }
     }
 

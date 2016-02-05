@@ -10,6 +10,7 @@ import UIKit
 import TPKeyboardAvoiding
 import Proposer
 import Navi
+import RealmSwift
 
 class EditProfileViewController: SegueViewController {
 
@@ -43,7 +44,7 @@ class EditProfileViewController: SegueViewController {
     private let editProfileColoredTitleCellIdentifier = "EditProfileColoredTitleCell"
 
     private var introduction: String {
-        return YepUserDefaults.introduction.value ?? NSLocalizedString("No Introduction yet.", comment: "")
+        return UserManager.currentUser?.introduction ?? NSLocalizedString("No Introduction yet.", comment: "")
     }
 
     private let introAttributes = [NSFontAttributeName: YepConfig.EditProfile.introFont]
@@ -55,9 +56,6 @@ class EditProfileViewController: SegueViewController {
     }
 
     deinit {
-        YepUserDefaults.nickname.removeListenerWithName(Listener.Nickname)
-        YepUserDefaults.introduction.removeListenerWithName(Listener.Introduction)
-        YepUserDefaults.badge.removeListenerWithName(Listener.Badge)
 
         editProfileTableView?.delegate = nil
 
@@ -74,7 +72,7 @@ class EditProfileViewController: SegueViewController {
 
         updateAvatar() {}
 
-        mobileLabel.text = YepUserDefaults.fullPhoneNumber
+        mobileLabel.text = UserManager.currentUser?.mobilePhoneNumber
 
         editProfileTableView.registerNib(UINib(nibName: editProfileLessInfoCellIdentifier, bundle: nil), forCellReuseIdentifier: editProfileLessInfoCellIdentifier)
         editProfileTableView.registerNib(UINib(nibName: editProfileMoreInfoCellIdentifier, bundle: nil), forCellReuseIdentifier: editProfileMoreInfoCellIdentifier)
@@ -90,7 +88,7 @@ class EditProfileViewController: SegueViewController {
     // MARK: Actions
 
     private func updateAvatar(completion:() -> Void) {
-        if let avatarUrl = YepUserDefaults.avatarUrl.value {
+        if let avatarUrl = UserManager.currentUser?.avatarUrl {
 
             println("avatarUrl: \(avatarUrl)")
 
@@ -211,7 +209,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
 
                 var username = ""
                 if let
-                    myUserID = YepUserDefaults.userID.value,
+                    myUserID = UserManager.currentUser?.userId,
                     realm = try? Realm(),
                     me = userWithUserID(myUserID, inRealm: realm) {
                         username = me.username
@@ -227,7 +225,6 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
                     cell.selectionStyle = .None
                 }
 
-                cell.badgeImageView.image = nil
                 cell.infoLabelTrailingConstraint.constant = EditProfileLessInfoCell.ConstraintConstant.minInfoLabelTrailing
 
                 return cell
@@ -239,27 +236,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.annotationLabel.text = NSLocalizedString("Nickname", comment: "")
                 cell.accessoryImageView.hidden = false
                 cell.selectionStyle = .Default
-
-                YepUserDefaults.nickname.bindAndFireListener(Listener.Nickname) { [weak cell] nickname in
-                    dispatch_async(dispatch_get_main_queue()) {
-                        cell?.infoLabel.text = nickname
-                    }
-                }
-
-                YepUserDefaults.badge.bindAndFireListener(Listener.Badge) { [weak cell] badgeName in
-                    dispatch_async(dispatch_get_main_queue()) {
-                        if let badgeName = badgeName, badge = BadgeView.Badge(rawValue: badgeName) {
-                            cell?.badgeImageView.image = badge.image
-                            cell?.badgeImageView.tintColor = badge.color
-                            cell?.infoLabelTrailingConstraint.constant = EditProfileLessInfoCell.ConstraintConstant.normalInfoLabelTrailing
-
-                        } else {
-                            cell?.badgeImageView.image = nil
-                            cell?.infoLabelTrailingConstraint.constant = EditProfileLessInfoCell.ConstraintConstant.minInfoLabelTrailing
-                        }
-                    }
-                }
-
+                cell.infoLabel.text = UserManager.currentUser?.username
                 return cell
 
             case InfoRow.Intro.rawValue:
@@ -267,12 +244,8 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
                 let cell = tableView.dequeueReusableCellWithIdentifier(editProfileMoreInfoCellIdentifier) as! EditProfileMoreInfoCell
 
                 cell.annotationLabel.text = NSLocalizedString("Introduction", comment: "")
-
-                YepUserDefaults.introduction.bindAndFireListener(Listener.Introduction) { [weak cell] introduction in
-                    dispatch_async(dispatch_get_main_queue()) {
-                        cell?.infoTextView.text = introduction ?? NSLocalizedString("Introduce yourself here.", comment: "")
-                    }
-                }
+                
+                cell.infoTextView.text = introduction ?? NSLocalizedString("Introduce yourself here.", comment: "")
 
                 cell.infoTextViewIsDirtyAction = { [weak self] isDirty in
                     self?.navigationItem.rightBarButtonItem = self?.doneButton
@@ -282,7 +255,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.infoTextViewDidEndEditingAction = { [weak self] newIntroduction in
                     self?.doneButton.enabled = false
 
-                    if let oldIntroduction = YepUserDefaults.introduction.value {
+                    if let oldIntroduction = UserManager.currentUser?.introduction {
                         if oldIntroduction == newIntroduction {
                             return
                         }
@@ -290,20 +263,20 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
 
                     YepHUD.showActivityIndicator()
 
-                    updateMyselfWithInfo(["introduction": newIntroduction], failureHandler: { (reason, errorMessage) in
-                        defaultFailureHandler(reason, errorMessage: errorMessage)
-
-                        YepHUD.hideActivityIndicator()
-
-                    }, completion: { success in
-                        dispatch_async(dispatch_get_main_queue()) {
-                            YepUserDefaults.introduction.value = newIntroduction
-
-                            self?.editProfileTableView.reloadData()
-                        }
-
-                        YepHUD.hideActivityIndicator()
-                    })
+//                    updateMyselfWithInfo(["introduction": newIntroduction], failureHandler: { (reason, errorMessage) in
+//                        defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//                        YepHUD.hideActivityIndicator()
+//
+//                    }, completion: { success in
+//                        dispatch_async(dispatch_get_main_queue()) {
+//                            YepUserDefaults.introduction.value = newIntroduction
+//
+//                            self?.editProfileTableView.reloadData()
+//                        }
+//
+//                        YepHUD.hideActivityIndicator()
+//                    })
                 }
 
                 return cell
@@ -375,7 +348,7 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
             case InfoRow.Username.rawValue:
 
                 if let
-                    myUserID = YepUserDefaults.userID.value,
+                    myUserID = UserManager.currentUser?.userId,
                     me = userWithUserID(myUserID, inRealm: try! Realm()) {
 
                         let username = me.username
@@ -386,32 +359,32 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
 
                                 let newUsername = text
 
-                                updateMyselfWithInfo(["username": newUsername], failureHandler: { [weak self] reason, errorMessage in
-                                    defaultFailureHandler(reason, errorMessage: errorMessage)
-
-                                    YepAlert.alertSorry(message: errorMessage ?? NSLocalizedString("Set username failed!", comment: ""), inViewController: self)
-
-                                }, completion: { success in
-                                    dispatch_async(dispatch_get_main_queue()) { [weak tableView] in
-                                        guard let realm = try? Realm() else {
-                                            return
-                                        }
-                                        
-                                        if let
-                                            myUserID = YepUserDefaults.userID.value,
-                                            me = userWithUserID(myUserID, inRealm: realm) {
-                                                let _ = try? realm.write {
-                                                    me.username = newUsername
-                                                }
-                                        }
-
-                                        // update UI
-
-                                        if let usernameCell = tableView?.cellForRowAtIndexPath(indexPath) as? EditProfileLessInfoCell {
-                                            usernameCell.infoLabel.text = newUsername
-                                        }
-                                    }
-                                })
+//                                updateMyselfWithInfo(["username": newUsername], failureHandler: { [weak self] reason, errorMessage in
+//                                    defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//                                    YepAlert.alertSorry(message: errorMessage ?? NSLocalizedString("Set username failed!", comment: ""), inViewController: self)
+//
+//                                }, completion: { success in
+//                                    dispatch_async(dispatch_get_main_queue()) { [weak tableView] in
+//                                        guard let realm = try? Realm() else {
+//                                            return
+//                                        }
+//                                        
+//                                        if let
+//                                            myUserID = YepUserDefaults.userID.value,
+//                                            me = userWithUserID(myUserID, inRealm: realm) {
+//                                                let _ = try? realm.write {
+//                                                    me.username = newUsername
+//                                                }
+//                                        }
+//
+//                                        // update UI
+//
+//                                        if let usernameCell = tableView?.cellForRowAtIndexPath(indexPath) as? EditProfileLessInfoCell {
+//                                            usernameCell.infoLabel.text = newUsername
+//                                        }
+//                                    }
+//                                })
                                 
                             }, cancelAction: {
                             })
@@ -429,11 +402,9 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
 
             YepAlert.confirmOrCancel(title: NSLocalizedString("Notice", comment: ""), message: NSLocalizedString("Do you want to logout?", comment: ""), confirmTitle: NSLocalizedString("Yes", comment: ""), cancelTitle: NSLocalizedString("Cancel", comment: ""), inViewController: self, withConfirmAction: { () -> Void in
 
-                unregisterThirdPartyPush()
-
-                cleanRealmAndCaches()
-
-                YepUserDefaults.cleanAllUserDefaults()
+//                cleanRealmAndCaches()
+//
+//                YepUserDefaults.cleanAllUserDefaults()
 
                 if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
                     appDelegate.startShowStory()
@@ -465,28 +436,28 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
 
         if let imageData = imageData {
 
-            updateAvatarWithImageData(imageData, failureHandler: { (reason, errorMessage) in
-
-                defaultFailureHandler(reason, errorMessage: errorMessage)
-
-                dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                    self?.activityIndicator.stopAnimating()
-                }
-                
-            }, completion: { newAvatarURLString in
-                dispatch_async(dispatch_get_main_queue()) {
-
-                    YepUserDefaults.avatarUrl.value = newAvatarURLString
-
-                    println("newAvatarURLString: \(newAvatarURLString)")
-
-                    self.updateAvatar() {
-                        dispatch_async(dispatch_get_main_queue()) { [weak self] in
-                            self?.activityIndicator.stopAnimating()
-                        }
-                    }
-                }
-            })
+//            updateAvatarWithImageData(imageData, failureHandler: { (reason, errorMessage) in
+//
+//                defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//                dispatch_async(dispatch_get_main_queue()) { [weak self] in
+//                    self?.activityIndicator.stopAnimating()
+//                }
+//                
+//            }, completion: { newAvatarURLString in
+//                dispatch_async(dispatch_get_main_queue()) {
+//
+//                    YepUserDefaults.avatarUrl.value = newAvatarURLString
+//
+//                    println("newAvatarURLString: \(newAvatarURLString)")
+//
+//                    self.updateAvatar() {
+//                        dispatch_async(dispatch_get_main_queue()) { [weak self] in
+//                            self?.activityIndicator.stopAnimating()
+//                        }
+//                    }
+//                }
+//            })
         }
     }
 }

@@ -101,22 +101,22 @@ class FeedbackViewController: UIViewController {
         feedbackTextView.resignFirstResponder()
 
         let deviceInfo = (DeviceGuru.hardwareDescription() ?? "nixDevice") + ", " + NSProcessInfo().operatingSystemVersionString
-        let feedback = Feedback(content: feedbackTextView.text, deviceInfo: deviceInfo)
-
-        sendFeedback(feedback, failureHandler: { [weak self] reason, errorMessage in
-            defaultFailureHandler(reason, errorMessage: errorMessage)
-
-            YepAlert.alertSorry(message: NSLocalizedString("Network error!", comment: ""), inViewController: self)
-
-        }, completion: { [weak self] _ in
-
-            YepAlert.alert(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Thanks! Your feedback has been recorded!", comment: ""), dismissTitle: NSLocalizedString("OK", comment: ""), inViewController: self, withDismissAction: {
-
-                dispatch_async(dispatch_get_main_queue()) {
-                    self?.navigationController?.popViewControllerAnimated(true)
-                }
-            })
-        })
+//        let feedback = Feedback(content: feedbackTextView.text, deviceInfo: deviceInfo)
+//
+//        sendFeedback(feedback, failureHandler: { [weak self] reason, errorMessage in
+//            defaultFailureHandler(reason, errorMessage: errorMessage)
+//
+//            YepAlert.alertSorry(message: NSLocalizedString("Network error!", comment: ""), inViewController: self)
+//
+//        }, completion: { [weak self] _ in
+//
+//            YepAlert.alert(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Thanks! Your feedback has been recorded!", comment: ""), dismissTitle: NSLocalizedString("OK", comment: ""), inViewController: self, withDismissAction: {
+//
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self?.navigationController?.popViewControllerAnimated(true)
+//                }
+//            })
+//        })
     }
 }
 

@@ -44,4 +44,8 @@ class UserManager: BaseManager {
     func changeUser() {
         
     }
+    
+    func userWithUserId(userId: String) {
+        
+    }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Navi
+import RealmSwift
 
 private let screenScale = UIScreen.mainScreen().scale
 

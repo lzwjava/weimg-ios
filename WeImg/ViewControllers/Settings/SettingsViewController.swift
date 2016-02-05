@@ -17,7 +17,7 @@ class SettingsViewController: BaseViewController {
 
     private var introduction: String {
         get {
-            return YepUserDefaults.introduction.value ?? NSLocalizedString("No Introduction yet.", comment: "")
+            return UserManager.currentUser?.introduction ?? NSLocalizedString("No Introduction yet.", comment: "");
         }
     }
 
@@ -43,11 +43,7 @@ class SettingsViewController: BaseViewController {
     }
 
     deinit {
-        YepUserDefaults.introduction.removeListenerWithName(Listener.Introduction)
-
         settingsTableView?.delegate = nil
-
-        println("deinit Settings")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,12 +60,6 @@ class SettingsViewController: BaseViewController {
 
         settingsTableView.registerNib(UINib(nibName: settingsUserCellIdentifier, bundle: nil), forCellReuseIdentifier: settingsUserCellIdentifier)
         settingsTableView.registerNib(UINib(nibName: settingsMoreCellIdentifier, bundle: nil), forCellReuseIdentifier: settingsMoreCellIdentifier)
-
-        YepUserDefaults.introduction.bindAndFireListener(Listener.Introduction) { [weak self] introduction in
-            dispatch_async(dispatch_get_main_queue()) {
-                self?.settingsTableView.reloadData()
-            }
-        }
         
         if let gestures = navigationController?.view.gestureRecognizers {
             for recognizer in gestures {
