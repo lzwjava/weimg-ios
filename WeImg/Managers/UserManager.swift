@@ -65,7 +65,7 @@ class UserManager: BaseManager {
         
     }
     
-    private func updateInfo(avatarUrl: String?, username: String?, introduction: String?, completion:(user: User?, error:NSError?) -> Void) {
+    private func updateInfo(avatarUrl: String?, username: String?, introduction: String?, completion:(User?, NSError?) -> Void) {
         var params =  [String: AnyObject]()
         if let avatarUrl = avatarUrl {
             params["avatarUrl"] = avatarUrl
@@ -76,14 +76,26 @@ class UserManager: BaseManager {
         if let introduction = introduction {
             params["introduction"] = introduction
         }
-        HttpClient.request(.PATCH, "self") { (user: User?, error: NSError?) -> Void in
-            
+        HttpClient.request(.PATCH, "self", parameters: params) { (user: User?, error: NSError?) -> Void in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            self.changeUser(user!)
+            completion(user!, nil)
         }
     }
     
     func updateAvatarWithImageData(data: NSData, completion:(NSError?) -> Void) {
         ImageManager.manager.uploadImageData(data) { (dict: [String : String]?, error: NSError?) -> Void in
-            
+            guard error == nil else {
+                completion(error)
+                return
+            }
+            let avatarUrl = dict!["url"]
+            self.updateInfo(avatarUrl, username: nil, introduction: nil, completion: { (user: User?, error: NSError?) -> Void in
+                completion(error)
+            })
         }
     }
 }

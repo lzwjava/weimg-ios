@@ -229,23 +229,15 @@ class RegisterPickAvatarViewController: BaseViewController {
         let imageData = UIImageJPEGRepresentation(image, YepConfig.avatarCompressionQuality())
 
         if let imageData = imageData {
-//
-//            updateAvatarWithImageData(imageData, failureHandler: { (reason, errorMessage) in
-//
-//                defaultFailureHandler(reason, errorMessage: errorMessage)
-//
-//                YepHUD.hideActivityIndicator()
-//
-//            }, completion: { newAvatarURLString in
-//                YepHUD.hideActivityIndicator()
-//
-//                dispatch_async(dispatch_get_main_queue()) {
-//
-//                    YepUserDefaults.avatarUrl.value = newAvatarURLString
-//
-//                    self.performSegueWithIdentifier("showRegisterPickSkills", sender: nil)
-//                }
-//            })
+            UserManager.manager.updateAvatarWithImageData(imageData)
+                {  (error: NSError?) in
+                    YepHUD.hideActivityIndicator()
+                    if (self.filterError(error)) {
+                        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                            appDelegate.startMainStory()
+                        }
+                    }
+            }
         }
     }
 
