@@ -51,6 +51,4 @@ class User : Mappable {
         introduction        <-  map["introduction"]
         created             <- (map["created"],DateTransform())
     }
-    
-    
 }

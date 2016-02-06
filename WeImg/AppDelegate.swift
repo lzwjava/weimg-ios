@@ -19,11 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 全局的外观自定义
         customAppearce()
         
-//        let isLogined = YepUserDefaults.isLogined
-        let isLogined = false
+        let isLogined = UserManager.currentUser != nil
         
-//        if isLogined {
-//            
+        if isLogined {
+            
 //            // 记录启动通知类型
 //            if let
 //                notification = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? UILocalNotification,
@@ -31,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                type = userInfo["type"] as? String {
 //                    remoteNotificationType = RemoteNotificationType(rawValue: type)
 //            }
-//            
-//        } else {
+            
+        } else {
             startShowStory()
-//        }
+        }
         
 
         return true

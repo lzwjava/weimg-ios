@@ -8,12 +8,17 @@
 
 import Foundation
 import CryptoSwift
+import ObjectMapper
 
 class UserManager: BaseManager {
     var pickedUsername: String?
     var pickedMobilePhoneNumber: String?
     var pickedPassword: String?
-    static var currentUser: User?
+    static var currentUser: User? = {
+        let jsonString = NSUserDefaults.standardUserDefaults().objectForKey("currentUser") as? String
+        let user = Mapper<User>().map(jsonString)
+        return user
+    }()
     
     static let manager: UserManager = {
         return UserManager()
@@ -59,6 +64,9 @@ class UserManager: BaseManager {
     
     private func changeUser(user: User) {
         UserManager.currentUser = user
+        let jsonString = user.toJSONString()
+        NSUserDefaults.standardUserDefaults().setObject(jsonString, forKey: "currentUser")
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     func userWithUserId(userId: String) {

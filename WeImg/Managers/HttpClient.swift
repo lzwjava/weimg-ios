@@ -14,10 +14,13 @@ class HttpClient {
     
     private static var baseUrl : String = "http://localhost:3005/";
     
-    private static func request(method: Alamofire.Method, _ URLString: URLStringConvertible,
-        parameters: [String: AnyObject]? = nil, completion:(AnyObject?, NSError?) -> Void) {
+    private static func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, completion:(AnyObject?, NSError?) -> Void) {
         let url = baseUrl + URLString.URLString
-        Alamofire.request(method, url, parameters: parameters).responseJSON { (resp: Response<AnyObject, NSError>) -> Void in
+        var headers = [String: String]()
+        if UserManager.currentUser != nil {
+            headers["X-Session"] = UserManager.currentUser?.sessionToken
+        }
+        Alamofire.request(method, url, parameters: parameters, encoding: .URL, headers: headers).responseJSON { (resp: Response<AnyObject, NSError>) -> Void in
             if let error = errorFromReponse(resp) {
                 completion(nil, error)
             } else {
