@@ -34,7 +34,7 @@ class WeImgTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        PostManager.manager.getPost { (posts:[Post], error: NSError?) -> Void in
+        PostManager.manager.getPosts { (posts:[Post], error: NSError?) -> Void in
             self.notify()
         }
         wait()

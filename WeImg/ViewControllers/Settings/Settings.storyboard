@@ -7,7 +7,7 @@
         <!--Settings View Controller-->
         <scene sceneID="JaG-N7-XLh">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" hidesBottomBarWhenPushed="YES" id="CpR-ps-Bxo" customClass="SettingsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="CpR-ps-Bxo" customClass="SettingsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="izP-Su-vBw"/>
                         <viewControllerLayoutGuide type="bottom" id="oW4-0M-m4t"/>

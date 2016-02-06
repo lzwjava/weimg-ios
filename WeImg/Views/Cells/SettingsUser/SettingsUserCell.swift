@@ -19,18 +19,6 @@ class SettingsUserCell: UITableViewCell {
     @IBOutlet weak var introLabel: UILabel!
 
     @IBOutlet weak var accessoryImageView: UIImageView!
-
-    struct Listener {
-        static let Avatar = "SettingsUserCell.Avatar"
-        static let Nickname = "SettingsUserCell.Nickname"
-        static let Introduction = "SettingsUserCell.Introduction"
-    }
-
-    deinit {
-//        YepUserDefaults.avatarUrl.removeListenerWithName(Listener.Avatar)
-//        YepUserDefaults.nickname.removeListenerWithName(Listener.Nickname)
-//        YepUserDefaults.introduction.removeListenerWithName(Listener.Introduction)
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +29,7 @@ class SettingsUserCell: UITableViewCell {
         introLabel.font = YepConfig.Settings.introFont
 
         accessoryImageView.tintColor = UIColor.yepCellAccessoryImageViewTintColor()
+        initUser()
     }
     
     func initUser() {

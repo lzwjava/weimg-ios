@@ -14,7 +14,7 @@ class PostManager : BaseManager {
         return PostManager()
     }()
     
-    func getPost( completionHandler: ([Post], NSError?) -> Void) {
+    func getPosts( completionHandler: ([Post], NSError?) -> Void) {
         HttpClient.requestArray(.GET, "posts", parameters: nil, completion: completionHandler)
     }
     

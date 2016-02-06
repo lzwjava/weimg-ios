@@ -54,7 +54,10 @@ class BaseViewController: SegueViewController {
     }
     
     func alertError(error: NSError, dismissAction: () -> Void) {
-        let errorMessage = error.userInfo[NSLocalizedDescriptionKey] as! String
+        var errorMessage = error.userInfo[NSLocalizedDescriptionKey] as? String
+        if errorMessage == nil {
+            errorMessage = error.userInfo[NSLocalizedFailureReasonErrorKey] as? String
+        }
         YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: dismissAction)
     }
 }

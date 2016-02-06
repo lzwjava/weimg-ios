@@ -49,7 +49,7 @@ class HttpClient {
                 } else {
                     parsedObject = Mapper<T>().map(result)
                 }
-                guard parsedObject != nil else {
+                guard parsedObject != nil || parsedArray != nil else {
                     completion(nil, [], objectMapperError())
                     return
                 }

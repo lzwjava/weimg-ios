@@ -45,6 +45,7 @@ class SettingsViewController: BaseViewController {
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
+    
     }
 
     override func viewDidLoad() {
