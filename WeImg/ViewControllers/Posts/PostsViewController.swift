@@ -101,5 +101,8 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         return imageSize
     }
     
+    @IBAction func newButtonClicked(sender: AnyObject) {
+        performSegueWithIdentifier("showNewPost", sender: nil)
+    }
 }
 

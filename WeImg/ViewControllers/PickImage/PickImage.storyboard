@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Pick Image View Controller-->
+        <scene sceneID="mWZ-c8-1B2">
+            <objects>
+                <viewController storyboardIdentifier="PickImageViewController" id="ahX-va-ksC" customClass="PickImageViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FTA-gz-0rV"/>
+                        <viewControllerLayoutGuide type="bottom" id="eBw-zF-Lb7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ngx-LP-qdD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddw-tl-RFw">
+                                <rect key="frame" x="-7" y="0.0" width="607" height="44"/>
+                                <items>
+                                    <navigationItem title="上传图片" id="egi-aR-hAr"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58b-lD-WrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="326"/>
+        </scene>
+    </scenes>
+</document>

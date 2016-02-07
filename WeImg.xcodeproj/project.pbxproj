@@ -51,6 +51,13 @@
 		706BD7061C66558E00A277D7 /* ImageUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD7021C66558E00A277D7 /* ImageUICollectionViewCell.xib */; };
 		706BD7081C66558E00A277D7 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD7041C66558E00A277D7 /* PostsViewController.swift */; };
 		706BD70A1C67350200A277D7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD7091C67350200A277D7 /* Image.swift */; };
+		706BD70D1C67C04400A277D7 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD70C1C67C04400A277D7 /* NewPostViewController.swift */; };
+		706BD7101C67C1DD00A277D7 /* PickImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD70F1C67C1DD00A277D7 /* PickImageViewController.swift */; };
+		706BD7121C67C26300A277D7 /* PickImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706BD7111C67C26300A277D7 /* PickImage.storyboard */; };
+		706BD7141C67C8A600A277D7 /* NewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706BD7131C67C8A600A277D7 /* NewPost.storyboard */; };
+		706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD7171C67CDA700A277D7 /* EditImageCell.xib */; };
+		706BD71A1C67CDBD00A277D7 /* EditImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD7191C67CDBD00A277D7 /* EditImageCell.swift */; };
+		706BD71C1C67D40600A277D7 /* AddImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD71B1C67D40600A277D7 /* AddImageCell.xib */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -159,6 +166,13 @@
 		706BD7021C66558E00A277D7 /* ImageUICollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUICollectionViewCell.xib; sourceTree = "<group>"; };
 		706BD7041C66558E00A277D7 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		706BD7091C67350200A277D7 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		706BD70C1C67C04400A277D7 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		706BD70F1C67C1DD00A277D7 /* PickImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickImageViewController.swift; sourceTree = "<group>"; };
+		706BD7111C67C26300A277D7 /* PickImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PickImage.storyboard; sourceTree = "<group>"; };
+		706BD7131C67C8A600A277D7 /* NewPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewPost.storyboard; sourceTree = "<group>"; };
+		706BD7171C67CDA700A277D7 /* EditImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditImageCell.xib; sourceTree = "<group>"; };
+		706BD7191C67CDBD00A277D7 /* EditImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditImageCell.swift; sourceTree = "<group>"; };
+		706BD71B1C67D40600A277D7 /* AddImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddImageCell.xib; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +301,7 @@
 		706BD67E1C63022700A277D7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				706BD7161C67CD8600A277D7 /* EditImage */,
 				706BD6AC1C636BA800A277D7 /* About */,
 				706BD69D1C6358C300A277D7 /* EditProfileColoredTitle */,
 				706BD6A01C6358C300A277D7 /* EditProfileLessInfo */,
@@ -420,9 +435,39 @@
 			path = Posts;
 			sourceTree = "<group>";
 		};
+		706BD70B1C67BB5700A277D7 /* NewPost */ = {
+			isa = PBXGroup;
+			children = (
+				706BD70C1C67C04400A277D7 /* NewPostViewController.swift */,
+				706BD7131C67C8A600A277D7 /* NewPost.storyboard */,
+			);
+			path = NewPost;
+			sourceTree = "<group>";
+		};
+		706BD70E1C67C1D200A277D7 /* PickImage */ = {
+			isa = PBXGroup;
+			children = (
+				706BD70F1C67C1DD00A277D7 /* PickImageViewController.swift */,
+				706BD7111C67C26300A277D7 /* PickImage.storyboard */,
+			);
+			path = PickImage;
+			sourceTree = "<group>";
+		};
+		706BD7161C67CD8600A277D7 /* EditImage */ = {
+			isa = PBXGroup;
+			children = (
+				706BD7191C67CDBD00A277D7 /* EditImageCell.swift */,
+				706BD7171C67CDA700A277D7 /* EditImageCell.xib */,
+				706BD71B1C67D40600A277D7 /* AddImageCell.xib */,
+			);
+			path = EditImage;
+			sourceTree = "<group>";
+		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				706BD70E1C67C1D200A277D7 /* PickImage */,
+				706BD70B1C67BB5700A277D7 /* NewPost */,
 				706BD7001C66558E00A277D7 /* Posts */,
 				706BD6E71C63C20D00A277D7 /* Nav */,
 				706BD6931C63039C00A277D7 /* EditProfile */,
@@ -699,16 +744,20 @@
 				706BD6AB1C6358C300A277D7 /* EditProfileMoreInfoCell.xib in Resources */,
 				706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */,
 				706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */,
+				706BD71C1C67D40600A277D7 /* AddImageCell.xib in Resources */,
+				706BD7141C67C8A600A277D7 /* NewPost.storyboard in Resources */,
 				70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */,
 				706BD7061C66558E00A277D7 /* ImageUICollectionViewCell.xib in Resources */,
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
 				706BD6881C63025B00A277D7 /* SettingsMoreCell.xib in Resources */,
+				706BD7121C67C26300A277D7 /* PickImage.storyboard in Resources */,
 				706BD67C1C63019B00A277D7 /* Settings.storyboard in Resources */,
 				70629B121C61EF7500865921 /* Localizable.strings in Resources */,
 				706BD6831C63022700A277D7 /* SettingsUserCell.xib in Resources */,
 				706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */,
 				70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
+				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
 				706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */,
 				706BD6911C63030E00A277D7 /* Feedback.storyboard in Resources */,
@@ -786,6 +835,7 @@
 				70C2F40C1C60E72C00C345B2 /* CameraPreviewView.swift in Sources */,
 				70C2F4121C60E7E400C345B2 /* BorderTextField.swift in Sources */,
 				70C2F41A1C60EC9600C345B2 /* UIColor+Yep.swift in Sources */,
+				706BD70D1C67C04400A277D7 /* NewPostViewController.swift in Sources */,
 				70C2F3F61C60E69900C345B2 /* HttpClient.swift in Sources */,
 				70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */,
 				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
@@ -802,6 +852,7 @@
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
 				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
 				706BD6AA1C6358C300A277D7 /* EditProfileMoreInfoCell.swift in Sources */,
+				706BD7101C67C1DD00A277D7 /* PickImageViewController.swift in Sources */,
 				706BD6DA1C63A0B500A277D7 /* DiscoveredUser.swift in Sources */,
 				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,
 				70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */,
@@ -814,6 +865,7 @@
 				70C2F4421C61BD9400C345B2 /* LoginPasswordViewController.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
 				706BD7051C66558E00A277D7 /* ImageUICollectionViewCell.swift in Sources */,
+				706BD71A1C67CDBD00A277D7 /* EditImageCell.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
 				706BD6921C63030E00A277D7 /* FeedbackViewController.swift in Sources */,
 				70C2F40F1C60E76100C345B2 /* BorderButton.swift in Sources */,

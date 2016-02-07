@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -38,14 +37,29 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" id="hwF-nA-3aO"/>
+                    <navigationItem key="navigationItem" id="hwF-nA-3aO">
+                        <barButtonItem key="rightBarButtonItem" title="New" id="4pu-JS-0AO">
+                            <connections>
+                                <action selector="newButtonClicked:" destination="9pv-A4-QxB" id="G3J-1N-r7n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="w8t-M2-KyD" id="Lv6-u8-8KQ"/>
+                        <segue destination="7Z8-hV-ASW" kind="presentation" identifier="showNewPost" id="07X-IT-U6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1560" y="-243"/>
+        </scene>
+        <!--NewPostViewController-->
+        <scene sceneID="0cp-2m-X6k">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewPost" referencedIdentifier="NewPostViewController" id="7Z8-hV-ASW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paU-8o-lqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045.5" y="-225"/>
         </scene>
         <!--Item-->
         <scene sceneID="V1M-KR-xSA">
