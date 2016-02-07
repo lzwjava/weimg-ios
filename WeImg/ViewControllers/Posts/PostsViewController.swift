@@ -83,7 +83,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         
         // Add image to cell
         let post = posts[indexPath.row]
-        cell.image.kf_setImageWithURL(NSURL(string: post.coverUrl)!)
+        cell.image.kf_setImageWithURL(NSURL(string: post.cover.link)!)
         return cell
     }
     
@@ -95,8 +95,9 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         // create a cell size from the image size, and return the size
-        let imageSize = CGSize(width: 300, height: 534)
-        
+        let scale = UIScreen.mainScreen().scale
+        let post = posts[indexPath.row]
+        let imageSize = CGSize(width: CGFloat(post.cover.width) / scale, height: CGFloat(post.cover.height) / scale)
         return imageSize
     }
     

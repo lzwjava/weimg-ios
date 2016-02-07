@@ -12,8 +12,7 @@ import ObjectMapper
 class Post : Mappable {
     var postId: Int!
     var author: Int!
-    var cover: String!
-    var coverUrl: String!
+    var cover: Image!
     var score: Float!
     var title: String!
     var topic: String?
@@ -29,7 +28,6 @@ class Post : Mappable {
         postId  <-  map["postId"]
         author  <-  map["author"]
         cover   <-  map["cover"]
-        coverUrl <- map["coverUrl"]
         score   <-  map["score"]
         title   <-  map["title"]
         topic   <-  map["topic"]
