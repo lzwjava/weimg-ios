@@ -21,6 +21,10 @@ class YepConfig {
         return 0.7
     }
     
+    class func imageCompressionQuality() -> CGFloat {
+        return 0.8
+    }
+    
     class func verifyCodeLength() -> Int {
         return 6
     }

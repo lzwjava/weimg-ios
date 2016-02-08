@@ -403,6 +403,8 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
 //                cleanRealmAndCaches()
 //
 //                YepUserDefaults.cleanAllUserDefaults()
+                
+                UserManager.manager.clearCurrentUser()
 
                 if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
                     appDelegate.startShowStory()

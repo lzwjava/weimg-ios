@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--New Post View Controller-->
@@ -16,15 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2wl-Qd-hPD">
-                                <rect key="frame" x="0.0" y="64" width="600" height="485"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQW-p7-4Ig">
-                                <rect key="frame" x="541" y="562" width="50" height="30"/>
-                                <state key="normal" title="Upload"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQW-p7-4Ig">
+                                <rect key="frame" x="561" y="562" width="30" height="30"/>
+                                <state key="normal" title="上传"/>
+                                <connections>
+                                    <action selector="uploadImages:" destination="Jnk-dT-Sr1" eventType="touchUpInside" id="Hce-NT-BM5"/>
+                                </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rC-HW-TnM">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rC-HW-TnM">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="New Post" id="5Cv-ps-tUa">
@@ -32,8 +32,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2wl-Qd-hPD">
+                                <rect key="frame" x="0.0" y="64" width="600" height="485"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s7n-6z-ot4" firstAttribute="top" secondItem="2wl-Qd-hPD" secondAttribute="bottom" constant="51" id="1oC-NN-h39"/>
+                            <constraint firstItem="2wl-Qd-hPD" firstAttribute="top" secondItem="8rC-HW-TnM" secondAttribute="bottom" id="5pl-bc-BZ6"/>
+                            <constraint firstItem="8rC-HW-TnM" firstAttribute="top" secondItem="gKI-Ci-4gp" secondAttribute="bottom" id="FyZ-A1-wXE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2wl-Qd-hPD" secondAttribute="trailing" constant="-20" id="K2y-us-Kyo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8rC-HW-TnM" secondAttribute="trailing" constant="-20" id="W0c-WG-0Op"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MQW-p7-4Ig" secondAttribute="trailing" constant="-11" id="WaF-LH-2vU"/>
+                            <constraint firstItem="2wl-Qd-hPD" firstAttribute="leading" secondItem="ipG-73-ICt" secondAttribute="leadingMargin" constant="-20" id="c47-xW-1ZY"/>
+                            <constraint firstItem="s7n-6z-ot4" firstAttribute="top" secondItem="MQW-p7-4Ig" secondAttribute="bottom" constant="8" id="mAh-q8-jXx"/>
+                            <constraint firstItem="8rC-HW-TnM" firstAttribute="leading" secondItem="ipG-73-ICt" secondAttribute="leadingMargin" constant="-20" id="xa9-Cq-0wE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageTableView" destination="2wl-Qd-hPD" id="wsf-36-ztw"/>

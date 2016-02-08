@@ -16,8 +16,12 @@ class UserManager: BaseManager {
     var pickedPassword: String?
     static var currentUser: User? = {
         let jsonString = NSUserDefaults.standardUserDefaults().objectForKey("currentUser") as? String
-        let user = Mapper<User>().map(jsonString)
-        return user
+        if let jsonString = jsonString {
+            let user = Mapper<User>().map(jsonString)
+            return user
+        } else {
+            return nil
+        }
     }()
     
     static let manager: UserManager = {
@@ -105,5 +109,10 @@ class UserManager: BaseManager {
                 completion(error)
             })
         }
+    }
+    
+    func clearCurrentUser() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("currentUser")
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

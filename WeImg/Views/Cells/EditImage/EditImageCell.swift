@@ -9,11 +9,6 @@
 import UIKit
 import Photos
 
-class ImageItem {
-    var asset : PHAsset!
-    var desc: String?
-}
-
 class EditImageCell: UITableViewCell {
     
     @IBOutlet weak var contentImageView: UIImageView!
@@ -22,6 +17,9 @@ class EditImageCell: UITableViewCell {
     var imageItem: ImageItem? {
         didSet {
             descTextField.text = self.imageItem?.desc
+            PHImageManager.defaultManager().requestImageForAsset(self.imageItem!.asset, targetSize: self.contentImageView.bounds.size, contentMode: .Default, options: nil) { (result: UIImage?, info: [NSObject : AnyObject]?) -> Void in
+                self.contentImageView.image = result
+            }
         }
     }
     

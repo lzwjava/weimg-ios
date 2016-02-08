@@ -18,13 +18,13 @@ class PostManager : BaseManager {
         HttpClient.requestArray(.GET, "posts", parameters: nil, completion: completionHandler)
     }
     
-    func createPost(title: String, images: [UIImage], descs: [String], completionHandler: (NSError?)-> Void) {
+    func createPost(title: String, imageItems:[ImageItem], completionHandler: (NSError?)-> Void) {
         var blockError: NSError?
         var imageIds = [NSString]()
-        for (index, image) in images.enumerate() {
-            let desc = descs[index]
+        for imageItem in imageItems {
+            let desc = imageItem.desc
             let sema =  dispatch_semaphore_create(0)
-            ImageManager.manager.uploadImage(image, desc: desc, completionHandler: { (imageId: String?, error: NSError?) -> Void in
+            ImageManager.manager.uploadImage(imageItem.asset, desc: desc, completionHandler: { (imageId: String?, error: NSError?) -> Void in
                 if error != nil {
                     blockError = error
                 } else {
@@ -37,6 +37,25 @@ class PostManager : BaseManager {
                 break;
             }
         }
+        guard blockError == nil else {
+            completionHandler(blockError)
+            return
+        }
+        var parameters = [String: AnyObject]()
+        do {
+            let imageIdsStr = try NSJSONSerialization.dataWithJSONObject(imageIds, options:[])
+            parameters["imageIds"] = NSString(data: imageIdsStr, encoding: NSUTF8StringEncoding)
+        } catch {
+            
+        }
+        parameters["title"] = title
+        let sema =  dispatch_semaphore_create(0)
+        HttpClient.request(.POST, "posts", parameters: parameters) {
+            (error: NSError?) in
+            blockError = error
+            dispatch_semaphore_signal(sema)
+        }
+        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER)
         completionHandler(blockError)
     }
 }

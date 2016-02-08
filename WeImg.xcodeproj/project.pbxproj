@@ -58,6 +58,7 @@
 		706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD7171C67CDA700A277D7 /* EditImageCell.xib */; };
 		706BD71A1C67CDBD00A277D7 /* EditImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD7191C67CDBD00A277D7 /* EditImageCell.swift */; };
 		706BD71C1C67D40600A277D7 /* AddImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD71B1C67D40600A277D7 /* AddImageCell.xib */; };
+		707650BF1C686EEF000B3556 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650BE1C686EEF000B3556 /* ImageItem.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -173,6 +174,7 @@
 		706BD7171C67CDA700A277D7 /* EditImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditImageCell.xib; sourceTree = "<group>"; };
 		706BD7191C67CDBD00A277D7 /* EditImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditImageCell.swift; sourceTree = "<group>"; };
 		706BD71B1C67D40600A277D7 /* AddImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddImageCell.xib; sourceTree = "<group>"; };
+		707650BE1C686EEF000B3556 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 				706BD6EE1C64EA9E00A277D7 /* Avatar.swift */,
 				706BD6F01C65291500A277D7 /* EmptyObject.swift */,
 				706BD7091C67350200A277D7 /* Image.swift */,
+				707650BE1C686EEF000B3556 /* ImageItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -881,6 +884,7 @@
 				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
 				706BD6E21C63B01B00A277D7 /* WeChatActivity.swift in Sources */,
 				706BD6ED1C64E78B00A277D7 /* NSFileManager+Yep.swift in Sources */,
+				707650BF1C686EEF000B3556 /* ImageItem.swift in Sources */,
 				706BD67D1C63019B00A277D7 /* SettingsViewController.swift in Sources */,
 				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
 				70C2F4451C61C44C00C345B2 /* WelcomeViewController.swift in Sources */,

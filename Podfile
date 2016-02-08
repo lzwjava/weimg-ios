@@ -21,6 +21,7 @@ target 'WeImg' do
     pod 'MonkeyKing', '0.0.2'
     #    pod 'RealmSwift', '0.97.0'
     pod 'CryptoSwift', '~> 0.2.2'
+    pod 'QBImagePickerController', '~> 3.4.0'
 end
 
 target 'WeImgTests' do
