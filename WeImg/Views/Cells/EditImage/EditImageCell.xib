@@ -19,7 +19,7 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-wy-X3V">
-                        <rect key="frame" x="20" y="9" width="68" height="67"/>
+                        <rect key="frame" x="20" y="7.5" width="69" height="69"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>

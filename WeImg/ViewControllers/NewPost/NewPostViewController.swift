@@ -29,8 +29,8 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         imageTableView.delegate = self
         imageTableView.dataSource = self
-        self.imageTableView.registerNib(UINib(nibName: editImageIdentifier, bundle: nil), forCellReuseIdentifier: editImageIdentifier)
-        self.imageTableView.registerNib(UINib(nibName: addImageIdentifier, bundle: nil), forCellReuseIdentifier: addImageIdentifier)
+        imageTableView.registerNib(UINib(nibName: editImageIdentifier, bundle: nil), forCellReuseIdentifier: editImageIdentifier)
+        imageTableView.registerNib(UINib(nibName: addImageIdentifier, bundle: nil), forCellReuseIdentifier: addImageIdentifier)
         pickerController.delegate = self
     }
     
@@ -111,5 +111,9 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
                 }
             })
         }
+    }
+    
+    @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

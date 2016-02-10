@@ -22,6 +22,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         // Attach datasource and delegate
         self.collectionView.dataSource  = self
         self.collectionView.delegate = self
+        self.collectionView.backgroundColor = UIColor.whiteColor()
         
         //Layout setup
         setupCollectionView()
@@ -101,8 +102,28 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         return imageSize
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let post = posts[indexPath.row]
+        performSegueWithIdentifier("showPostDetail", sender: post)
+    }
+    
     @IBAction func newButtonClicked(sender: AnyObject) {
         performSegueWithIdentifier("showNewPost", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+            case "showPostDetail":
+                let vc = segue.destinationViewController as! PostDetailViewController
+                vc.post = sender as? Post
+                break
+            default:
+                break
+        }
     }
 }
 

@@ -58,4 +58,13 @@ class PostManager : BaseManager {
         dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER)
         completionHandler(blockError)
     }
+    
+    func getPost(postId: Int, completionHandler: (Post?, NSError?) -> Void) {
+        HttpClient.request(.GET, "posts/" + String(postId), parameters: nil, completion: completionHandler)
+    }
+    
+    func vote(postId: Int, vote: String, completion:(NSError?) -> Void) {
+        HttpClient.request(.GET, "posts/" + String(postId) + "/vote/" + vote, completion: completion)
+    }
+    
 }

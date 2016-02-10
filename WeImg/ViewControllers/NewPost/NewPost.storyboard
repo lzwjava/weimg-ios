@@ -28,7 +28,11 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="New Post" id="5Cv-ps-tUa">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OVB-Fe-Rge"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OVB-Fe-Rge">
+                                            <connections>
+                                                <action selector="cancel:" destination="Jnk-dT-Sr1" id="2KT-Z8-foi"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

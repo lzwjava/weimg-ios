@@ -18,6 +18,7 @@ class Post : Mappable {
     var topic: String?
     var ups:Int!
     var downs: Int!
+    var images: [Image]?
     var created: NSDate!
     
     required init?(_ map: Map) {
@@ -33,6 +34,7 @@ class Post : Mappable {
         topic   <-  map["topic"]
         ups     <-  map["ups"]
         downs   <-  map["downs"]
+        images  <-  map["images"]
         created <-  (map["created"], DateTransform())
     }
 }
