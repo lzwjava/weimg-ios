@@ -99,7 +99,7 @@
                         <outlet property="avatarImageViewWidthConstraint" destination="VqV-cy-fEX" id="UmF-DJ-fYz"/>
                         <outlet property="editProfileTableView" destination="dZB-Et-VDq" id="hcV-Va-JSZ"/>
                         <outlet property="mobileLabel" destination="vpA-xU-vyL" id="naY-1Y-zOj"/>
-                        <segue destination="UKH-YZ-kh2" kind="showDetail" identifier="showEditUsername" id="6C6-pV-ZrP"/>
+                        <segue destination="UKH-YZ-kh2" kind="show" identifier="showEditUsername" id="jbs-n3-0Wa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERa-8Z-cFR" userLabel="First Responder" sceneMemberID="firstResponder"/>

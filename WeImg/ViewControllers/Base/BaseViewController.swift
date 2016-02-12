@@ -44,24 +44,6 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func filterError(error: NSError?) -> Bool {
-        if let error = error {
-            alertError(error) {}
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    func alertError(error: NSError, dismissAction: () -> Void) {
-        var errorMessage = error.userInfo[NSLocalizedDescriptionKey] as? String
-        if errorMessage == nil {
-            errorMessage = error.userInfo[NSLocalizedFailureReasonErrorKey] as? String
-        }
-        YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: dismissAction)
-    }
-    
-    
     override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
         
         if let navigationController = navigationController {

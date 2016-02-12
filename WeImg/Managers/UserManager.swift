@@ -77,6 +77,14 @@ class UserManager: BaseManager {
         
     }
     
+    func updateUsername(username: String, completion:(User?, NSError?) -> Void) {
+        self.updateInfo(nil, username: username, introduction: nil, completion: completion)
+    }
+    
+    func updateIntro(intro: String, completion:(User?, NSError?) -> Void) {
+        self.updateInfo(nil, username: nil, introduction: intro, completion: completion)
+    }
+    
     private func updateInfo(avatarUrl: String?, username: String?, introduction: String?, completion:(User?, NSError?) -> Void) {
         var params =  [String: AnyObject]()
         if let avatarUrl = avatarUrl {

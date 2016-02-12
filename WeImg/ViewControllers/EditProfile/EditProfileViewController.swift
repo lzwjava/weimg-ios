@@ -65,12 +65,13 @@ class EditProfileViewController: BaseViewController {
         super.viewDidLoad()
 
         title = NSLocalizedString("Edit Profile", comment: "")
-
+        
+        
         let avatarSize = YepConfig.editProfileAvatarSize()
         avatarImageViewWidthConstraint.constant = avatarSize
-
+        
         updateAvatar() {}
-
+        
         mobileLabel.text = UserManager.currentUser?.mobilePhoneNumber
 
         editProfileTableView.registerNib(UINib(nibName: editProfileLessInfoCellIdentifier, bundle: nil), forCellReuseIdentifier: editProfileLessInfoCellIdentifier)
@@ -82,6 +83,10 @@ class EditProfileViewController: BaseViewController {
         super.viewWillDisappear(animated)
 
         view.endEditing(true)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     // MARK: Actions

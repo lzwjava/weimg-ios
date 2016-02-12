@@ -21,7 +21,6 @@ class EditUsernameController: UITableViewController {
 
         nicknameTextField.text = UserManager.currentUser?.username
         nicknameTextField.delegate = self
-        
     }
 
     override func viewDidDisappear(animated: Bool) {
@@ -30,14 +29,11 @@ class EditUsernameController: UITableViewController {
         guard let newNickname = nicknameTextField.text else {
             return
         }
-
+        
         if newNickname != UserManager.currentUser?.username {
-
-//            updateMyselfWithInfo(["nickname": newNickname], failureHandler: nil, completion: { success in
-//                dispatch_async(dispatch_get_main_queue()) {
-//                    YepUserDefaults.nickname.value = newNickname
-//                }
-//            })
+            UserManager.manager.updateUsername(newNickname, completion: { (user: User?, error: NSError?) -> Void in
+                
+            })
         }
     }
 }
@@ -63,17 +59,11 @@ extension EditUsernameController: UITextFieldDelegate {
 
             } else {
                 if newNickname != UserManager.currentUser?.username {
-//
-//                    updateMyselfWithInfo(["nickname": newNickname], failureHandler: { [weak self] reason, errorMessage in
-//                        defaultFailureHandler(reason, errorMessage: errorMessage)
-//
-//                        YepAlert.alertSorry(message: NSLocalizedString("Update nickname failed!", comment: ""), inViewController: self)
-//
-//                    }, completion: { success in
-//                        dispatch_async(dispatch_get_main_queue()) {
-//                            YepUserDefaults.nickname.value = newNickname
-//                        }
-//                    })
+                    UserManager.manager.updateUsername(newNickname, completion: { (user: User?, error: NSError?) -> Void in
+                        if (self.filterError(error)) {
+                            self.navigationController?.popViewControllerAnimated(true)
+                        }
+                    })
                 }
             }
         }
