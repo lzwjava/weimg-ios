@@ -69,6 +69,8 @@
 		707650D21C6D01B5000B3556 /* CommentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650D11C6D01B5000B3556 /* CommentManager.swift */; };
 		707650DA1C6D16EC000B3556 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650D81C6D16EC000B3556 /* CommentCell.swift */; };
 		707650DB1C6D16EC000B3556 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707650D91C6D16EC000B3556 /* CommentCell.xib */; };
+		707650DF1C6D95F7000B3556 /* CommentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650DD1C6D95F7000B3556 /* CommentHeader.swift */; };
+		707650E01C6D95F7000B3556 /* CommentHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707650DE1C6D95F7000B3556 /* CommentHeader.xib */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -195,6 +197,8 @@
 		707650D11C6D01B5000B3556 /* CommentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentManager.swift; sourceTree = "<group>"; };
 		707650D81C6D16EC000B3556 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		707650D91C6D16EC000B3556 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		707650DD1C6D95F7000B3556 /* CommentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentHeader.swift; sourceTree = "<group>"; };
+		707650DE1C6D95F7000B3556 /* CommentHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentHeader.xib; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 		706BD67E1C63022700A277D7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				707650DC1C6D95CC000B3556 /* CommentHeader */,
 				707650D31C6D1694000B3556 /* Comment */,
 				707650CA1C6A157D000B3556 /* PostImage */,
 				707650C51C69F81A000B3556 /* PostTitle */,
@@ -522,6 +527,15 @@
 				707650D91C6D16EC000B3556 /* CommentCell.xib */,
 			);
 			path = Comment;
+			sourceTree = "<group>";
+		};
+		707650DC1C6D95CC000B3556 /* CommentHeader */ = {
+			isa = PBXGroup;
+			children = (
+				707650DD1C6D95F7000B3556 /* CommentHeader.swift */,
+				707650DE1C6D95F7000B3556 /* CommentHeader.xib */,
+			);
+			path = CommentHeader;
 			sourceTree = "<group>";
 		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
@@ -825,6 +839,7 @@
 				707650CC1C6A15A4000B3556 /* PostImageCell.xib in Resources */,
 				706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */,
 				70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */,
+				707650E01C6D95F7000B3556 /* CommentHeader.xib in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
@@ -960,6 +975,7 @@
 				706BD67D1C63019B00A277D7 /* SettingsViewController.swift in Sources */,
 				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
 				70C2F4451C61C44C00C345B2 /* WelcomeViewController.swift in Sources */,
+				707650DF1C6D95F7000B3556 /* CommentHeader.swift in Sources */,
 				706BD7081C66558E00A277D7 /* PostsViewController.swift in Sources */,
 				70C2F4371C61BD2E00C345B2 /* ShowStepGeniusViewController.swift in Sources */,
 				70C2F4151C60EB5E00C345B2 /* CommonHelper.swift in Sources */,

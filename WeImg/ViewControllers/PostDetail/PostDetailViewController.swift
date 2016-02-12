@@ -12,6 +12,8 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     
     private let postTitleViewIdentifier = "PostTitleView"
     private let postImageCellIdentifier = "PostImageCell"
+    private let commentCellIdentifier = "CommentCell"
+    private let commentHeaderIdentifier = "CommentHeader"
     
     var post: Post?
     var comments = [Comment]()
@@ -22,6 +24,8 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         imageTableView.registerNib(UINib(nibName: postTitleViewIdentifier, bundle: nil), forCellReuseIdentifier: postTitleViewIdentifier)
         imageTableView.registerNib(UINib(nibName: postImageCellIdentifier, bundle: nil), forCellReuseIdentifier: postImageCellIdentifier)
+        imageTableView.registerNib(UINib(nibName: commentCellIdentifier, bundle: nil), forCellReuseIdentifier: commentCellIdentifier)
+        imageTableView.registerNib(UINib(nibName: commentHeaderIdentifier, bundle: nil), forCellReuseIdentifier: commentHeaderIdentifier)
         fetchData()
     }
     
@@ -35,6 +39,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         CommentManager.manager.getComments(post!.postId, skip: 0, limit: 100) { (comments: [Comment], error: NSError?) -> Void in
             if (self.filterError(error)) {
                 self.comments = comments
+                self.imageTableView.reloadData()
             }
         }
     }
@@ -50,7 +55,10 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             }
             break;
         case 1:
-            return UITableViewCell()
+            let comment = comments[indexPath.row]
+            let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier) as! CommentCell
+            cell.comment = comment
+            return cell
         default:
             break;
         }
@@ -104,7 +112,9 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             postTitleView.post = post
             return postTitleView
         case 1:
-            return UIView()
+            let commentHeader = tableView.dequeueReusableCellWithIdentifier(commentHeaderIdentifier) as! CommentHeader
+            commentHeader.commentCount = comments.count
+            return commentHeader
         default:
             return UIView()
         }
