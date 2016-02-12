@@ -36,7 +36,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="w8t-M2-KyD" secondAttribute="trailing" constant="-20" id="vma-R3-eIu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="hwF-nA-3aO">
                         <barButtonItem key="rightBarButtonItem" title="New" id="4pu-JS-0AO">
                             <connections>
@@ -72,11 +71,13 @@
             </objects>
             <point key="canvasLocation" x="2045.5" y="-225"/>
         </scene>
-        <!--Item-->
+        <!--首页-->
         <scene sceneID="V1M-KR-xSA">
             <objects>
                 <navigationController id="HBK-XQ-pBA" customClass="YepNavigationController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ZRP-l5-cUj"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="tab_Gallery" id="ZRP-l5-cUj" userLabel="Gallery">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hAq-PX-JNY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -100,11 +101,11 @@
             </objects>
             <point key="canvasLocation" x="1338.5" y="507"/>
         </scene>
-        <!--Item-->
+        <!--设置-->
         <scene sceneID="bzI-HD-gFj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sHj-7g-QNv" customClass="YepNavigationController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dZl-Me-Hx4"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="tab_Settings" id="dZl-Me-Hx4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aQM-JB-6oS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -117,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="763" y="465"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Yep Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="49e-Tb-3d3" customClass="YepTabBarController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -138,6 +139,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="tab_Gallery" width="27" height="24"/>
+        <image name="tab_Settings" width="32" height="9"/>
     </resources>
 </document>

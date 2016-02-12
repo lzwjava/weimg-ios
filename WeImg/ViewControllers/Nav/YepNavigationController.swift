@@ -19,6 +19,7 @@ class YepNavigationController: UINavigationController, UIGestureRecognizerDelega
             delegate = self
         }
         
+//        self.navigationBar.tintColor = UIColor.yepBarButtonColor()
 //        self.navigationBar.changeBottomHairImage()
     }
 

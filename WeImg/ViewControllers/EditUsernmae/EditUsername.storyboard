@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Username Controller-->
+        <scene sceneID="haa-f8-pzk">
+            <objects>
+                <tableViewController storyboardIdentifier="EditUsernameController" id="bR5-cW-KXu" customClass="EditUsernameController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rZo-zS-XyO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="a9r-C8-wI0">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="71i-wb-G55">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="71i-wb-G55" id="hot-qC-tmQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NIX" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOb-eC-1bb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SOb-eC-1bb" firstAttribute="top" secondItem="hot-qC-tmQ" secondAttribute="top" id="Hx8-Ib-uez"/>
+                                                <constraint firstItem="SOb-eC-1bb" firstAttribute="leading" secondItem="hot-qC-tmQ" secondAttribute="leading" id="KGx-nf-V2b"/>
+                                                <constraint firstAttribute="trailing" secondItem="SOb-eC-1bb" secondAttribute="trailing" id="Vdr-Jo-vF7"/>
+                                                <constraint firstAttribute="bottom" secondItem="SOb-eC-1bb" secondAttribute="bottom" id="c9r-wn-OnB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="bR5-cW-KXu" id="eMf-NA-GcV"/>
+                            <outlet property="delegate" destination="bR5-cW-KXu" id="nJM-g7-aO5"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="nicknameTextField" destination="SOb-eC-1bb" id="ior-U2-bV8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrO-Vm-oLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4976" y="-1156"/>
+        </scene>
+    </scenes>
+</document>

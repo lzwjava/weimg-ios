@@ -84,8 +84,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // NavigationBar Item Style
         
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepTintColor()], forState: .Normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepTintColor().colorWithAlphaComponent(0.3)], forState: .Disabled)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepBarButtonColor()], forState: .Normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepBarButtonColor().colorWithAlphaComponent(0.3)], forState: .Disabled)
+        UIBarButtonItem.appearance().tintColor = UIColor.yepBarButtonColor()
         
         // NavigationBar Title Style
         
@@ -110,7 +111,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         
         UINavigationBar.appearance().titleTextAttributes = textAttributes
-        UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = UIColor.yepNavigationBarTintColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         //UIBarButtonItem.appearance().setTitleTextAttributes(barButtonTextAttributes, forState: UIControlState.Normal)
         //UINavigationBar.appearance().setBackgroundImage(UIImage(named:"white"), forBarMetrics: .Default)
         //UINavigationBar.appearance().shadowImage = UIImage()
@@ -120,12 +125,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //UITabBar.appearance().backgroundImage = UIImage(named:"white")
         //UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().tintColor = UIColor.yepTintColor()
-        UITabBar.appearance().barTintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = UIColor.yepBarButtonColor()
+        UITabBar.appearance().barTintColor = UIColor.yepBarTintColor()
         //UITabBar.appearance().translucent = false
     }
-
-
 
 }
 

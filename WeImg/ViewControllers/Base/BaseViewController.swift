@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: SegueViewController {
+class BaseViewController: UIViewController {
     
     var animatedOnNavigationBar = true
     
@@ -59,6 +59,26 @@ class BaseViewController: SegueViewController {
             errorMessage = error.userInfo[NSLocalizedFailureReasonErrorKey] as? String
         }
         YepAlert.alertSorry(message: errorMessage, inViewController: self, withDismissAction: dismissAction)
+    }
+    
+    
+    override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+        
+        if let navigationController = navigationController {
+            guard navigationController.topViewController == self else {
+                return
+            }
+        }
+        
+        super.performSegueWithIdentifier(identifier, sender: sender)
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: nil)
+        if self.navigationController?.viewControllers.count > 0 {
+            segue.destinationViewController.hidesBottomBarWhenPushed = true
+        }
     }
 }
 

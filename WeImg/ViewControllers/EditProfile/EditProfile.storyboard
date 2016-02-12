@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -100,6 +99,7 @@
                         <outlet property="avatarImageViewWidthConstraint" destination="VqV-cy-fEX" id="UmF-DJ-fYz"/>
                         <outlet property="editProfileTableView" destination="dZB-Et-VDq" id="hcV-Va-JSZ"/>
                         <outlet property="mobileLabel" destination="vpA-xU-vyL" id="naY-1Y-zOj"/>
+                        <segue destination="UKH-YZ-kh2" kind="showDetail" identifier="showEditUsername" id="6C6-pV-ZrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERa-8Z-cFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,6 +110,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4251" y="-959"/>
+        </scene>
+        <!--EditUsernameController-->
+        <scene sceneID="I2J-HJ-Knu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditUsername" referencedIdentifier="EditUsernameController" id="UKH-YZ-kh2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWd-ot-c0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4706.5" y="-1009"/>
         </scene>
     </scenes>
     <resources>

@@ -9,7 +9,7 @@
 import UIKit
 import Ruler
 
-class AboutViewController: SegueViewController {
+class AboutViewController: BaseViewController {
 
     @IBOutlet private weak var appLogoImageView: UIImageView!
     @IBOutlet private weak var appLogoImageViewTopConstraint: NSLayoutConstraint!
@@ -28,7 +28,6 @@ class AboutViewController: SegueViewController {
     private let rowHeight: CGFloat = Ruler.iPhoneVertical(50, 60, 60, 60).value
 
     private let aboutAnnotations: [String] = [
-        NSLocalizedString("Pods help Yep", comment: ""),
         NSLocalizedString("Rate Yep on App Store", comment: ""),
         NSLocalizedString("Terms of Service", comment: ""),
     ]
@@ -60,8 +59,7 @@ class AboutViewController: SegueViewController {
 extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
 
     private enum Row: Int {
-        case Pods = 1
-        case Rate
+        case Rate = 1
         case Terms
     }
 
@@ -98,8 +96,6 @@ extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         switch indexPath.row {
-        case Row.Pods.rawValue:
-            performSegueWithIdentifier("showPodsHelpYep", sender: nil)
         case Row.Rate.rawValue:
             UIApplication.sharedApplication().openURL(NSURL(string: YepConfig.appURLString)!)
         case Row.Terms.rawValue:

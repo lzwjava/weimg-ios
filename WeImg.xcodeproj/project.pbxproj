@@ -71,9 +71,12 @@
 		707650DB1C6D16EC000B3556 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707650D91C6D16EC000B3556 /* CommentCell.xib */; };
 		707650DF1C6D95F7000B3556 /* CommentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650DD1C6D95F7000B3556 /* CommentHeader.swift */; };
 		707650E01C6D95F7000B3556 /* CommentHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707650DE1C6D95F7000B3556 /* CommentHeader.xib */; };
+		707650E31C6E582A000B3556 /* YepTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650E21C6E582A000B3556 /* YepTabBarController.swift */; };
+		707650E51C6E590A000B3556 /* UIScrollView+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650E41C6E590A000B3556 /* UIScrollView+Yep.swift */; };
+		707650EE1C6E68B8000B3556 /* EditUsername.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707650EC1C6E68B8000B3556 /* EditUsername.storyboard */; };
+		707650EF1C6E68B8000B3556 /* EditUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650ED1C6E68B8000B3556 /* EditUsernameController.swift */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
-		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
 		70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */; };
 		70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D81C60E68200C345B2 /* RegisterPickMobileViewController.swift */; };
 		70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D91C60E68200C345B2 /* RegisterPickNameViewController.swift */; };
@@ -199,9 +202,12 @@
 		707650D91C6D16EC000B3556 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		707650DD1C6D95F7000B3556 /* CommentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentHeader.swift; sourceTree = "<group>"; };
 		707650DE1C6D95F7000B3556 /* CommentHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentHeader.xib; sourceTree = "<group>"; };
+		707650E21C6E582A000B3556 /* YepTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepTabBarController.swift; sourceTree = "<group>"; };
+		707650E41C6E590A000B3556 /* UIScrollView+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Yep.swift"; sourceTree = "<group>"; };
+		707650EC1C6E68B8000B3556 /* EditUsername.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUsername.storyboard; sourceTree = "<group>"; };
+		707650ED1C6E68B8000B3556 /* EditUsernameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUsernameController.swift; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
 		70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickAvatarViewController.swift; sourceTree = "<group>"; };
 		70C2F3D81C60E68200C345B2 /* RegisterPickMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickMobileViewController.swift; sourceTree = "<group>"; };
 		70C2F3D91C60E68200C345B2 /* RegisterPickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickNameViewController.swift; sourceTree = "<group>"; };
@@ -538,14 +544,33 @@
 			path = CommentHeader;
 			sourceTree = "<group>";
 		};
+		707650E11C6E582A000B3556 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				707650E21C6E582A000B3556 /* YepTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		707650EB1C6E68B8000B3556 /* EditUsernmae */ = {
+			isa = PBXGroup;
+			children = (
+				707650EC1C6E68B8000B3556 /* EditUsername.storyboard */,
+				707650ED1C6E68B8000B3556 /* EditUsernameController.swift */,
+			);
+			path = EditUsernmae;
+			sourceTree = "<group>";
+		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				707650E11C6E582A000B3556 /* TabBar */,
 				707650C01C69F2B0000B3556 /* PostDetail */,
 				706BD70E1C67C1D200A277D7 /* PickImage */,
 				706BD70B1C67BB5700A277D7 /* NewPost */,
 				706BD7001C66558E00A277D7 /* Posts */,
 				706BD6E71C63C20D00A277D7 /* Nav */,
+				707650EB1C6E68B8000B3556 /* EditUsernmae */,
 				706BD6931C63039C00A277D7 /* EditProfile */,
 				706BD68E1C63030E00A277D7 /* Feedback */,
 				706BD6891C63030400A277D7 /* About */,
@@ -563,7 +588,6 @@
 			isa = PBXGroup;
 			children = (
 				70C2F3D31C60E68200C345B2 /* BaseViewController.swift */,
-				70C2F3D41C60E68200C345B2 /* SegueViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -666,6 +690,7 @@
 		70C2F4161C60EBBB00C345B2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				707650E41C6E590A000B3556 /* UIScrollView+Yep.swift */,
 				706BD69B1C63588700A277D7 /* NSBundle+Yep.swift */,
 				70C2F42A1C611BCA00C345B2 /* UIImage+Yep.swift */,
 				70C2F4261C611AE900C345B2 /* UIFont+Yep.swift */,
@@ -842,6 +867,7 @@
 				707650E01C6D95F7000B3556 /* CommentHeader.xib in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
+				707650EE1C6E68B8000B3556 /* EditUsername.storyboard in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
 				706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */,
 				706BD6911C63030E00A277D7 /* Feedback.storyboard in Resources */,
@@ -913,6 +939,7 @@
 			files = (
 				707650D21C6D01B5000B3556 /* CommentManager.swift in Sources */,
 				70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */,
+				707650E31C6E582A000B3556 /* YepTabBarController.swift in Sources */,
 				70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */,
 				70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */,
 				706BD6E61C63BA7300A277D7 /* AvatarStyles.swift in Sources */,
@@ -949,6 +976,7 @@
 				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,
 				706BD70A1C67350200A277D7 /* Image.swift in Sources */,
 				706BD6A61C6358C300A277D7 /* EditProfileColoredTitleCell.swift in Sources */,
+				707650E51C6E590A000B3556 /* UIScrollView+Yep.swift in Sources */,
 				70C2F4421C61BD9400C345B2 /* LoginPasswordViewController.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
 				706BD7051C66558E00A277D7 /* ImageUICollectionViewCell.swift in Sources */,
@@ -966,7 +994,6 @@
 				70C2F4091C60E6B500C345B2 /* User.swift in Sources */,
 				707650C21C69F2C6000B3556 /* PostDetailViewController.swift in Sources */,
 				70C2F4271C611AE900C345B2 /* UIFont+Yep.swift in Sources */,
-				70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */,
 				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
 				706BD6E21C63B01B00A277D7 /* WeChatActivity.swift in Sources */,
 				706BD6ED1C64E78B00A277D7 /* NSFileManager+Yep.swift in Sources */,
@@ -974,6 +1001,7 @@
 				707650BF1C686EEF000B3556 /* ImageItem.swift in Sources */,
 				706BD67D1C63019B00A277D7 /* SettingsViewController.swift in Sources */,
 				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
+				707650EF1C6E68B8000B3556 /* EditUsernameController.swift in Sources */,
 				70C2F4451C61C44C00C345B2 /* WelcomeViewController.swift in Sources */,
 				707650DF1C6D95F7000B3556 /* CommentHeader.swift in Sources */,
 				706BD7081C66558E00A277D7 /* PostsViewController.swift in Sources */,

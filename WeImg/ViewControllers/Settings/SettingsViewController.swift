@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: BaseViewController {
 
-    @IBOutlet private weak var settingsTableView: UITableView!
+    @IBOutlet weak var settingsTableView: UITableView!
 
     private let settingsUserCellIdentifier = "SettingsUserCell"
     private let settingsMoreCellIdentifier = "SettingsMoreCell"

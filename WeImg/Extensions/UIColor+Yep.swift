@@ -11,15 +11,27 @@ import UIKit
 extension UIColor {
     class func yepTintColor() -> UIColor {
         return UIColor(red: 50/255.0, green: 167/255.0, blue: 255/255.0, alpha: 1.0)
+//        return UIColor.redColor()
+    }
+    
+    class func yepBarButtonColor() -> UIColor {
+        return UIColor.whiteColor()
+    }
+    
+    class func yepNavigationBarTintColor() -> UIColor {
+        return UIColor(red: 31/255.0, green: 31/255.0, blue: 31/255.0, alpha: 1.0)
+    }
+    
+    class func yepBarTintColor() -> UIColor {
+        return UIColor(red: 43/255.0, green: 39/255.0, blue: 35/255.0, alpha: 0.8)
     }
     
     class func yepMessageColor() -> UIColor {
         return UIColor(red: 64/255.0, green: 64/255.0, blue: 64/255.0, alpha: 1.0)
     }
 
-
     class func yepNavgationBarTitleColor() -> UIColor {
-        return UIColor(red: 0.247, green: 0.247, blue: 0.247, alpha: 1.0)
+        return UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
     }
 
     class func yepViewBackgroundColor() -> UIColor {
