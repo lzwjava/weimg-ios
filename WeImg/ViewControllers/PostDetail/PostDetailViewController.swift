@@ -14,6 +14,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     private let postImageCellIdentifier = "PostImageCell"
     
     var post: Post?
+    var comments = [Comment]()
     
     @IBOutlet weak var imageTableView: UITableView!
     
@@ -31,27 +32,48 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
                 self.imageTableView.reloadData()
             }
         }
+        CommentManager.manager.getComments(post!.postId, skip: 0, limit: 100) { (comments: [Comment], error: NSError?) -> Void in
+            if (self.filterError(error)) {
+                self.comments = comments
+            }
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let images = post?.images {
-            let cell = tableView.dequeueReusableCellWithIdentifier(postImageCellIdentifier) as! PostImageCell
-            let image = images[indexPath.row]
-            cell.postImage = image
-            return cell
+        switch (indexPath.section) {
+        case 0:
+            if let images = post?.images {
+                let cell = tableView.dequeueReusableCellWithIdentifier(postImageCellIdentifier) as! PostImageCell
+                let image = images[indexPath.row]
+                cell.postImage = image
+                return cell
+            }
+            break;
+        case 1:
+            return UITableViewCell()
+        default:
+            break;
         }
         return UITableViewCell()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let images = post?.images {
-            return images.count
+        switch(section) {
+        case 0:
+            if let images = post?.images {
+                return images.count
+            } else {
+                return 0
+            }
+        case 1:
+            return comments.count
+        default:
+            return 0
         }
-        return 0
     }
     
     private func heightForImage(image: Image) -> CGFloat {
@@ -60,20 +82,32 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if let images = post?.images {
-            let image = images[indexPath.row]
-            return heightForImage(image)
+        switch(indexPath.section) {
+        case 0:
+            if let images = post?.images {
+                let image = images[indexPath.row]
+                return heightForImage(image)
+            } else {
+                return 0
+            }
+        case 1:
+            return 20
+        default:
+            return 0
         }
-        return 0
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if (section == 0) {
+        switch(section) {
+        case 0:
             let postTitleView = tableView.dequeueReusableCellWithIdentifier(postTitleViewIdentifier) as! PostTitleView
             postTitleView.post = post
             return postTitleView
+        case 1:
+            return UIView()
+        default:
+            return UIView()
         }
-        return UIView()
     }
     
     @IBAction func upButtonClicked(sender: AnyObject) {

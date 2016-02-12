@@ -65,6 +65,10 @@
 		707650C91C69F926000B3556 /* PostTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650C81C69F926000B3556 /* PostTitleView.swift */; };
 		707650CC1C6A15A4000B3556 /* PostImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707650CB1C6A15A4000B3556 /* PostImageCell.xib */; };
 		707650CE1C6A15B8000B3556 /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650CD1C6A15B8000B3556 /* PostImageCell.swift */; };
+		707650D01C6D00AA000B3556 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650CF1C6D00AA000B3556 /* Comment.swift */; };
+		707650D21C6D01B5000B3556 /* CommentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650D11C6D01B5000B3556 /* CommentManager.swift */; };
+		707650DA1C6D16EC000B3556 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650D81C6D16EC000B3556 /* CommentCell.swift */; };
+		707650DB1C6D16EC000B3556 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707650D91C6D16EC000B3556 /* CommentCell.xib */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DD1C60E68200C345B2 /* SegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D41C60E68200C345B2 /* SegueViewController.swift */; };
@@ -187,6 +191,10 @@
 		707650C81C69F926000B3556 /* PostTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTitleView.swift; sourceTree = "<group>"; };
 		707650CB1C6A15A4000B3556 /* PostImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostImageCell.xib; sourceTree = "<group>"; };
 		707650CD1C6A15B8000B3556 /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		707650CF1C6D00AA000B3556 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		707650D11C6D01B5000B3556 /* CommentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentManager.swift; sourceTree = "<group>"; };
+		707650D81C6D16EC000B3556 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		707650D91C6D16EC000B3556 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D41C60E68200C345B2 /* SegueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +323,7 @@
 		706BD67E1C63022700A277D7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				707650D31C6D1694000B3556 /* Comment */,
 				707650CA1C6A157D000B3556 /* PostImage */,
 				707650C51C69F81A000B3556 /* PostTitle */,
 				706BD7161C67CD8600A277D7 /* EditImage */,
@@ -506,6 +515,15 @@
 			path = PostImage;
 			sourceTree = "<group>";
 		};
+		707650D31C6D1694000B3556 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				707650D81C6D16EC000B3556 /* CommentCell.swift */,
+				707650D91C6D16EC000B3556 /* CommentCell.xib */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +574,7 @@
 				70C2F3E71C60E69900C345B2 /* ImageManager.swift */,
 				70C2F3E81C60E69900C345B2 /* PostManager.swift */,
 				70C2F3E91C60E69900C345B2 /* UserManager.swift */,
+				707650D11C6D01B5000B3556 /* CommentManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -572,6 +591,7 @@
 				706BD6F01C65291500A277D7 /* EmptyObject.swift */,
 				706BD7091C67350200A277D7 /* Image.swift */,
 				707650BE1C686EEF000B3556 /* ImageItem.swift */,
+				707650CF1C6D00AA000B3556 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -795,6 +815,7 @@
 				706BD7141C67C8A600A277D7 /* NewPost.storyboard in Resources */,
 				70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */,
 				706BD7061C66558E00A277D7 /* ImageUICollectionViewCell.xib in Resources */,
+				707650DB1C6D16EC000B3556 /* CommentCell.xib in Resources */,
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
 				706BD6881C63025B00A277D7 /* SettingsMoreCell.xib in Resources */,
 				706BD7121C67C26300A277D7 /* PickImage.storyboard in Resources */,
@@ -875,6 +896,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707650D21C6D01B5000B3556 /* CommentManager.swift in Sources */,
 				70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */,
 				70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */,
 				70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */,
@@ -893,6 +915,7 @@
 				70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
 				706BD6821C63022700A277D7 /* SettingsUserCell.swift in Sources */,
+				707650DA1C6D16EC000B3556 /* CommentCell.swift in Sources */,
 				706BD6871C63025B00A277D7 /* SettingsMoreCell.swift in Sources */,
 				706BD6F11C65291500A277D7 /* EmptyObject.swift in Sources */,
 				706BD6781C626C8900A277D7 /* RegisterPickPasswordViewController.swift in Sources */,
@@ -932,6 +955,7 @@
 				70C2F3F71C60E69900C345B2 /* ImageManager.swift in Sources */,
 				706BD6E21C63B01B00A277D7 /* WeChatActivity.swift in Sources */,
 				706BD6ED1C64E78B00A277D7 /* NSFileManager+Yep.swift in Sources */,
+				707650D01C6D00AA000B3556 /* Comment.swift in Sources */,
 				707650BF1C686EEF000B3556 /* ImageItem.swift in Sources */,
 				706BD67D1C63019B00A277D7 /* SettingsViewController.swift in Sources */,
 				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
@@ -1105,6 +1129,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ba10effd-3063-4dac-9303-499e489bfd2d";
 			};
 			name = Debug;
 		};
@@ -1118,6 +1143,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ba10effd-3063-4dac-9303-499e489bfd2d";
 			};
 			name = Release;
 		};

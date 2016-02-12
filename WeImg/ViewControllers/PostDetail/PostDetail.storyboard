@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="32H-If-Eaa">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bLr-6c-1HW" id="hit-p4-2Ix"/>
@@ -43,30 +43,21 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Z3X-KP-Ueb"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oz-KH-tyf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="qw1-BI-ZGi"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="32H-If-Eaa" secondAttribute="trailing" constant="-20" id="1OT-JG-Hzm"/>
-                            <constraint firstItem="6Oz-KH-tyf" firstAttribute="top" secondItem="Jtj-qi-KO4" secondAttribute="topMargin" id="7cq-bH-31B"/>
                             <constraint firstItem="32H-If-Eaa" firstAttribute="leading" secondItem="Jtj-qi-KO4" secondAttribute="leadingMargin" constant="-20" id="Bqn-Cp-VTx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kwQ-2W-xK6" secondAttribute="trailing" constant="-20" id="CxW-EE-BZH"/>
-                            <constraint firstItem="6Oz-KH-tyf" firstAttribute="leading" secondItem="Jtj-qi-KO4" secondAttribute="leadingMargin" constant="-20" id="PXj-H8-n17"/>
                             <constraint firstItem="rd7-ke-P0s" firstAttribute="top" secondItem="32H-If-Eaa" secondAttribute="bottom" id="RV6-Qk-ATg"/>
                             <constraint firstItem="kwQ-2W-xK6" firstAttribute="leading" secondItem="Jtj-qi-KO4" secondAttribute="leadingMargin" constant="-20" id="ejz-ag-8eD"/>
-                            <constraint firstItem="32H-If-Eaa" firstAttribute="top" secondItem="6Oz-KH-tyf" secondAttribute="bottom" id="rxv-le-OBM"/>
+                            <constraint firstItem="32H-If-Eaa" firstAttribute="top" secondItem="5sW-GP-iX4" secondAttribute="bottom" constant="44" id="ijg-2P-pXd"/>
                             <constraint firstItem="rd7-ke-P0s" firstAttribute="top" secondItem="kwQ-2W-xK6" secondAttribute="bottom" id="wPT-Td-Cga"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6Oz-KH-tyf" secondAttribute="trailing" constant="-20" id="z9r-HF-C9W"/>
                         </constraints>
                     </view>
                     <connections>

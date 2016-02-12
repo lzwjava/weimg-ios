@@ -75,8 +75,6 @@ class HttpClient {
                 completion(error)
             }
     }
-    
-    
 
     static func requestArray<T: Mappable>(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, completion:([T], NSError?) -> Void) {
             request(method, URLString, parameters: parameters, array: true) { (object: T?, array: [T], error: NSError?) -> Void in

@@ -48,7 +48,7 @@
                         <outlet property="collectionView" destination="w8t-M2-KyD" id="Lv6-u8-8KQ"/>
                         <segue destination="7Z8-hV-ASW" kind="presentation" identifier="showNewPost" id="07X-IT-U6X"/>
                         <segue destination="ktN-9p-vP7" kind="popoverPresentation" identifier="showPostDetail" popoverAnchorView="w8t-M2-KyD" id="PVa-dX-vRk">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
                         </segue>
                     </connections>
                 </viewController>
