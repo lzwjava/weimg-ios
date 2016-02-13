@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		70629B121C61EF7500865921 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70629B141C61EF7500865921 /* Localizable.strings */; };
+		70696DB01C6F103D0038DB83 /* PostOutlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */; };
+		70696DB11C6F103D0038DB83 /* PostOutlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70696DAF1C6F103D0038DB83 /* PostOutlineCell.xib */; };
 		706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A001E1C5A297300A8D7B4 /* AppDelegate.swift */; };
 		706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00241C5A297300A8D7B4 /* Main.storyboard */; };
 		706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A00271C5A297300A8D7B4 /* Images.xcassets */; };
@@ -45,8 +47,6 @@
 		706BD6EF1C64EA9E00A277D7 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6EE1C64EA9E00A277D7 /* Avatar.swift */; };
 		706BD6F11C65291500A277D7 /* EmptyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6F01C65291500A277D7 /* EmptyObject.swift */; };
 		706BD6F41C66400F00A277D7 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6F31C66400F00A277D7 /* CHTCollectionViewWaterfallLayout.swift */; };
-		706BD7051C66558E00A277D7 /* ImageUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD7011C66558E00A277D7 /* ImageUICollectionViewCell.swift */; };
-		706BD7061C66558E00A277D7 /* ImageUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD7021C66558E00A277D7 /* ImageUICollectionViewCell.xib */; };
 		706BD7081C66558E00A277D7 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD7041C66558E00A277D7 /* PostsViewController.swift */; };
 		706BD70A1C67350200A277D7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD7091C67350200A277D7 /* Image.swift */; };
 		706BD70D1C67C04400A277D7 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD70C1C67C04400A277D7 /* NewPostViewController.swift */; };
@@ -133,6 +133,8 @@
 		527C54C41326CCAC54767B52 /* Pods_WeImg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeImg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70629B161C61EFC000865921 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		70629B171C61EFD900865921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostOutlineCell.swift; sourceTree = "<group>"; };
+		70696DAF1C6F103D0038DB83 /* PostOutlineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostOutlineCell.xib; sourceTree = "<group>"; };
 		706A001B1C5A297300A8D7B4 /* WeImg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeImg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A001E1C5A297300A8D7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A00251C5A297300A8D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -174,8 +176,6 @@
 		706BD6EE1C64EA9E00A277D7 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		706BD6F01C65291500A277D7 /* EmptyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyObject.swift; sourceTree = "<group>"; };
 		706BD6F31C66400F00A277D7 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
-		706BD7011C66558E00A277D7 /* ImageUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUICollectionViewCell.swift; sourceTree = "<group>"; };
-		706BD7021C66558E00A277D7 /* ImageUICollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUICollectionViewCell.xib; sourceTree = "<group>"; };
 		706BD7041C66558E00A277D7 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		706BD7091C67350200A277D7 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		706BD70C1C67C04400A277D7 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +264,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70696DAD1C6F10310038DB83 /* PostOutline */ = {
+			isa = PBXGroup;
+			children = (
+				70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */,
+				70696DAF1C6F103D0038DB83 /* PostOutlineCell.xib */,
+			);
+			path = PostOutline;
+			sourceTree = "<group>";
+		};
 		706A00121C5A297300A8D7B4 = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +338,7 @@
 		706BD67E1C63022700A277D7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				70696DAD1C6F10310038DB83 /* PostOutline */,
 				707650DC1C6D95CC000B3556 /* CommentHeader */,
 				707650D31C6D1694000B3556 /* Comment */,
 				707650CA1C6A157D000B3556 /* PostImage */,
@@ -450,8 +460,6 @@
 		706BD7001C66558E00A277D7 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				706BD7011C66558E00A277D7 /* ImageUICollectionViewCell.swift */,
-				706BD7021C66558E00A277D7 /* ImageUICollectionViewCell.xib */,
 				706BD7041C66558E00A277D7 /* PostsViewController.swift */,
 			);
 			path = Posts;
@@ -838,7 +846,7 @@
 				706BD71C1C67D40600A277D7 /* AddImageCell.xib in Resources */,
 				706BD7141C67C8A600A277D7 /* NewPost.storyboard in Resources */,
 				70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */,
-				706BD7061C66558E00A277D7 /* ImageUICollectionViewCell.xib in Resources */,
+				70696DB11C6F103D0038DB83 /* PostOutlineCell.xib in Resources */,
 				707650DB1C6D16EC000B3556 /* CommentCell.xib in Resources */,
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
 				706BD6881C63025B00A277D7 /* SettingsMoreCell.xib in Resources */,
@@ -963,7 +971,6 @@
 				707650E51C6E590A000B3556 /* UIScrollView+Yep.swift in Sources */,
 				70C2F4421C61BD9400C345B2 /* LoginPasswordViewController.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
-				706BD7051C66558E00A277D7 /* ImageUICollectionViewCell.swift in Sources */,
 				706BD71A1C67CDBD00A277D7 /* EditImageCell.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
 				706BD6921C63030E00A277D7 /* FeedbackViewController.swift in Sources */,
@@ -991,6 +998,7 @@
 				706BD7081C66558E00A277D7 /* PostsViewController.swift in Sources */,
 				70C2F4371C61BD2E00C345B2 /* ShowStepGeniusViewController.swift in Sources */,
 				70C2F4151C60EB5E00C345B2 /* CommonHelper.swift in Sources */,
+				70696DB01C6F103D0038DB83 /* PostOutlineCell.swift in Sources */,
 				70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */,
 				706BD69C1C63588700A277D7 /* NSBundle+Yep.swift in Sources */,
 				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,

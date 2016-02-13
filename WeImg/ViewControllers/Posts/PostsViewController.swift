@@ -64,8 +64,8 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     // Register CollectionView Nibs
     func registerNibs(){
         
-        // attach the UI nib file for the ImageUICollectionViewCell to the collectionview 
-        let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
+        // attach the UI nib file for the PostOutlineCell to the collectionview 
+        let viewNib = UINib(nibName: "PostOutlineCell", bundle: nil)
         collectionView.registerNib(viewNib, forCellWithReuseIdentifier: "cell")
     }
     
@@ -80,11 +80,11 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         // Create the cell and return the cell
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ImageUICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PostOutlineCell
         
         // Add image to cell
         let post = posts[indexPath.row]
-        cell.image.kf_setImageWithURL(NSURL(string: post.cover.link)!)
+        cell.post = post
         return cell
     }
     
@@ -94,12 +94,8 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     //** Size for the cells in the Waterfall Layout */
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        // create a cell size from the image size, and return the size
-        let scale = UIScreen.mainScreen().scale
         let post = posts[indexPath.row]
-        let imageSize = CGSize(width: CGFloat(post.cover.width) / scale, height: CGFloat(post.cover.height) / scale)
-        return imageSize
+        return PostOutlineCell.sizeForPost(post)
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

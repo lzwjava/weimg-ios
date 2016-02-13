@@ -10,7 +10,7 @@ import UIKit
 import KeyboardMan
 import DeviceGuru
 
-class FeedbackViewController: UIViewController {
+class FeedbackViewController: BaseViewController {
 
     @IBOutlet private weak var promptLabel: UILabel! {
         didSet {
