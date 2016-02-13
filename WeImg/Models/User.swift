@@ -21,7 +21,6 @@ class User : Mappable {
     var avatarUrl: String!
     var sessionToken: String!
     var created: NSDate!
-    var introduction: String!
     
     var friendState: UserFriendState {
         if let currnetUser = UserManager.currentUser {
@@ -48,7 +47,6 @@ class User : Mappable {
         mobilePhoneNumber   <-  map["mobilePhoneNumber"]
         avatarUrl           <-  map["avatarUrl"]
         sessionToken        <-  map["sessionToken"]
-        introduction        <-  map["introduction"]
         created             <- (map["created"],DateTransform())
     }
 }

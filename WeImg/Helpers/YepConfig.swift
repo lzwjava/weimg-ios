@@ -43,36 +43,11 @@ class YepConfig {
     
     struct Settings {
         static let userCellAvatarSize: CGFloat = 80
-        
-        static let introFont: UIFont = {
-            if #available(iOS 8.2, *) {
-                return UIFont.systemFontOfSize(12, weight: UIFontWeightLight)
-            } else {
-                return UIFont(name: "HelveticaNeue-Light", size: 12)!
-            }
-        }()
-        
-        static let introInset: CGFloat = 20 + userCellAvatarSize + 20 + 10 + 11 + 20
-    }
-    
-    
-    struct EditProfile {
-        
-        static let introFont: UIFont = {
-            if #available(iOS 8.2, *) {
-                return UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
-            } else {
-                return UIFont(name: "HelveticaNeue-Light", size: 15)!
-            }
-        }()
-        
-        static let introInset: CGFloat = 20 + 20
     }
     
     struct Profile {
         static let leftEdgeInset: CGFloat = Ruler.iPhoneHorizontal(20, 38, 40).value
         static let rightEdgeInset: CGFloat = leftEdgeInset
-        static let introductionLabelFont = UIFont.systemFontOfSize(14)
     }
     
     struct ChinaSocialNetwork {

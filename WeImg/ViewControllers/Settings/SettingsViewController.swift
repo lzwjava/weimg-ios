@@ -15,11 +15,6 @@ class SettingsViewController: BaseViewController {
     private let settingsUserCellIdentifier = "SettingsUserCell"
     private let settingsMoreCellIdentifier = "SettingsMoreCell"
 
-    private var introduction: String {
-        get {
-            return UserManager.currentUser?.introduction ?? NSLocalizedString("No Introduction yet.", comment: "");
-        }
-    }
 
     private let moreAnnotations: [[String: String]] = [
         [
@@ -31,12 +26,6 @@ class SettingsViewController: BaseViewController {
             "segue": "showAbout",
         ],
     ]
-
-    private let introAttributes = [NSFontAttributeName: YepConfig.Settings.introFont]
-
-    private struct Listener {
-        static let Introduction = "SettingsViewController.Introduction"
-    }
 
     deinit {
         settingsTableView?.delegate = nil
@@ -116,11 +105,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         case Section.User.rawValue:
 
             let tableViewWidth = CGRectGetWidth(settingsTableView.bounds)
-            let introLabelMaxWidth = tableViewWidth - YepConfig.Settings.introInset
 
-            let rect = introduction.boundingRectWithSize(CGSize(width: introLabelMaxWidth, height: CGFloat(FLT_MAX)), options: [.UsesLineFragmentOrigin, .UsesFontLeading], attributes: introAttributes, context: nil)
-
-            let height = max(20 + 8 + 22 + 8 + ceil(rect.height) + 20, 20 + YepConfig.Settings.userCellAvatarSize + 20)
+            let height = max(20 + 8 + 22, 20 + YepConfig.Settings.userCellAvatarSize + 20)
 
             return height
 

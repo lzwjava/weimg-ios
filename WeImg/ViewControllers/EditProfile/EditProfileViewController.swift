@@ -42,18 +42,6 @@ class EditProfileViewController: BaseViewController {
     private let editProfileMoreInfoCellIdentifier = "EditProfileMoreInfoCell"
     private let editProfileColoredTitleCellIdentifier = "EditProfileColoredTitleCell"
 
-    private var introduction: String {
-        return UserManager.currentUser?.introduction ?? NSLocalizedString("No Introduction yet.", comment: "")
-    }
-
-    private let introAttributes = [NSFontAttributeName: YepConfig.EditProfile.introFont]
-
-    private struct Listener {
-        static let Nickname = "EditProfileLessInfoCell.Nickname"
-        static let Introduction = "EditProfileLessInfoCell.Introduction"
-        static let Badge = "EditProfileLessInfoCell.Badge"
-    }
-
     deinit {
 
         editProfileTableView?.delegate = nil
@@ -156,13 +144,6 @@ class EditProfileViewController: BaseViewController {
         }
     }
 
-    @objc private func saveIntroduction(sender: UIBarButtonItem) {
-
-        let introductionCellIndexPath = NSIndexPath(forRow: InfoRow.Intro.rawValue, inSection: Section.Info.rawValue)
-        if let introductionCell = editProfileTableView.cellForRowAtIndexPath(introductionCellIndexPath) as? EditProfileMoreInfoCell {
-            introductionCell.infoTextView.resignFirstResponder()
-        }
-    }
 }
 
 extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate {
@@ -213,49 +194,6 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
                 cell.selectionStyle = .Default
                 cell.infoLabel.text = UserManager.currentUser?.username
                 return cell
-
-            case InfoRow.Intro.rawValue:
-
-                let cell = tableView.dequeueReusableCellWithIdentifier(editProfileMoreInfoCellIdentifier) as! EditProfileMoreInfoCell
-
-                cell.annotationLabel.text = NSLocalizedString("Introduction", comment: "")
-                
-                cell.infoTextView.text = introduction ?? NSLocalizedString("Introduce yourself here.", comment: "")
-
-                cell.infoTextViewIsDirtyAction = { [weak self] isDirty in
-                    self?.navigationItem.rightBarButtonItem = self?.doneButton
-                    self?.doneButton.enabled = isDirty
-                }
-
-                cell.infoTextViewDidEndEditingAction = { [weak self] newIntroduction in
-                    self?.doneButton.enabled = false
-
-                    if let oldIntroduction = UserManager.currentUser?.introduction {
-                        if oldIntroduction == newIntroduction {
-                            return
-                        }
-                    }
-
-                    YepHUD.showActivityIndicator()
-
-//                    updateMyselfWithInfo(["introduction": newIntroduction], failureHandler: { (reason, errorMessage) in
-//                        defaultFailureHandler(reason, errorMessage: errorMessage)
-//
-//                        YepHUD.hideActivityIndicator()
-//
-//                    }, completion: { success in
-//                        dispatch_async(dispatch_get_main_queue()) {
-//                            YepUserDefaults.introduction.value = newIntroduction
-//
-//                            self?.editProfileTableView.reloadData()
-//                        }
-//
-//                        YepHUD.hideActivityIndicator()
-//                    })
-                }
-
-                return cell
-
             default:
                 return UITableViewCell()
             }
@@ -281,18 +219,6 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
 
             case InfoRow.Nickname.rawValue:
                 return 60
-
-            case InfoRow.Intro.rawValue:
-
-                let tableViewWidth = CGRectGetWidth(editProfileTableView.bounds)
-                let introLabelMaxWidth = tableViewWidth - YepConfig.EditProfile.introInset
-
-                let rect = introduction.boundingRectWithSize(CGSize(width: introLabelMaxWidth, height: CGFloat(FLT_MAX)), options: [.UsesLineFragmentOrigin, .UsesFontLeading], attributes: introAttributes, context: nil)
-
-                let height = 20 + 22 + 10 + ceil(rect.height) + 20
-                
-                return max(height, 120)
-
             default:
                 return 0
             }
@@ -328,8 +254,6 @@ extension EditProfileViewController: UITableViewDataSource, UITableViewDelegate 
             YepAlert.confirmOrCancel(title: NSLocalizedString("Notice", comment: ""), message: NSLocalizedString("Do you want to logout?", comment: ""), confirmTitle: NSLocalizedString("Yes", comment: ""), cancelTitle: NSLocalizedString("Cancel", comment: ""), inViewController: self, withConfirmAction: { () -> Void in
 
 //                cleanRealmAndCaches()
-//
-//                YepUserDefaults.cleanAllUserDefaults()
                 
                 UserManager.manager.clearCurrentUser()
 

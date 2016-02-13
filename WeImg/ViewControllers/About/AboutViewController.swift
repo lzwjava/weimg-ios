@@ -28,7 +28,7 @@ class AboutViewController: BaseViewController {
     private let rowHeight: CGFloat = Ruler.iPhoneVertical(50, 60, 60, 60).value
 
     private let aboutAnnotations: [String] = [
-        NSLocalizedString("Rate Yep on App Store", comment: ""),
+        NSLocalizedString("Rate WeImg on App Store", comment: ""),
         NSLocalizedString("Terms of Service", comment: ""),
     ]
 

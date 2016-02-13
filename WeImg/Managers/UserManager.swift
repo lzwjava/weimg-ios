@@ -78,23 +78,17 @@ class UserManager: BaseManager {
     }
     
     func updateUsername(username: String, completion:(User?, NSError?) -> Void) {
-        self.updateInfo(nil, username: username, introduction: nil, completion: completion)
+        self.updateInfo(nil, username: username, completion: completion)
     }
     
-    func updateIntro(intro: String, completion:(User?, NSError?) -> Void) {
-        self.updateInfo(nil, username: nil, introduction: intro, completion: completion)
-    }
     
-    private func updateInfo(avatarUrl: String?, username: String?, introduction: String?, completion:(User?, NSError?) -> Void) {
+    private func updateInfo(avatarUrl: String?, username: String?, completion:(User?, NSError?) -> Void) {
         var params =  [String: AnyObject]()
         if let avatarUrl = avatarUrl {
             params["avatarUrl"] = avatarUrl
         }
         if let username = username {
             params["username"] = username
-        }
-        if let introduction = introduction {
-            params["introduction"] = introduction
         }
         HttpClient.request(.PATCH, "self", parameters: params) { (user: User?, error: NSError?) -> Void in
             guard error == nil else {
@@ -113,7 +107,7 @@ class UserManager: BaseManager {
                 return
             }
             let avatarUrl = dict!["url"]
-            self.updateInfo(avatarUrl, username: nil, introduction: nil, completion: { (user: User?, error: NSError?) -> Void in
+            self.updateInfo(avatarUrl, username: nil,  completion: { (user: User?, error: NSError?) -> Void in
                 completion(error)
             })
         }

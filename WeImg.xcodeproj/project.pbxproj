@@ -32,8 +32,6 @@
 		706BD6A71C6358C300A277D7 /* EditProfileColoredTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD69F1C6358C300A277D7 /* EditProfileColoredTitleCell.xib */; };
 		706BD6A81C6358C300A277D7 /* EditProfileLessInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6A11C6358C300A277D7 /* EditProfileLessInfoCell.swift */; };
 		706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */; };
-		706BD6AA1C6358C300A277D7 /* EditProfileMoreInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */; };
-		706BD6AB1C6358C300A277D7 /* EditProfileMoreInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */; };
 		706BD6AF1C636BA800A277D7 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6AD1C636BA800A277D7 /* AboutCell.swift */; };
 		706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6AE1C636BA800A277D7 /* AboutCell.xib */; };
 		706BD6B21C636D0300A277D7 /* YepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6B11C636D0300A277D7 /* YepLog.swift */; };
@@ -163,8 +161,6 @@
 		706BD69F1C6358C300A277D7 /* EditProfileColoredTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileColoredTitleCell.xib; sourceTree = "<group>"; };
 		706BD6A11C6358C300A277D7 /* EditProfileLessInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileLessInfoCell.swift; sourceTree = "<group>"; };
 		706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileLessInfoCell.xib; sourceTree = "<group>"; };
-		706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileMoreInfoCell.swift; sourceTree = "<group>"; };
-		706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileMoreInfoCell.xib; sourceTree = "<group>"; };
 		706BD6AD1C636BA800A277D7 /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		706BD6AE1C636BA800A277D7 /* AboutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutCell.xib; sourceTree = "<group>"; };
 		706BD6B11C636D0300A277D7 /* YepLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YepLog.swift; sourceTree = "<group>"; };
@@ -341,7 +337,6 @@
 				706BD6AC1C636BA800A277D7 /* About */,
 				706BD69D1C6358C300A277D7 /* EditProfileColoredTitle */,
 				706BD6A01C6358C300A277D7 /* EditProfileLessInfo */,
-				706BD6A31C6358C300A277D7 /* EditProfileMoreInfo */,
 				706BD6841C63025B00A277D7 /* SettingsMore */,
 				706BD67F1C63022700A277D7 /* SettingsUser */,
 			);
@@ -417,15 +412,6 @@
 				706BD6A21C6358C300A277D7 /* EditProfileLessInfoCell.xib */,
 			);
 			path = EditProfileLessInfo;
-			sourceTree = "<group>";
-		};
-		706BD6A31C6358C300A277D7 /* EditProfileMoreInfo */ = {
-			isa = PBXGroup;
-			children = (
-				706BD6A41C6358C300A277D7 /* EditProfileMoreInfoCell.swift */,
-				706BD6A51C6358C300A277D7 /* EditProfileMoreInfoCell.xib */,
-			);
-			path = EditProfileMoreInfo;
 			sourceTree = "<group>";
 		};
 		706BD6AC1C636BA800A277D7 /* About */ = {
@@ -845,7 +831,6 @@
 			files = (
 				706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */,
 				706BD6A71C6358C300A277D7 /* EditProfileColoredTitleCell.xib in Resources */,
-				706BD6AB1C6358C300A277D7 /* EditProfileMoreInfoCell.xib in Resources */,
 				707650C41C69F320000B3556 /* PostDetail.storyboard in Resources */,
 				706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */,
 				707650C71C69F915000B3556 /* PostTitleView.xib in Resources */,
@@ -965,7 +950,6 @@
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
 				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
-				706BD6AA1C6358C300A277D7 /* EditProfileMoreInfoCell.swift in Sources */,
 				706BD7101C67C1DD00A277D7 /* PickImageViewController.swift in Sources */,
 				706BD6DA1C63A0B500A277D7 /* DiscoveredUser.swift in Sources */,
 				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,

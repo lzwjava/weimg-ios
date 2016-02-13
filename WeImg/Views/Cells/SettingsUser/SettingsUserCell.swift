@@ -16,8 +16,6 @@ class SettingsUserCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
 
-    @IBOutlet weak var introLabel: UILabel!
-
     @IBOutlet weak var accessoryImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -26,8 +24,6 @@ class SettingsUserCell: UITableViewCell {
         let avatarSize = YepConfig.Settings.userCellAvatarSize
         avatarImageViewWidthConstraint.constant = avatarSize
 
-        introLabel.font = YepConfig.Settings.introFont
-
         accessoryImageView.tintColor = UIColor.yepCellAccessoryImageViewTintColor()
         initUser()
     }
@@ -35,7 +31,6 @@ class SettingsUserCell: UITableViewCell {
     func initUser() {
         self.updateAvatar()
         self.nameLabel.text = UserManager.currentUser?.username
-        self.introLabel.text = UserManager.currentUser?.introduction
     }
 
     func updateAvatar() {
