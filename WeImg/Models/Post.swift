@@ -37,6 +37,6 @@ class Post : Mappable {
         downs   <-  map["downs"]
         points  <-  map["points"]
         images  <-  map["images"]
-        created <-  (map["created"], DateTransform())
+        created <-  (map["created"], CustomDateTransform())
     }
 }

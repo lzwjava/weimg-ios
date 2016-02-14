@@ -30,7 +30,7 @@ class Image : Mappable {
         height  <-  map["height"]
         author  <-  map["author"]
         description  <-  map["description"]
-        created <-  (map["created"], DateTransform())
+        created <-  (map["created"], CustomDateTransform())
     }
 }
 

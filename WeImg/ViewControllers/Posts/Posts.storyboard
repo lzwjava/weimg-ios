@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--PostsViewController-->
+        <scene sceneID="eFB-RC-kW4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RxG-QQ-UfD" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PostsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Lgn-kq-v4r" userLabel="PostsViewController" customClass="PostsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v1y-Uj-IkY"/>
+                        <viewControllerLayoutGuide type="bottom" id="WPF-3q-XMR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4f8-YV-DQZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Na3-ee-E1g" userLabel="Posts Collection View">
+                                <rect key="frame" x="20" y="40" width="560" height="560"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TAk-0g-rhx">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Na3-ee-E1g" firstAttribute="top" secondItem="v1y-Uj-IkY" secondAttribute="bottom" constant="20" id="1gH-Ht-9AM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Na3-ee-E1g" secondAttribute="trailing" id="KRH-jb-Q82"/>
+                            <constraint firstItem="Na3-ee-E1g" firstAttribute="leading" secondItem="4f8-YV-DQZ" secondAttribute="leadingMargin" id="dJk-qZ-79l"/>
+                            <constraint firstItem="WPF-3q-XMR" firstAttribute="top" secondItem="Na3-ee-E1g" secondAttribute="bottom" id="e9Q-HY-cfS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Na3-ee-E1g" id="Hd9-0L-iOz"/>
+                        <segue destination="jLR-xS-zZe" kind="presentation" identifier="showNewPost" id="9aW-rq-12M"/>
+                        <segue destination="JVM-V5-d6i" kind="show" identifier="showPostDetail" id="pdL-Ab-TFx"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1572" y="-235"/>
+        </scene>
+        <!--PostDetailViewController-->
+        <scene sceneID="Gzg-xC-t0B">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbS-mQ-BVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="PostDetail" referencedIdentifier="PostDetailViewController" id="JVM-V5-d6i" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="2099.5" y="-347"/>
+        </scene>
+        <!--NewPostViewController-->
+        <scene sceneID="6Zj-2f-V5N">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4v-xe-WK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="NewPost" referencedIdentifier="NewPostViewController" id="jLR-xS-zZe" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="2099" y="-125"/>
+        </scene>
+    </scenes>
+</document>

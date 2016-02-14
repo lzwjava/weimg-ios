@@ -14,8 +14,11 @@ class PostManager : BaseManager {
         return PostManager()
     }()
     
-    func getPosts( completionHandler: ([Post], NSError?) -> Void) {
-        HttpClient.requestArray(.GET, "posts", parameters: nil, completion: completionHandler)
+    func getPosts(skip: Int, limit: Int, completionHandler: ([Post], NSError?) -> Void) {
+        var params = [String: AnyObject]()
+        params["skip"] = skip
+        params["limit"] = limit
+        HttpClient.requestArray(.GET, "posts", parameters: params, completion: completionHandler)
     }
     
     func createPost(title: String, imageItems:[ImageItem], completionHandler: (NSError?)-> Void) {

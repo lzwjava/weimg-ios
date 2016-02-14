@@ -47,6 +47,6 @@ class User : Mappable {
         mobilePhoneNumber   <-  map["mobilePhoneNumber"]
         avatarUrl           <-  map["avatarUrl"]
         sessionToken        <-  map["sessionToken"]
-        created             <- (map["created"],DateTransform())
+        created             <- (map["created"], CustomDateTransform())
     }
 }

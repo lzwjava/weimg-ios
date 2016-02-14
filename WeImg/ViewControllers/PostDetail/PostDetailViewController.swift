@@ -22,14 +22,19 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        fetchData()
+    }
+    
+    private func setupTableView() {
         imageTableView.registerNib(UINib(nibName: postTitleViewIdentifier, bundle: nil), forCellReuseIdentifier: postTitleViewIdentifier)
         imageTableView.registerNib(UINib(nibName: postImageCellIdentifier, bundle: nil), forCellReuseIdentifier: postImageCellIdentifier)
         imageTableView.registerNib(UINib(nibName: commentCellIdentifier, bundle: nil), forCellReuseIdentifier: commentCellIdentifier)
         imageTableView.registerNib(UINib(nibName: commentHeaderIdentifier, bundle: nil), forCellReuseIdentifier: commentHeaderIdentifier)
-        fetchData()
+        imageTableView.backgroundColor = UIColor.yepMainColor()
     }
     
-    func fetchData() {
+    private func fetchData() {
         PostManager.manager.getPost(post!.postId) { (post: Post?, error: NSError?) -> Void in
             if (self.filterError(error)) {
                 self.post = post
@@ -119,6 +124,20 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             return UIView()
         }
     }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch(section) {
+        case 0:
+            return PostTitleView.heightForPost(post)
+        case 1:
+            return CommentHeader.heightForPost(post)
+        default:
+            break
+        }
+        return 0
+    }
+    
+    
     
     @IBAction func upButtonClicked(sender: AnyObject) {
         PostManager.manager.vote(post!.postId, vote: "up") { (error: NSError?) -> Void in

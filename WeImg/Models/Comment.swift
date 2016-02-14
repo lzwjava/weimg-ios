@@ -27,6 +27,6 @@ class Comment: Mappable {
         parentId    <- map["parentId"]
         content     <- map["content"]
         authorId    <- map["authorId"]
-        created     <- (map["created"], DateTransform())
+        created     <- (map["created"], CustomDateTransform())
     }
 }

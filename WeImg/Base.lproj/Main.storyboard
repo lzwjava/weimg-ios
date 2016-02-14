@@ -2,75 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--PostsViewController-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController id="9pv-A4-QxB" userLabel="PostsViewController" customClass="PostsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w8t-M2-KyD" userLabel="Posts Collection View">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ESF-XA-dc1">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="w8t-M2-KyD" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="Zy8-Zg-jVi"/>
-                            <constraint firstItem="w8t-M2-KyD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="atR-LE-xu2"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="w8t-M2-KyD" secondAttribute="bottom" id="dkO-co-t96"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="w8t-M2-KyD" secondAttribute="trailing" constant="-20" id="vma-R3-eIu"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="hwF-nA-3aO">
-                        <barButtonItem key="rightBarButtonItem" title="New" id="4pu-JS-0AO">
-                            <connections>
-                                <action selector="newButtonClicked:" destination="9pv-A4-QxB" id="G3J-1N-r7n"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="collectionView" destination="w8t-M2-KyD" id="Lv6-u8-8KQ"/>
-                        <segue destination="7Z8-hV-ASW" kind="presentation" identifier="showNewPost" id="07X-IT-U6X"/>
-                        <segue destination="ktN-9p-vP7" kind="popoverPresentation" identifier="showPostDetail" popoverAnchorView="w8t-M2-KyD" id="PVa-dX-vRk">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
-                        </segue>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1560" y="-243"/>
-        </scene>
-        <!--PostDetailViewController-->
-        <scene sceneID="cGD-kn-3zW">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PostDetail" referencedIdentifier="PostDetailViewController" id="ktN-9p-vP7" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lFu-5d-DnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2045.5" y="-321"/>
-        </scene>
-        <!--NewPostViewController-->
-        <scene sceneID="0cp-2m-X6k">
-            <objects>
-                <viewControllerPlaceholder storyboardName="NewPost" referencedIdentifier="NewPostViewController" id="7Z8-hV-ASW" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="paU-8o-lqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2045.5" y="-225"/>
-        </scene>
         <!--首页-->
         <scene sceneID="V1M-KR-xSA">
             <objects>
@@ -83,12 +16,22 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="zZt-Mk-Knu"/>
+                        <segue destination="KHv-5c-PFW" kind="relationship" relationship="rootViewController" id="h7k-qF-tPA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLf-Ku-w2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="710" y="-243"/>
+        </scene>
+        <!--PostsViewController-->
+        <scene sceneID="lSq-br-WS2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Posts" referencedIdentifier="PostsViewController" id="KHv-5c-PFW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vVp-FU-xmJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GG0-dC-RzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247.5" y="-257"/>
         </scene>
         <!--SettingsViewController-->
         <scene sceneID="Qhs-yT-JNx">
@@ -116,7 +59,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtS-v6-GiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763" y="465"/>
+            <point key="canvasLocation" x="721" y="499"/>
         </scene>
         <!--Yep Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

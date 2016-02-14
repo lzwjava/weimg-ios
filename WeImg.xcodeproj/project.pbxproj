@@ -10,6 +10,8 @@
 		70629B121C61EF7500865921 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70629B141C61EF7500865921 /* Localizable.strings */; };
 		70696DB01C6F103D0038DB83 /* PostOutlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */; };
 		70696DB11C6F103D0038DB83 /* PostOutlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70696DAF1C6F103D0038DB83 /* PostOutlineCell.xib */; };
+		70696DB31C6F7AB90038DB83 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70696DB21C6F7AB90038DB83 /* Posts.storyboard */; };
+		70696DB51C70C67E0038DB83 /* CustomDateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70696DB41C70C67E0038DB83 /* CustomDateTransform.swift */; };
 		706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A001E1C5A297300A8D7B4 /* AppDelegate.swift */; };
 		706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A00241C5A297300A8D7B4 /* Main.storyboard */; };
 		706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A00271C5A297300A8D7B4 /* Images.xcassets */; };
@@ -135,6 +137,8 @@
 		70629B171C61EFD900865921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostOutlineCell.swift; sourceTree = "<group>"; };
 		70696DAF1C6F103D0038DB83 /* PostOutlineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostOutlineCell.xib; sourceTree = "<group>"; };
+		70696DB21C6F7AB90038DB83 /* Posts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Posts.storyboard; sourceTree = "<group>"; };
+		70696DB41C70C67E0038DB83 /* CustomDateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateTransform.swift; sourceTree = "<group>"; };
 		706A001B1C5A297300A8D7B4 /* WeImg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeImg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A001E1C5A297300A8D7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A00251C5A297300A8D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				706BD7041C66558E00A277D7 /* PostsViewController.swift */,
+				70696DB21C6F7AB90038DB83 /* Posts.storyboard */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				70C2F4141C60EB5E00C345B2 /* CommonHelper.swift */,
 				70C2F42C1C611BF900C345B2 /* YepConfig.swift */,
 				706BD6B11C636D0300A277D7 /* YepLog.swift */,
+				70696DB41C70C67E0038DB83 /* CustomDateTransform.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -857,6 +863,7 @@
 				707650CC1C6A15A4000B3556 /* PostImageCell.xib in Resources */,
 				706A00261C5A297300A8D7B4 /* Main.storyboard in Resources */,
 				70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */,
+				70696DB31C6F7AB90038DB83 /* Posts.storyboard in Resources */,
 				707650E01C6D95F7000B3556 /* CommentHeader.xib in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
@@ -959,6 +966,7 @@
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,
 				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
 				706BD7101C67C1DD00A277D7 /* PickImageViewController.swift in Sources */,
+				70696DB51C70C67E0038DB83 /* CustomDateTransform.swift in Sources */,
 				706BD6DA1C63A0B500A277D7 /* DiscoveredUser.swift in Sources */,
 				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,
 				70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */,

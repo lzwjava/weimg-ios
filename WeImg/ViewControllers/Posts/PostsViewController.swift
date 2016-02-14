@@ -12,6 +12,7 @@ import Kingfisher
 class PostsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    private var refreshControl: UIRefreshControl?
     var posts = [Post]()
     
     //MARK: - View Controller Lifecycle
@@ -22,7 +23,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         // Attach datasource and delegate
         self.collectionView.dataSource  = self
         self.collectionView.delegate = self
-        self.collectionView.backgroundColor = UIColor.whiteColor()
+        self.collectionView.backgroundColor = UIColor.clearColor()
         
         //Layout setup
         setupCollectionView()
@@ -30,7 +31,14 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         //Register nibs
         registerNibs()
         
-        PostManager.manager.getPosts { (fetchedPosts: [Post], error: NSError?) -> Void in
+        loadPosts(false)
+    }
+    
+    private func loadPosts(refresh: Bool) {
+        PostManager.manager.getPosts(0, limit: 100) { (fetchedPosts: [Post], error: NSError?) -> Void in
+            if refresh {
+                self.refreshControl?.endRefreshing()
+            }
             if (self.filterError(error)) {
                 self.posts = fetchedPosts
                 self.collectionView.reloadData()
@@ -59,6 +67,15 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         
         // Add the waterfall layout to your collection view
         self.collectionView.collectionViewLayout = layout
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        self.refreshControl = refreshControl
+        collectionView.addSubview(refreshControl)
+    }
+    
+    func refresh(sender: AnyObject) {
+        loadPosts(true)
     }
     
     // Register CollectionView Nibs

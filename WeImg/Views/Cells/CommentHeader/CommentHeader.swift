@@ -29,4 +29,8 @@ class CommentHeader: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    class func heightForPost(post: Post?) -> CGFloat {
+        return 44
+    }
+
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 func println(object: Any) {
-    #if DEBUG
+//    #if DEBUG
         Swift.print(object)
-    #endif
+//    #endif
 }
 

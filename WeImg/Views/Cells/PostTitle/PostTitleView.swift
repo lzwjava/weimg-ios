@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DateTools
 
 class PostTitleView: UITableViewCell {
     
@@ -16,8 +17,6 @@ class PostTitleView: UITableViewCell {
     
     @IBOutlet weak var voteLabel: UILabel!
     
-    @IBOutlet weak var commentLabel: UILabel!
-    
     @IBOutlet weak var timeLabel: UILabel!
     
     var post: Post? {
@@ -25,15 +24,16 @@ class PostTitleView: UITableViewCell {
             self.titleLabel.text = self.post?.title
             self.nameLabel.text = String(self.post?.author)
             self.voteLabel.text = String(self.post?.ups)
-//            self.commentLabel.text = String(self.post?.)
+            self.timeLabel.text = self.post?.created.timeAgoSinceNow()
 //            self.timeLabel.text = self.post?.created
         }
     }
     
     override func awakeFromNib() {
-        
     }
     
-    
+    class func heightForPost(post: Post?) -> CGFloat {
+        return 73
+    }
     
 }
