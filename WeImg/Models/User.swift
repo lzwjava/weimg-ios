@@ -15,7 +15,7 @@ enum UserFriendState: Int {
 }
 
 class User : Mappable {
-    var userId: String!
+    var userId: Int!
     var username: String!
     var mobilePhoneNumber: String!
     var avatarUrl: String!

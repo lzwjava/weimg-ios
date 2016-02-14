@@ -11,7 +11,7 @@ import ObjectMapper
 
 class Post : Mappable {
     var postId: Int!
-    var author: Int!
+    var author: User!
     var cover: Image!
     var score: Float!
     var title: String!

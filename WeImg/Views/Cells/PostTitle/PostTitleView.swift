@@ -22,8 +22,9 @@ class PostTitleView: UITableViewCell {
     var post: Post? {
         didSet {
             self.titleLabel.text = self.post?.title
-            self.nameLabel.text = String(self.post?.author)
-            self.voteLabel.text = String(self.post?.ups)
+            self.nameLabel.text = self.post?.author.username
+            let points = (self.post?.points)!
+            self.voteLabel.text = String(points)
             self.timeLabel.text = self.post?.created.timeAgoSinceNow()
 //            self.timeLabel.text = self.post?.created
         }
@@ -33,7 +34,7 @@ class PostTitleView: UITableViewCell {
     }
     
     class func heightForPost(post: Post?) -> CGFloat {
-        return 73
+        return 135
     }
     
 }
