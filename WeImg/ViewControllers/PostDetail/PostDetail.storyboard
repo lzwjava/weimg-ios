@@ -25,39 +25,13 @@
                                     <outlet property="delegate" destination="bLr-6c-1HW" id="nWT-s0-wK9"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwQ-2W-xK6">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiO-vb-HkE">
-                                        <rect key="frame" x="285" y="8" width="30" height="30"/>
-                                        <state key="normal" title="Up"/>
-                                        <connections>
-                                            <action selector="upButtonClicked:" destination="bLr-6c-1HW" eventType="touchUpInside" id="ZZx-Nr-3qc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bw8-cV-SJN">
-                                        <rect key="frame" x="187" y="8" width="39" height="30"/>
-                                        <state key="normal" title="Down"/>
-                                        <connections>
-                                            <action selector="downButtonClicked:" destination="bLr-6c-1HW" eventType="touchUpInside" id="FaF-ny-pz7"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Z3X-KP-Ueb"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="32H-If-Eaa" secondAttribute="trailing" constant="-20" id="1OT-JG-Hzm"/>
                             <constraint firstItem="32H-If-Eaa" firstAttribute="leading" secondItem="Jtj-qi-KO4" secondAttribute="leadingMargin" constant="-20" id="Bqn-Cp-VTx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kwQ-2W-xK6" secondAttribute="trailing" constant="-20" id="CxW-EE-BZH"/>
                             <constraint firstItem="rd7-ke-P0s" firstAttribute="top" secondItem="32H-If-Eaa" secondAttribute="bottom" id="RV6-Qk-ATg"/>
-                            <constraint firstItem="kwQ-2W-xK6" firstAttribute="leading" secondItem="Jtj-qi-KO4" secondAttribute="leadingMargin" constant="-20" id="ejz-ag-8eD"/>
                             <constraint firstItem="32H-If-Eaa" firstAttribute="top" secondItem="5sW-GP-iX4" secondAttribute="bottom" id="ijg-2P-pXd"/>
-                            <constraint firstItem="rd7-ke-P0s" firstAttribute="top" secondItem="kwQ-2W-xK6" secondAttribute="bottom" id="wPT-Td-Cga"/>
                         </constraints>
                     </view>
                     <connections>

@@ -36,7 +36,12 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="156" y="-27.5"/>
+            <connections>
+                <outlet property="downVoteView" destination="D8k-VA-kPG" id="6Qn-j0-DEC"/>
+                <outlet property="shareView" destination="lqQ-kL-rji" id="KSv-zt-cnG"/>
+                <outlet property="upVoteView" destination="WqE-Rk-IWy" id="91H-HB-8d2"/>
+            </connections>
+            <point key="canvasLocation" x="226" y="-22.5"/>
         </view>
     </objects>
     <resources>

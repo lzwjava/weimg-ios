@@ -29,6 +29,20 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     
     func setupNavigationBar() {
         let actionView = PostActionView.instanceFromNib()
+        actionView.upVoteAction = { (vote: String?) -> Void in
+            PostManager.manager.vote(self.post!.postId, vote: "up") { (error: NSError?) -> Void in
+                if self.filterError(error) {
+                    println("succeed")
+                }
+            }
+        }
+        actionView.downVoteAction = {(vote: String?) -> Void in
+            PostManager.manager.vote(self.post!.postId, vote: "down") { (error: NSError?) -> Void in
+                if self.filterError(error) {
+                    println("succeed")
+                }
+            }
+        }
         navigationItem.titleView = actionView
     }
     
@@ -64,7 +78,6 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             configCell(cell, indexPath: indexPath)
             return cell
         case 1:
-            let comment = comments[indexPath.row]
             let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier) as! CommentCell
             configCommentCell(cell, indexPath: indexPath)
             return cell
@@ -163,24 +176,6 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             break
         }
         return 0
-    }
-    
-    
-    
-    @IBAction func upButtonClicked(sender: AnyObject) {
-        PostManager.manager.vote(post!.postId, vote: "up") { (error: NSError?) -> Void in
-            if self.filterError(error) {
-                println("succeed")
-            }
-        }
-    }
-
-    @IBAction func downButtonClicked(sender: AnyObject) {
-        PostManager.manager.vote(post!.postId, vote: "down") { (error: NSError?) -> Void in
-            if self.filterError(error) {
-                println("succeed")
-            }
-        }
     }
     
 }

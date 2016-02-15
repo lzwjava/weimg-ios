@@ -10,8 +10,70 @@ import UIKit
 
 class PostActionView: UIView {
     
+    @IBOutlet weak var upVoteView: UIImageView!
+    
+    @IBOutlet weak var downVoteView: UIImageView!
+    
+    @IBOutlet weak var shareView: UIImageView!
+    
+    private var upVoteTap: UITapGestureRecognizer?
+    private var downVoteTap: UITapGestureRecognizer?
+    
+    var vote: String?
+    var upVoteAction: ((vote: String?) -> Void)?
+    var downVoteAction: ((vote: String?) -> Void)?
+    
     override func awakeFromNib() {
-        self.backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clearColor()
+        
+        upVoteTap = UITapGestureRecognizer(target:self, action:  "upVoteClicked:")
+        downVoteTap =  UITapGestureRecognizer(target: self, action: "downVoteClicked:")
+        upVoteView.addGestureRecognizer(upVoteTap!)
+        upVoteView.userInteractionEnabled = true
+        downVoteView.addGestureRecognizer(downVoteTap!)
+        downVoteView.userInteractionEnabled = true
+    }
+    
+    deinit {
+        if let upVoteTap = upVoteTap {
+            upVoteView.removeGestureRecognizer(upVoteTap)
+        }
+        if let downVoteTap = downVoteTap {
+            downVoteView.removeGestureRecognizer(downVoteTap)
+        }
+    }
+    
+    func upVoteClicked(sender:AnyObject) {
+        if vote == "up" {
+            vote = nil
+        } else {
+            vote = "up"
+        }
+        updateViews()
+        upVoteAction?(vote: vote)
+    }
+    
+    private func updateViews() {
+        if vote == "up" {
+            upVoteView.highlighted = true
+            downVoteView.highlighted = false
+        } else if vote == "down" {
+            upVoteView.highlighted = false
+            downVoteView.highlighted = true
+        } else {
+            upVoteView.highlighted = false
+            downVoteView.highlighted = false
+        }
+    }
+    
+    func downVoteClicked(sender: AnyObject) {
+        if vote == "down" {
+            vote = nil
+        } else {
+            vote = "down"
+        }
+        updateViews()
+        downVoteAction?(vote:vote)
     }
     
     class func instanceFromNib() -> PostActionView {
