@@ -58,7 +58,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         let layout = CHTCollectionViewWaterfallLayout()
         
         // Change individual layout attributes for the spacing between cells
-        layout.minimumColumnSpacing = 1.0
+        layout.minimumColumnSpacing = YepConfig.Posts.columnSpacing
         layout.minimumInteritemSpacing = 1.0
         
         // Collection view attributes

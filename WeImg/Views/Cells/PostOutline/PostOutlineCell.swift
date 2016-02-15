@@ -28,9 +28,9 @@ class PostOutlineCell: UICollectionViewCell {
     }
     
     static func sizeForPost(post: Post) -> CGSize {
-        let width = CGRectGetWidth(UIScreen.mainScreen().bounds) / 2
+        let width = (CGRectGetWidth(UIScreen.mainScreen().bounds) - 20 * 2 - YepConfig.Posts.columnSpacing) / 2
         let ratio = CGFloat(post.cover.width) / CGFloat(post.cover.height)
-        let imageHeight = width / ratio
+        let imageHeight = round(width / ratio)
         let height = imageHeight + 60
         return CGSize(width: width, height: height)
     }

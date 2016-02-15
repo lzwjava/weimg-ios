@@ -69,5 +69,9 @@ class YepConfig {
     struct Feedback {
         static let bottomMargin: CGFloat = Ruler.iPhoneVertical(10, 20, 40, 40).value
     }
+    
+    struct Posts {
+        static let columnSpacing: CGFloat = 10
+    }
 
 }

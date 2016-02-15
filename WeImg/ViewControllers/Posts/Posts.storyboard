@@ -8,7 +8,6 @@
         <!--PostsViewController-->
         <scene sceneID="eFB-RC-kW4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RxG-QQ-UfD" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PostsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Lgn-kq-v4r" userLabel="PostsViewController" customClass="PostsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v1y-Uj-IkY"/>
@@ -43,22 +42,23 @@
                         <segue destination="JVM-V5-d6i" kind="show" identifier="showPostDetail" id="pdL-Ab-TFx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RxG-QQ-UfD" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1572" y="-235"/>
         </scene>
         <!--PostDetailViewController-->
         <scene sceneID="Gzg-xC-t0B">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qbS-mQ-BVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="PostDetail" referencedIdentifier="PostDetailViewController" id="JVM-V5-d6i" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbS-mQ-BVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2099.5" y="-347"/>
         </scene>
         <!--NewPostViewController-->
         <scene sceneID="6Zj-2f-V5N">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r4v-xe-WK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="NewPost" referencedIdentifier="NewPostViewController" id="jLR-xS-zZe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4v-xe-WK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2099" y="-125"/>
         </scene>

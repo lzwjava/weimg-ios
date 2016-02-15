@@ -114,11 +114,27 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             return postTitleView
         case 1:
             let commentHeader = tableView.dequeueReusableCellWithIdentifier(commentHeaderIdentifier) as! CommentHeader
-            commentHeader.commentCount = comments.count
+            setupCommentHeader(commentHeader)
             return commentHeader
         default:
             return UIView()
         }
+    }
+    
+    private func setupCommentHeader(header: CommentHeader) {
+        var options = [String]()
+        options.append("热门评论")
+        options.append("最新评论")
+        header.optionsButton?.options = options
+        header.optionsButton?.selectAction = {[weak self] selectedIndex in
+            if let strongSelf = self {
+                strongSelf.loadCommentsByOrder(selectedIndex)
+            }
+        }
+    }
+    
+    private func loadCommentsByOrder(type: Int) {
+        
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

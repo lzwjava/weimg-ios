@@ -16,6 +16,8 @@ class OptionsButton: UIView {
     
     var tapGestureRecognizer: UITapGestureRecognizer?
     
+    var selectAction: (Int -> Void)?
+    
     var options = [String]() {
         didSet {
             circleStackView.subviews.forEach({ $0.removeFromSuperview()})
@@ -24,7 +26,9 @@ class OptionsButton: UIView {
                 circleView.tag = 100 + index
                 circleStackView.addArrangedSubview(circleView)
             }
-            selectedIndex = 0
+            if options.count > 0 {
+                selectedIndex = 0
+            }
         }
     }
     
@@ -54,6 +58,7 @@ class OptionsButton: UIView {
     func tapAction(sender: AnyObject) {
         if let selectedIndex = selectedIndex {
             self.selectedIndex = (selectedIndex + 1) % options.count
+            selectAction?(self.selectedIndex!)
         }
     }
     

@@ -10,20 +10,13 @@ import UIKit
 
 class CommentHeader: UITableViewCell {
     
-    var commentCount: Int? {
-        didSet {
-//            countLabel.text = String(self.commentCount)
-        }
-    }
+    var optionsButton: OptionsButton?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let optionsButton = OptionsButton.instanceFromNib()
-        var options = [String]()
-        options.append("热门评论")
-        options.append("最新评论")
-        optionsButton.options = options
+        self.optionsButton = optionsButton
         addSubview(optionsButton)
         // Initialization code
     }
