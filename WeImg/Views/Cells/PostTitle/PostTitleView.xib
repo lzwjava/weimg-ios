@@ -49,28 +49,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u0O-3O-hKc">
                                 <rect key="frame" x="0.0" y="69" width="293" height="40"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DMv-7G-YOb">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DMv-7G-YOb">
                                         <rect key="frame" x="0.0" y="12" width="100" height="16"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="global_meta_upvote" translatesAutoresizingMaskIntoConstraints="NO" id="ara-ou-6uf">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="global_meta_upvote" highlightedImage="comment_upvoteActive" translatesAutoresizingMaskIntoConstraints="NO" id="ara-ou-6uf">
                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="5s1-rU-W9g"/>
                                                     <constraint firstAttribute="height" constant="16" id="MFX-hi-zlp"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2G-Ws-8f4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2G-Ws-8f4">
                                                 <rect key="frame" x="26" y="0.0" width="74" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
+                                                <color key="highlightedColor" red="0.22352941179999999" green="0.76862745099999996" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                             </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="FwV-oH-ZrH"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6dG-TL-vB4">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6dG-TL-vB4">
                                         <rect key="frame" x="100" y="11" width="193" height="18"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="global_meta_time" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-WE-CAA">
@@ -80,7 +80,7 @@
                                                     <constraint firstAttribute="width" constant="16" id="aDJ-TA-ytz"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10 小时前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT2-i5-RDB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 小时前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fT2-i5-RDB">
                                                 <rect key="frame" x="26" y="0.0" width="167" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,12 +105,15 @@
                 <outlet property="nameLabel" destination="TPR-16-jx3" id="THo-h6-xNc"/>
                 <outlet property="timeLabel" destination="fT2-i5-RDB" id="GUY-rS-FHa"/>
                 <outlet property="titleLabel" destination="JGZ-fd-TA8" id="tf1-cm-CDc"/>
+                <outlet property="voteContainerView" destination="DMv-7G-YOb" id="AXf-ls-Ub2"/>
+                <outlet property="voteImageView" destination="ara-ou-6uf" id="7Qa-PM-5bz"/>
                 <outlet property="voteLabel" destination="k2G-Ws-8f4" id="hnS-sW-teV"/>
             </connections>
             <point key="canvasLocation" x="277.5" y="398.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="comment_upvoteActive" width="22" height="21"/>
         <image name="global_meta_time" width="9" height="9"/>
         <image name="global_meta_upvote" width="9" height="9"/>
     </resources>

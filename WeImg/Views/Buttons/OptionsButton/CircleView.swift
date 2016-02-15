@@ -18,7 +18,7 @@ class CircleView: UIView {
     }
     */
     
-    private let selectedColor = UIColor.rgb(57, 196, 66)
+    private let selectedColor = UIColor.yepGreen()
     private let normalColor = UIColor.rgb(41, 83, 44)
     
     var selected = false {

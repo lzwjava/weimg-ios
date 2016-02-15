@@ -14,6 +14,18 @@ extension UIColor {
         return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1)
     }
     
+    class func yepGray() -> UIColor {
+        return rgb(108, 108, 108)
+    }
+    
+    class func yepGreen() -> UIColor {
+        return rgb(57, 196, 66)
+    }
+    
+    class func yepRed() -> UIColor {
+        return UIColor.redColor()
+    }
+    
     class func yepMainColor() -> UIColor {
         return UIColor(red: 23 / 255.0, green: 23 / 255.0, blue: 23 / 255.0, alpha: 1.0)
     }
@@ -55,10 +67,6 @@ extension UIColor {
         return UIColor(red: 0.557, green: 0.557, blue: 0.576, alpha: 1.0)
     }
 
-    class func yepMessageToolbarSubviewBorderColor() -> UIColor {
-        return UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0)
-    }
-
     class func yepBorderColor() -> UIColor {
         return UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
 //        return UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
@@ -85,21 +93,6 @@ extension UIColor {
         return UIColor(red:0.176,  green:0.537,  blue:0.878, alpha:1)
     }
 
-    
-    class func messageToolBarColor() -> UIColor {
-//        return UIColor.yepTintColor()
-        return UIColor(red:0.557, green:0.557, blue:0.576, alpha:1)
-    }
-
-    class func messageToolBarHighlightColor() -> UIColor {
-        return UIColor.yepTintColor()
-//        return UIColor(red:0.557, green:0.557, blue:0.576, alpha:1)
-    }
-
-    class func messageToolBarNormalColor() -> UIColor {
-        return UIColor.lightGrayColor()
-    }
-    
     class func yepDisabledColor() -> UIColor {
         return UIColor(red:0.95, green:0.95, blue:0.95, alpha:1)
     }

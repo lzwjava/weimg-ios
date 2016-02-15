@@ -18,6 +18,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     var post: Post?
     var comments = [Comment]()
     var postActionView: PostActionView?
+    var postTitleView: PostTitleView?
     
     @IBOutlet weak var imageTableView: UITableView!
     
@@ -28,19 +29,24 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         setupNavigationBar()
     }
     
+    private func updatePostByVote(vote: String?) {
+        self.post?.vote = vote
+        self.postTitleView?.post = self.post
+    }
+    
     func setupNavigationBar() {
         let actionView = PostActionView.instanceFromNib()
         actionView.upVoteAction = { (vote: String?) -> Void in
             PostManager.manager.vote(self.post!.postId, vote: "up") { (error: NSError?) -> Void in
                 if self.filterError(error) {
-                    println("succeed")
+                    self.updatePostByVote(vote)
                 }
             }
         }
         actionView.downVoteAction = {(vote: String?) -> Void in
             PostManager.manager.vote(self.post!.postId, vote: "down") { (error: NSError?) -> Void in
                 if self.filterError(error) {
-                    println("succeed")
+                    self.updatePostByVote(vote)
                 }
             }
         }
@@ -63,7 +69,6 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             if (self.filterError(error)) {
                 self.post = post
                 self.postActionView?.vote = post?.vote
-                self.imageTableView.reloadData()
             }
         }
     }
@@ -151,6 +156,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         case 0:
             let postTitleView = tableView.dequeueReusableCellWithIdentifier(postTitleViewIdentifier) as! PostTitleView
             postTitleView.post = post
+            self.postTitleView = postTitleView
             return postTitleView
         case 1:
             let commentHeader = tableView.dequeueReusableCellWithIdentifier(commentHeaderIdentifier) as! CommentHeader
