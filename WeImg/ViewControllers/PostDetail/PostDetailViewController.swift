@@ -24,6 +24,12 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         setupTableView()
         fetchData()
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        let actionView = PostActionView.instanceFromNib()
+        navigationItem.titleView = actionView
     }
     
     private func setupTableView() {

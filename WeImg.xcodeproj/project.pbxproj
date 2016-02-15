@@ -124,6 +124,8 @@
 		70FB48F31C71C9FF0023FBC3 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB48EF1C71C9FF0023FBC3 /* CircleView.xib */; };
 		70FB48F41C71C9FF0023FBC3 /* OptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48F01C71C9FF0023FBC3 /* OptionsButton.swift */; };
 		70FB48F51C71C9FF0023FBC3 /* OptionsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB48F11C71C9FF0023FBC3 /* OptionsButton.xib */; };
+		70FB48F81C721DF30023FBC3 /* PostActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48F71C721DF30023FBC3 /* PostActionView.swift */; };
+		70FB48FA1C721E180023FBC3 /* PostActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB48F91C721E180023FBC3 /* PostActionView.xib */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -268,6 +270,8 @@
 		70FB48EF1C71C9FF0023FBC3 /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
 		70FB48F01C71C9FF0023FBC3 /* OptionsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsButton.swift; sourceTree = "<group>"; };
 		70FB48F11C71C9FF0023FBC3 /* OptionsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsButton.xib; sourceTree = "<group>"; };
+		70FB48F71C721DF30023FBC3 /* PostActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActionView.swift; sourceTree = "<group>"; };
+		70FB48F91C721E180023FBC3 /* PostActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostActionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -659,6 +663,7 @@
 		70C2F4061C60E6B500C345B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70FB48F61C721DDF0023FBC3 /* PostActionView */,
 				706BD6F21C66400F00A277D7 /* WaterFallLayout */,
 				706BD6981C63581200A277D7 /* HorizontalLine */,
 				706BD67E1C63022700A277D7 /* Cells */,
@@ -799,6 +804,15 @@
 			path = OptionsButton;
 			sourceTree = "<group>";
 		};
+		70FB48F61C721DDF0023FBC3 /* PostActionView */ = {
+			isa = PBXGroup;
+			children = (
+				70FB48F71C721DF30023FBC3 /* PostActionView.swift */,
+				70FB48F91C721E180023FBC3 /* PostActionView.xib */,
+			);
+			path = PostActionView;
+			sourceTree = "<group>";
+		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,6 +918,7 @@
 				706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */,
 				706BD6A71C6358C300A277D7 /* EditProfileColoredTitleCell.xib in Resources */,
 				707650C41C69F320000B3556 /* PostDetail.storyboard in Resources */,
+				70FB48FA1C721E180023FBC3 /* PostActionView.xib in Resources */,
 				706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */,
 				707650C71C69F915000B3556 /* PostTitleView.xib in Resources */,
 				706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */,
@@ -1015,6 +1030,7 @@
 				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
 				70FB48F21C71C9FF0023FBC3 /* CircleView.swift in Sources */,
 				706BD6AF1C636BA800A277D7 /* AboutCell.swift in Sources */,
+				70FB48F81C721DF30023FBC3 /* PostActionView.swift in Sources */,
 				70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
 				706BD6821C63022700A277D7 /* SettingsUserCell.swift in Sources */,
