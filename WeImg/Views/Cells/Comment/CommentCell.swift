@@ -11,10 +11,17 @@ import UIKit
 class CommentCell: UITableViewCell {
     
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var pointsLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     
     var comment: Comment? {
         didSet {
-            self.contentLabel.text = comment?.content
+            contentLabel.text = comment?.content
+            usernameLabel.text = comment?.author.username
+            pointsLabel.text = String(comment!.points)
+            timeLabel.text = comment?.created.timeAgoSinceNow()
         }
     }
     

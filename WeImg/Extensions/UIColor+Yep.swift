@@ -18,6 +18,10 @@ extension UIColor {
         return UIColor(red: 23 / 255.0, green: 23 / 255.0, blue: 23 / 255.0, alpha: 1.0)
     }
     
+    class func cellBackgroundColor() -> UIColor {
+        return rgb(34, 34, 34)
+    }
+    
     class func yepTintColor() -> UIColor {
         return UIColor(red: 50/255.0, green: 167/255.0, blue: 255/255.0, alpha: 1.0)
 //        return UIColor.redColor()

@@ -55,7 +55,7 @@
                     <constraint firstItem="HHe-vZ-0tm" firstAttribute="top" secondItem="JXb-FI-0SQ" secondAttribute="topMargin" id="aT2-FK-3d9"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="descriptionLabel" destination="STz-k2-tU1" id="guE-cZ-I80"/>
                 <outlet property="imageHeightConstraint" destination="jWm-G5-aAA" id="alv-s2-V2i"/>

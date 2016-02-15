@@ -32,7 +32,8 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         imageTableView.registerNib(UINib(nibName: commentCellIdentifier, bundle: nil), forCellReuseIdentifier: commentCellIdentifier)
         imageTableView.registerNib(UINib(nibName: commentHeaderIdentifier, bundle: nil), forCellReuseIdentifier: commentHeaderIdentifier)
         imageTableView.backgroundColor = UIColor.yepMainColor()
-        imageTableView.separatorStyle = .None
+        imageTableView.separatorStyle = .SingleLine
+        imageTableView.separatorColor = UIColor.yepMainColor()
     }
     
     private func fetchData() {
@@ -59,7 +60,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         case 1:
             let comment = comments[indexPath.row]
             let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier) as! CommentCell
-            cell.comment = comment
+            configCommentCell(cell, indexPath: indexPath)
             return cell
         default:
             break;
@@ -93,14 +94,23 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         }
     }
     
+    private func configCommentCell(cell: CommentCell, indexPath: NSIndexPath) {
+        let comment = comments[indexPath.row]
+        cell.comment = comment
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch(indexPath.section) {
         case 0:
-            return tableView.fd_heightForCellWithIdentifier(postImageCellIdentifier, configuration: { (cell: AnyObject!) -> Void in
+            let height = tableView.fd_heightForCellWithIdentifier(postImageCellIdentifier, configuration: { (cell: AnyObject!) -> Void in
                 self.configCell(cell as! PostImageCell, indexPath: indexPath)
             })
+            return height
         case 1:
-            return 20
+            let height = tableView.fd_heightForCellWithIdentifier(commentCellIdentifier, configuration: { (cell: AnyObject!) -> Void in
+                self.configCommentCell(cell as! CommentCell, indexPath: indexPath)
+            })
+            return height
         default:
             return 0
         }

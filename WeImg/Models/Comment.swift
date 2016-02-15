@@ -14,7 +14,8 @@ class Comment: Mappable {
     var postId: Int!
     var parentId: Int?
     var content: String!
-    var authorId: Int!
+    var points: Int!
+    var author: User!
     var created: NSDate!
     
     required init?(_ map: Map) {
@@ -26,7 +27,8 @@ class Comment: Mappable {
         postId      <- map["postId"]
         parentId    <- map["parentId"]
         content     <- map["content"]
-        authorId    <- map["authorId"]
+        author      <- map["author"]
+        points      <- map["points"]
         created     <- (map["created"], CustomDateTransform())
     }
 }
