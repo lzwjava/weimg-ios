@@ -19,6 +19,7 @@ class Post : Mappable {
     var ups:Int!
     var downs: Int!
     var points: Int!
+    var vote: String?
     var images: [Image]?
     var created: NSDate!
     
@@ -36,6 +37,7 @@ class Post : Mappable {
         ups     <-  map["ups"]
         downs   <-  map["downs"]
         points  <-  map["points"]
+        vote    <-  map["vote"]
         images  <-  map["images"]
         created <-  (map["created"], CustomDateTransform())
     }

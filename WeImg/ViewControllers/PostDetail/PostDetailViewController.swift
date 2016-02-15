@@ -17,6 +17,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     
     var post: Post?
     var comments = [Comment]()
+    var postActionView: PostActionView?
     
     @IBOutlet weak var imageTableView: UITableView!
     
@@ -43,6 +44,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
                 }
             }
         }
+        self.postActionView = actionView
         navigationItem.titleView = actionView
     }
     
@@ -56,19 +58,28 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         imageTableView.separatorColor = UIColor.yepMainColor()
     }
     
-    private func fetchData() {
+    private func fetchPost() {
         PostManager.manager.getPost(post!.postId) { (post: Post?, error: NSError?) -> Void in
             if (self.filterError(error)) {
                 self.post = post
+                self.postActionView?.vote = post?.vote
                 self.imageTableView.reloadData()
             }
         }
+    }
+    
+    private func fetchComments() {
         CommentManager.manager.getComments(post!.postId, skip: 0, limit: 100) { (comments: [Comment], error: NSError?) -> Void in
             if (self.filterError(error)) {
                 self.comments = comments
                 self.imageTableView.reloadData()
             }
         }
+    }
+    
+    private func fetchData() {
+        fetchPost()
+        fetchComments()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

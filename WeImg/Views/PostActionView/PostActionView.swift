@@ -19,7 +19,12 @@ class PostActionView: UIView {
     private var upVoteTap: UITapGestureRecognizer?
     private var downVoteTap: UITapGestureRecognizer?
     
-    var vote: String?
+    var vote: String? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     var upVoteAction: ((vote: String?) -> Void)?
     var downVoteAction: ((vote: String?) -> Void)?
     

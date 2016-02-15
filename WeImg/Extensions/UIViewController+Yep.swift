@@ -61,7 +61,15 @@ extension UIViewController {
     
     func filterError(error: NSError?) -> Bool {
         if let error = error {
-            alertError(error) {}
+            alertError(error) {
+                let reason = error.userInfo[NSLocalizedFailureReasonErrorKey]
+                if let reasonString = reason as? String {
+                    if reasonString == "not_in_session" {
+                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        appDelegate.startShowStory()
+                    }
+                }
+            }
             return false
         } else {
             return true

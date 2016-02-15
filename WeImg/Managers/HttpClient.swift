@@ -97,7 +97,9 @@ class HttpClient {
                 } else {
                     errorInfo = status
                 }
-                let userInfo = [NSLocalizedDescriptionKey: errorInfo]
+                var userInfo = [String: String]()
+                userInfo[NSLocalizedDescriptionKey] = errorInfo
+                userInfo[NSLocalizedFailureReasonErrorKey] = status
                 let statusError = NSError(domain: "WeImg", code: 0, userInfo: userInfo)
                 return statusError
             } else {
