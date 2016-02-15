@@ -116,6 +116,14 @@
 		70C2F4451C61C44C00C345B2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F4441C61C44C00C345B2 /* WelcomeViewController.swift */; };
 		70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F4461C61C4AE00C345B2 /* Show.storyboard */; };
 		70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F4491C61C61D00C345B2 /* Show.xcassets */; };
+		70FB48DE1C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48D71C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.m */; };
+		70FB48DF1C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48D91C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.m */; };
+		70FB48E01C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48DB1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell.m */; };
+		70FB48E11C71122D0023FBC3 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48DD1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		70FB48F21C71C9FF0023FBC3 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48EE1C71C9FF0023FBC3 /* CircleView.swift */; };
+		70FB48F31C71C9FF0023FBC3 /* CircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB48EF1C71C9FF0023FBC3 /* CircleView.xib */; };
+		70FB48F41C71C9FF0023FBC3 /* OptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48F01C71C9FF0023FBC3 /* OptionsButton.swift */; };
+		70FB48F51C71C9FF0023FBC3 /* OptionsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB48F11C71C9FF0023FBC3 /* OptionsButton.xib */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +255,19 @@
 		70C2F4441C61C44C00C345B2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		70C2F4471C61C4AE00C345B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Show.storyboard; sourceTree = "<group>"; };
 		70C2F4491C61C61D00C345B2 /* Show.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Show.xcassets; sourceTree = "<group>"; };
+		70FB48D01C710F1B0023FBC3 /* WeImg-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeImg-Bridging-Header.h"; sourceTree = "<group>"; };
+		70FB48D61C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		70FB48D71C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		70FB48D81C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		70FB48D91C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		70FB48DA1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
+		70FB48DB1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		70FB48DC1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		70FB48DD1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		70FB48EE1C71C9FF0023FBC3 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		70FB48EF1C71C9FF0023FBC3 /* CircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleView.xib; sourceTree = "<group>"; };
+		70FB48F01C71C9FF0023FBC3 /* OptionsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsButton.swift; sourceTree = "<group>"; };
+		70FB48F11C71C9FF0023FBC3 /* OptionsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsButton.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +321,7 @@
 		706A001D1C5A297300A8D7B4 /* WeImg */ = {
 			isa = PBXGroup;
 			children = (
+				70FB48D41C7111FD0023FBC3 /* Vendors */,
 				706BD6E01C63B01B00A277D7 /* Activities */,
 				70C2F4161C60EBBB00C345B2 /* Extensions */,
 				70C2F4131C60EB2700C345B2 /* Helpers */,
@@ -316,6 +338,7 @@
 				706A00291C5A297300A8D7B4 /* LaunchScreen.storyboard */,
 				706A002C1C5A297300A8D7B4 /* Info.plist */,
 				70629B141C61EF7500865921 /* Localizable.strings */,
+				70FB48D01C710F1B0023FBC3 /* WeImg-Bridging-Header.h */,
 			);
 			path = WeImg;
 			sourceTree = "<group>";
@@ -658,6 +681,7 @@
 		70C2F40D1C60E76100C345B2 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				70FB48ED1C71C9FF0023FBC3 /* OptionsButton */,
 				70C2F43C1C61BD5D00C345B2 /* EdgeBorderButton.swift */,
 				70C2F40E1C60E76100C345B2 /* BorderButton.swift */,
 			);
@@ -739,6 +763,40 @@
 				70C2F4441C61C44C00C345B2 /* WelcomeViewController.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		70FB48D41C7111FD0023FBC3 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				70FB48D51C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		70FB48D51C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell */ = {
+			isa = PBXGroup;
+			children = (
+				70FB48D61C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.h */,
+				70FB48D71C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.m */,
+				70FB48D81C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.h */,
+				70FB48D91C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.m */,
+				70FB48DA1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell.h */,
+				70FB48DB1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell.m */,
+				70FB48DC1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCellDebug.h */,
+				70FB48DD1C71122D0023FBC3 /* UITableView+FDTemplateLayoutCellDebug.m */,
+			);
+			path = "UITableView+FDTemplateLayoutCell";
+			sourceTree = "<group>";
+		};
+		70FB48ED1C71C9FF0023FBC3 /* OptionsButton */ = {
+			isa = PBXGroup;
+			children = (
+				70FB48EE1C71C9FF0023FBC3 /* CircleView.swift */,
+				70FB48EF1C71C9FF0023FBC3 /* CircleView.xib */,
+				70FB48F01C71C9FF0023FBC3 /* OptionsButton.swift */,
+				70FB48F11C71C9FF0023FBC3 /* OptionsButton.xib */,
+			);
+			path = OptionsButton;
 			sourceTree = "<group>";
 		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
@@ -853,6 +911,7 @@
 				706BD7141C67C8A600A277D7 /* NewPost.storyboard in Resources */,
 				70C2F4481C61C4AE00C345B2 /* Show.storyboard in Resources */,
 				70696DB11C6F103D0038DB83 /* PostOutlineCell.xib in Resources */,
+				70FB48F51C71C9FF0023FBC3 /* OptionsButton.xib in Resources */,
 				707650DB1C6D16EC000B3556 /* CommentCell.xib in Resources */,
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
 				706BD6881C63025B00A277D7 /* SettingsMoreCell.xib in Resources */,
@@ -866,6 +925,7 @@
 				70696DB31C6F7AB90038DB83 /* Posts.storyboard in Resources */,
 				707650E01C6D95F7000B3556 /* CommentHeader.xib in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
+				70FB48F31C71C9FF0023FBC3 /* CircleView.xib in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
 				707650EE1C6E68B8000B3556 /* EditUsername.storyboard in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
@@ -953,6 +1013,7 @@
 				70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */,
 				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
 				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
+				70FB48F21C71C9FF0023FBC3 /* CircleView.swift in Sources */,
 				706BD6AF1C636BA800A277D7 /* AboutCell.swift in Sources */,
 				70C2F4411C61BD9400C345B2 /* LoginByMobileViewController.swift in Sources */,
 				706A001F1C5A297300A8D7B4 /* AppDelegate.swift in Sources */,
@@ -960,6 +1021,8 @@
 				707650DA1C6D16EC000B3556 /* CommentCell.swift in Sources */,
 				706BD6871C63025B00A277D7 /* SettingsMoreCell.swift in Sources */,
 				706BD6F11C65291500A277D7 /* EmptyObject.swift in Sources */,
+				70FB48DE1C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.m in Sources */,
+				70FB48DF1C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				706BD6781C626C8900A277D7 /* RegisterPickPasswordViewController.swift in Sources */,
 				70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */,
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
@@ -988,6 +1051,7 @@
 				70C2F4071C60E6B500C345B2 /* Post.swift in Sources */,
 				706BD6F41C66400F00A277D7 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				706BD6EF1C64EA9E00A277D7 /* Avatar.swift in Sources */,
+				70FB48E01C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				706BD6971C63039C00A277D7 /* EditProfileViewController.swift in Sources */,
 				706BD6B21C636D0300A277D7 /* YepLog.swift in Sources */,
 				70C2F4091C60E6B500C345B2 /* User.swift in Sources */,
@@ -997,6 +1061,7 @@
 				706BD6E21C63B01B00A277D7 /* WeChatActivity.swift in Sources */,
 				706BD6ED1C64E78B00A277D7 /* NSFileManager+Yep.swift in Sources */,
 				707650D01C6D00AA000B3556 /* Comment.swift in Sources */,
+				70FB48E11C71122D0023FBC3 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				707650BF1C686EEF000B3556 /* ImageItem.swift in Sources */,
 				706BD67D1C63019B00A277D7 /* SettingsViewController.swift in Sources */,
 				70C2F4391C61BD2E00C345B2 /* ShowStepMeetViewController.swift in Sources */,
@@ -1008,6 +1073,7 @@
 				70C2F4151C60EB5E00C345B2 /* CommonHelper.swift in Sources */,
 				70696DB01C6F103D0038DB83 /* PostOutlineCell.swift in Sources */,
 				70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */,
+				70FB48F41C71C9FF0023FBC3 /* OptionsButton.swift in Sources */,
 				706BD69C1C63588700A277D7 /* NSBundle+Yep.swift in Sources */,
 				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,
 				706BD6EB1C64DF8D00A277D7 /* Models.swift in Sources */,
@@ -1168,12 +1234,15 @@
 			baseConfigurationReference = 256BB710AFCAA4E8AF7D684E /* Pods-WeImg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = WeImg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ba10effd-3063-4dac-9303-499e489bfd2d";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeImg/WeImg-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1182,12 +1251,14 @@
 			baseConfigurationReference = 423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = WeImg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ba10effd-3063-4dac-9303-499e489bfd2d";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeImg/WeImg-Bridging-Header.h";
 			};
 			name = Release;
 		};

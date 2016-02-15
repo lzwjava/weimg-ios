@@ -32,6 +32,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         imageTableView.registerNib(UINib(nibName: commentCellIdentifier, bundle: nil), forCellReuseIdentifier: commentCellIdentifier)
         imageTableView.registerNib(UINib(nibName: commentHeaderIdentifier, bundle: nil), forCellReuseIdentifier: commentHeaderIdentifier)
         imageTableView.backgroundColor = UIColor.yepMainColor()
+        imageTableView.separatorStyle = .None
     }
     
     private func fetchData() {
@@ -52,13 +53,9 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch (indexPath.section) {
         case 0:
-            if let images = post?.images {
-                let cell = tableView.dequeueReusableCellWithIdentifier(postImageCellIdentifier) as! PostImageCell
-                let image = images[indexPath.row]
-                cell.postImage = image
-                return cell
-            }
-            break;
+            let cell = tableView.dequeueReusableCellWithIdentifier(postImageCellIdentifier, forIndexPath: indexPath) as! PostImageCell
+            configCell(cell, indexPath: indexPath)
+            return cell
         case 1:
             let comment = comments[indexPath.row]
             let cell = tableView.dequeueReusableCellWithIdentifier(commentCellIdentifier) as! CommentCell
@@ -89,20 +86,19 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         }
     }
     
-    private func heightForImage(image: Image) -> CGFloat {
-        let width = CGRectGetWidth(UIScreen.mainScreen().bounds)
-        return width / CGFloat(image.width) * CGFloat(image.height)
+    private func configCell(cell: PostImageCell, indexPath: NSIndexPath) {
+        if let images = post?.images {
+            let image = images[indexPath.row]
+            cell.postImage = image
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch(indexPath.section) {
         case 0:
-            if let images = post?.images {
-                let image = images[indexPath.row]
-                return heightForImage(image)
-            } else {
-                return 0
-            }
+            return tableView.fd_heightForCellWithIdentifier(postImageCellIdentifier, configuration: { (cell: AnyObject!) -> Void in
+                self.configCell(cell as! PostImageCell, indexPath: indexPath)
+            })
         case 1:
             return 20
         default:

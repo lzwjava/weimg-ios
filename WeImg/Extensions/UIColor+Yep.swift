@@ -9,6 +9,11 @@
 import UIKit
 
 extension UIColor {
+    
+    class func rgb(red: Int, _ green: Int, _ blue: Int) -> UIColor {
+        return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1)
+    }
+    
     class func yepMainColor() -> UIColor {
         return UIColor(red: 23 / 255.0, green: 23 / 255.0, blue: 23 / 255.0, alpha: 1.0)
     }
@@ -140,4 +145,5 @@ extension UIColor {
         //return yep_inverseColor
         return yep_binaryColor
     }
+    
 }
