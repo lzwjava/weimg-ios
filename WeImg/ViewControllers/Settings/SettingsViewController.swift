@@ -32,17 +32,13 @@ class SettingsViewController: BaseViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         super.viewWillAppear(animated)
-    
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        animatedOnNavigationBar = false
-
-        title = NSLocalizedString("Settings", comment: "")
 
         settingsTableView.registerNib(UINib(nibName: settingsUserCellIdentifier, bundle: nil), forCellReuseIdentifier: settingsUserCellIdentifier)
         settingsTableView.registerNib(UINib(nibName: settingsMoreCellIdentifier, bundle: nil), forCellReuseIdentifier: settingsMoreCellIdentifier)

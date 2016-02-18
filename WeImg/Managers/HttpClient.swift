@@ -12,7 +12,8 @@ import ObjectMapper
 
 class HttpClient {
     
-    private static var baseUrl : String = "http://localhost:3005/";
+//    private static var baseUrl : String = "http://localhost:3005/";
+    private static var baseUrl : String = "http://test.reviewcode.cn/";
 //    private static var baseUrl : String = "http://192.168.1.112:3005/";
     
     private static func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, completion:(AnyObject?, NSError?) -> Void) {

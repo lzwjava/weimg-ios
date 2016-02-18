@@ -74,6 +74,7 @@ class PostTitleView: UITableViewCell {
     }
     
     override func awakeFromNib() {
+        
     }
     
     class func heightForPost(post: Post?) -> CGFloat {

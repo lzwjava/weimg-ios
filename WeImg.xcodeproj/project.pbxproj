@@ -126,6 +126,9 @@
 		70FB48F51C71C9FF0023FBC3 /* OptionsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB48F11C71C9FF0023FBC3 /* OptionsButton.xib */; };
 		70FB48F81C721DF30023FBC3 /* PostActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48F71C721DF30023FBC3 /* PostActionView.swift */; };
 		70FB48FA1C721E180023FBC3 /* PostActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB48F91C721E180023FBC3 /* PostActionView.xib */; };
+		70FB48FD1C7646390023FBC3 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48FC1C7646390023FBC3 /* TabBar.swift */; };
+		70FB49051C7655590023FBC3 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB49031C7655590023FBC3 /* TabBarButton.swift */; };
+		70FB49061C7655590023FBC3 /* TabBarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49041C7655590023FBC3 /* TabBarButton.xib */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -272,6 +275,9 @@
 		70FB48F11C71C9FF0023FBC3 /* OptionsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsButton.xib; sourceTree = "<group>"; };
 		70FB48F71C721DF30023FBC3 /* PostActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActionView.swift; sourceTree = "<group>"; };
 		70FB48F91C721E180023FBC3 /* PostActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostActionView.xib; sourceTree = "<group>"; };
+		70FB48FC1C7646390023FBC3 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		70FB49031C7655590023FBC3 /* TabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		70FB49041C7655590023FBC3 /* TabBarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarButton.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -663,6 +669,7 @@
 		70C2F4061C60E6B500C345B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70FB48FB1C7646160023FBC3 /* TabBar */,
 				70FB48F61C721DDF0023FBC3 /* PostActionView */,
 				706BD6F21C66400F00A277D7 /* WaterFallLayout */,
 				706BD6981C63581200A277D7 /* HorizontalLine */,
@@ -813,6 +820,24 @@
 			path = PostActionView;
 			sourceTree = "<group>";
 		};
+		70FB48FB1C7646160023FBC3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				70FB48FC1C7646390023FBC3 /* TabBar.swift */,
+				70FB49021C7655590023FBC3 /* TabbarButton */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		70FB49021C7655590023FBC3 /* TabbarButton */ = {
+			isa = PBXGroup;
+			children = (
+				70FB49031C7655590023FBC3 /* TabBarButton.swift */,
+				70FB49041C7655590023FBC3 /* TabBarButton.xib */,
+			);
+			path = TabbarButton;
+			sourceTree = "<group>";
+		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +968,7 @@
 				70FB48F31C71C9FF0023FBC3 /* CircleView.xib in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
 				707650EE1C6E68B8000B3556 /* EditUsername.storyboard in Resources */,
+				70FB49061C7655590023FBC3 /* TabBarButton.xib in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
 				706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */,
 				706BD6911C63030E00A277D7 /* Feedback.storyboard in Resources */,
@@ -1054,6 +1080,7 @@
 				706BD69A1C63581200A277D7 /* HorizontalLineView.swift in Sources */,
 				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,
 				706BD70A1C67350200A277D7 /* Image.swift in Sources */,
+				70FB48FD1C7646390023FBC3 /* TabBar.swift in Sources */,
 				706BD6A61C6358C300A277D7 /* EditProfileColoredTitleCell.swift in Sources */,
 				707650E51C6E590A000B3556 /* UIScrollView+Yep.swift in Sources */,
 				70C2F4421C61BD9400C345B2 /* LoginPasswordViewController.swift in Sources */,
@@ -1091,6 +1118,7 @@
 				70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */,
 				70FB48F41C71C9FF0023FBC3 /* OptionsButton.swift in Sources */,
 				706BD69C1C63588700A277D7 /* NSBundle+Yep.swift in Sources */,
+				70FB49051C7655590023FBC3 /* TabBarButton.swift in Sources */,
 				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,
 				706BD6EB1C64DF8D00A277D7 /* Models.swift in Sources */,
 				70C2F4381C61BD2E00C345B2 /* ShowStepMatchViewController.swift in Sources */,

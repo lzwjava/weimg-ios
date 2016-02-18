@@ -4,11 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--首页-->
+        <!--Yep Navigation Controller-->
         <scene sceneID="V1M-KR-xSA">
             <objects>
                 <navigationController id="HBK-XQ-pBA" customClass="YepNavigationController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="tab_Gallery" id="ZRP-l5-cUj" userLabel="Gallery">
+                    <tabBarItem key="tabBarItem" title="" image="tab_Gallery" id="ZRP-l5-cUj" userLabel="Gallery">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hAq-PX-JNY">
@@ -44,11 +44,11 @@
             </objects>
             <point key="canvasLocation" x="1338.5" y="507"/>
         </scene>
-        <!--设置-->
+        <!--Yep Navigation Controller-->
         <scene sceneID="bzI-HD-gFj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sHj-7g-QNv" customClass="YepNavigationController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" image="tab_Settings" id="dZl-Me-Hx4"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_Settings" id="dZl-Me-Hx4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aQM-JB-6oS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -66,7 +66,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBarController" id="49e-Tb-3d3" customClass="YepTabBarController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA" customClass="TabBar" customModule="WeImg" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -74,11 +74,20 @@
                     <connections>
                         <segue destination="HBK-XQ-pBA" kind="relationship" relationship="viewControllers" id="hDi-up-VEJ"/>
                         <segue destination="sHj-7g-QNv" kind="relationship" relationship="viewControllers" id="y9m-Wb-zoE"/>
+                        <segue destination="EmX-ZN-gur" kind="presentation" identifier="showNewPost" id="SWs-zd-dC1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--NewPostViewController-->
+        <scene sceneID="Hgk-BQ-7fV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewPost" referencedIdentifier="NewPostViewController" id="EmX-ZN-gur" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VxD-Oi-msv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.5" y="445"/>
         </scene>
     </scenes>
     <resources>

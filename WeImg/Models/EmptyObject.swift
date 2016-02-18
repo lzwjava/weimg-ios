@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class EmptyObject: Mappable {
+
     required init?(_ map: Map) {
         
     }

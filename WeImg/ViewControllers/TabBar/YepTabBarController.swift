@@ -65,12 +65,12 @@ class YepTabBarController: UITabBarController {
 
         // Set Titles
 
-        if let items = tabBar.items {
-            for i in 0..<items.count {
-                let item = items[i]
-                item.title = Tab(rawValue: i)?.title
-            }
-        }
+//        if let items = tabBar.items {
+//            for i in 0..<items.count {
+//                let item = items[i]
+//                item.title = Tab(rawValue: i)?.title
+//            }
+//        }
 
 //        // 处理启动切换
 //
@@ -81,6 +81,24 @@ class YepTabBarController: UITabBarController {
 //                }
 //            }
 //        }
+        
+        if let vcs = self.viewControllers {
+            for vc in vcs {
+                vc.title = nil
+                vc.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+            }
+        }
+        
+        setUpTabBar()
+    }
+    
+    func setUpTabBar() {
+        let tabBar = self.tabBar as! TabBar
+        tabBar.tabBarBtn.addTarget(self, action: "tabBarButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    func tabBarButtonClicked(sender: AnyObject) {
+        performSegueWithIdentifier("showNewPost", sender: nil)
     }
 }
 

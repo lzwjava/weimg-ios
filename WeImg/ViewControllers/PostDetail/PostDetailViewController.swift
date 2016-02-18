@@ -29,26 +29,22 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         setupNavigationBar()
     }
     
-    private func updatePostByVote(vote: String?) {
-        self.post?.vote = vote
-        self.postTitleView?.post = self.post
+    private func vote(vote: String) {
+        PostManager.manager.vote(self.post!.postId, vote: vote) { (error: NSError?) -> Void in
+            if self.filterError(error) {
+                self.post?.vote = vote
+                self.postTitleView?.post = self.post
+            }
+        }
     }
     
     func setupNavigationBar() {
         let actionView = PostActionView.instanceFromNib()
         actionView.upVoteAction = { (vote: String?) -> Void in
-            PostManager.manager.vote(self.post!.postId, vote: "up") { (error: NSError?) -> Void in
-                if self.filterError(error) {
-                    self.updatePostByVote(vote)
-                }
-            }
+            self.vote("up")
         }
         actionView.downVoteAction = {(vote: String?) -> Void in
-            PostManager.manager.vote(self.post!.postId, vote: "down") { (error: NSError?) -> Void in
-                if self.filterError(error) {
-                    self.updatePostByVote(vote)
-                }
-            }
+            self.vote("down")
         }
         self.postActionView = actionView
         navigationItem.titleView = actionView

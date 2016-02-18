@@ -120,10 +120,6 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         performSegueWithIdentifier("showPostDetail", sender: post)
     }
     
-    @IBAction func newButtonClicked(sender: AnyObject) {
-        performSegueWithIdentifier("showNewPost", sender: nil)
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let identifier = segue.identifier else {
             return
