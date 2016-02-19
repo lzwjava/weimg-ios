@@ -93,7 +93,6 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="XL8-Wr-zY2" firstAttribute="top" secondItem="VkH-dA-itE" secondAttribute="topMargin" constant="5" id="0gt-oC-LTs"/>
                     <constraint firstItem="XL8-Wr-zY2" firstAttribute="trailing" secondItem="VkH-dA-itE" secondAttribute="trailingMargin" constant="-8" id="4d8-ZU-cm5"/>
@@ -101,6 +100,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="XL8-Wr-zY2" secondAttribute="bottom" constant="5" id="BXa-bf-DZU"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="nameLabel" destination="TPR-16-jx3" id="THo-h6-xNc"/>
                 <outlet property="timeLabel" destination="fT2-i5-RDB" id="GUY-rS-FHa"/>

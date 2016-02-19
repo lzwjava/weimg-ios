@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RyJ-Qn-Qt1" customClass="TabBarButton" customModule="WeImg" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="32" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <state key="normal" backgroundImage="tab_Upload"/>
             <point key="canvasLocation" x="398" y="66"/>

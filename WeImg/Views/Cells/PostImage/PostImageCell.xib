@@ -15,13 +15,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HHe-vZ-0tm">
-                        <rect key="frame" x="8" y="8" width="425" height="377"/>
+                        <rect key="frame" x="0.0" y="8" width="441" height="377"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnV-S8-dbs">
-                                <rect key="frame" x="0.0" y="0.0" width="425" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="441" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iF-aV-CZt">
-                                        <rect key="frame" x="0.0" y="0.0" width="425" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="441" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -29,16 +29,16 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fOO-Pc-ZHC">
-                                <rect key="frame" x="0.0" y="20" width="425" height="336"/>
+                                <rect key="frame" x="0.0" y="20.5" width="441" height="336"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="336" id="jWm-G5-aAA"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AI-fd-blo">
-                                <rect key="frame" x="0.0" y="356" width="425" height="20.5"/>
+                                <rect key="frame" x="0.0" y="356.5" width="441" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STz-k2-tU1">
-                                        <rect key="frame" x="0.0" y="0.0" width="425" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="441" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -50,8 +50,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="HHe-vZ-0tm" secondAttribute="bottom" id="2EG-4G-eaH"/>
-                    <constraint firstItem="HHe-vZ-0tm" firstAttribute="leading" secondItem="JXb-FI-0SQ" secondAttribute="leadingMargin" id="2Lr-yV-W6A"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="HHe-vZ-0tm" secondAttribute="trailing" id="Q2D-po-5Pu"/>
+                    <constraint firstItem="HHe-vZ-0tm" firstAttribute="leading" secondItem="JXb-FI-0SQ" secondAttribute="leadingMargin" constant="-8" id="2Lr-yV-W6A"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HHe-vZ-0tm" secondAttribute="trailing" constant="-8" id="Q2D-po-5Pu"/>
                     <constraint firstItem="HHe-vZ-0tm" firstAttribute="top" secondItem="JXb-FI-0SQ" secondAttribute="topMargin" id="aT2-FK-3d9"/>
                 </constraints>
             </tableViewCellContentView>

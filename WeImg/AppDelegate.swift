@@ -79,17 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Global Tint Color
         
-        window?.tintColor = UIColor.yepTintColor()
-        window?.tintAdjustmentMode = .Normal
+        window?.tintColor = UIColor.yepGlobalTintColor()
+        window?.tintAdjustmentMode = .Automatic
         
         // NavigationBar Item Style
-        
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepBarButtonColor()], forState: .Normal)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.yepBarButtonColor().colorWithAlphaComponent(0.3)], forState: .Disabled)
         UIBarButtonItem.appearance().tintColor = UIColor.yepBarButtonColor()
         
         // NavigationBar Title Style
-        
         let shadow: NSShadow = {
             let shadow = NSShadow()
             shadow.shadowColor = UIColor.lightGrayColor()
@@ -125,7 +123,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //UITabBar.appearance().backgroundImage = UIImage(named:"white")
         //UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().tintColor = UIColor.yepBarButtonColor()
+        
+        UITabBar.appearance().tintColor = UIColor.yepTabBarTintColor()
         UITabBar.appearance().barTintColor = UIColor.yepBarTintColor()
         //UITabBar.appearance().translucent = false
     }

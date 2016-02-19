@@ -24,23 +24,28 @@ class PostTitleView: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     var post: Post? {
+        
+        willSet (newPost){
+            if let _ = post {
+                let anim = CAKeyframeAnimation(keyPath: "transform.scale")
+                anim.duration = 0.5
+                anim.values = [NSNumber(float: 1.0), NSNumber(float:1.2), NSNumber(float: 1.0)]
+                self.voteContainerView.layer.addAnimation(anim, forKey: nil)
+            }
+        }
+
         didSet {
             self.titleLabel.text = self.post?.title
             self.nameLabel.text = self.post?.author.username
             let points = (self.post?.points)!
             self.voteLabel.text = String(points)
             self.timeLabel.text = self.post?.created.timeAgoSinceNow()
-//            self.timeLabel.text = self.post?.created
             updateViews()
         }
     }
     
     private func updateViews() {
-        let anim = CAKeyframeAnimation(keyPath: "transform.scale")
-        anim.duration = 0.5
-        anim.values = [NSNumber(float: 1.0), NSNumber(float:1.2), NSNumber(float: 1.0)]
 //        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        self.voteContainerView.layer.addAnimation(anim, forKey: nil)
 //        self.voteImageView.layer.addAnimation(anim, forKey: nil)
 //        self.voteLabel.layer.addAnimation(anim, forKey: nil)
         

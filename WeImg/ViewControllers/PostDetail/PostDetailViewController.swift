@@ -65,6 +65,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
             if (self.filterError(error)) {
                 self.post = post
                 self.postActionView?.vote = post?.vote
+                self.imageTableView.reloadData()
             }
         }
     }

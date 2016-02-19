@@ -34,6 +34,10 @@ extension UIColor {
         return rgb(34, 34, 34)
     }
     
+    class func yepGlobalTintColor() -> UIColor {
+        return UIColor.whiteColor()
+    }
+    
     class func yepTintColor() -> UIColor {
         return UIColor(red: 50/255.0, green: 167/255.0, blue: 255/255.0, alpha: 1.0)
 //        return UIColor.redColor()
@@ -41,6 +45,10 @@ extension UIColor {
     
     class func yepBarButtonColor() -> UIColor {
         return UIColor.whiteColor()
+    }
+    
+    class func yepTabBarTintColor() -> UIColor {
+        return rgb(57, 196, 66)  // green
     }
     
     class func yepNavigationBarTintColor() -> UIColor {

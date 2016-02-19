@@ -21,7 +21,9 @@ class PostImageCell: UITableViewCell {
             if let postImage = postImage {
                 postImageView.kf_setImageWithURL(NSURL(string: postImage.link)!)
 //                imageTitleLabel.text = postImage.
-                imageHeightConstraint.constant = PostImageCell.heightForImage(postImage)
+                
+                let imageHeight = round(postImageView.frame.width / CGFloat(postImage.width) * CGFloat(postImage.height))
+                imageHeightConstraint.constant = imageHeight
                 descriptionLabel.text = postImage.description
             }
         }
@@ -35,9 +37,8 @@ class PostImageCell: UITableViewCell {
         self.descriptionLabel.text = nil
     }
     
-    class func heightForImage(image: Image) -> CGFloat {
-        let width = CGRectGetWidth(UIScreen.mainScreen().bounds)
-        return width / CGFloat(image.width) * CGFloat(image.height)
-    }
+//    class func heightForImage(image: Image, width: CGFloat) -> CGFloat {
+//        return width / CGFloat(image.width) * CGFloat(image.height)
+//    }
     
 }
