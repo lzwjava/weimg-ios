@@ -129,6 +129,8 @@
 		70FB48FD1C7646390023FBC3 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB48FC1C7646390023FBC3 /* TabBar.swift */; };
 		70FB49051C7655590023FBC3 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB49031C7655590023FBC3 /* TabBarButton.swift */; };
 		70FB49061C7655590023FBC3 /* TabBarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49041C7655590023FBC3 /* TabBarButton.xib */; };
+		70FB49091C7791010023FBC3 /* PostsNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB49081C7791010023FBC3 /* PostsNavigationBarView.swift */; };
+		70FB490B1C77911C0023FBC3 /* PostsNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB490A1C77911C0023FBC3 /* PostsNavigationBarView.xib */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -278,6 +280,8 @@
 		70FB48FC1C7646390023FBC3 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		70FB49031C7655590023FBC3 /* TabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		70FB49041C7655590023FBC3 /* TabBarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarButton.xib; sourceTree = "<group>"; };
+		70FB49081C7791010023FBC3 /* PostsNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsNavigationBarView.swift; sourceTree = "<group>"; };
+		70FB490A1C77911C0023FBC3 /* PostsNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsNavigationBarView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -669,6 +673,7 @@
 		70C2F4061C60E6B500C345B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70FB49071C7790D70023FBC3 /* PostsNavigationBar */,
 				70FB48FB1C7646160023FBC3 /* TabBar */,
 				70FB48F61C721DDF0023FBC3 /* PostActionView */,
 				706BD6F21C66400F00A277D7 /* WaterFallLayout */,
@@ -838,6 +843,15 @@
 			path = TabbarButton;
 			sourceTree = "<group>";
 		};
+		70FB49071C7790D70023FBC3 /* PostsNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				70FB49081C7791010023FBC3 /* PostsNavigationBarView.swift */,
+				70FB490A1C77911C0023FBC3 /* PostsNavigationBarView.xib */,
+			);
+			path = PostsNavigationBar;
+			sourceTree = "<group>";
+		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -946,6 +960,7 @@
 				70FB48FA1C721E180023FBC3 /* PostActionView.xib in Resources */,
 				706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */,
 				707650C71C69F915000B3556 /* PostTitleView.xib in Resources */,
+				70FB490B1C77911C0023FBC3 /* PostsNavigationBarView.xib in Resources */,
 				706A00281C5A297300A8D7B4 /* Images.xcassets in Resources */,
 				706BD71C1C67D40600A277D7 /* AddImageCell.xib in Resources */,
 				706BD7141C67C8A600A277D7 /* NewPost.storyboard in Resources */,
@@ -1072,6 +1087,7 @@
 				70C2F3F81C60E69900C345B2 /* PostManager.swift in Sources */,
 				706BD7101C67C1DD00A277D7 /* PickImageViewController.swift in Sources */,
 				70696DB51C70C67E0038DB83 /* CustomDateTransform.swift in Sources */,
+				70FB49091C7791010023FBC3 /* PostsNavigationBarView.swift in Sources */,
 				706BD6DA1C63A0B500A277D7 /* DiscoveredUser.swift in Sources */,
 				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,
 				70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */,

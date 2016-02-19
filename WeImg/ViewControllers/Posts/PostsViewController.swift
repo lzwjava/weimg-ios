@@ -13,7 +13,9 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var refreshControl = UIRefreshControl()
-    var posts = [Post]()
+    private var posts = [Post]()
+    private var optionsButton: OptionsButton?
+    private var navigationBarView = PostsNavigationBarView.instanceFromNib()
     
     private var sort = Sort.score
     
@@ -32,6 +34,8 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         self.collectionView.delegate = self
         self.collectionView.backgroundColor = UIColor.clearColor()
         
+        setupNavigationBar()
+        
         //Layout setup
         setupCollectionView()
         
@@ -39,19 +43,27 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         registerNibs()
         
         loadPosts()
-        
-        setupNavigationBar()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     private func setupNavigationBar() {
-        let optionsButton = OptionsButton.instanceFromNib()
-//        optionsButton.backgroundColor = UIColor.clearColor()
+        let frame = navigationController!.navigationBar.frame
+        navigationBarView.setUpWithNavigationFrame(frame)
+        navigationItem.titleView = navigationBarView
         
         var options = [String]()
-        options.append("热门")
+        options.append("最热")
         options.append("最新")
-        optionsButton.options = options
-        optionsButton.selectAction = {[weak self] (selectedIndex: Int) in
+        navigationBarView.optionsButton.options = options
+        navigationBarView.optionsButton.selectAction =
+            {[weak self] (selectedIndex: Int) in
             if let strongSelf = self {
                 if (selectedIndex == 0) {
                     strongSelf.sort = Sort.score
@@ -61,11 +73,9 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
                 strongSelf.loadPosts()
             }
         }
-        self.navigationController?.navigationBar.addSubview(optionsButton)
     }
     
     private func loadPosts() {
-        print(refreshControl.refreshing)
         if !refreshControl.refreshing {
             refreshControl.beginRefreshing()
             collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
@@ -149,6 +159,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let post = posts[indexPath.row]
+        self.optionsButton?.removeFromSuperview()
         performSegueWithIdentifier("showPostDetail", sender: post)
     }
     
