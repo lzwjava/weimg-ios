@@ -69,6 +69,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         self.collectionView.collectionViewLayout = layout
         
         let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.whiteColor()
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
         self.refreshControl = refreshControl
         collectionView.addSubview(refreshControl)
