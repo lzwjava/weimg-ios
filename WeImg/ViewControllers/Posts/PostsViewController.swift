@@ -12,8 +12,15 @@ import Kingfisher
 class PostsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    private var refreshControl: UIRefreshControl?
+    private var refreshControl = UIRefreshControl()
     var posts = [Post]()
+    
+    private var sort = Sort.score
+    
+    private enum Sort : String {
+        case created = "created"
+        case score = "score"
+    }
     
     //MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -31,14 +38,40 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         //Register nibs
         registerNibs()
         
-        loadPosts(false)
+        loadPosts()
+        
+        setupNavigationBar()
     }
     
-    private func loadPosts(refresh: Bool) {
-        PostManager.manager.getPosts(0, limit: 100) { (fetchedPosts: [Post], error: NSError?) -> Void in
-            if refresh {
-                self.refreshControl?.endRefreshing()
+    private func setupNavigationBar() {
+        let optionsButton = OptionsButton.instanceFromNib()
+//        optionsButton.backgroundColor = UIColor.clearColor()
+        
+        var options = [String]()
+        options.append("热门")
+        options.append("最新")
+        optionsButton.options = options
+        optionsButton.selectAction = {[weak self] (selectedIndex: Int) in
+            if let strongSelf = self {
+                if (selectedIndex == 0) {
+                    strongSelf.sort = Sort.score
+                } else {
+                    strongSelf.sort = Sort.created
+                }
+                strongSelf.loadPosts()
             }
+        }
+        self.navigationController?.navigationBar.addSubview(optionsButton)
+    }
+    
+    private func loadPosts() {
+        print(refreshControl.refreshing)
+        if !refreshControl.refreshing {
+            refreshControl.beginRefreshing()
+            collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
+        }
+        PostManager.manager.getPosts(0, limit: 100, sort: sort.rawValue) { (fetchedPosts: [Post], error: NSError?) -> Void in
+            self.refreshControl.endRefreshing()
             if (self.filterError(error)) {
                 self.posts = fetchedPosts
                 self.collectionView.reloadData()
@@ -52,7 +85,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     }
     
     //MARK: - CollectionView UI Setup
-    func setupCollectionView(){
+    func setupCollectionView() {
         
         // Create a waterfall layout
         let layout = CHTCollectionViewWaterfallLayout()
@@ -68,15 +101,13 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         // Add the waterfall layout to your collection view
         self.collectionView.collectionViewLayout = layout
         
-        let refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.whiteColor()
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
-        self.refreshControl = refreshControl
         collectionView.addSubview(refreshControl)
     }
     
     func refresh(sender: AnyObject) {
-        loadPosts(true)
+        loadPosts()
     }
     
     // Register CollectionView Nibs

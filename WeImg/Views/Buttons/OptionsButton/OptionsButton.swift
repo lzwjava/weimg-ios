@@ -12,6 +12,8 @@ class OptionsButton: UIView {
     
     @IBOutlet weak var circleStackView: UIStackView!
     
+    @IBOutlet weak var contentStackView: UIStackView!
+
     @IBOutlet weak var optionTitleLabel: UILabel!
     
     var tapGestureRecognizer: UITapGestureRecognizer?
@@ -26,6 +28,9 @@ class OptionsButton: UIView {
                 circleView.tag = 100 + index
                 circleStackView.addArrangedSubview(circleView)
             }
+//            print(contentStackView.frame)
+//            print(self.frame)
+            self.frame = contentStackView.frame
             if options.count > 0 {
                 selectedIndex = 0
             }
@@ -44,6 +49,8 @@ class OptionsButton: UIView {
     }
     
     override func awakeFromNib() {
+        self.backgroundColor = UIColor.clearColor()
+        
         let tap = UITapGestureRecognizer(target: self, action: "tapAction:")
         self.tapGestureRecognizer = tap
         self.addGestureRecognizer(tap)

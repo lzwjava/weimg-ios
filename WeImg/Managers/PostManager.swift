@@ -14,7 +14,7 @@ class PostManager : BaseManager {
         return PostManager()
     }()
     
-    func getPosts(skip: Int, limit: Int, completionHandler: ([Post], NSError?) -> Void) {
+    func getPosts(skip: Int, limit: Int, sort: String, completionHandler: ([Post], NSError?) -> Void) {
         var params = [String: AnyObject]()
         params["skip"] = skip
         params["limit"] = limit
