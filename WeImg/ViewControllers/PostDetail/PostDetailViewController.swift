@@ -15,7 +15,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     private let commentCellIdentifier = "CommentCell"
     private let commentHeaderIdentifier = "CommentHeader"
     
-    var post: Post?
+    var post: Post!
     var comments = [Comment]()
     var postActionView: PostActionView?
     var postTitleView: PostTitleView?
@@ -30,9 +30,9 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     private func vote(vote: String) {
-        PostManager.manager.vote(self.post!.postId, vote: vote) { (error: NSError?) -> Void in
+        PostManager.manager.vote(self.post.postId, vote: vote) { (error: NSError?) -> Void in
             if self.filterError(error) {
-                self.post?.vote = vote
+                self.post.vote = vote
                 self.postTitleView?.post = self.post
             }
         }
@@ -63,14 +63,14 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     private func fetchPost() {
         PostManager.manager.getPost(post!.postId) { (post: Post?, error: NSError?) -> Void in
             if (self.filterError(error)) {
-                self.post = post
-                self.postActionView?.vote = post?.vote
+                self.post = post!
+                self.postActionView?.vote = post!.vote
                 self.imageTableView.reloadData()
             }
         }
     }
     
-    private func fetchComments() {
+    func fetchComments() {
         CommentManager.manager.getComments(post!.postId, skip: 0, limit: 100) { (comments: [Comment], error: NSError?) -> Void in
             if (self.filterError(error)) {
                 self.comments = comments
@@ -107,7 +107,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(section) {
         case 0:
-            if let images = post?.images {
+            if let images = post.images {
                 return images.count
             } else {
                 return 0
@@ -120,7 +120,7 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     }
     
     private func configCell(cell: PostImageCell, indexPath: NSIndexPath) {
-        if let images = post?.images {
+        if let images = post.images {
             let image = images[indexPath.row]
             cell.postImage = image
         }
@@ -168,14 +168,31 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         var options = [String]()
         options.append("热门评论")
         options.append("最新评论")
-        header.optionsButton?.options = options
-        header.optionsButton?.selectAction = {[weak self] selectedIndex in
+        header.optionsButton.options = options
+        header.optionsButton.selectAction = {[weak self] selectedIndex in
             if let strongSelf = self {
                 strongSelf.loadCommentsByOrder(selectedIndex)
             }
         }
+        
+        header.commentAction = { [weak self] in
+            if let strongSelf = self {
+                strongSelf.performSegueWithIdentifier("showComment", sender: strongSelf.post)
+            }
+        }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard segue.identifier != nil else {
+            return
+        }
+        if segue.identifier == "showComment" {
+            let vc = segue.destinationViewController as! CommentViewController
+            vc.post = sender as! Post
+            vc.postDetailViewController = self
+        }
+    }
+
     private func loadCommentsByOrder(type: Int) {
         
     }

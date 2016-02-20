@@ -131,6 +131,10 @@
 		70FB49061C7655590023FBC3 /* TabBarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49041C7655590023FBC3 /* TabBarButton.xib */; };
 		70FB49091C7791010023FBC3 /* PostsNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB49081C7791010023FBC3 /* PostsNavigationBarView.swift */; };
 		70FB490B1C77911C0023FBC3 /* PostsNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB490A1C77911C0023FBC3 /* PostsNavigationBarView.xib */; };
+		70FB490E1C7878440023FBC3 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB490D1C7878440023FBC3 /* CommentViewController.swift */; };
+		70FB49141C78787A0023FBC3 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49131C78787A0023FBC3 /* Comment.storyboard */; };
+		70FB49171C7880590023FBC3 /* CommentAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */; };
+		70FB49191C78806A0023FBC3 /* CommentAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -282,6 +286,10 @@
 		70FB49041C7655590023FBC3 /* TabBarButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarButton.xib; sourceTree = "<group>"; };
 		70FB49081C7791010023FBC3 /* PostsNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsNavigationBarView.swift; sourceTree = "<group>"; };
 		70FB490A1C77911C0023FBC3 /* PostsNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsNavigationBarView.xib; sourceTree = "<group>"; };
+		70FB490D1C7878440023FBC3 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		70FB49131C78787A0023FBC3 /* Comment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
+		70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAccessoryView.swift; sourceTree = "<group>"; };
+		70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentAccessoryView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -600,6 +608,7 @@
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				70FB490C1C78780D0023FBC3 /* Comment */,
 				707650E11C6E582A000B3556 /* TabBar */,
 				707650C01C69F2B0000B3556 /* PostDetail */,
 				706BD70E1C67C1D200A277D7 /* PickImage */,
@@ -673,6 +682,7 @@
 		70C2F4061C60E6B500C345B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70FB49151C78803B0023FBC3 /* CoommentAccessoryView */,
 				70FB49071C7790D70023FBC3 /* PostsNavigationBar */,
 				70FB48FB1C7646160023FBC3 /* TabBar */,
 				70FB48F61C721DDF0023FBC3 /* PostActionView */,
@@ -852,6 +862,24 @@
 			path = PostsNavigationBar;
 			sourceTree = "<group>";
 		};
+		70FB490C1C78780D0023FBC3 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				70FB490D1C7878440023FBC3 /* CommentViewController.swift */,
+				70FB49131C78787A0023FBC3 /* Comment.storyboard */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		70FB49151C78803B0023FBC3 /* CoommentAccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */,
+				70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */,
+			);
+			path = CoommentAccessoryView;
+			sourceTree = "<group>";
+		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -968,6 +996,7 @@
 				70696DB11C6F103D0038DB83 /* PostOutlineCell.xib in Resources */,
 				70FB48F51C71C9FF0023FBC3 /* OptionsButton.xib in Resources */,
 				707650DB1C6D16EC000B3556 /* CommentCell.xib in Resources */,
+				70FB49141C78787A0023FBC3 /* Comment.storyboard in Resources */,
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
 				706BD6881C63025B00A277D7 /* SettingsMoreCell.xib in Resources */,
 				706BD7121C67C26300A277D7 /* PickImage.storyboard in Resources */,
@@ -982,6 +1011,7 @@
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				70FB48F31C71C9FF0023FBC3 /* CircleView.xib in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
+				70FB49191C78806A0023FBC3 /* CommentAccessoryView.xib in Resources */,
 				707650EE1C6E68B8000B3556 /* EditUsername.storyboard in Resources */,
 				70FB49061C7655590023FBC3 /* TabBarButton.xib in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
@@ -1066,6 +1096,7 @@
 				706BD70D1C67C04400A277D7 /* NewPostViewController.swift in Sources */,
 				70C2F3F61C60E69900C345B2 /* HttpClient.swift in Sources */,
 				707650CE1C6A15B8000B3556 /* PostImageCell.swift in Sources */,
+				70FB49171C7880590023FBC3 /* CommentAccessoryView.swift in Sources */,
 				70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */,
 				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
 				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
@@ -1133,6 +1164,7 @@
 				70696DB01C6F103D0038DB83 /* PostOutlineCell.swift in Sources */,
 				70C2F4231C60ED7B00C345B2 /* UIViewController+Yep.swift in Sources */,
 				70FB48F41C71C9FF0023FBC3 /* OptionsButton.swift in Sources */,
+				70FB490E1C7878440023FBC3 /* CommentViewController.swift in Sources */,
 				706BD69C1C63588700A277D7 /* NSBundle+Yep.swift in Sources */,
 				70FB49051C7655590023FBC3 /* TabBarButton.swift in Sources */,
 				70C2F4181C60EC6E00C345B2 /* UIColor+WeImg.swift in Sources */,

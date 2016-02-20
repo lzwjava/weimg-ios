@@ -36,11 +36,20 @@
                     </view>
                     <connections>
                         <outlet property="imageTableView" destination="32H-If-Eaa" id="wY7-JU-4dz"/>
+                        <segue destination="KeN-cV-KhU" kind="presentation" identifier="showComment" id="LuR-9o-SRN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBP-sY-NJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="320" y="304"/>
+        </scene>
+        <!--CommentViewController-->
+        <scene sceneID="5xE-0z-V5V">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="showComment" storyboardName="Comment" referencedIdentifier="CommentViewController" id="KeN-cV-KhU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENb-TF-01S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="827.5" y="268"/>
         </scene>
     </scenes>
 </document>

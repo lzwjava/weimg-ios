@@ -127,7 +127,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.yepTabBarTintColor()
         UITabBar.appearance().barTintColor = UIColor.yepBarTintColor()
         //UITabBar.appearance().translucent = false
+        
+        UITextView.appearance().tintColor = UIColor.yepGreen()
+        UITextField.appearance().tintColor = UIColor.yepGreen()
+        
+        UITextView.appearance().textColor = UIColor.whiteColor()
+        UITextField.appearance().textColor = UIColor.whiteColor()
     }
 
 }
-

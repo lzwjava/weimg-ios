@@ -19,7 +19,7 @@ class CommentManager: BaseManager {
         if let parentId = parentId {
             params["parentId"] = parentId
         }
-        HttpClient.request(.POST, "posts/" + String(postId) + "/comments", completion: completion)
+        HttpClient.request(.POST, "posts/" + String(postId) + "/comments",parameters: params, completion: completion)
     }
     
     func getComments(postId: Int, skip: Int, limit: Int, completion:([Comment], NSError?) -> Void) {

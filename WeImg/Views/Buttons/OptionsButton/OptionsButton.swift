@@ -30,7 +30,10 @@ class OptionsButton: UIView {
             }
 //            print(contentStackView.frame)
 //            print(self.frame)
-            self.frame = contentStackView.frame
+//            let frame = contentStackView.frame
+//            let newFrame = CGRectMake(0, 0, frame.width + 5, frame.height)
+//            print(newFrame)
+//            self.frame = newFrame
             if options.count > 0 {
                 selectedIndex = 0
             }

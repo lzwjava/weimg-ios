@@ -10,20 +10,24 @@ import UIKit
 
 class CommentHeader: UITableViewCell {
     
-    var optionsButton: OptionsButton?
+    var optionsButton =  OptionsButton.instanceFromNib()
+    
+    @IBOutlet weak var commentButton: UIButton!
+    
+    var commentAction: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let optionsButton = OptionsButton.instanceFromNib()
-        self.optionsButton = optionsButton
+
         addSubview(optionsButton)
-        // Initialization code
+        
+        commentButton.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+        commentButton.titleLabel!.transform = CGAffineTransformMakeScale(-1.0, 1.0);
+        commentButton.imageView!.transform = CGAffineTransformMakeScale(-1.0, 1.0);
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -31,4 +35,7 @@ class CommentHeader: UITableViewCell {
         return 44
     }
 
+    @IBAction func commentButtonClicked(sender: AnyObject) {
+        commentAction?()
+    }
 }

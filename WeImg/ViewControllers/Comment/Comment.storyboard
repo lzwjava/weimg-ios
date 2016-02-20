@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comment View Controller-->
+        <scene sceneID="Asw-J3-5nJ">
+            <objects>
+                <viewController storyboardIdentifier="CommentViewController" id="J90-y9-12f" customClass="CommentViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WCd-xM-C8M"/>
+                        <viewControllerLayoutGuide type="bottom" id="fSq-gW-Hvw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BOa-M2-TZe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFu-Vs-cuz">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uvv-yu-v2T"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="评论" id="6zn-j0-Ete">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7D1-Vk-yhk">
+                                            <connections>
+                                                <action selector="cancelButtonClicked:" destination="J90-y9-12f" id="nOB-d7-xAp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="lzwjava 评论道..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l5z-Yw-wEe">
+                                <rect key="frame" x="30" y="89" width="539" height="183"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="X2n-ae-s9C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l5z-Yw-wEe" firstAttribute="top" secondItem="wFu-Vs-cuz" secondAttribute="bottom" constant="25" id="EzM-uK-7C4"/>
+                            <constraint firstItem="wFu-Vs-cuz" firstAttribute="top" secondItem="WCd-xM-C8M" secondAttribute="bottom" id="MUT-DR-CtF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wFu-Vs-cuz" secondAttribute="trailing" constant="-20" id="R6B-D4-18g"/>
+                            <constraint firstItem="wFu-Vs-cuz" firstAttribute="leading" secondItem="BOa-M2-TZe" secondAttribute="leadingMargin" constant="-20" id="TRv-2C-2E3"/>
+                            <constraint firstItem="l5z-Yw-wEe" firstAttribute="leading" secondItem="BOa-M2-TZe" secondAttribute="leadingMargin" constant="10" id="bLy-xd-JlX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l5z-Yw-wEe" secondAttribute="trailing" constant="11" id="d4I-bz-cfU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextView" destination="l5z-Yw-wEe" id="F3k-Q8-OHu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xmU-VV-VaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301" y="462"/>
+        </scene>
+    </scenes>
+</document>
