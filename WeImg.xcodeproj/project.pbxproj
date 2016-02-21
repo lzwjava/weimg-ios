@@ -135,6 +135,9 @@
 		70FB49141C78787A0023FBC3 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49131C78787A0023FBC3 /* Comment.storyboard */; };
 		70FB49171C7880590023FBC3 /* CommentAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */; };
 		70FB49191C78806A0023FBC3 /* CommentAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */; };
+		70FB491D1C788E2B0023FBC3 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FB491C1C788E2B0023FBC3 /* UITextView+Placeholder.m */; };
+		70FB49211C78AB2F0023FBC3 /* CommentSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB491F1C78AB2F0023FBC3 /* CommentSelectionCell.swift */; };
+		70FB49221C78AB2F0023FBC3 /* CommentSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49201C78AB2F0023FBC3 /* CommentSelectionCell.xib */; };
 		8FD99436B8756C70400E3D38 /* Pods_WeImg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527C54C41326CCAC54767B52 /* Pods_WeImg.framework */; };
 /* End PBXBuildFile section */
 
@@ -290,6 +293,10 @@
 		70FB49131C78787A0023FBC3 /* Comment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
 		70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAccessoryView.swift; sourceTree = "<group>"; };
 		70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentAccessoryView.xib; sourceTree = "<group>"; };
+		70FB491B1C788E2B0023FBC3 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		70FB491C1C788E2B0023FBC3 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		70FB491F1C78AB2F0023FBC3 /* CommentSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSelectionCell.swift; sourceTree = "<group>"; };
+		70FB49201C78AB2F0023FBC3 /* CommentSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentSelectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				70696DAD1C6F10310038DB83 /* PostOutline */,
+				70FB491E1C78AB140023FBC3 /* CommentSelection */,
 				707650DC1C6D95CC000B3556 /* CommentHeader */,
 				707650D31C6D1694000B3556 /* Comment */,
 				707650CA1C6A157D000B3556 /* PostImage */,
@@ -795,6 +803,7 @@
 		70FB48D41C7111FD0023FBC3 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				70FB491A1C788E2B0023FBC3 /* UITextView+Placeholder */,
 				70FB48D51C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell */,
 			);
 			path = Vendors;
@@ -878,6 +887,24 @@
 				70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */,
 			);
 			path = CoommentAccessoryView;
+			sourceTree = "<group>";
+		};
+		70FB491A1C788E2B0023FBC3 /* UITextView+Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				70FB491B1C788E2B0023FBC3 /* UITextView+Placeholder.h */,
+				70FB491C1C788E2B0023FBC3 /* UITextView+Placeholder.m */,
+			);
+			path = "UITextView+Placeholder";
+			sourceTree = "<group>";
+		};
+		70FB491E1C78AB140023FBC3 /* CommentSelection */ = {
+			isa = PBXGroup;
+			children = (
+				70FB491F1C78AB2F0023FBC3 /* CommentSelectionCell.swift */,
+				70FB49201C78AB2F0023FBC3 /* CommentSelectionCell.xib */,
+			);
+			path = CommentSelection;
 			sourceTree = "<group>";
 		};
 		8DC6AB465A73753D8A544447 /* Frameworks */ = {
@@ -1000,6 +1027,7 @@
 				706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */,
 				706BD6881C63025B00A277D7 /* SettingsMoreCell.xib in Resources */,
 				706BD7121C67C26300A277D7 /* PickImage.storyboard in Resources */,
+				70FB49221C78AB2F0023FBC3 /* CommentSelectionCell.xib in Resources */,
 				706BD67C1C63019B00A277D7 /* Settings.storyboard in Resources */,
 				70629B121C61EF7500865921 /* Localizable.strings in Resources */,
 				706BD6831C63022700A277D7 /* SettingsUserCell.xib in Resources */,
@@ -1086,6 +1114,7 @@
 				707650D21C6D01B5000B3556 /* CommentManager.swift in Sources */,
 				70C2F3E11C60E68200C345B2 /* RegisterPickNameViewController.swift in Sources */,
 				707650E31C6E582A000B3556 /* YepTabBarController.swift in Sources */,
+				70FB491D1C788E2B0023FBC3 /* UITextView+Placeholder.m in Sources */,
 				70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */,
 				70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */,
 				706BD6E61C63BA7300A277D7 /* AvatarStyles.swift in Sources */,
@@ -1123,6 +1152,7 @@
 				70C2F42D1C611BF900C345B2 /* YepConfig.swift in Sources */,
 				70C2F43B1C61BD2E00C345B2 /* ShowViewController.swift in Sources */,
 				706BD68D1C63030400A277D7 /* AboutViewController.swift in Sources */,
+				70FB49211C78AB2F0023FBC3 /* CommentSelectionCell.swift in Sources */,
 				70C2F4081C60E6B500C345B2 /* UploadToken.swift in Sources */,
 				706BD69A1C63581200A277D7 /* HorizontalLineView.swift in Sources */,
 				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,

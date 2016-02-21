@@ -133,6 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITextView.appearance().textColor = UIColor.whiteColor()
         UITextField.appearance().textColor = UIColor.whiteColor()
+        UITextField.appearance().backgroundColor = UIColor.blackColor()
     }
 
 }

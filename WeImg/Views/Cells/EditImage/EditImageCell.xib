@@ -17,6 +17,9 @@
                         <rect key="frame" x="117" y="16" width="242" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="descValueChanged:" destination="CXP-dW-cab" eventType="editingChanged" id="H7A-io-maJ"/>
+                        </connections>
                     </textField>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-wy-X3V">
                         <rect key="frame" x="20" y="7.5" width="69" height="69"/>

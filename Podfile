@@ -23,7 +23,7 @@ target 'WeImg' do
     pod 'CryptoSwift', '~> 0.2.2'
     pod 'QBImagePickerController', '~> 3.4.0'
     pod 'DateTools', '~> 1.7.0'
-    pod 'PKHUD'
+    pod 'PKHUD', '~> 2.2.5'
 end
 
 target 'WeImgTests' do

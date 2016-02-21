@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import QBImagePickerController
+import PKHUD
 
 class NewPostViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, QBImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -101,9 +102,12 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     @IBAction func uploadImages(sender: AnyObject) {
         if selectedItems.count > 0 {
+            PKHUD.sharedHUD.contentView = PKHUDProgressView()
+            PKHUD.sharedHUD.show()
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
                 PostManager.manager.createPost("My Post", imageItems: self.selectedItems) { (error: NSError?) -> Void in
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        PKHUD.sharedHUD.hide()
                         if self.filterError(error) {
                             self.dismissViewControllerAnimated(true, completion: nil)
                         }

@@ -31,4 +31,8 @@ class EditImageCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func descValueChanged(sender: AnyObject) {
+        self.imageItem?.desc = descTextField.text
+    }
+    
 }

@@ -32,9 +32,11 @@ class PostImageCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.imageTitleLabel.text = nil
-        self.postImageView.image = nil
-        self.descriptionLabel.text = nil
+        imageTitleLabel.text = nil
+        postImageView.image = nil
+        descriptionLabel.text = nil
+        
+        selectionStyle = .None
     }
     
 //    class func heightForImage(image: Image, width: CGFloat) -> CGFloat {

@@ -19,6 +19,10 @@ class CommentViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupCommentTextView()
+    }
+    
+    private func setupCommentTextView() {
         commentAccessoryView.sendAction = { () in
             let content = self.commentTextView.text
             if !content.isEmpty {
@@ -31,8 +35,10 @@ class CommentViewController: BaseViewController {
             }
         }
         commentTextView.inputAccessoryView = commentAccessoryView
+        let placeholder = UserManager.currentUser!.username + " 评论道..."
+        commentTextView.placeholder = placeholder
+        commentTextView.placeholderColor = UIColor.lightGrayColor()
         commentTextView.becomeFirstResponder()
-        
     }
 
     override func didReceiveMemoryWarning() {
