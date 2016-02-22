@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,18 +14,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="256-qZ-gqV">
-                        <rect key="frame" x="8" y="11" width="54" height="21"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="256-qZ-gqV">
+                        <rect key="frame" x="23" y="11" width="74" height="21"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdA-MB-HOD">
-                                <rect key="frame" x="0.0" y="0.0" width="9" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdA-MB-HOD">
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="21"/>
                                 <state key="normal" backgroundImage="nav_upvote"/>
                                 <connections>
                                     <action selector="upvoteClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="27j-N0-Uug"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM6-2t-5Wm">
-                                <rect key="frame" x="19" y="0.0" width="22" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM6-2t-5Wm">
+                                <rect key="frame" x="52" y="0.0" width="22" height="21"/>
                                 <state key="normal" backgroundImage="nav_downvote"/>
                                 <connections>
                                     <action selector="downvoteClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UCM-jb-Dci"/>
@@ -34,6 +35,11 @@
                     </stackView>
                 </subviews>
                 <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="256-qZ-gqV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="Ifs-dH-msn"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="256-qZ-gqV" secondAttribute="trailing" constant="180" id="lnt-Bv-ZNg"/>
+                    <constraint firstItem="256-qZ-gqV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="t4F-Da-GIv"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>

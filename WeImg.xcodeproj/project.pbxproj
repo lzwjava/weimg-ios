@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700B1A8A1C7B6DA00012C5A4 /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700B1A891C7B6DA00012C5A4 /* VoteItem.swift */; };
 		70629B121C61EF7500865921 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70629B141C61EF7500865921 /* Localizable.strings */; };
 		70696DB01C6F103D0038DB83 /* PostOutlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */; };
 		70696DB11C6F103D0038DB83 /* PostOutlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70696DAF1C6F103D0038DB83 /* PostOutlineCell.xib */; };
@@ -155,6 +156,7 @@
 		256BB710AFCAA4E8AF7D684E /* Pods-WeImg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.debug.xcconfig"; sourceTree = "<group>"; };
 		423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.release.xcconfig"; sourceTree = "<group>"; };
 		527C54C41326CCAC54767B52 /* Pods_WeImg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeImg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		700B1A891C7B6DA00012C5A4 /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
 		70629B161C61EFC000865921 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		70629B171C61EFD900865921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostOutlineCell.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 				706BD7091C67350200A277D7 /* Image.swift */,
 				707650BE1C686EEF000B3556 /* ImageItem.swift */,
 				707650CF1C6D00AA000B3556 /* Comment.swift */,
+				700B1A891C7B6DA00012C5A4 /* VoteItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1141,6 +1144,7 @@
 				70FB48DE1C71122D0023FBC3 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				70FB48DF1C71122D0023FBC3 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				706BD6781C626C8900A277D7 /* RegisterPickPasswordViewController.swift in Sources */,
+				700B1A8A1C7B6DA00012C5A4 /* VoteItem.swift in Sources */,
 				70C2F4211C60ED4100C345B2 /* YepHUD.swift in Sources */,
 				70C2F4251C60EDD400C345B2 /* String+Yep.swift in Sources */,
 				70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */,

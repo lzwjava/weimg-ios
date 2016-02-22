@@ -49,11 +49,6 @@ class PostActionView: UIView {
     }
     
     func upVoteClicked(sender:AnyObject) {
-        if vote == "up" {
-            vote = nil
-        } else {
-            vote = "up"
-        }
         updateViews()
         upVoteAction?(vote: vote)
     }
@@ -72,11 +67,6 @@ class PostActionView: UIView {
     }
     
     func downVoteClicked(sender: AnyObject) {
-        if vote == "down" {
-            vote = nil
-        } else {
-            vote = "down"
-        }
         updateViews()
         downVoteAction?(vote:vote)
     }

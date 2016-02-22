@@ -69,11 +69,10 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
         assert(commentCount + selectionCount == cellCount)
     }
     
-    private func vote(vote: String) {
-        PostManager.manager.vote(self.post.postId, vote: vote) { (error: NSError?) -> Void in
+    private func vote(vote: String, origin: String?) {
+        PostManager.manager.vote(post.postId, vote: vote) { (voteItem: VoteItem?, error: NSError?) -> Void in
             if self.filterError(error) {
-                self.post.vote = vote
-                self.postTitleView?.post = self.post
+                self.fetchPost()
             }
         }
     }
@@ -81,10 +80,10 @@ class PostDetailViewController: BaseViewController, UITableViewDelegate, UITable
     func setupNavigationBar() {
         let actionView = PostActionView.instanceFromNib()
         actionView.upVoteAction = { (vote: String?) -> Void in
-            self.vote("up")
+            self.vote("up", origin: vote)
         }
         actionView.downVoteAction = {(vote: String?) -> Void in
-            self.vote("down")
+            self.vote("down", origin: vote)
         }
         self.postActionView = actionView
         navigationItem.titleView = actionView

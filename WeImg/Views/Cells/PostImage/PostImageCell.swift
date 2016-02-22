@@ -36,7 +36,6 @@ class PostImageCell: UITableViewCell {
                 
                 if let desc = postImage.description {
                     descriptionLabel.text = desc
-//                    descriptionHeightConstraint.constant = 100
                     descriptionHeightConstraint.active = false
                 } else {
                     descriptionHeightConstraint.active = true

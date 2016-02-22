@@ -66,7 +66,7 @@ class PostManager : BaseManager {
         HttpClient.request(.GET, "posts/" + String(postId), parameters: nil, completion: completionHandler)
     }
     
-    func vote(postId: Int, vote: String, completion:(NSError?) -> Void) {
+    func vote(postId: Int, vote: String, completion:(VoteItem?, NSError?) -> Void) {
         HttpClient.request(.GET, "posts/" + String(postId) + "/vote/" + vote, completion: completion)
     }
     
