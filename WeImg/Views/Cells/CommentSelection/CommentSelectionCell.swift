@@ -19,7 +19,6 @@ class CommentSelectionCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         selectionStyle = .None
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -27,6 +26,7 @@ class CommentSelectionCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func upvoteClicked(sender: AnyObject) {
         upvoteAction?(commentIndex)
     }

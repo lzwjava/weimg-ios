@@ -16,14 +16,14 @@
                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="256-qZ-gqV">
                         <rect key="frame" x="8" y="11" width="54" height="21"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdA-MB-HOD">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdA-MB-HOD">
                                 <rect key="frame" x="0.0" y="0.0" width="9" height="21"/>
                                 <state key="normal" backgroundImage="nav_upvote"/>
                                 <connections>
                                     <action selector="upvoteClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="27j-N0-Uug"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM6-2t-5Wm">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM6-2t-5Wm">
                                 <rect key="frame" x="19" y="0.0" width="22" height="21"/>
                                 <state key="normal" backgroundImage="nav_downvote"/>
                                 <connections>
