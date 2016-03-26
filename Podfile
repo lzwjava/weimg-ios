@@ -12,7 +12,7 @@ target 'WeImg' do
     pod 'Ruler', '~> 0.6'
     pod 'Proposer', '~> 0.7.1'
     pod 'Navi', '~> 0.3.9'
-    pod 'SQLite.swift', '~> 0.9.2'
+    pod 'SQLite.swift', :git => 'https://github.com/stephencelis/SQLite.swift'
     pod 'KeyboardMan', '~> 0.5.2'
     pod 'DeviceGuru', '~> 1.3.3'
     pod 'TPKeyboardAvoiding', '~> 1.2.11'
