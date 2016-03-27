@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,10 +22,18 @@
                             <action selector="descValueChanged:" destination="CXP-dW-cab" eventType="editingChanged" id="H7A-io-maJ"/>
                         </connections>
                     </textField>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-wy-X3V">
-                        <rect key="frame" x="20" y="7.5" width="69" height="69"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-wy-X3V">
+                        <rect key="frame" x="26" y="13" width="56" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="0Zu-tc-OfP"/>
+                            <constraint firstAttribute="width" constant="56" id="X0p-gg-caC"/>
+                        </constraints>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="ViU-wy-X3V" firstAttribute="leading" secondItem="UFo-zL-Q6p" secondAttribute="leadingMargin" constant="18" id="GiZ-hT-1vY"/>
+                    <constraint firstItem="ViU-wy-X3V" firstAttribute="top" secondItem="UFo-zL-Q6p" secondAttribute="topMargin" constant="5" id="zwG-U7-UW8"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentImageView" destination="ViU-wy-X3V" id="A6O-kr-wp6"/>

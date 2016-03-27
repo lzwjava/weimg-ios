@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e9P-o7-wsE">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e9P-o7-wsE" customClass="AddImageCell" customModule="WeImg" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e9P-o7-wsE" id="wmJ-Rh-O8r">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVM-UZ-OOe">
-                        <rect key="frame" x="23" y="8" width="65" height="68.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVM-UZ-OOe">
+                        <rect key="frame" x="26" y="13" width="56" height="56"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="56" id="SgW-DB-qtC"/>
+                            <constraint firstAttribute="height" constant="56" id="Yht-HW-UY7"/>
+                        </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-jJ-JWg">
-                        <rect key="frame" x="121" y="28" width="30" height="30"/>
-                        <state key="normal" title="添加"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="添加新图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndX-7a-DM8">
-                        <rect key="frame" x="171" y="32" width="85" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhj-oO-YVa" customClass="AddButton" customModule="WeImg" customModuleProvider="target">
+                        <rect key="frame" x="107.5" y="30.5" width="25" height="25"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="MQG-Pn-qCp"/>
+                            <constraint firstAttribute="width" constant="25" id="Tfn-Wp-buq"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加新图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndX-7a-DM8">
+                        <rect key="frame" x="142.5" y="32" width="85" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="uhj-oO-YVa" firstAttribute="centerX" secondItem="wmJ-Rh-O8r" secondAttribute="centerX" constant="-40" id="3GX-DF-aAI"/>
+                    <constraint firstItem="dVM-UZ-OOe" firstAttribute="leading" secondItem="wmJ-Rh-O8r" secondAttribute="leadingMargin" constant="18" id="7Xk-sX-pOD"/>
+                    <constraint firstItem="uhj-oO-YVa" firstAttribute="centerY" secondItem="wmJ-Rh-O8r" secondAttribute="centerY" id="7zq-Vj-M3d"/>
+                    <constraint firstItem="dVM-UZ-OOe" firstAttribute="top" secondItem="wmJ-Rh-O8r" secondAttribute="topMargin" constant="5" id="Eo2-Qz-j6a"/>
+                    <constraint firstItem="ndX-7a-DM8" firstAttribute="centerY" secondItem="wmJ-Rh-O8r" secondAttribute="centerY" id="Lo4-eo-hUP"/>
+                    <constraint firstItem="ndX-7a-DM8" firstAttribute="centerX" secondItem="wmJ-Rh-O8r" secondAttribute="centerX" constant="25" id="dZX-K5-dOi"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="placeholderView" destination="dVM-UZ-OOe" id="9MI-Ot-y5Q"/>
+            </connections>
             <point key="canvasLocation" x="483" y="259.5"/>
         </tableViewCell>
     </objects>

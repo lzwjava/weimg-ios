@@ -24,6 +24,7 @@ target 'WeImg' do
     pod 'QBImagePickerController', '~> 3.4.0'
     pod 'DateTools', '~> 1.7.0'
     pod 'PKHUD', '~> 2.2.5'
+    pod 'XXNibBridge', '~> 2.2'
 end
 
 target 'WeImgTests' do

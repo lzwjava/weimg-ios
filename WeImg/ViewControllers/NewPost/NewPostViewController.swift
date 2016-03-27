@@ -52,20 +52,8 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == selectedItems.count {
-            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-//            let takeAction = UIAlertAction(title: "拍照", style: .Default, handler: { (alert: UIAlertAction) -> Void in
-//                
-//            })
-            let pickAction = UIAlertAction(title: "相册", style: .Default, handler: { (action: UIAlertAction) -> Void in
-                self.pickerController.minimumNumberOfSelection = 0;
-                self.presentViewController(self.pickerController, animated: true, completion: nil)
-            })
-            let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: { (action: UIAlertAction) -> Void in
-                alertController.dismissViewControllerAnimated(true, completion: nil)
-            })
-            alertController.addAction(pickAction)
-            alertController.addAction(cancelAction)
-            presentViewController(alertController, animated: true, completion: nil)
+            self.pickerController.minimumNumberOfSelection = 0;
+            self.presentViewController(self.pickerController, animated: true, completion: nil)
         } else {
             
         }

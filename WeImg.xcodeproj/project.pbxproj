@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		700B1A8A1C7B6DA00012C5A4 /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700B1A891C7B6DA00012C5A4 /* VoteItem.swift */; };
+		701C38611CA74DB00066A365 /* AddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C38601CA74DB00066A365 /* AddImageCell.swift */; };
+		701C38651CA7558C0066A365 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C38641CA7558C0066A365 /* AddButton.swift */; };
+		701C38671CA7559B0066A365 /* AddButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 701C38661CA7559B0066A365 /* AddButton.xib */; };
 		70629B121C61EF7500865921 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70629B141C61EF7500865921 /* Localizable.strings */; };
 		70696DB01C6F103D0038DB83 /* PostOutlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */; };
 		70696DB11C6F103D0038DB83 /* PostOutlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70696DAF1C6F103D0038DB83 /* PostOutlineCell.xib */; };
@@ -157,6 +160,9 @@
 		423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.release.xcconfig"; sourceTree = "<group>"; };
 		527C54C41326CCAC54767B52 /* Pods_WeImg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeImg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700B1A891C7B6DA00012C5A4 /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
+		701C38601CA74DB00066A365 /* AddImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageCell.swift; sourceTree = "<group>"; };
+		701C38641CA7558C0066A365 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		701C38661CA7559B0066A365 /* AddButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddButton.xib; sourceTree = "<group>"; };
 		70629B161C61EFC000865921 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		70629B171C61EFD900865921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		70696DAE1C6F103D0038DB83 /* PostOutlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostOutlineCell.swift; sourceTree = "<group>"; };
@@ -548,6 +554,7 @@
 			children = (
 				706BD7191C67CDBD00A277D7 /* EditImageCell.swift */,
 				706BD7171C67CDA700A277D7 /* EditImageCell.xib */,
+				701C38601CA74DB00066A365 /* AddImageCell.swift */,
 				706BD71B1C67D40600A277D7 /* AddImageCell.xib */,
 			);
 			path = EditImage;
@@ -722,6 +729,8 @@
 				70FB48ED1C71C9FF0023FBC3 /* OptionsButton */,
 				70C2F43C1C61BD5D00C345B2 /* EdgeBorderButton.swift */,
 				70C2F40E1C60E76100C345B2 /* BorderButton.swift */,
+				701C38641CA7558C0066A365 /* AddButton.swift */,
+				701C38661CA7559B0066A365 /* AddButton.xib */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1039,6 +1048,7 @@
 				70C2F44A1C61C61D00C345B2 /* Show.xcassets in Resources */,
 				70696DB31C6F7AB90038DB83 /* Posts.storyboard in Resources */,
 				707650E01C6D95F7000B3556 /* CommentHeader.xib in Resources */,
+				701C38671CA7559B0066A365 /* AddButton.xib in Resources */,
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				70FB48F31C71C9FF0023FBC3 /* CircleView.xib in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
@@ -1129,6 +1139,7 @@
 				70C2F3F61C60E69900C345B2 /* HttpClient.swift in Sources */,
 				707650CE1C6A15B8000B3556 /* PostImageCell.swift in Sources */,
 				70FB49171C7880590023FBC3 /* CommentAccessoryView.swift in Sources */,
+				701C38651CA7558C0066A365 /* AddButton.swift in Sources */,
 				70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */,
 				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
 				70C2F3E21C60E68200C345B2 /* RegisterVerifyMobileViewController.swift in Sources */,
@@ -1161,6 +1172,7 @@
 				706BD69A1C63581200A277D7 /* HorizontalLineView.swift in Sources */,
 				70C2F4291C611B4E00C345B2 /* YepAlert.swift in Sources */,
 				706BD70A1C67350200A277D7 /* Image.swift in Sources */,
+				701C38611CA74DB00066A365 /* AddImageCell.swift in Sources */,
 				70FB48FD1C7646390023FBC3 /* TabBar.swift in Sources */,
 				706BD6A61C6358C300A277D7 /* EditProfileColoredTitleCell.swift in Sources */,
 				707650E51C6E590A000B3556 /* UIScrollView+Yep.swift in Sources */,
