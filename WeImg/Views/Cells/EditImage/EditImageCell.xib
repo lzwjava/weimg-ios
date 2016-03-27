@@ -14,14 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="389" height="84.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="描述" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gq-5Q-DkR">
-                        <rect key="frame" x="117" y="16" width="242" height="30"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                        <connections>
-                            <action selector="descValueChanged:" destination="CXP-dW-cab" eventType="editingChanged" id="H7A-io-maJ"/>
-                        </connections>
-                    </textField>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-wy-X3V">
                         <rect key="frame" x="26" y="13" width="56" height="56"/>
                         <constraints>
@@ -29,15 +21,29 @@
                             <constraint firstAttribute="width" constant="56" id="X0p-gg-caC"/>
                         </constraints>
                     </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="49Y-Ux-W35">
+                        <rect key="frame" x="97" y="11" width="278" height="62.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="XuH-ai-2Z0"/>
+                        </connections>
+                    </textView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ViU-wy-X3V" firstAttribute="leading" secondItem="UFo-zL-Q6p" secondAttribute="leadingMargin" constant="18" id="GiZ-hT-1vY"/>
+                    <constraint firstItem="49Y-Ux-W35" firstAttribute="top" secondItem="UFo-zL-Q6p" secondAttribute="topMargin" constant="3" id="XtM-pP-nxc"/>
+                    <constraint firstItem="49Y-Ux-W35" firstAttribute="leading" secondItem="ViU-wy-X3V" secondAttribute="trailing" constant="15" id="l4v-es-0V7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="49Y-Ux-W35" secondAttribute="bottom" constant="3" id="nh3-ws-PgR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="49Y-Ux-W35" secondAttribute="trailing" constant="6" id="phd-W9-8e0"/>
                     <constraint firstItem="ViU-wy-X3V" firstAttribute="top" secondItem="UFo-zL-Q6p" secondAttribute="topMargin" constant="5" id="zwG-U7-UW8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentImageView" destination="ViU-wy-X3V" id="A6O-kr-wp6"/>
-                <outlet property="descTextField" destination="7gq-5Q-DkR" id="mfF-RR-TQG"/>
+                <outlet property="descTextView" destination="49Y-Ux-W35" id="HDF-Ol-svO"/>
             </connections>
             <point key="canvasLocation" x="478.5" y="375.5"/>
         </tableViewCell>

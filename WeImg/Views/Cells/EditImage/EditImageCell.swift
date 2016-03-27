@@ -9,14 +9,14 @@
 import UIKit
 import Photos
 
-class EditImageCell: UITableViewCell {
+class EditImageCell: UITableViewCell, UITextViewDelegate {
     
     @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var descTextField: UITextField!
+    @IBOutlet weak var descTextView: UITextView!
     
     var imageItem: ImageItem? {
         didSet {
-            descTextField.text = self.imageItem?.desc
+            descTextView.text = self.imageItem?.desc
             PHImageManager.defaultManager().requestImageForAsset(self.imageItem!.asset, targetSize: self.contentImageView.bounds.size, contentMode: .Default, options: nil) { (result: UIImage?, info: [NSObject : AnyObject]?) -> Void in
                 self.contentImageView.image = result
             }
@@ -25,14 +25,20 @@ class EditImageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        descTextView.text = nil
+        descTextView.placeholder = "描述"
+        descTextView.backgroundColor = UIColor.clearColor()
+        descTextView.textColor = UIColor.blackColor()
+        
+        selectionStyle = .None
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func descValueChanged(sender: AnyObject) {
-        self.imageItem?.desc = descTextField.text
+    func textViewDidChange(textView: UITextView) {
+        self.imageItem?.desc = textView.text
     }
     
 }

@@ -27,7 +27,7 @@ class AddImageCell: UITableViewCell {
         let pattern:[Int] = [4, 2]
         border.lineDashPattern = pattern
         border.path = UIBezierPath(rect: placeholderView.bounds).CGPath
-        placeholderView.layer.addSublayer(border);
+        placeholderView.layer.addSublayer(border)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
