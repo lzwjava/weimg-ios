@@ -10,27 +10,18 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="416" id="w4w-8L-1TL" customClass="PostImageCell" customModule="WeImg" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="444" height="416"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="w4w-8L-1TL" id="JXb-FI-0SQ">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w4w-8L-1TL" id="JXb-FI-0SQ">
                 <rect key="frame" x="0.0" y="0.0" width="444" height="415.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iF-aV-CZt">
-                        <rect key="frame" x="13" y="8" width="418" height="20.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="PuS-2j-81e"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOO-Pc-ZHC">
-                        <rect key="frame" x="0.0" y="36.5" width="444" height="337.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fOO-Pc-ZHC">
+                        <rect key="frame" x="0.0" y="41" width="444" height="336"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="336" id="jWm-G5-aAA"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="详情" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STz-k2-tU1">
-                        <rect key="frame" x="13" y="379" width="418" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STz-k2-tU1">
+                        <rect key="frame" x="13" y="382" width="418" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20.5" id="Nsc-Cl-YCq"/>
                         </constraints>
@@ -44,12 +35,8 @@
                     <constraint firstItem="STz-k2-tU1" firstAttribute="top" secondItem="fOO-Pc-ZHC" secondAttribute="bottom" constant="5" id="94k-DR-qfi"/>
                     <constraint firstItem="fOO-Pc-ZHC" firstAttribute="leading" secondItem="JXb-FI-0SQ" secondAttribute="leadingMargin" constant="-8" id="BDk-aG-6LM"/>
                     <constraint firstAttribute="trailingMargin" secondItem="STz-k2-tU1" secondAttribute="trailing" constant="5" id="H2E-aV-XOg"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="6iF-aV-CZt" secondAttribute="trailing" constant="5" id="Nh4-zM-eg1"/>
-                    <constraint firstItem="6iF-aV-CZt" firstAttribute="top" secondItem="JXb-FI-0SQ" secondAttribute="topMargin" id="bRz-2b-bG8"/>
                     <constraint firstAttribute="bottomMargin" secondItem="STz-k2-tU1" secondAttribute="bottom" constant="5" id="hqy-7Y-c2l"/>
-                    <constraint firstItem="fOO-Pc-ZHC" firstAttribute="top" secondItem="6iF-aV-CZt" secondAttribute="bottom" constant="10" id="ogS-jf-3kC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fOO-Pc-ZHC" secondAttribute="trailing" constant="-8" id="onz-te-bCX"/>
-                    <constraint firstItem="6iF-aV-CZt" firstAttribute="leading" secondItem="JXb-FI-0SQ" secondAttribute="leadingMargin" constant="5" id="tJ1-G7-EnW"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,9 +44,7 @@
                 <outlet property="descriptionHeightConstraint" destination="Nsc-Cl-YCq" id="IdN-oj-LJk"/>
                 <outlet property="descriptionLabel" destination="STz-k2-tU1" id="guE-cZ-I80"/>
                 <outlet property="imageHeightConstraint" destination="jWm-G5-aAA" id="alv-s2-V2i"/>
-                <outlet property="imageTitleLabel" destination="6iF-aV-CZt" id="Rg8-42-ZZf"/>
                 <outlet property="postImageView" destination="fOO-Pc-ZHC" id="ZAG-ZP-XO4"/>
-                <outlet property="titleHeightConstraint" destination="PuS-2j-81e" id="iir-f1-MM2"/>
             </connections>
             <point key="canvasLocation" x="290" y="479"/>
         </tableViewCell>

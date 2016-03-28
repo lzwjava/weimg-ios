@@ -408,7 +408,6 @@
 				707650D31C6D1694000B3556 /* Comment */,
 				707650CA1C6A157D000B3556 /* PostImage */,
 				707650C51C69F81A000B3556 /* PostTitle */,
-				706BD7161C67CD8600A277D7 /* EditImage */,
 				706BD6AC1C636BA800A277D7 /* About */,
 				706BD69D1C6358C300A277D7 /* EditProfileColoredTitle */,
 				706BD6A01C6358C300A277D7 /* EditProfileLessInfo */,
@@ -557,7 +556,8 @@
 				701C38601CA74DB00066A365 /* AddImageCell.swift */,
 				706BD71B1C67D40600A277D7 /* AddImageCell.xib */,
 			);
-			path = EditImage;
+			name = EditImage;
+			path = ../EditImage;
 			sourceTree = "<group>";
 		};
 		707650C01C69F2B0000B3556 /* PostDetail */ = {
@@ -574,6 +574,7 @@
 			children = (
 				707650C61C69F915000B3556 /* PostTitleView.xib */,
 				707650C81C69F926000B3556 /* PostTitleView.swift */,
+				706BD7161C67CD8600A277D7 /* EditImage */,
 			);
 			path = PostTitle;
 			sourceTree = "<group>";

@@ -15,7 +15,6 @@ class Image : Mappable {
     var width: Int!
     var height: Int!
     var author: Int!
-    var title: String?
     var description: String?
     var created: NSDate!
     
@@ -30,7 +29,6 @@ class Image : Mappable {
         width   <-  map["width"]
         height  <-  map["height"]
         author  <-  map["author"]
-        title   <-   map["title"]
         description  <-  map["description"]
         created <-  (map["created"], CustomDateTransform())
     }

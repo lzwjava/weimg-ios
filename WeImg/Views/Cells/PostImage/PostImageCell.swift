@@ -11,11 +11,9 @@ import Kingfisher
 
 class PostImageCell: UITableViewCell {
     
-    @IBOutlet weak var imageTitleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var titleHeightConstraint: NSLayoutConstraint!
     @IBOutlet var descriptionHeightConstraint: NSLayoutConstraint!
     
     var postImage:Image? {
@@ -23,13 +21,6 @@ class PostImageCell: UITableViewCell {
             if let postImage = postImage {
                 postImageView.kf_setImageWithURL(NSURL(string: postImage.link)!)
 //                imageTitleLabel.text = postImage.
-                if let title = postImage.title {
-                    imageTitleLabel.text = title
-                    titleHeightConstraint.active = false
-                } else {
-                    titleHeightConstraint.active = true
-                    titleHeightConstraint.constant = 0
-                }
                 
                 let imageHeight = round(postImageView.frame.width / CGFloat(postImage.width) * CGFloat(postImage.height))
                 imageHeightConstraint.constant = imageHeight
@@ -47,8 +38,7 @@ class PostImageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        imageTitleLabel.text = nil
+    
         postImageView.image = nil
         descriptionLabel.text = nil
         
