@@ -13,24 +13,24 @@ class PostImageCell: UITableViewCell {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
+    
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var descriptionHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var descriptionLabelHeight: NSLayoutConstraint!
     
     var postImage:Image? {
         didSet {
             if let postImage = postImage {
                 postImageView.kf_setImageWithURL(NSURL(string: postImage.link)!)
-//                imageTitleLabel.text = postImage.
                 
                 let imageHeight = round(postImageView.frame.width / CGFloat(postImage.width) * CGFloat(postImage.height))
                 imageHeightConstraint.constant = imageHeight
                 
                 if let desc = postImage.description {
                     descriptionLabel.text = desc
-                    descriptionHeightConstraint.active = false
+                    descriptionLabelHeight.active = false
                 } else {
-                    descriptionHeightConstraint.active = true
-                    descriptionHeightConstraint.constant = 0
+                    descriptionLabelHeight.active = true
+                    descriptionLabelHeight.constant = 0
                 }
             }
         }

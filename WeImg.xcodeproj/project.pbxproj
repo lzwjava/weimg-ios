@@ -79,6 +79,8 @@
 		707650E51C6E590A000B3556 /* UIScrollView+Yep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650E41C6E590A000B3556 /* UIScrollView+Yep.swift */; };
 		707650EE1C6E68B8000B3556 /* EditUsername.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707650EC1C6E68B8000B3556 /* EditUsername.storyboard */; };
 		707650EF1C6E68B8000B3556 /* EditUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707650ED1C6E68B8000B3556 /* EditUsernameController.swift */; };
+		70B7D2551CBE1D52007E270A /* CommentAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7D2531CBE1D52007E270A /* CommentAccessoryView.swift */; };
+		70B7D2561CBE1D52007E270A /* CommentAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B7D2541CBE1D52007E270A /* CommentAccessoryView.xib */; };
 		70C2F3601C5F5EE300C345B2 /* beauty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70C2F35F1C5F5EE300C345B2 /* beauty.jpg */; };
 		70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D31C60E68200C345B2 /* BaseViewController.swift */; };
 		70C2F3DF1C60E68200C345B2 /* RegisterPickAvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */; };
@@ -137,8 +139,6 @@
 		70FB490B1C77911C0023FBC3 /* PostsNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB490A1C77911C0023FBC3 /* PostsNavigationBarView.xib */; };
 		70FB490E1C7878440023FBC3 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB490D1C7878440023FBC3 /* CommentViewController.swift */; };
 		70FB49141C78787A0023FBC3 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49131C78787A0023FBC3 /* Comment.storyboard */; };
-		70FB49171C7880590023FBC3 /* CommentAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */; };
-		70FB49191C78806A0023FBC3 /* CommentAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */; };
 		70FB491D1C788E2B0023FBC3 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FB491C1C788E2B0023FBC3 /* UITextView+Placeholder.m */; };
 		70FB49211C78AB2F0023FBC3 /* CommentSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB491F1C78AB2F0023FBC3 /* CommentSelectionCell.swift */; };
 		70FB49221C78AB2F0023FBC3 /* CommentSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FB49201C78AB2F0023FBC3 /* CommentSelectionCell.xib */; };
@@ -236,6 +236,8 @@
 		707650E41C6E590A000B3556 /* UIScrollView+Yep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Yep.swift"; sourceTree = "<group>"; };
 		707650EC1C6E68B8000B3556 /* EditUsername.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUsername.storyboard; sourceTree = "<group>"; };
 		707650ED1C6E68B8000B3556 /* EditUsernameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUsernameController.swift; sourceTree = "<group>"; };
+		70B7D2531CBE1D52007E270A /* CommentAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAccessoryView.swift; sourceTree = "<group>"; };
+		70B7D2541CBE1D52007E270A /* CommentAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentAccessoryView.xib; sourceTree = "<group>"; };
 		70C2F35F1C5F5EE300C345B2 /* beauty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty.jpg; sourceTree = "<group>"; };
 		70C2F3D31C60E68200C345B2 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		70C2F3D71C60E68200C345B2 /* RegisterPickAvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPickAvatarViewController.swift; sourceTree = "<group>"; };
@@ -299,8 +301,6 @@
 		70FB490A1C77911C0023FBC3 /* PostsNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostsNavigationBarView.xib; sourceTree = "<group>"; };
 		70FB490D1C7878440023FBC3 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		70FB49131C78787A0023FBC3 /* Comment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
-		70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAccessoryView.swift; sourceTree = "<group>"; };
-		70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentAccessoryView.xib; sourceTree = "<group>"; };
 		70FB491B1C788E2B0023FBC3 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		70FB491C1C788E2B0023FBC3 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		70FB491F1C78AB2F0023FBC3 /* CommentSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSelectionCell.swift; sourceTree = "<group>"; };
@@ -623,6 +623,15 @@
 			path = EditUsernmae;
 			sourceTree = "<group>";
 		};
+		70B7D2521CBE1D52007E270A /* CommentAccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				70B7D2531CBE1D52007E270A /* CommentAccessoryView.swift */,
+				70B7D2541CBE1D52007E270A /* CommentAccessoryView.xib */,
+			);
+			path = CommentAccessoryView;
+			sourceTree = "<group>";
+		};
 		70C2F3D11C60E68200C345B2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,7 +710,7 @@
 		70C2F4061C60E6B500C345B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				70FB49151C78803B0023FBC3 /* CoommentAccessoryView */,
+				70B7D2521CBE1D52007E270A /* CommentAccessoryView */,
 				70FB49071C7790D70023FBC3 /* PostsNavigationBar */,
 				70FB48FB1C7646160023FBC3 /* TabBar */,
 				70FB48F61C721DDF0023FBC3 /* PostActionView */,
@@ -893,15 +902,6 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
-		70FB49151C78803B0023FBC3 /* CoommentAccessoryView */ = {
-			isa = PBXGroup;
-			children = (
-				70FB49161C7880590023FBC3 /* CommentAccessoryView.swift */,
-				70FB49181C78806A0023FBC3 /* CommentAccessoryView.xib */,
-			);
-			path = CoommentAccessoryView;
-			sourceTree = "<group>";
-		};
 		70FB491A1C788E2B0023FBC3 /* UITextView+Placeholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,6 +1025,7 @@
 				706A002B1C5A297300A8D7B4 /* LaunchScreen.storyboard in Resources */,
 				706BD6A71C6358C300A277D7 /* EditProfileColoredTitleCell.xib in Resources */,
 				707650C41C69F320000B3556 /* PostDetail.storyboard in Resources */,
+				70B7D2561CBE1D52007E270A /* CommentAccessoryView.xib in Resources */,
 				70FB48FA1C721E180023FBC3 /* PostActionView.xib in Resources */,
 				706BD6B01C636BA800A277D7 /* AboutCell.xib in Resources */,
 				707650C71C69F915000B3556 /* PostTitleView.xib in Resources */,
@@ -1053,7 +1054,6 @@
 				70C2F4301C611D1F00C345B2 /* Intro.storyboard in Resources */,
 				70FB48F31C71C9FF0023FBC3 /* CircleView.xib in Resources */,
 				706BD7181C67CDA700A277D7 /* EditImageCell.xib in Resources */,
-				70FB49191C78806A0023FBC3 /* CommentAccessoryView.xib in Resources */,
 				707650EE1C6E68B8000B3556 /* EditUsername.storyboard in Resources */,
 				70FB49061C7655590023FBC3 /* TabBarButton.xib in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
@@ -1139,7 +1139,6 @@
 				706BD70D1C67C04400A277D7 /* NewPostViewController.swift in Sources */,
 				70C2F3F61C60E69900C345B2 /* HttpClient.swift in Sources */,
 				707650CE1C6A15B8000B3556 /* PostImageCell.swift in Sources */,
-				70FB49171C7880590023FBC3 /* CommentAccessoryView.swift in Sources */,
 				701C38651CA7558C0066A365 /* AddButton.swift in Sources */,
 				70C2F43A1C61BD2E00C345B2 /* ShowStepViewController.swift in Sources */,
 				70C2F3F51C60E69900C345B2 /* BaseManager.swift in Sources */,
@@ -1181,6 +1180,7 @@
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
 				706BD71A1C67CDBD00A277D7 /* EditImageCell.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
+				70B7D2551CBE1D52007E270A /* CommentAccessoryView.swift in Sources */,
 				706BD6921C63030E00A277D7 /* FeedbackViewController.swift in Sources */,
 				707650C91C69F926000B3556 /* PostTitleView.swift in Sources */,
 				70C2F40F1C60E76100C345B2 /* BorderButton.swift in Sources */,

@@ -7,23 +7,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="416" id="w4w-8L-1TL" customClass="PostImageCell" customModule="WeImg" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="444" height="416"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="376" id="w4w-8L-1TL" customClass="PostImageCell" customModule="WeImg" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="436" height="376"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w4w-8L-1TL" id="JXb-FI-0SQ">
-                <rect key="frame" x="0.0" y="0.0" width="444" height="415.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="436" height="375.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fOO-Pc-ZHC">
-                        <rect key="frame" x="0.0" y="41" width="444" height="336"/>
+                        <rect key="frame" x="0.0" y="0.0" width="436" height="336"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="336" id="jWm-G5-aAA"/>
+                            <constraint firstAttribute="height" constant="336" id="Vg5-Fu-EVw"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STz-k2-tU1">
-                        <rect key="frame" x="13" y="382" width="418" height="20.5"/>
+                        <rect key="frame" x="13" y="344" width="410" height="20.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20.5" id="Nsc-Cl-YCq"/>
+                            <constraint firstAttribute="height" constant="20.5" id="gNe-wB-2dX"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,21 +32,22 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="STz-k2-tU1" firstAttribute="leading" secondItem="JXb-FI-0SQ" secondAttribute="leadingMargin" constant="5" id="3gS-eH-44O"/>
-                    <constraint firstItem="STz-k2-tU1" firstAttribute="top" secondItem="fOO-Pc-ZHC" secondAttribute="bottom" constant="5" id="94k-DR-qfi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="STz-k2-tU1" secondAttribute="bottom" constant="3" id="98G-WA-vwW"/>
                     <constraint firstItem="fOO-Pc-ZHC" firstAttribute="leading" secondItem="JXb-FI-0SQ" secondAttribute="leadingMargin" constant="-8" id="BDk-aG-6LM"/>
                     <constraint firstAttribute="trailingMargin" secondItem="STz-k2-tU1" secondAttribute="trailing" constant="5" id="H2E-aV-XOg"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="STz-k2-tU1" secondAttribute="bottom" constant="5" id="hqy-7Y-c2l"/>
+                    <constraint firstItem="fOO-Pc-ZHC" firstAttribute="top" secondItem="JXb-FI-0SQ" secondAttribute="topMargin" constant="-8" id="K5B-Cv-qQS"/>
+                    <constraint firstItem="STz-k2-tU1" firstAttribute="top" secondItem="fOO-Pc-ZHC" secondAttribute="bottom" constant="8" id="Uc4-oz-qt3"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fOO-Pc-ZHC" secondAttribute="trailing" constant="-8" id="onz-te-bCX"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="descriptionHeightConstraint" destination="Nsc-Cl-YCq" id="IdN-oj-LJk"/>
                 <outlet property="descriptionLabel" destination="STz-k2-tU1" id="guE-cZ-I80"/>
-                <outlet property="imageHeightConstraint" destination="jWm-G5-aAA" id="alv-s2-V2i"/>
+                <outlet property="descriptionLabelHeight" destination="gNe-wB-2dX" id="7KR-OT-QzR"/>
+                <outlet property="imageHeightConstraint" destination="Vg5-Fu-EVw" id="EFX-Lt-Fjt"/>
                 <outlet property="postImageView" destination="fOO-Pc-ZHC" id="ZAG-ZP-XO4"/>
             </connections>
-            <point key="canvasLocation" x="290" y="479"/>
+            <point key="canvasLocation" x="286" y="466"/>
         </tableViewCell>
     </objects>
 </document>
