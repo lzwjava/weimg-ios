@@ -117,13 +117,9 @@ class RegisterPickAvatarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.yepViewBackgroundColor()
-
         navigationItem.titleView = NavigationTitleLabel(title: NSLocalizedString("Avatar", comment: ""))
 
         navigationItem.rightBarButtonItem = nextButton
-
-        view.backgroundColor = UIColor.whiteColor()
 
         pickAvatarState = .Default
 

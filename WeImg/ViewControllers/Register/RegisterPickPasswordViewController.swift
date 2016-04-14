@@ -33,16 +33,12 @@ class RegisterPickPasswordViewController: BaseViewController {
 
         animatedOnNavigationBar = false
 
-        view.backgroundColor = UIColor.yepViewBackgroundColor()
-
         navigationItem.titleView = NavigationTitleLabel(title: NSLocalizedString("Sign Up", comment: ""))
 
         navigationItem.rightBarButtonItem = nextButton
 
         pickPasswordPromptLabel.text = NSLocalizedString("Your password?", comment: "")
-
-        passwordTextField.backgroundColor = UIColor.whiteColor()
-        passwordTextField.textColor = UIColor.yepInputTextColor()
+        
         passwordTextField.placeholder = " "//NSLocalizedString("Nickname", comment: "")
         passwordTextField.delegate = self
         passwordTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: .EditingChanged)

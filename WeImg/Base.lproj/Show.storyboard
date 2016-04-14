@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Show View Controller-->
         <scene sceneID="ArT-yr-P3e">
             <objects>
-                <viewController storyboardIdentifier="ShowViewController" automaticallyAdjustsScrollViewInsets="NO" id="Acs-5Z-0vE" customClass="ShowViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowViewController" automaticallyAdjustsScrollViewInsets="NO" id="Acs-5Z-0vE" customClass="ShowViewController" customModule="微图" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VPL-Lp-RgF"/>
                         <viewControllerLayoutGuide type="bottom" id="0sA-kf-Eg9"/>
@@ -22,9 +22,6 @@
                                     <outlet property="delegate" destination="Acs-5Z-0vE" id="4Rx-1k-RAw"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Z8-B0-cVp">
-                                <rect key="frame" x="168" y="560" width="39" height="37"/>
-                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzt-eY-iLl" userLabel="Register Button">
                                 <rect key="frame" x="0.0" y="607" width="187.5" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,7 +35,7 @@
                                     <action selector="register:" destination="Acs-5Z-0vE" eventType="touchUpInside" id="laj-NJ-xLV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXr-PM-hSY" userLabel="Login Button" customClass="EdgeBorderButton" customModule="WeImg" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXr-PM-hSY" userLabel="Login Button" customClass="EdgeBorderButton" customModule="微图" customModuleProvider="target">
                                 <rect key="frame" x="187.5" y="607" width="187.5" height="60"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
@@ -56,8 +53,6 @@
                             <constraint firstItem="kzt-eY-iLl" firstAttribute="width" secondItem="OXr-PM-hSY" secondAttribute="width" id="BKO-Qe-HDB"/>
                             <constraint firstItem="Zwm-fM-O1u" firstAttribute="leading" secondItem="CUt-X0-WDO" secondAttribute="leading" id="BaF-jS-bGU"/>
                             <constraint firstItem="kzt-eY-iLl" firstAttribute="leading" secondItem="CUt-X0-WDO" secondAttribute="leading" id="Dc6-V6-3Xd"/>
-                            <constraint firstItem="9Z8-B0-cVp" firstAttribute="centerX" secondItem="CUt-X0-WDO" secondAttribute="centerX" id="Ej0-cw-PmF"/>
-                            <constraint firstItem="kzt-eY-iLl" firstAttribute="top" secondItem="9Z8-B0-cVp" secondAttribute="bottom" constant="10" id="G2n-aW-sFX"/>
                             <constraint firstAttribute="bottom" secondItem="Zwm-fM-O1u" secondAttribute="bottom" id="Q82-ie-kQU"/>
                             <constraint firstItem="0sA-kf-Eg9" firstAttribute="top" secondItem="kzt-eY-iLl" secondAttribute="bottom" id="X06-Mm-HKj"/>
                             <constraint firstItem="OXr-PM-hSY" firstAttribute="top" secondItem="kzt-eY-iLl" secondAttribute="top" id="dwY-eD-gLe"/>
@@ -69,7 +64,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginButton" destination="OXr-PM-hSY" id="t1n-4e-AV0"/>
-                        <outlet property="pageControl" destination="9Z8-B0-cVp" id="D8a-Vi-bnF"/>
                         <outlet property="registerButton" destination="kzt-eY-iLl" id="Z7W-O2-x7v"/>
                         <outlet property="scrollView" destination="Zwm-fM-O1u" id="AzC-i3-j5q"/>
                     </connections>
@@ -81,7 +75,7 @@
         <!--Show Step Genius View Controller-->
         <scene sceneID="PLw-aM-8MV">
             <objects>
-                <viewController storyboardIdentifier="ShowStepGeniusViewController" id="uOd-IQ-cPI" customClass="ShowStepGeniusViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowStepGeniusViewController" id="uOd-IQ-cPI" customClass="ShowStepGeniusViewController" customModule="微图" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wL1-aj-Ess"/>
                         <viewControllerLayoutGuide type="bottom" id="VdK-Vy-bdO"/>
@@ -215,7 +209,7 @@
         <!--Show Step Match View Controller-->
         <scene sceneID="s8K-Id-ctX">
             <objects>
-                <viewController storyboardIdentifier="ShowStepMatchViewController" id="PZT-AV-qxC" customClass="ShowStepMatchViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowStepMatchViewController" id="PZT-AV-qxC" customClass="ShowStepMatchViewController" customModule="微图" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lvT-kf-VeV"/>
                         <viewControllerLayoutGuide type="bottom" id="N4t-8c-Qpf"/>
@@ -302,7 +296,7 @@
         <!--Show Step Meet View Controller-->
         <scene sceneID="BhG-6b-dOc">
             <objects>
-                <viewController storyboardIdentifier="ShowStepMeetViewController" id="hs0-4g-kkg" customClass="ShowStepMeetViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowStepMeetViewController" id="hs0-4g-kkg" customClass="ShowStepMeetViewController" customModule="微图" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xwr-Qf-X6d"/>
                         <viewControllerLayoutGuide type="bottom" id="rfy-Bq-16L"/>
@@ -402,7 +396,7 @@
         <!--Yep Navigation Controller-->
         <scene sceneID="3zM-n1-XF5">
             <objects>
-                <navigationController storyboardIdentifier="ShowNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wNH-aL-wte" customClass="YepNavigationController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ShowNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wNH-aL-wte" customClass="YepNavigationController" customModule="微图" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uLP-N4-GPU">

@@ -9,11 +9,9 @@
 import UIKit
 import Ruler
 
-class ShowViewController: UIViewController {
+class ShowViewController: BaseViewController {
 
     @IBOutlet private weak var scrollView: UIScrollView!
-
-    @IBOutlet private weak var pageControl: UIPageControl!
 
     @IBOutlet private weak var registerButton: UIButton!
     @IBOutlet private weak var loginButton: EdgeBorderButton!
@@ -35,7 +33,6 @@ class ShowViewController: UIViewController {
 
         if isFirstAppear {
             scrollView.alpha = 0
-            pageControl.alpha = 0
             registerButton.alpha = 0
             loginButton.alpha = 0
         }
@@ -47,7 +44,6 @@ class ShowViewController: UIViewController {
         if isFirstAppear {
             UIView.animateWithDuration(1, delay: 0.5, options: .CurveEaseInOut, animations: { [weak self] in
                 self?.scrollView.alpha = 1
-                self?.pageControl.alpha = 1
                 self?.registerButton.alpha = 1
                 self?.loginButton.alpha = 1
             }, completion: { _ in })
@@ -57,73 +53,11 @@ class ShowViewController: UIViewController {
     }
 
     private func makeUI() {
-
-        let stepA = stepGenius()
-        let stepB = stepMatch()
-        let stepC = stepMeet()
-
-        steps = [stepA, stepB, stepC]
-
-        pageControl.numberOfPages = steps.count
-        pageControl.pageIndicatorTintColor = UIColor.yepBorderColor()
-        pageControl.currentPageIndicatorTintColor = UIColor.yepTintColor()
-
         registerButton.setTitle(NSLocalizedString("Sign Up", comment: ""), forState: .Normal)
         loginButton.setTitle(NSLocalizedString("Login", comment: ""), forState: .Normal)
 
         registerButton.backgroundColor = UIColor.yepTintColor()
         loginButton.setTitleColor(UIColor.yepInputTextColor(), forState: .Normal)
-
-        let viewsDictionary = [
-            "view": view,
-            "stepA": stepA.view,
-            "stepB": stepB.view,
-            "stepC": stepC.view,
-        ]
-
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[stepA(==view)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-
-        NSLayoutConstraint.activateConstraints(vConstraints)
-
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[stepA(==view)][stepB(==view)][stepC(==view)]|", options: [.AlignAllBottom, .AlignAllTop], metrics: nil, views: viewsDictionary)
-
-        NSLayoutConstraint.activateConstraints(hConstraints)
-    }
-
-    private func stepGenius() -> ShowStepGeniusViewController {
-        let step = storyboard!.instantiateViewControllerWithIdentifier("ShowStepGeniusViewController") as! ShowStepGeniusViewController
-
-        step.view.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(step.view)
-
-        addChildViewController(step)
-        step.didMoveToParentViewController(self)
-
-        return step
-    }
-
-    private func stepMatch() -> ShowStepMatchViewController {
-        let step = storyboard!.instantiateViewControllerWithIdentifier("ShowStepMatchViewController") as! ShowStepMatchViewController
-
-        step.view.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(step.view)
-
-        addChildViewController(step)
-        step.didMoveToParentViewController(self)
-
-        return step
-    }
-
-    private func stepMeet() -> ShowStepMeetViewController {
-        let step = storyboard!.instantiateViewControllerWithIdentifier("ShowStepMeetViewController") as! ShowStepMeetViewController
-
-        step.view.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(step.view)
-
-        addChildViewController(step)
-        step.didMoveToParentViewController(self)
-
-        return step
     }
 
     // MARK: Actions
@@ -154,8 +88,6 @@ extension ShowViewController: UIScrollViewDelegate {
         let pageFraction = scrollView.contentOffset.x / pageWidth
 
         let page = Int(round(pageFraction))
-
-        pageControl.currentPage = page
     }
 }
 

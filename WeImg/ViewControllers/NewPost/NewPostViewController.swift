@@ -34,6 +34,7 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
         imageTableView.registerNib(UINib(nibName: editImageIdentifier, bundle: nil), forCellReuseIdentifier: editImageIdentifier)
         imageTableView.registerNib(UINib(nibName: addImageIdentifier, bundle: nil), forCellReuseIdentifier: addImageIdentifier)
         pickerController.delegate = self
+        setTitleField()
     }
     
     private func setTitleField() {

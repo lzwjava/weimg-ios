@@ -53,8 +53,6 @@ class RegisterVerifyMobileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.yepViewBackgroundColor()
-
         navigationItem.titleView = NavigationTitleLabel(title: NSLocalizedString("Sign Up", comment: ""))
 
         navigationItem.rightBarButtonItem = nextButton
