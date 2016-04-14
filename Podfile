@@ -23,8 +23,9 @@ target 'WeImg' do
     pod 'CryptoSwift', '~> 0.2.2'
     pod 'QBImagePickerController', '~> 3.4.0'
     pod 'DateTools', '~> 1.7.0'
-    pod 'PKHUD', '~> 2.2.5'
+    pod 'PKHUD', '~> 3.1.0'
     pod 'XXNibBridge', '~> 2.2'
+    pod 'OpenShare', '~> 0.0'
 end
 
 target 'WeImgTests' do

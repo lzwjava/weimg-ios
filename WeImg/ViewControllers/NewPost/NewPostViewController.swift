@@ -110,7 +110,7 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
             PostManager.manager.createPost(self.titleField.text!, imageItems: self.selectedItems) { (error: NSError?) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    PKHUD.sharedHUD.hide()
+                    PKHUD.sharedHUD.hide(animated: true, completion: nil)
                     if self.filterError(error) {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     }
