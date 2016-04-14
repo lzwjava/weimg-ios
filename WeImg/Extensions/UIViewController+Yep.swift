@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import PKHUD
 
 // MAKR: - Heights
 
@@ -58,6 +59,13 @@ extension UIViewController {
 
 
 extension UIViewController {
+    
+    func toast(text: String) {
+        let textView = PKHUDTextView(text: text)
+        PKHUD.sharedHUD.contentView = textView
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2)
+    }
     
     func filterError(error: NSError?) -> Bool {
         if let error = error {

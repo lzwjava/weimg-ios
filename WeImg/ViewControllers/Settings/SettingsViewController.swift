@@ -52,6 +52,9 @@ class SettingsViewController: BaseViewController {
                 }
             }
         }
+        
+        settingsTableView.backgroundColor = UIColor.yepMainColor()
+        settingsTableView.separatorStyle = .None
     }
 }
 

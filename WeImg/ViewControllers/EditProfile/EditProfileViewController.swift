@@ -65,6 +65,9 @@ class EditProfileViewController: BaseViewController {
         editProfileTableView.registerNib(UINib(nibName: editProfileLessInfoCellIdentifier, bundle: nil), forCellReuseIdentifier: editProfileLessInfoCellIdentifier)
         editProfileTableView.registerNib(UINib(nibName: editProfileMoreInfoCellIdentifier, bundle: nil), forCellReuseIdentifier: editProfileMoreInfoCellIdentifier)
         editProfileTableView.registerNib(UINib(nibName: editProfileColoredTitleCellIdentifier, bundle: nil), forCellReuseIdentifier: editProfileColoredTitleCellIdentifier)
+        
+        editProfileTableView.backgroundColor = UIColor.yepMainColor()
+        editProfileTableView.separatorStyle = .None
     }
 
     override func viewWillDisappear(animated: Bool) {

@@ -16,6 +16,7 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
     private let editImageIdentifier = "EditImageCell";
     private let addImageIdentifier = "AddImageCell"
     
+    @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var imageTableView: UITableView!
     var selectedItems = [ImageItem]();
     private var pickerController: QBImagePickerController = {
@@ -33,6 +34,12 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
         imageTableView.registerNib(UINib(nibName: editImageIdentifier, bundle: nil), forCellReuseIdentifier: editImageIdentifier)
         imageTableView.registerNib(UINib(nibName: addImageIdentifier, bundle: nil), forCellReuseIdentifier: addImageIdentifier)
         pickerController.delegate = self
+    }
+    
+    private func setTitleField() {
+        titleField.attributedPlaceholder = NSAttributedString(string: "标题", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
+        titleField.layer.borderColor = UIColor.grayColor().CGColor
+        titleField.layer.borderWidth = 1.0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,20 +96,26 @@ class NewPostViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func uploadImages(sender: AnyObject) {
-        if selectedItems.count > 0 {
-            PKHUD.sharedHUD.contentView = PKHUDProgressView()
-            PKHUD.sharedHUD.show()
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
-                PostManager.manager.createPost("My Post", imageItems: self.selectedItems) { (error: NSError?) -> Void in
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        PKHUD.sharedHUD.hide()
-                        if self.filterError(error) {
-                            self.dismissViewControllerAnimated(true, completion: nil)
-                        }
-                    })
-                }
-            })
+        if titleField.text?.characters.count <= 0 {
+            toast("请输入标题")
+            return
         }
+        if (selectedItems.count == 0) {
+            toast("请至少选择一张照片")
+            return
+        }
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
+            PostManager.manager.createPost(self.titleField.text!, imageItems: self.selectedItems) { (error: NSError?) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    PKHUD.sharedHUD.hide()
+                    if self.filterError(error) {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                })
+            }
+        })
     }
     
     @IBAction func cancel(sender: AnyObject) {

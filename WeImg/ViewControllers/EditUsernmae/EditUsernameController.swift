@@ -21,6 +21,11 @@ class EditUsernameController: UITableViewController {
 
         nicknameTextField.text = UserManager.currentUser?.username
         nicknameTextField.delegate = self
+        
+        tableView.backgroundColor = UIColor.yepMainColor()
+        tableView.separatorStyle = .None
+        
+        nicknameTextField.backgroundColor = UIColor.cellBackgroundColor()
     }
 
     override func viewDidDisappear(animated: Bool) {

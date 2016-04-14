@@ -27,7 +27,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rC-HW-TnM">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="New Post" id="5Cv-ps-tUa">
+                                    <navigationItem title="发布" id="5Cv-ps-tUa">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OVB-Fe-Rge">
                                             <connections>
                                                 <action selector="cancel:" destination="Jnk-dT-Sr1" id="2KT-Z8-foi"/>
@@ -37,25 +37,35 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2wl-Qd-hPD">
-                                <rect key="frame" x="0.0" y="64" width="600" height="485"/>
+                                <rect key="frame" x="0.0" y="124" width="600" height="425"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="osD-59-2rg">
+                                <rect key="frame" x="31" y="79" width="535" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="s7n-6z-ot4" firstAttribute="top" secondItem="2wl-Qd-hPD" secondAttribute="bottom" constant="51" id="1oC-NN-h39"/>
-                            <constraint firstItem="2wl-Qd-hPD" firstAttribute="top" secondItem="8rC-HW-TnM" secondAttribute="bottom" id="5pl-bc-BZ6"/>
+                            <constraint firstItem="2wl-Qd-hPD" firstAttribute="top" secondItem="8rC-HW-TnM" secondAttribute="bottom" constant="60" id="5pl-bc-BZ6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="osD-59-2rg" secondAttribute="trailing" constant="14" id="ByD-w8-sMy"/>
                             <constraint firstItem="8rC-HW-TnM" firstAttribute="top" secondItem="gKI-Ci-4gp" secondAttribute="bottom" id="FyZ-A1-wXE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2wl-Qd-hPD" secondAttribute="trailing" constant="-20" id="K2y-us-Kyo"/>
+                            <constraint firstItem="2wl-Qd-hPD" firstAttribute="top" secondItem="osD-59-2rg" secondAttribute="bottom" constant="15" id="Lz0-i1-iqZ"/>
+                            <constraint firstItem="osD-59-2rg" firstAttribute="top" secondItem="8rC-HW-TnM" secondAttribute="bottom" constant="15" id="UTo-IQ-rUl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8rC-HW-TnM" secondAttribute="trailing" constant="-20" id="W0c-WG-0Op"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MQW-p7-4Ig" secondAttribute="trailing" constant="-11" id="WaF-LH-2vU"/>
                             <constraint firstItem="2wl-Qd-hPD" firstAttribute="leading" secondItem="ipG-73-ICt" secondAttribute="leadingMargin" constant="-20" id="c47-xW-1ZY"/>
                             <constraint firstItem="s7n-6z-ot4" firstAttribute="top" secondItem="MQW-p7-4Ig" secondAttribute="bottom" constant="8" id="mAh-q8-jXx"/>
+                            <constraint firstItem="osD-59-2rg" firstAttribute="leading" secondItem="ipG-73-ICt" secondAttribute="leadingMargin" constant="11" id="ocu-xX-28U"/>
                             <constraint firstItem="8rC-HW-TnM" firstAttribute="leading" secondItem="ipG-73-ICt" secondAttribute="leadingMargin" constant="-20" id="xa9-Cq-0wE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageTableView" destination="2wl-Qd-hPD" id="wsf-36-ztw"/>
+                        <outlet property="titleField" destination="osD-59-2rg" id="bYb-H5-Z1M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loh-8X-en3" userLabel="First Responder" sceneMemberID="firstResponder"/>

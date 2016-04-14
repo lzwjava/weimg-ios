@@ -26,6 +26,7 @@ class SettingsUserCell: UITableViewCell {
 
         accessoryImageView.tintColor = UIColor.yepCellAccessoryImageViewTintColor()
         initUser()
+        
     }
     
     func initUser() {
