@@ -51,6 +51,7 @@ class AboutViewController: BaseViewController {
         aboutTableView.registerNib(UINib(nibName: aboutCellID, bundle: nil), forCellReuseIdentifier: aboutCellID)
 
         aboutTableViewHeightConstraint.constant = rowHeight * CGFloat(aboutAnnotations.count) + 1
+        aboutTableView.backgroundColor = UIColor.yepMainColor()
     }
 }
 
@@ -83,7 +84,7 @@ extension AboutViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 1
+            return 0
         default:
             return rowHeight
         }

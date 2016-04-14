@@ -15,7 +15,6 @@ class FeedbackViewController: BaseViewController {
     @IBOutlet private weak var promptLabel: UILabel! {
         didSet {
             promptLabel.text = NSLocalizedString("We read every feedback", comment: "")
-            promptLabel.textColor = UIColor.darkGrayColor()
         }
     }
 
@@ -30,12 +29,14 @@ class FeedbackViewController: BaseViewController {
     @IBOutlet private weak var feedbackTextViewTopLineView: HorizontalLineView! {
         didSet {
             feedbackTextViewTopLineView.lineColor = UIColor.lightGrayColor()
+            feedbackTextViewTopLineView.backgroundColor = UIColor.darkGrayColor()
         }
     }
 
     @IBOutlet private weak var feedbackTextViewBottomLineView: HorizontalLineView! {
         didSet {
             feedbackTextViewBottomLineView.lineColor = UIColor.lightGrayColor()
+            feedbackTextViewBottomLineView.backgroundColor = UIColor.darkGrayColor()
         }
     }
 
@@ -58,7 +59,7 @@ class FeedbackViewController: BaseViewController {
 
         title = NSLocalizedString("Feedback", comment: "")
 
-        view.backgroundColor = UIColor.yepViewBackgroundColor()
+        view.backgroundColor = UIColor.yepMainColor()
 
         let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "done:")
         navigationItem.rightBarButtonItem = doneBarButtonItem

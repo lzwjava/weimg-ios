@@ -132,9 +132,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITextField.appearance().tintColor = UIColor.yepGreen()
         
         UITextView.appearance().textColor = UIColor.whiteColor()
-        UITextView.appearance().backgroundColor = UIColor.blackColor()
+        UITextView.appearance().backgroundColor = UIColor.cellBackgroundColor()
         UITextField.appearance().textColor = UIColor.whiteColor()
-        UITextField.appearance().backgroundColor = UIColor.blackColor()
+        UITextField.appearance().backgroundColor = UIColor.cellBackgroundColor()
     }
 
 }
