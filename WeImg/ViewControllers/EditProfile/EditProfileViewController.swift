@@ -140,6 +140,8 @@ class EditProfileViewController: BaseViewController {
         alertController.addAction(cancelAction)
 
         self.presentViewController(alertController, animated: true, completion: nil)
+        
+        YepAlert.setAlertStyle(alertController)
 
         // touch to create (if need) for faster appear
         delay(0.2) { [weak self] in

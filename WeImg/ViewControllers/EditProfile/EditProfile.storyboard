@@ -8,7 +8,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="wug-qX-SHm">
             <objects>
-                <viewController storyboardIdentifier="EditProfileViewController" id="ARL-wa-16S" customClass="EditProfileViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="ARL-wa-16S" customClass="EditProfileViewController" customModule="微图" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="scg-q0-Icz"/>
                         <viewControllerLayoutGuide type="bottom" id="AOC-F1-9xe"/>
@@ -122,6 +122,6 @@
     </scenes>
     <resources>
         <image name="icon_profile_phone" width="16" height="24"/>
-        <image name="profile_avatar_frame" width="112" height="112"/>
+        <image name="profile_avatar_frame" width="20" height="20"/>
     </resources>
 </document>

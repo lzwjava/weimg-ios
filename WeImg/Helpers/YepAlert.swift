@@ -25,7 +25,12 @@ class YepAlert {
             alertController.addAction(action)
 
             viewController?.presentViewController(alertController, animated: true, completion: nil)
+            setAlertStyle(alertController)
         }
+    }
+    
+    class func setAlertStyle(alertController: UIAlertController) {
+        alertController.view.tintColor = UIColor.yepGreen()
     }
 
     class func alertSorry(message message: String?, inViewController viewController: UIViewController?, withDismissAction dismissAction: (() -> Void)?) {
@@ -57,6 +62,7 @@ class YepAlert {
             alertController.addAction(action)
 
             viewController?.presentViewController(alertController, animated: true, completion: nil)
+            setAlertStyle(alertController)
         }
     }
 
@@ -84,6 +90,7 @@ class YepAlert {
             alertController.addAction(_confirmAction)
 
             viewController?.presentViewController(alertController, animated: true, completion: nil)
+            setAlertStyle(alertController)
         }
     }
 
@@ -104,6 +111,7 @@ class YepAlert {
             alertController.addAction(confirmAction)
 
             viewController?.presentViewController(alertController, animated: true, completion: nil)
+            setAlertStyle(alertController)
         }
     }
 
