@@ -30,8 +30,6 @@
 		706BD6881C63025B00A277D7 /* SettingsMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6861C63025B00A277D7 /* SettingsMoreCell.xib */; };
 		706BD68C1C63030400A277D7 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706BD68A1C63030400A277D7 /* About.storyboard */; };
 		706BD68D1C63030400A277D7 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD68B1C63030400A277D7 /* AboutViewController.swift */; };
-		706BD6911C63030E00A277D7 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706BD68F1C63030E00A277D7 /* Feedback.storyboard */; };
-		706BD6921C63030E00A277D7 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6901C63030E00A277D7 /* FeedbackViewController.swift */; };
 		706BD6961C63039C00A277D7 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706BD6941C63039C00A277D7 /* EditProfile.storyboard */; };
 		706BD6971C63039C00A277D7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6951C63039C00A277D7 /* EditProfileViewController.swift */; };
 		706BD69A1C63581200A277D7 /* HorizontalLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706BD6991C63581200A277D7 /* HorizontalLineView.swift */; };
@@ -183,8 +181,6 @@
 		706BD6861C63025B00A277D7 /* SettingsMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsMoreCell.xib; sourceTree = "<group>"; };
 		706BD68A1C63030400A277D7 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		706BD68B1C63030400A277D7 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		706BD68F1C63030E00A277D7 /* Feedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
-		706BD6901C63030E00A277D7 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		706BD6941C63039C00A277D7 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		706BD6951C63039C00A277D7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		706BD6991C63581200A277D7 /* HorizontalLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalLineView.swift; sourceTree = "<group>"; };
@@ -436,15 +432,6 @@
 			path = About;
 			sourceTree = "<group>";
 		};
-		706BD68E1C63030E00A277D7 /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				706BD68F1C63030E00A277D7 /* Feedback.storyboard */,
-				706BD6901C63030E00A277D7 /* FeedbackViewController.swift */,
-			);
-			path = Feedback;
-			sourceTree = "<group>";
-		};
 		706BD6931C63039C00A277D7 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,7 +623,6 @@
 				706BD6E71C63C20D00A277D7 /* Nav */,
 				707650EB1C6E68B8000B3556 /* EditUsernmae */,
 				706BD6931C63039C00A277D7 /* EditProfile */,
-				706BD68E1C63030E00A277D7 /* Feedback */,
 				706BD6891C63030400A277D7 /* About */,
 				70C2F4431C61C44C00C345B2 /* Welcome */,
 				70C2F43E1C61BD9400C345B2 /* Login */,
@@ -1046,7 +1032,6 @@
 				70FB49061C7655590023FBC3 /* TabBarButton.xib in Resources */,
 				706BD68C1C63030400A277D7 /* About.storyboard in Resources */,
 				706BD6A91C6358C300A277D7 /* EditProfileLessInfoCell.xib in Resources */,
-				706BD6911C63030E00A277D7 /* Feedback.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1168,7 +1153,6 @@
 				706BD71A1C67CDBD00A277D7 /* EditImageCell.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
 				70B7D2551CBE1D52007E270A /* CommentAccessoryView.swift in Sources */,
-				706BD6921C63030E00A277D7 /* FeedbackViewController.swift in Sources */,
 				707650C91C69F926000B3556 /* PostTitleView.swift in Sources */,
 				70C2F40F1C60E76100C345B2 /* BorderButton.swift in Sources */,
 				70C2F3F91C60E69900C345B2 /* UserManager.swift in Sources */,
