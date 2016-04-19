@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40255A001CC5467A00BC0F7C /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 402559FD1CC5467A00BC0F7C /* UIScrollView+SVInfiniteScrolling.m */; };
+		40255A011CC5467A00BC0F7C /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 402559FF1CC5467A00BC0F7C /* UIScrollView+SVPullToRefresh.m */; };
 		700B1A8A1C7B6DA00012C5A4 /* VoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700B1A891C7B6DA00012C5A4 /* VoteItem.swift */; };
 		701C38611CA74DB00066A365 /* AddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C38601CA74DB00066A365 /* AddImageCell.swift */; };
 		701C38651CA7558C0066A365 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701C38641CA7558C0066A365 /* AddButton.swift */; };
@@ -151,6 +153,11 @@
 
 /* Begin PBXFileReference section */
 		256BB710AFCAA4E8AF7D684E /* Pods-WeImg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.debug.xcconfig"; sourceTree = "<group>"; };
+		402559FB1CC5467A00BC0F7C /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		402559FC1CC5467A00BC0F7C /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		402559FD1CC5467A00BC0F7C /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		402559FE1CC5467A00BC0F7C /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		402559FF1CC5467A00BC0F7C /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		423C752F3464F8065CF2BBAC /* Pods-WeImg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeImg.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeImg/Pods-WeImg.release.xcconfig"; sourceTree = "<group>"; };
 		527C54C41326CCAC54767B52 /* Pods_WeImg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeImg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700B1A891C7B6DA00012C5A4 /* VoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteItem.swift; sourceTree = "<group>"; };
@@ -314,6 +321,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		402559FA1CC5466D00BC0F7C /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				402559FB1CC5467A00BC0F7C /* SVPullToRefresh.h */,
+				402559FC1CC5467A00BC0F7C /* UIScrollView+SVInfiniteScrolling.h */,
+				402559FD1CC5467A00BC0F7C /* UIScrollView+SVInfiniteScrolling.m */,
+				402559FE1CC5467A00BC0F7C /* UIScrollView+SVPullToRefresh.h */,
+				402559FF1CC5467A00BC0F7C /* UIScrollView+SVPullToRefresh.m */,
+			);
+			name = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		70696DAD1C6F10310038DB83 /* PostOutline */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,6 +818,7 @@
 		70FB48D41C7111FD0023FBC3 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				402559FA1CC5466D00BC0F7C /* SVPullToRefresh */,
 				70FB491A1C788E2B0023FBC3 /* UITextView+Placeholder */,
 				70FB48D51C71122D0023FBC3 /* UITableView+FDTemplateLayoutCell */,
 			);
@@ -1103,6 +1123,7 @@
 				707650E31C6E582A000B3556 /* YepTabBarController.swift in Sources */,
 				70FB491D1C788E2B0023FBC3 /* UITextView+Placeholder.m in Sources */,
 				70C2F3E01C60E68200C345B2 /* RegisterPickMobileViewController.swift in Sources */,
+				40255A011CC5467A00BC0F7C /* UIScrollView+SVPullToRefresh.m in Sources */,
 				70C2F43D1C61BD5D00C345B2 /* EdgeBorderButton.swift in Sources */,
 				706BD6E61C63BA7300A277D7 /* AvatarStyles.swift in Sources */,
 				706BD6E91C63C20D00A277D7 /* YepNavigationController.swift in Sources */,
@@ -1150,6 +1171,7 @@
 				707650E51C6E590A000B3556 /* UIScrollView+Yep.swift in Sources */,
 				70C2F4421C61BD9400C345B2 /* LoginPasswordViewController.swift in Sources */,
 				70C2F3DC1C60E68200C345B2 /* BaseViewController.swift in Sources */,
+				40255A001CC5467A00BC0F7C /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				706BD71A1C67CDBD00A277D7 /* EditImageCell.swift in Sources */,
 				70C2F42B1C611BCA00C345B2 /* UIImage+Yep.swift in Sources */,
 				70B7D2551CBE1D52007E270A /* CommentAccessoryView.swift in Sources */,
@@ -1347,7 +1369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "微图";
-				PROVISIONING_PROFILE = "ba10effd-3063-4dac-9303-499e489bfd2d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeImg/WeImg-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1364,7 +1386,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.weimg.WeImg;
 				PRODUCT_NAME = "微图";
-				PROVISIONING_PROFILE = "ba10effd-3063-4dac-9303-499e489bfd2d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeImg/WeImg-Bridging-Header.h";
 			};
 			name = Release;

@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class PostsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout {
+class PostsViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     private var refreshControl = UIRefreshControl()
@@ -18,11 +18,6 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     private var navigationBarView = PostsNavigationBarView.instanceFromNib()
     
     private var sort = Sort.score
-    
-    private enum Sort : String {
-        case created = "created"
-        case score = "score"
-    }
     
     //MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -42,7 +37,7 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         //Register nibs
         registerNibs()
         
-        loadPosts()
+        refreshPosts()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -70,20 +65,31 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
                 } else {
                     strongSelf.sort = Sort.created
                 }
-                strongSelf.loadPosts()
+                strongSelf.refreshPosts()
+            }
+        }
+    }
+    
+    private func refreshPosts() {
+        if !refreshControl.refreshing {
+            refreshControl.beginRefreshing()
+            collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
+        }
+        
+        PostManager.manager.refresh { (fetchedPosts: [Post], error: NSError?) -> Void in
+            self.refreshControl.endRefreshing()
+            if (self.filterError(error)) {
+                self.posts = fetchedPosts
+                self.collectionView.reloadData()
             }
         }
     }
     
     private func loadPosts() {
-        if !refreshControl.refreshing {
-            refreshControl.beginRefreshing()
-            collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
-        }
-        PostManager.manager.getPosts(0, limit: 100, sort: sort.rawValue) { (fetchedPosts: [Post], error: NSError?) -> Void in
-            self.refreshControl.endRefreshing()
+        PostManager.manager.loadNextPage { (fetchedPosts: [Post], error: NSError?) -> Void in
             if (self.filterError(error)) {
-                self.posts = fetchedPosts
+                self.posts.appendContentsOf(fetchedPosts)
+                self.collectionView.infiniteScrollingView.stopAnimating()
                 self.collectionView.reloadData()
             }
         }
@@ -112,12 +118,17 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         self.collectionView.collectionViewLayout = layout
         
         refreshControl.tintColor = UIColor.whiteColor()
-        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(PostsViewController.refresh(_:)), forControlEvents: .ValueChanged)
         collectionView.addSubview(refreshControl)
+        
+        self.collectionView.addInfiniteScrollingWithActionHandler {
+            print("load more")
+            self.loadPosts()
+        }
     }
     
     func refresh(sender: AnyObject) {
-        loadPosts()
+        refreshPosts()
     }
     
     // Register CollectionView Nibs
@@ -128,9 +139,27 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         collectionView.registerNib(viewNib, forCellWithReuseIdentifier: "cell")
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+            case "showPostDetail":
+                let vc = segue.destinationViewController as! PostDetailViewController
+                vc.post = sender as? Post
+                break
+            default:
+                break
+        }
+    }
+}
+
+extension PostsViewController: UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout
+{
     //MARK: - CollectionView Delegate Methods
     
-     //** Number of Cells in the CollectionView */
+    //** Number of Cells in the CollectionView */
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
@@ -138,7 +167,6 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
     //** Create a basic CollectionView Cell */
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        // Create the cell and return the cell
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PostOutlineCell
         
         // Add image to cell
@@ -163,19 +191,6 @@ class PostsViewController: BaseViewController, UICollectionViewDelegate, UIColle
         performSegueWithIdentifier("showPostDetail", sender: post)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        guard let identifier = segue.identifier else {
-            return
-        }
-        
-        switch identifier {
-            case "showPostDetail":
-                let vc = segue.destinationViewController as! PostDetailViewController
-                vc.post = sender as? Post
-                break
-            default:
-                break
-        }
-    }
+    
 }
 

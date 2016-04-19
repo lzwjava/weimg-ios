@@ -9,10 +9,33 @@
 import Foundation
 import Alamofire
 
+enum Sort : String {
+    case created = "created"
+    case score = "score"
+}
+
 class PostManager : BaseManager {
     static let manager: PostManager = {
         return PostManager()
     }()
+    
+    var sort = Sort.score.rawValue
+    
+    var skip = 0
+    let limit = 10
+    
+    func refresh(completionHandler: ([Post], NSError?) -> Void) {
+        
+        skip = 0
+        getPosts(0, limit: limit, sort: sort, completionHandler: completionHandler);
+       
+    }
+    
+    func loadNextPage(completionHandler: ([Post], NSError?) -> Void) {
+        skip += limit;
+        getPosts(skip, limit: limit, sort: sort, completionHandler: completionHandler);
+        
+    }
     
     func getPosts(skip: Int, limit: Int, sort: String, completionHandler: ([Post], NSError?) -> Void) {
         var params = [String: AnyObject]()

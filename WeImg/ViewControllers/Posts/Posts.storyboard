@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--PostsViewController-->
         <scene sceneID="eFB-RC-kW4">
             <objects>
-                <viewController storyboardIdentifier="PostsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Lgn-kq-v4r" userLabel="PostsViewController" customClass="PostsViewController" customModule="WeImg" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Lgn-kq-v4r" userLabel="PostsViewController" customClass="PostsViewController" customModule="微图" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v1y-Uj-IkY"/>
                         <viewControllerLayoutGuide type="bottom" id="WPF-3q-XMR"/>

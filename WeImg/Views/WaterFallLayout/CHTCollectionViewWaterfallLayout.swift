@@ -151,10 +151,10 @@ class CHTCollectionViewWaterfallLayout : UICollectionViewLayout{
         self.allItemAttributes.removeAllObjects()
         self.sectionItemAttributes.removeAllObjects()
         
-        for var section = 0; section < numberOfSections; ++section{
+        for section in 0 ..< numberOfSections{
             let columnCount = self.columnCountForSection(section)
             let sectionColumnHeights = NSMutableArray(capacity: columnCount)
-            for var idx = 0; idx < columnCount; idx++ {
+            for idx in 0 ..< columnCount {
                 sectionColumnHeights.addObject(idx)
             }
             self.columnHeights.addObject(sectionColumnHeights)
@@ -163,7 +163,7 @@ class CHTCollectionViewWaterfallLayout : UICollectionViewLayout{
         var top : CGFloat = 0.0
         var attributes = UICollectionViewLayoutAttributes()
         
-        for var section = 0; section < numberOfSections; ++section{
+        for section in 0 ..< numberOfSections{
             /*
             * 1. Get section-specific metrics (minimumInteritemSpacing, sectionInset)
             */
@@ -205,7 +205,7 @@ class CHTCollectionViewWaterfallLayout : UICollectionViewLayout{
                 top = CGRectGetMaxY(attributes.frame)
             }
             top += sectionInsets.top
-            for var idx = 0; idx < columnCount; idx++ {
+            for idx in 0 ..< columnCount {
                 if let sectionColumnHeights = self.columnHeights[section] as? NSMutableArray {
                     sectionColumnHeights[idx]=top
                 }
